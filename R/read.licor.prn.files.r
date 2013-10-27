@@ -4,10 +4,11 @@
 ##' to extract the whole header remark field and also check whether data is in photon or energy based units.
 ##' The time field is ignored as it does not contain year information.
 ##' 
-##' @usage read_licor_prn_files(in.path=".", out.path="../data/", file.name.patt="*.PRN")
+##' @usage read_licor_prn_files(in.path=".", out.path="../data/", file.name.patt="*.PRN", trim.wl=NULL)
 ##' @param in.path The path to the folder containing the text files with processed data from the spectrometer.
 ##' @param out.path The path to the folder where to save the .Rda files
 ##' @param file.name.patt The pattern to be matched when searching for data files.
+##' @param trim.wl Numeric value indicating threshold wavelength (nm) above which data is discarded.
 ##' 
 ##' @return Returns a character vector with the names of the data.frames created.
 ##' @export
@@ -24,7 +25,7 @@
 ##' "MAX:  546NM  7.491E-01"
 ##' 
 ##' @details
-##' read all available lamp data
+##' read all available lamp data in the directory (folder) pointed to by in.path
 ##' assumes that all files with ".PRN" are filter-data files from LI-COR spectroradiometer 
 ##' STEPS
 ##' 1) get matching file names
@@ -34,12 +35,13 @@
 ##'  c) read spectral data
 ##'  d) calculate data in the other unit
 ##'  e) create a data.frame
+##'  e') if trim.wl != NULL, then discard data for longer wavelengths
 ##'  f) add the remark from file header as a comment() to the dataframe
 ##'  g) save the dataframe as an .Rda file
 ##'  h) save the extracted header as a .txt file
 ##' 3) goto 2, for next file
 
-read_licor_prn_files <- function(in.path=".", out.path="../data/", file.name.patt="*.PRN"){
+read_licor_prn_files <- function(in.path=".", out.path="../data/", file.name.patt="*.PRN", trim.wl=NULL){
   old.path <- getwd()
   setwd(in.path)
   df.names.vec <- NULL
@@ -66,7 +68,10 @@ read_licor_prn_files <- function(in.path=".", out.path="../data/", file.name.pat
     } else {
       stop("unrecognized unit.in")
     }
-    comment(df.temp) <- parsed_remark
+    if (!is.null(trim.wl)) {
+      df.temp <- df.temp[df.temp$w.length <= trim.wl,]
+    }
+    comment(df.temp) <- paste("LICOR LI-1800:", parsed_remark)
     assign(df.name, df.temp)
     save(list=df.name, file=paste(out.path, df.name, ".rda", sep=""))
     str_cat <- NULL

@@ -31,6 +31,6 @@
 #' @examples
 #' library(photobiologyLamps)
 #' library(photobiologyVIS)
-#' with(fl1.data, photon_ratio(w.length, s.e.irrad, Blue(), Green()))
-#' 
+#' with(incandescent.60w.data, photon_ratio(w.length, s.e.irrad, Blue(), Green()))
+#' plot(s.e.irrad~w.length, data=incandescent.60w.data, main=comment(incandescent.60w.data), type="l")
 NULL
