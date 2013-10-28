@@ -1,4 +1,4 @@
-library(photobiologyLamps)
+library(photobiologyInOut)
 
 df.names <- read_licor_prn_files("raw.data/LI1800/","../../data/",trim.wl=900)
 all.names <- NULL
