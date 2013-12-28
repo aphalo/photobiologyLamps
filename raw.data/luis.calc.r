@@ -2,7 +2,7 @@ library(photobiologyVIS)
 library(photobiologyUV)
 library(photobiologyFilters)
 
-Bentham.raw.data <- read.csv("raw.data/Bentham_01_and_12.csv")
+Bentham.raw.data <- read.csv("raw.data/Bentham/Bentham_01_and_12.csv")
 names(Bentham.raw.data)
 
 fl2.data$s.e.irrad <- with(fl2.data, as_energy(w.length, s.q.irrad * 1e-6))
