@@ -26,7 +26,7 @@
  
 \begin{document}
 
-\title{\PBLam Version 0.1.3\\ Catalogue of Lamps}
+\title{\PBLam Version 0.1.4\\ Catalogue of Lamps}
 \author{Pedro J. Aphalo}
 
 \maketitle
@@ -37,7 +37,8 @@ We will plot the emission spectra of the different lamps for which data is provi
 
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
-opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",            fig.width=4, fig.height=4, out.width='.47\\textwidth', dev='cairo_pdf')
+opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",
+               fig.width=4, fig.height=4, out.width='.47\\textwidth', dev='cairo_pdf')
 @
 
 <<example-0, eval=TRUE>>=
@@ -76,6 +77,12 @@ UVB.lamps <- c("philips.tl01.bentham", "philips.tl12.bentham")
 for (lamp in UVB.lamps) {
   lamp.plotter(lamp.name=lamp)
 }
+@
+
+<<plot-UVB-emperature, fig.width=8, fig.height=4, out.width='.95\\textwidth'>>=
+fig_temp <- ggplot(data=qpanel.uvb313.temperature.data, aes(x=w.length, y=s.e.irrad, colour=factor(temperature)))
+fig_temp <- fig_temp + geom_line() + labs(x="Wavelength (nm)", y="Spectral energy irradiance (W m-2)", colour="Temperature (C)")
+print(fig_temp)
 @
 
 \section{UV-A lamp spectra}

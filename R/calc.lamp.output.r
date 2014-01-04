@@ -46,7 +46,7 @@ calc_lamp_output <- function(w.length.out,
     else {
       lamp.object.name <- paste(lamp.name, "data", sep=".")
       if (!exists(lamp.object.name)) {
-        warning("No data for lamp with name: ", lmap.object.name)
+        warning("No data for lamp with name: ", lamp.object.name)
         return(NA)
       }
       lamp.object <- get(lamp.object.name)
