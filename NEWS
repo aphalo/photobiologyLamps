@@ -1,3 +1,15 @@
+photobiologyLamps Ver 0.1.3
+===========================
+
+Added function calc_lamp_output.
+Wrote new vignette dataPlots with plots for all lamp data in the package.
+
+
+photobiologyLamps Ver 0.1.2
+===========================
+
+Merged some edits, and fixed some documentation bugs.
+
 photobiologyLamps Ver 0.1.1
 ===========================
 

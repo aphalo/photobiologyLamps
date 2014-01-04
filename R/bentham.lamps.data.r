@@ -13,7 +13,7 @@
 #' 
 #' @note
 #' Instrument used: Bentham scanning double monochromator spectroradiometer with
-#' a cosine corrected input optics. Recently calibrated with a STUK.
+#' a cosine corrected input optics. Recently calibrated at STUK.
 #' Measurements done by Lasse Ylianttila (STUK, Helsinki, Finland).
 #' 
 #' @docType data
