@@ -1,6 +1,6 @@
 %\VignetteEngine{knitr}
 %\VignetteIndexEntry{UV-radiation quantification with R: Catalogue of lamps}
-%\VignetteDepends{knitr, photobiology, photobiologyLamps}
+%\VignetteDepends{knitr, photobiology, photobiologyLamps, photobiologygg, ggplot2}
 %\VignetteKeyword{misc}
 
 \documentclass{article}
