@@ -3,10 +3,10 @@ library(photobiology)
 load("~/Rpackages/photobiologyLamps/raw.data/Bentham/Bentham.raw.data.Rda")
 philips.tl12.bentham.data <- philips.tl01.bentham.data <- Bentham.raw.data
 philips.tl12.bentham.data$TL01 <- NULL
-philips.tl12.bentham.data$s.e.irrad <- philips.tl12.bentham.data$TL12
+philips.tl12.bentham.data$s.e.irrad <- philips.tl12.bentham.data$TL12 * 1e-3
 philips.tl12.bentham.data$s.q.irrad <- with(philips.tl12.bentham.data, as_quantum_mol(w.length, s.e.irrad))
 philips.tl01.bentham.data$TL12 <- NULL
-philips.tl01.bentham.data$s.e.irrad <- philips.tl01.bentham.data$TL01
+philips.tl01.bentham.data$s.e.irrad <- philips.tl01.bentham.data$TL01 * 1e-3
 philips.tl01.bentham.data$s.q.irrad <- with(philips.tl01.bentham.data, as_quantum_mol(w.length, s.e.irrad))
 
 save(philips.tl01.bentham.data, file="~/Rpackages/photobiologyLamps/data/philips.tl01.bentham.data.rda")

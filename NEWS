@@ -1,3 +1,9 @@
+photobiologyLamps Ver 0.1.5
+===========================
+
+Corrected wrong units in Betham data. It was in mW m-2 nm-1, while documentation 
+indicated that it was in W m-2 nm-1. Data has been now rescaled. 
+
 photobiologyLamps Ver 0.1.4
 ===========================
 
