@@ -11,13 +11,15 @@
 #' \tabular{ll}{
 #' Package: \tab photobiologyLamps\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.1.5\cr
-#' Date: \tab 2013-02-19\cr
+#' Version: \tab 0.1.6\cr
+#' Date: \tab 2014-03-23\cr
 #' License: \tab GPL (>= 3)\cr
 #' URL: \tab \url{http://uv4growth.dyndns.org},\cr \tab \url{http://openinstruments.dyndns.org},\cr
 #' \tab \url{https://bitbucket.org/aphalo/photobiology}\cr
 #' BugReports: \tab \url{https://bitbucket.org/aphalo/photobiology}\cr
 #' }
+#' 
+#' @import photobiology
 #' 
 #' @references
 #' Aphalo, P. J., Albert, A., Björn, L. O., McLeod, A. R., Robson, T. M., 

@@ -26,7 +26,7 @@
  
 \begin{document}
 
-\title{\PBLam Version 0.1.5\\ Catalogue of Lamps}
+\title{\PBLam Version 0.1.6\\ Catalogue of Lamps}
 \author{Pedro J. Aphalo}
 
 \maketitle
@@ -72,23 +72,30 @@ print(fig_photon)
 
 \section{UV-B lamp spectra}
 
-<<plot-UVB-lamps>>=
+<<plot-UVB-lamps-Bentham>>=
 UVB.lamps <- c("philips.tl01.bentham", "philips.tl12.bentham")
 for (lamp in UVB.lamps) {
   lamp.plotter(lamp.name=lamp)
 }
 @
 
+<<plot-UVB-lamps-Macam>>=
+UVB.M.lamps <- c("philips.tl12", "qpanel.uvb313")
+for (lamp in UVB.M.lamps) {
+  lamp.plotter(lamp.name=lamp)
+}
+@
+
 <<plot-UVB-temperature, fig.width=8, fig.height=4, out.width='.95\\textwidth'>>=
 fig_temp <- ggplot(data=qpanel.uvb313.temperature.data, aes(x=w.length, y=s.e.irrad, colour=factor(temperature)))
-fig_temp <- fig_temp + geom_line() + labs(x="Wavelength (nm)", y="Spectral energy irradiance (W m-2)", colour="Temperature (C)")
+fig_temp <- fig_temp + geom_line() + labs(x="Wavelength (nm)", y="Spectral energy irradiance (W m-2 nm-1)", colour="Temperature (C)")
 print(fig_temp)
 @
 
 \section{UV-A lamp spectra}
 
 <<plot-UVA-lamps>>=
-UVA.lamps <- c()
+UVA.lamps <- c("qpanel.uva340")
 for (lamp in UVA.lamps) {
   lamp.plotter(lamp.name=lamp)
 }
