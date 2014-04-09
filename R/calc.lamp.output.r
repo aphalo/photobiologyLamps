@@ -21,6 +21,7 @@
 #' @return a dataframe with two numeric vectors with wavelength values and scaled and interpolated spectral (energy or photon) irradiance values
 #' @keywords manip misc
 #' @export
+#' @importFrom photobiology check_spectrum trim_tails integrate_irradiance as_quantum_mol as_energy
 #' 
 #' @note This is a convenience function that adds no new functionality but makes it a little easier to plot lamp spectral emission data consistently.
 #' It automates interpolation, extrapolation/trimming and scaling.
@@ -107,7 +108,7 @@ calc_lamp_output <- function(w.length.out,
     div <- with(out.data, max(s.irrad, na.rm=TRUE))
   }
   else if (scaled=="area") {
-    div <- with(na.omit(out.data), integrate_irradianceC(w.length, s.irrad))
+    div <- with(na.omit(out.data), integrate_irradiance(w.length, s.irrad))
   }
   else {
     warning("Ignoring unsupported scaled argument: ", scaled)

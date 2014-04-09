@@ -15,7 +15,7 @@
 #' a cosine corrected input optics. Recently calibrated. The lamps were probably driven by a high
 #' frequency electronic ballast. Measured bwteen 1996 to 1998.
 #' 
-#' @reference 
+#' @references 
 #' Aphalo, P J, R Tegelberg, and R Julkunen-Tiitto. 1999. The Modulated UV-B Irradiation System at the 
 #' University of Joensuu.” Biotronics 28: 109–120. 
 #' \url{http://133.5.207.201/ijob/Biotronics/1999_IJOBS_V28/V28_p109-120.pdf}.

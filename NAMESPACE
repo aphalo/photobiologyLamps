@@ -1,2 +1,6 @@
 export(calc_lamp_output)
-import(photobiology)
+importFrom(photobiology,as_energy)
+importFrom(photobiology,as_quantum_mol)
+importFrom(photobiology,check_spectrum)
+importFrom(photobiology,integrate_irradiance)
+importFrom(photobiology,trim_tails)
