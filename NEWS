@@ -1,3 +1,13 @@
+photobiologyLamps 0.1.8
+=======================
+
+Substantial changes to calc_lamp_output to simplify use and to correclty handle NAs and cases when extrapolation is involved.
+
+photobiologyLamps 0.1.7
+=======================
+
+Changes to adjust code to changes in package photobiology version 0.2.16
+
 photobiologyLamps 0.1.6
 =======================
 
