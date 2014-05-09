@@ -26,7 +26,7 @@
  
 \begin{document}
 
-\title{\PBLam Version 0.1.8\\ Catalogue of Lamps}
+\title{\PBLam Version 0.1.9\\ Catalogue of Lamps}
 \author{Pedro J. Aphalo}
 
 \maketitle
@@ -53,7 +53,7 @@ We define a function to do the actual plotting so as to not repeat code, and to 
 <<setup-function>>=
 lamp.plotter <- function(lamp.name, w.low=250.0, w.high=900.0, scaled="area"){
 w.length.out <- seq(from=w.low, to=w.high, length.out=300)
-spectrum.data <- calc_lamp_output(w.length.out=w.length.out, lamp.name=lamp.name, scaled=scaled, fill=0.0)
+spectrum.data <- calc_source_output(w.length.out=w.length.out, source.name=lamp.name, scaled=scaled, fill=0.0)
 spectrum.data <- na.omit(spectrum.data)
 fig_energy <- ggplot(aes(x=w.length, y=s.e.irrad), data=spectrum.data) + xlim(w.low, w.high) +
   labs(x="Wavelength (nm)", y="Spectral energy irradiance\n(rel. units)", title=lamp.name) + 

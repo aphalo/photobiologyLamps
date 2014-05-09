@@ -1,3 +1,9 @@
+photobiologyLamps 0.1.9
+=======================
+
+Fixed bug introduced introduced yesterday in 0.1.8. calc_lamp_output was not doing the rescaling correctly and moved most of the code to calc_source_output() in package photobiology.
+calc_lamp_output() now just calls calc_source_output() and its use is deprecated.
+
 photobiologyLamps 0.1.8
 =======================
 
