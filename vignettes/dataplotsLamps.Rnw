@@ -26,7 +26,7 @@
  
 \begin{document}
 
-\title{\PBLam Version 0.1.9\\ Catalogue of Lamps}
+\title{\PBLam Version 0.1.10\\ Catalogue of Lamps}
 \author{Pedro J. Aphalo}
 
 \maketitle
@@ -53,7 +53,7 @@ We define a function to do the actual plotting so as to not repeat code, and to 
 <<setup-function>>=
 lamp.plotter <- function(lamp.name, w.low=250.0, w.high=900.0, scaled="area"){
 w.length.out <- seq(from=w.low, to=w.high, length.out=300)
-spectrum.data <- calc_source_output(w.length.out=w.length.out, source.name=lamp.name, scaled=scaled, fill=0.0)
+spectrum.data <- calc_source_output(w.length.out=w.length.out, source.name=lamp.name, scaled=scaled, fill=NULL)
 spectrum.data <- na.omit(spectrum.data)
 fig_energy <- ggplot(aes(x=w.length, y=s.e.irrad), data=spectrum.data) + xlim(w.low, w.high) +
   labs(x="Wavelength (nm)", y="Spectral energy irradiance\n(rel. units)", title=lamp.name) + 
@@ -116,6 +116,17 @@ white.lamps <- c("incandescent.60w", "osram.36w.25", "philips.pls11w.827", "phil
                 "sylvania.215w.vho")
 for (lamp in white.lamps) {
   lamp.plotter(lamp.name=lamp)
+}
+@
+
+\section{Calibration lamps}
+
+<<FEL>>=
+FEL.data <- FEL_spectrum(250:900)
+D2.data <- D2_spectrum(250:900)
+calibration.lamps <- c("FEL","D2")
+for (lamp in calibration.lamps) {
+  lamp.plotter(lamp.name=lamp, scaled=NULL)
 }
 @
 

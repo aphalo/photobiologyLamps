@@ -23,7 +23,7 @@
 #' @return a dataframe with four numeric vectors with wavelength values (w.length), scaled and interpolated spectral energy or photon irradiance (s.irrad) depending on the argument passed to unit.out (s.irrad)
 #' @keywords manip misc
 #' @export
-#' @importFrom photobiology check_spectrum trim_tails integrate_irradiance as_quantum_mol as_energy
+#' @importFrom photobiology calc_source_output
 #' 
 #' @note This is a convenience function that adds no new functionality but makes it a little easier to plot lamp spectral emission data consistently.
 #' It automates interpolation, extrapolation/trimming and scaling.
@@ -48,6 +48,8 @@ calc_lamp_output <- function(w.length.out,
                                  w.length.in=w.length.in, s.irrad.in=s.irrad.in, 
                                  unit.in=unit.in,
                                  scaled=scaled, fill=fill)
+  
+  if (is.null(unit.out)) unit.out <- unit.in
   
   if (unit.out == "energy") {
     out.data$s.irrad <- out.data$s.e.irrad

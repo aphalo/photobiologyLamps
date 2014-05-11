@@ -1,3 +1,8 @@
+photobiologyLamps 0.1.10
+========================
+
+Added functions D2_spectrum() and FEL_spectrum(). These functions use constants from high precision fits to known calibration lamps.
+
 photobiologyLamps 0.1.9
 =======================
 
