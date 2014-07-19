@@ -18,8 +18,8 @@
 #' 
 #' @docType data
 #' @keywords datasets
-#' @format A data frame with 301 rows (250 nm to 400 nm, 0.5 nm step) and 3 variables.
+#' @format A source.spct with 301 rows (250 nm to 400 nm, 0.5 nm step) and 3 variables.
 #' @name lamps.bentham.data
 #' @aliases 
-#'  philips.tl01.bentham.data philips.tl12.bentham.data 
+#'  philips.tl01.bentham.spct philips.tl12.bentham.spct 
 NULL

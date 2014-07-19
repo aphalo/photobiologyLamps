@@ -18,9 +18,9 @@
 #' 
 #' @docType data
 #' @keywords datasets
-#' @format A data frame with 601 rows (300 nm to 900 nm, 1 nm stes) or or 501 rows 
+#' @format A source.spct with 601 rows (300 nm to 900 nm, 1 nm stes) or or 501 rows 
 #' (300 nm to 800 nm, 1 nm step) or 401 rows (and 3 variables
 #' @name lamps.licor.data
 #' @aliases 
-#'  incandescent.60w.data osram.36w.25.data philips.pls11w.827.data philips.tld36w.15.data philips.tld36w.18.data philips.tld36w.83.data philips.tld36w.865.data philips.tld36w.89.data philips.tld36w.92.data philips.tll36w.950.data sylvania.215w.vho.data 
+#'  incandescent.60w.spct osram.36w.25.spct philips.pls11w.827.spct philips.tld36w.15.spct philips.tld36w.18.spct philips.tld36w.83.spct philips.tld36w.865.spct philips.tld36w.89.spct philips.tld36w.92.spct philips.tll36w.950.spct sylvania.215w.vho.spct 
 NULL

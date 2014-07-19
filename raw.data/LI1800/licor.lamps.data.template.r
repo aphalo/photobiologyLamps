@@ -18,7 +18,7 @@
 #' 
 #' @docType data
 #' @keywords datasets
-#' @format A data frame with 601 rows (300 nm to 900 nm, 1 nm stes) or or 501 rows 
+#' @format A source.spct with 601 rows (300 nm to 900 nm, 1 nm stes) or or 501 rows 
 #' (300 nm to 800 nm, 1 nm step) or 401 rows (and 3 variables
 #' @name lamps.licor.data
 #' @aliases 

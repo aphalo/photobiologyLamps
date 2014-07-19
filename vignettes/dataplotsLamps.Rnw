@@ -26,7 +26,7 @@
  
 \begin{document}
 
-\title{\PBLam Version 0.1.10\\ Catalogue of Lamps}
+\title{\PBLam Version 0.1.11\\ Catalogue of Lamps}
 \author{Pedro J. Aphalo}
 
 \maketitle
@@ -85,7 +85,7 @@ for (lamp in UVB.M.lamps) {
 @
 
 <<plot-UVB-temperature, fig.width=8, fig.height=4, out.width='.95\\textwidth'>>=
-fig_temp <- ggplot(data=qpanel.uvb313.temperature.data, aes(x=w.length, y=s.e.irrad, colour=factor(temperature)))
+fig_temp <- ggplot(data=qpanel.uvb313.temperature.dt, aes(x=w.length, y=s.e.irrad, colour=factor(temperature)))
 fig_temp <- fig_temp + geom_line() + labs(x="Wavelength (nm)", y="Spectral energy irradiance (W m-2 nm-1)", colour="Temperature (C)")
 print(fig_temp)
 @

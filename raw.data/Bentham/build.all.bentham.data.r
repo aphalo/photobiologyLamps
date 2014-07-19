@@ -9,13 +9,15 @@ philips.tl01.bentham.data$TL12 <- NULL
 philips.tl01.bentham.data$s.e.irrad <- philips.tl01.bentham.data$TL01 * 1e-3
 philips.tl01.bentham.data$s.q.irrad <- with(philips.tl01.bentham.data, as_quantum_mol(w.length, s.e.irrad))
 
-save(philips.tl01.bentham.data, file="~/Rpackages/photobiologyLamps/data/philips.tl01.bentham.data.rda")
-save(philips.tl12.bentham.data, file="~/Rpackages/photobiologyLamps/data/philips.tl12.bentham.data.rda")
+philips.tl01.bentham.spct <- e2q(setSourceSpct(philips.tl01.bentham.data))
+philips.tl12.bentham.spct <- e2q(setSourceSpct(philips.tl12.bentham.data))
+save(philips.tl01.bentham.spct, file="~/Rpackages/photobiologyLamps/data/philips.tl01.bentham.spct.rda")
+save(philips.tl12.bentham.spct, file="~/Rpackages/photobiologyLamps/data/philips.tl12.bentham.spct.rda")
 
-df.names <- ls(pattern=".bentham.data")
+spct.names <- ls(pattern=".bentham.spct")
 
 all.names <- NULL
-for (str in df.names){
+for (str in spct.names){
   all.names <- paste(all.names, str)
 }
 print(all.names)

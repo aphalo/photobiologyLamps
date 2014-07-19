@@ -22,11 +22,9 @@
 #' 
 #' @docType data
 #' @keywords datasets
-#' @format A data frame with 561 rows (240 nm to 800 nm, 1.0 nm step) and 3 variables.
+#' @format A source.spct with 561 rows (240 nm to 800 nm, 1.0 nm step) and 3 variables.
 #' @name macam.lamps.data
-#' @aliases qpanel.uvb313.data qpanel.uva340.data philips.tl12.data
+#' @aliases qpanel.uvb313.spct qpanel.uva340.spct philips.tl12.spct
 #' @examples
-#' plot(s.q.irrad ~w.length, data=qpanel.uva340.data)
-#' plot(s.q.irrad ~w.length, data=qpanel.uvb313.data)
-#' plot(s.q.irrad ~w.length, data=philips.tl12.data)
+#' head(qpanel.uvb313.spct)
 NULL

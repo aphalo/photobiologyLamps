@@ -17,14 +17,19 @@ qpanel.uvb313.temperature.data <- ddply(qp.t.melted.data, .(temperature, w.lengt
 qpanel.uvb313.temperature.data$s.q.irrad <- with(qpanel.uvb313.temperature.data, as_quantum_mol(w.length, s.e.irrad))
 
 qp.t.split <- split(qpanel.uvb313.temperature.data, as.factor(qpanel.uvb313.temperature.data$temperature))
-qpanel.uvb313.minus5C.data <- as.data.frame(qp.t.split$"-5")[-1]
-qpanel.uvb313.00C.data <- as.data.frame(qp.t.split$"0")[-1]
-qpanel.uvb313.05C.data <- as.data.frame(qp.t.split$"5")[-1]
-qpanel.uvb313.10C.data <- as.data.frame(qp.t.split$"10")[-1]
-qpanel.uvb313.20C.data <- as.data.frame(qp.t.split$"20")[-1]
-qpanel.uvb313.30C.data <- as.data.frame(qp.t.split$"30")[-1]
-qpanel.uvb313.35C.data <- as.data.frame(qp.t.split$"35")[-1]
+qpanel.uvb313.minus5C.spct <- setSourceSpct(as.data.frame(qp.t.split$"-5", row.names=1:111)[-1])
+qpanel.uvb313.00C.spct <- setSourceSpct(as.data.frame(qp.t.split$"0", row.names=1:111)[-1])
+qpanel.uvb313.05C.spct <- setSourceSpct(as.data.frame(qp.t.split$"5", row.names=1:111)[-1])
+qpanel.uvb313.10C.spct <- setSourceSpct(as.data.frame(qp.t.split$"10", row.names=1:111)[-1])
+qpanel.uvb313.20C.spct <- setSourceSpct(as.data.frame(qp.t.split$"20", row.names=1:111)[-1])
+qpanel.uvb313.30C.spct <- setSourceSpct(as.data.frame(qp.t.split$"30", row.names=1:111)[-1])
+qpanel.uvb313.35C.spct <- setSourceSpct(as.data.frame(qp.t.split$"35", row.names=1:111)[-1])
 
+spct.names <- ls(pattern="C.spct")
 
-save(qpanel.uvb313.temperature.data, file="~/Rpackages/photobiologyLamps/data/qpanel.uvb313.temperature.data.rda")
+save(list=spct.names, file="~/Rpackages/photobiologyLamps/data/qpanel.uvb313.temperature.spct.rda")
+
+qpanel.uvb313.temperature.dt <- setDT(qpanel.uvb313.temperature.data)
+
+save(qpanel.uvb313.temperature.dt, file="~/Rpackages/photobiologyLamps/data/qpanel.uvb313.temperature.dt.rda")
 

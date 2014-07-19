@@ -11,8 +11,8 @@
 #' \tabular{ll}{
 #' Package: \tab photobiologyLamps\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.1.10\cr
-#' Date: \tab 2014-05-10\cr
+#' Version: \tab 0.1.11\cr
+#' Date: \tab 2014-07-19\cr
 #' License: \tab GPL (>= 3)\cr
 #' URL: \tab \url{http://uv4growth.dyndns.org},\cr \tab \url{http://openinstruments.dyndns.org},\cr
 #' \tab \url{https://bitbucket.org/aphalo/photobiology}\cr
@@ -31,6 +31,5 @@
 #' @examples
 #' library(photobiologyLamps)
 #' library(photobiologyVIS)
-#' with(incandescent.60w.data, photon_ratio(w.length, s.e.irrad, Blue(), Green()))
-#' plot(s.e.irrad~w.length, data=incandescent.60w.data, main=comment(incandescent.60w.data), type="l")
+#' q_ratio_spct(incandescent.60w.spct, Blue(), Green())
 NULL

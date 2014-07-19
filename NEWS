@@ -1,3 +1,8 @@
+photobiologyLamps 0.1.11
+========================
+
+All data is now in source.spct objects, except for a data.table with the temperature response data set.
+
 photobiologyLamps 0.1.10
 ========================
 
