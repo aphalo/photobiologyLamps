@@ -1,6 +1,6 @@
 library(photobiologyInOut)
 
-df.names <- read_licor_prn_files("raw.data/LI1800/","../../data/",trim.wl=900)
+df.names <- read_licor_prn_files("raw.data/LI1800/", "../../data/", trim.wl=900, unit.out="energy")
 all.names <- NULL
 for (str in df.names){
   all.names <- paste(all.names, str)

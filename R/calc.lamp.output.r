@@ -28,11 +28,11 @@
 #' @note This is a convenience function that adds no new functionality but makes it a little easier to plot lamp spectral emission data consistently.
 #' It automates interpolation, extrapolation/trimming and scaling.
 #' @examples
-#' with(incandescent.60w.data, calc_lamp_output(290:1100, w.length.in=w.length, s.irrad.in=s.e.irrad))
-#' with(incandescent.60w.data, calc_lamp_output(290:1100, w.length.in=w.length, 
+#' with(incandescent.60w.spct, calc_lamp_output(290:1100, w.length.in=w.length, s.irrad.in=s.e.irrad))
+#' with(incandescent.60w.spct, calc_lamp_output(290:1100, w.length.in=w.length, 
 #'                                                        s.irrad.in=s.e.irrad, unit.out="photon"))
-#' calc_lamp_output(290:1100, w.length.in=incandescent.60w.data$w.length, 
-#'                         s.irrad.in=incandescent.60w.data$s.e.irrad)
+#' calc_lamp_output(290:1100, w.length.in=incandescent.60w.spct$w.length, 
+#'                         s.irrad.in=incandescent.60w.spct$s.e.irrad)
 #' calc_lamp_output(290:1100, "incandescent.60w")
 #' calc_lamp_output(500:600, "incandescent.60w", unit.out="photon")
 #' 

@@ -26,7 +26,25 @@
  
 \begin{document}
 
-\title{\PBLam Version 0.1.11\\ Catalogue of Lamps}
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize", warning=FALSE,
+               fig.width=4, fig.height=4, out.width='.47\\textwidth', dev='cairo_pdf')
+@
+
+<<example-0-hiden, eval=TRUE, include=FALSE>>=
+library(ggplot2)
+library(photobiology)
+library(photobiologyLamps)
+library(photobiologygg)
+@
+
+<<own-set-up, echo=FALSE, include=FALSE>>=
+my_version <- packageVersion("photobiologyLamps")
+@
+
+\title{\PBLam Version \Sexpr{my_version}\\ Catalogue of Lamps}
+
 \author{Pedro J. Aphalo}
 
 \maketitle
@@ -35,13 +53,7 @@
 
 We will plot the emission spectra of the different lamps for which data is provided in the pacakge. We plot side-by-side the lamp output as spectral energy irradiance and as spectral photon irradiance. All spectra are normalized to an area of one under the whole curve.
 
-<<setup, include=FALSE, cache=FALSE>>=
-library(knitr)
-opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",
-               fig.width=4, fig.height=4, out.width='.47\\textwidth', dev='cairo_pdf')
-@
-
-<<example-0, eval=TRUE>>=
+<<example-0-dummy, eval=FALSE>>=
 library(ggplot2)
 library(photobiology)
 library(photobiologyLamps)
@@ -52,14 +64,15 @@ We define a function to do the actual plotting so as to not repeat code, and to 
 
 <<setup-function>>=
 lamp.plotter <- function(lamp.name, w.low=250.0, w.high=900.0, scaled="area"){
-w.length.out <- seq(from=w.low, to=w.high, length.out=300)
-spectrum.data <- calc_source_output(w.length.out=w.length.out, source.name=lamp.name, scaled=scaled, fill=NULL)
-spectrum.data <- na.omit(spectrum.data)
-fig_energy <- ggplot(aes(x=w.length, y=s.e.irrad), data=spectrum.data) + xlim(w.low, w.high) +
-  labs(x="Wavelength (nm)", y="Spectral energy irradiance\n(rel. units)", title=lamp.name) + 
+spectrum.data <- get(paste(lamp.name, ".spct", sep=""))
+spectrum.data <- e2q(trim_spct(spectrum.data, high.limit = w.high, fill = NA))
+fig_energy <- ggplot(aes(x=w.length, y=s.e.irrad), data=spectrum.data) + 
+  labs(x="Wavelength (nm)", y="Spectral energy irradiance\n(rel. units)", 
+       title=lamp.name) + 
   geom_line() + stat_peaks(ignore_threshold=0.33, colour="red")
-fig_photon <- ggplot(aes(x=w.length, y=s.q.irrad), data=spectrum.data) + xlim(w.low, w.high) +
-  labs(x="Wavelength (nm)", y="Spectral photon irradiance\n(rel. units)", title=lamp.name) + 
+fig_photon <- ggplot(aes(x=w.length, y=s.q.irrad), data=spectrum.data) + 
+  labs(x="Wavelength (nm)", y="Spectral photon irradiance\n(rel. units)", 
+       title=lamp.name) + 
   geom_line() + stat_peaks(ignore_threshold=0.33, colour="red")
 print(fig_energy)
 print(fig_photon)
@@ -85,8 +98,11 @@ for (lamp in UVB.M.lamps) {
 @
 
 <<plot-UVB-temperature, fig.width=8, fig.height=4, out.width='.95\\textwidth'>>=
-fig_temp <- ggplot(data=qpanel.uvb313.temperature.dt, aes(x=w.length, y=s.e.irrad, colour=factor(temperature)))
-fig_temp <- fig_temp + geom_line() + labs(x="Wavelength (nm)", y="Spectral energy irradiance (W m-2 nm-1)", colour="Temperature (C)")
+fig_temp <- ggplot(data=qpanel.uvb313.temperature.dt, 
+                   aes(x=w.length, y=s.e.irrad, colour=factor(temperature)))
+fig_temp <- fig_temp + geom_line() + 
+  labs(x="Wavelength (nm)", y="Spectral energy irradiance (W m-2 nm-1)", 
+       colour="Temperature (C)")
 print(fig_temp)
 @
 
@@ -111,9 +127,9 @@ for (lamp in colour.lamps) {
 \section{Broad VIS lamps}
 
 <<plot-white>>=
-white.lamps <- c("incandescent.60w", "osram.36w.25", "philips.pls11w.827", "philips.tld36w.83", 
-                "philips.tld36w.865", "philips.tld36w.89", "philips.tld36w.92", "philips.tll36w.950", 
-                "sylvania.215w.vho")
+white.lamps <- c("incandescent.60w", "osram.36w.25", "philips.pls11w.827", 
+                 "philips.tld36w.83", "philips.tld36w.865", "philips.tld36w.89", 
+                 "philips.tld36w.92", "philips.tll36w.950", "sylvania.215w.vho")
 for (lamp in white.lamps) {
   lamp.plotter(lamp.name=lamp)
 }
@@ -122,8 +138,8 @@ for (lamp in white.lamps) {
 \section{Calibration lamps}
 
 <<FEL>>=
-FEL.data <- FEL_spectrum(250:900)
-D2.data <- D2_spectrum(250:900)
+FEL.spct <- FEL_spectrum(250:900)
+D2.spct <- D2_spectrum(250:900)
 calibration.lamps <- c("FEL","D2")
 for (lamp in calibration.lamps) {
   lamp.plotter(lamp.name=lamp, scaled=NULL)

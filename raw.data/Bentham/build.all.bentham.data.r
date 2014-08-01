@@ -2,15 +2,17 @@ library(photobiology)
 
 load("~/Rpackages/photobiologyLamps/raw.data/Bentham/Bentham.raw.data.Rda")
 philips.tl12.bentham.data <- philips.tl01.bentham.data <- Bentham.raw.data
-philips.tl12.bentham.data$TL01 <- NULL
-philips.tl12.bentham.data$s.e.irrad <- philips.tl12.bentham.data$TL12 * 1e-3
-philips.tl12.bentham.data$s.q.irrad <- with(philips.tl12.bentham.data, as_quantum_mol(w.length, s.e.irrad))
 philips.tl01.bentham.data$TL12 <- NULL
+philips.tl12.bentham.data$TL01 <- NULL
 philips.tl01.bentham.data$s.e.irrad <- philips.tl01.bentham.data$TL01 * 1e-3
-philips.tl01.bentham.data$s.q.irrad <- with(philips.tl01.bentham.data, as_quantum_mol(w.length, s.e.irrad))
+philips.tl01.bentham.data$TL01 <- NULL
+philips.tl12.bentham.data$s.e.irrad <- philips.tl12.bentham.data$TL12 * 1e-3
+philips.tl12.bentham.data$TL12 <- NULL
 
-philips.tl01.bentham.spct <- e2q(setSourceSpct(philips.tl01.bentham.data))
-philips.tl12.bentham.spct <- e2q(setSourceSpct(philips.tl12.bentham.data))
+philips.tl01.bentham.spct <- setSourceSpct(philips.tl01.bentham.data)
+setkey(philips.tl01.bentham.spct, w.length)
+philips.tl12.bentham.spct <- setSourceSpct(philips.tl12.bentham.data)
+setkey(philips.tl12.bentham.spct, w.length)
 save(philips.tl01.bentham.spct, file="~/Rpackages/photobiologyLamps/data/philips.tl01.bentham.spct.rda")
 save(philips.tl12.bentham.spct, file="~/Rpackages/photobiologyLamps/data/philips.tl12.bentham.spct.rda")
 

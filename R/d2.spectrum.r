@@ -36,11 +36,10 @@ D2_spectrum <- function(w.length, k=D2.UV653, fill=NULL) {
   for (i in indexes) {
     s.e.irrad[i] <- sum(w.length[i]^pws * k)
   }
-  s.q.irrad <- as_quantum_mol(w.length, s.e.irrad)
   s.e.irrad[fill.selector] <- fill
-  s.q.irrad[fill.selector] <- fill
-  out.data <- data.frame(w.length, s.e.irrad, s.q.irrad)
+  out.data <- data.table(w.length, s.e.irrad)
   comment(out.data) <- paste("Fitted spectrum for:", comment(k))
+  setSourceSpct(out.data)
   return(out.data)
 }
 
