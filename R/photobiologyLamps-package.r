@@ -11,8 +11,8 @@
 #' \tabular{ll}{
 #' Package: \tab photobiologyLamps\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.1.12\cr
-#' Date: \tab 2014-07-25\cr
+#' Version: \tab 0.1.13\cr
+#' Date: \tab 2014-11-03\cr
 #' License: \tab GPL (>= 3)\cr
 #' URL: \tab \url{http://uv4growth.dyndns.org},\cr \tab \url{http://openinstruments.dyndns.org},\cr
 #' \tab \url{https://bitbucket.org/aphalo/photobiology}\cr
