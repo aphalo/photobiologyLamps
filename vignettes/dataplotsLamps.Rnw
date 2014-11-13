@@ -29,7 +29,7 @@
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
 opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize", warning=FALSE,
-               fig.width=4, fig.height=4, out.width='.47\\textwidth', dev='cairo_pdf')
+               fig.width=8, fig.height=4, out.width='.9\\textwidth', dev='cairo_pdf')
 @
 
 <<example-0-hiden, eval=TRUE, include=FALSE>>=
@@ -64,11 +64,13 @@ We define a function to do the actual plotting so as to not repeat code, and to 
 
 <<setup-function>>=
 lamp.plotter <- function(lamp.name, w.low=250.0, w.high=900.0, scaled="area"){
-spectrum.spct <- get(paste(lamp.name, ".spct", sep=""))
-spectrum.spct <- trim_spct(spectrum.spct, waveband(c(w.low, w.high)), fill = NA)
-e2q(spectrum.spct, byref=TRUE)
-plot(spectrum.spct, unit="energy")
-plot(spectrum.spct, unit="photon")
+  w.band <- waveband(c(w.low, w.high))
+  object.name <- paste(lamp.name, ".spct", sep="")
+a.spct <- copy(get(object.name))
+# a.spct <- trim_spct(a.spct, w.band, fill = NA)
+e2q(a.spct, byref=TRUE)
+print(plot(a.spct, unit="energy") + labs(title=object.name) + theme_bw(10))
+print(plot(a.spct, unit="photon") + labs(title=object.name) + theme_bw(10))
 }
 @
 
@@ -96,7 +98,7 @@ fig_temp <- ggplot(data=qpanel.uvb313.temperature.dt,
 fig_temp <- fig_temp + geom_line() + 
   labs(x="Wavelength (nm)", y="Spectral energy irradiance (W m-2 nm-1)", 
        colour="Temperature (C)")
-print(fig_temp)
+print(fig_temp + theme_bw())
 @
 
 \section{UV-A lamp spectra}
