@@ -1,3 +1,13 @@
+photobiologyLamps 0.1.14
+========================
+
+Rebuilt all spectral data objects with photobiology 0.4.5 so that the time.unit attribute is not missing.
+
+photobiologyLamps 0.1.13
+========================
+
+Minor changes.
+
 photobiologyLamps 0.1.12
 ========================
 

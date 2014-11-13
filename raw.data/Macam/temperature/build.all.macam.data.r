@@ -2,7 +2,7 @@ library(photobiology)
 library(reshape2)
 library(plyr)
 
-qp.t.wide.data <- read.csv("~/Rpackages/photobiologyLamps/raw.data/Macam/temperature/qpanel.uvb313.t.csv")
+qp.t.wide.data <- read.csv("./raw.data/Macam/temperature/qpanel.uvb313.t.csv")
 qp.t.melted.data <- melt(qp.t.wide.data, id="w.length", value.name="s.e.irrad", variable.name="temp.code")
 
 temp.vec <- c(-5,-5,0,0,5,10,10,20,20,30,30,35,35)
@@ -27,9 +27,9 @@ qpanel.uvb313.35C.spct <- setSourceSpct(as.data.frame(qp.t.split$"35", row.names
 
 spct.names <- ls(pattern="C.spct")
 
-save(list=spct.names, file="~/Rpackages/photobiologyLamps/data/qpanel.uvb313.temperature.spct.rda")
+save(list=spct.names, file="./data/qpanel.uvb313.temperature.spct.rda")
 
 qpanel.uvb313.temperature.dt <- setDT(qpanel.uvb313.temperature.data)
 
-save(qpanel.uvb313.temperature.dt, file="~/Rpackages/photobiologyLamps/data/qpanel.uvb313.temperature.dt.rda")
+save(qpanel.uvb313.temperature.dt, file="./data/qpanel.uvb313.temperature.dt.rda")
 
