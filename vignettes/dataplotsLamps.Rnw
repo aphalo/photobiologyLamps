@@ -69,8 +69,8 @@ lamp.plotter <- function(lamp.name, w.low=250.0, w.high=900.0, scaled="area"){
 a.spct <- copy(get(object.name))
 # a.spct <- trim_spct(a.spct, w.band, fill = NA)
 e2q(a.spct, byref=TRUE)
-print(plot(a.spct, unit="energy") + labs(title=object.name) + theme_bw(10))
-print(plot(a.spct, unit="photon") + labs(title=object.name) + theme_bw(10))
+print(plot(a.spct, unit="energy") + labs(title=object.name) + theme_grey(10))
+print(plot(a.spct, unit="photon") + labs(title=object.name) + theme_grey(10))
 }
 @
 
@@ -94,11 +94,12 @@ for (lamp in UVB.M.lamps) {
 
 <<plot-UVB-temperature, fig.width=8, fig.height=4, out.width='.95\\textwidth'>>=
 fig_temp <- ggplot(data=qpanel.uvb313.temperature.dt, 
-                   aes(x=w.length, y=s.e.irrad, colour=factor(temperature)))
+                   aes(x=w.length, y=s.e.irrad, colour=factor(temperature))) + 
+             scale_colour_brewer(type="seq", palette="YlOrRd")
 fig_temp <- fig_temp + geom_line() + 
   labs(x="Wavelength (nm)", y="Spectral energy irradiance (W m-2 nm-1)", 
        colour="Temperature (C)")
-print(fig_temp + theme_bw())
+print(fig_temp)
 @
 
 \section{UV-A lamp spectra}
