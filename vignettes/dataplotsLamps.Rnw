@@ -70,7 +70,7 @@ a.spct <- copy(get(object.name))
 # a.spct <- trim_spct(a.spct, w.band, fill = NA)
 e2q(a.spct, byref=TRUE)
 print(plot(a.spct, unit="energy") + labs(title=object.name) + theme_grey(10))
-print(plot(a.spct, unit="photon") + labs(title=object.name) + theme_grey(10))
+# print(plot(a.spct, unit="photon") + labs(title=object.name) + theme_grey(10))
 }
 @
 
