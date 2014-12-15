@@ -1,1 +1,0 @@
- FILE:GR8D REM: GR8 3+0           (QNTM) LIMS: 300- 900NM INT:  1NM

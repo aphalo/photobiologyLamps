@@ -1,3 +1,9 @@
+photobiologyLamps 0.2.0
+========================
+
+Rebuilt vignette with photobiology 0.5.1, which is now required.
+Removed calc.lamp.multipliers().
+
 photobiologyLamps 0.1.14
 ========================
 
