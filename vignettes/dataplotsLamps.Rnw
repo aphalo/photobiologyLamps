@@ -60,6 +60,11 @@ library(photobiologyLamps)
 library(photobiologygg)
 @
 
+<<>>=
+options(photobiology.plot.annotations = 
+          c("boxes", "labels", "colour.guide", "peaks", "title"))
+@
+
 We define a function to do the actual plotting so as to not repeat code, and to make changes easier in the future.
 
 %\newpage

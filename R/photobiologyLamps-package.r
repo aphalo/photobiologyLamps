@@ -1,7 +1,7 @@
 #' @title Spectral data for lamp emission
 #' 
 #' @description This package provides data for some frequently used lamps. The package is designed 
-#' to complement package \code{photobiology}.
+#' to complement package \code{\link[photobiology]{photobiology-package}}.
 #' 
 #' @docType package
 #' @keywords misc
@@ -11,12 +11,12 @@
 #' \tabular{ll}{
 #' Package: \tab photobiologyLamps\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.2.1\cr
-#' Date: \tab 2015-01-23\cr
-#' License: \tab GPL (>= 3)\cr
-#' URL: \tab \url{http://uv4growth.dyndns.org},\cr \tab \url{http://openinstruments.dyndns.org},\cr
-#' \tab \url{https://bitbucket.org/aphalo/photobiology}\cr
-#' BugReports: \tab \url{https://bitbucket.org/aphalo/photobiology}\cr
+#' Version: \tab 0.2.2\cr
+#' Date: \tab 2015-03-07\cr
+#' License: \tab GPL (>= 3.0)\cr
+#' URL: \tab \url{http://www.r4photobiology.info},\cr
+#' \tab \url{https://bitbucket.org/aphalo/photobiologyLamps}\cr
+#' BugReports: \tab \url{https://bitbucket.org/aphalo/photobiologyLamps}\cr
 #' }
 #' 
 #' @import photobiology
