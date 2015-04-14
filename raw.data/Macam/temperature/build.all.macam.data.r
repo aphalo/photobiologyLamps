@@ -13,23 +13,23 @@ names(replicate.vec) <- names(qp.t.wide.data[-1])
 qp.t.melted.data$temperature <- with(qp.t.melted.data, temp.vec[temp.code])
 qp.t.melted.data$replicate <- with(qp.t.melted.data, replicate.vec[temp.code])
 
-qpanel.uvb313.temperature.data <- ddply(qp.t.melted.data, .(temperature, w.length), summarise, s.e.irrad=mean(s.e.irrad))
-qpanel.uvb313.temperature.data$s.q.irrad <- with(qpanel.uvb313.temperature.data, as_quantum_mol(w.length, s.e.irrad))
-
-qp.t.split <- split(qpanel.uvb313.temperature.data, as.factor(qpanel.uvb313.temperature.data$temperature))
-qpanel.uvb313.minus5C.spct <- setSourceSpct(as.data.frame(qp.t.split$"-5", row.names=1:111)[-1])
-qpanel.uvb313.00C.spct <- setSourceSpct(as.data.frame(qp.t.split$"0", row.names=1:111)[-1])
-qpanel.uvb313.05C.spct <- setSourceSpct(as.data.frame(qp.t.split$"5", row.names=1:111)[-1])
-qpanel.uvb313.10C.spct <- setSourceSpct(as.data.frame(qp.t.split$"10", row.names=1:111)[-1])
-qpanel.uvb313.20C.spct <- setSourceSpct(as.data.frame(qp.t.split$"20", row.names=1:111)[-1])
-qpanel.uvb313.30C.spct <- setSourceSpct(as.data.frame(qp.t.split$"30", row.names=1:111)[-1])
-qpanel.uvb313.35C.spct <- setSourceSpct(as.data.frame(qp.t.split$"35", row.names=1:111)[-1])
-
 spct.names <- ls(pattern="C.spct")
+qpanel.uvb313.temp.spct <- ddply(qp.t.melted.data, .(temperature, w.length), summarise, s.e.irrad=mean(s.e.irrad))
 
-save(list=spct.names, file="./data/qpanel.uvb313.temperature.spct.rda")
+setSourceSpct(qpanel.uvb313.temp.spct)
+e2q(qpanel.uvb313.temp.spct, action = "add", byref = TRUE)
+setkey(qpanel.uvb313.temp.spct, temperature, w.length)
+qpanel.uvb313.minus5C.spct <- subset(qpanel.uvb313.temp.spct, temperature == -5)
+qpanel.uvb313.00C.spct <- subset(qpanel.uvb313.temp.spct, temperature == 0)
+qpanel.uvb313.05C.spct <- subset(qpanel.uvb313.temp.spct, temperature == 5)
+qpanel.uvb313.10C.spct <- subset(qpanel.uvb313.temp.spct, temperature == 10)
+qpanel.uvb313.20C.spct <- subset(qpanel.uvb313.temp.spct, temperature == 20)
+qpanel.uvb313.30C.spct <- subset(qpanel.uvb313.temp.spct, temperature == 30)
+qpanel.uvb313.35C.spct <- subset(qpanel.uvb313.temp.spct, temperature == 35)
 
-qpanel.uvb313.temperature.dt <- setDT(qpanel.uvb313.temperature.data)
+spct.names <- ls(pattern = "C.spct")
 
-save(qpanel.uvb313.temperature.dt, file="./data/qpanel.uvb313.temperature.dt.rda")
+save(list = spct.names, file="./data/qpanel.uvb313.temperature.spct.rda")
+
+save(qpanel.uvb313.temp.spct, file="./data/qpanel.uvb313.temp.spct.rda")
 

@@ -81,8 +81,8 @@ plot(philips.tl12.spct)
 plot(qpanel.uvb313.spct)
 @
 
-<<plot-UVB-temperature, fig.width=8, fig.height=4, out.width='.95\\textwidth'>>=
-fig_temp <- ggplot(data=qpanel.uvb313.temperature.dt, 
+<<plot-UVB-temperature1, fig.width=8, fig.height=4, out.width='.95\\textwidth'>>=
+fig_temp <- ggplot(data=qpanel.uvb313.temp.spct, 
                    aes(x=w.length, y=s.e.irrad, colour=factor(temperature))) + 
              scale_colour_brewer(type="seq", palette="YlOrRd")
 fig_temp <- fig_temp + geom_line() + 
@@ -90,6 +90,16 @@ fig_temp <- fig_temp + geom_line() +
        colour="Temperature (C)")
 print(fig_temp)
 @
+
+\newpage
+
+<<plot-UVB-temperature2, fig.width=8, fig.height=11, out.width='.95\\textwidth'>>=
+invisible(qpanel.uvb313.temp.spct[ , temperature := factor(temperature)])
+plot(qpanel.uvb313.temp.spct, annotations = c("boxes", "labels", "title")) +
+  facet_wrap(~temperature, ncol = 2)
+@
+
+\newpage
 
 \section{UV-A lamp spectra}
 

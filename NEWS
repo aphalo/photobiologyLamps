@@ -1,3 +1,13 @@
+photobiologyLamps 0.3.0
+========================
+
+Rebuilt all data, and the package under photobiology 0.6.0.
+
+Now that spectral objects can contain more than one spectrum, a
+source_spct object is used to store the spectra for the lamp
+temperature response. Because of this the User Guide was also
+edited.
+
 photobiologyLamps 0.2.2
 ========================
 
