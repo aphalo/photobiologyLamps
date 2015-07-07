@@ -1,7 +1,9 @@
 photobiologyLamps 0.3.1
 ========================
 
-Add spectral data for germicidal lamp. Rebuild data objects.
+Add spectral data for germicidal lamp.
+
+Rebuild all data, and the package under photobiology 0.7.0.
 
 photobiologyLamps 0.3.0
 ========================
