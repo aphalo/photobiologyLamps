@@ -15,7 +15,6 @@
 #' \itemize{
 #'   \item w.length (nm)  
 #'   \item s.e.irrad (W m-2 nm-1)
-#'   \item s.q.irrad (mol m-2 s-1 nm-1)
 #'   \item temperature (C)
 #' }
 #' 
@@ -51,7 +50,6 @@ NULL
 #' \itemize{
 #'   \item w.length (nm)  
 #'   \item s.e.irrad (W m-2 nm-1)
-#'   \item s.q.irrad (mol m-2 s-1 nm-1)
 #'   \item temperature (C)
 #' }
 #' 

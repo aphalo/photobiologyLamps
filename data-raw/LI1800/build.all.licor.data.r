@@ -1,6 +1,6 @@
 library(photobiologyInOut)
 
-oldwd <- setwd("raw.data/LI1800")
+oldwd <- setwd("data-raw/LI1800")
 df.names <- read_licor_files("./", "../../data/", high.limit = 900, unit.out = "energy", date = NA)
 all.names <- NULL
 for (str in df.names){

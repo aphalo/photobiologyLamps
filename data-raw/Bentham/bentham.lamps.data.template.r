@@ -8,7 +8,6 @@
 #' \itemize{
 #'   \item w.length (nm)  
 #'   \item s.e.irrad (W m-2 nm-1)
-#'   \item s.q.irrad (mol m-2 s-1 nm-1) 
 #' }
 #' 
 #' @note
@@ -21,5 +20,3 @@
 #' @format A source.spct with 301 rows (250 nm to 400 nm, 0.5 nm step) and 3 variables.
 #' @name lamps.bentham.data
 #' @aliases 
-#'  philips.tl01.bentham.spct philips.tl12.bentham.spct 
-NULL
