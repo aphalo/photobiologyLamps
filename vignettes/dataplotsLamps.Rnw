@@ -65,9 +65,14 @@ options(photobiology.plot.annotations =
           c("boxes", "labels", "colour.guide", "peaks", "title"))
 @
 
-We define a function to do the actual plotting so as to not repeat code, and to make changes easier in the future.
-
 %\newpage
+
+\section{UV-C lamp spectra}
+
+<<plot-UVC-lamps-Maya>>=
+plot(germicidal.spct)
+cat(comment(germicidal.spct))
+@
 
 \section{UV-B lamp spectra}
 
