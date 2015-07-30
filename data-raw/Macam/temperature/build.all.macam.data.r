@@ -18,7 +18,6 @@ qpanel.uvb313.temp.spct <- ddply(qp.t.melted.data, .(temperature, w.length), sum
 
 setSourceSpct(qpanel.uvb313.temp.spct)
 # e2q(qpanel.uvb313.temp.spct, action = "add", byref = TRUE)
-setkey(qpanel.uvb313.temp.spct, temperature, w.length)
 qpanel.uvb313.minus5C.spct <- subset(qpanel.uvb313.temp.spct, temperature == -5)
 qpanel.uvb313.00C.spct <- subset(qpanel.uvb313.temp.spct, temperature == 0)
 qpanel.uvb313.05C.spct <- subset(qpanel.uvb313.temp.spct, temperature == 5)

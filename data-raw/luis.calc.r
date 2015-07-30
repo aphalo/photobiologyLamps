@@ -1,5 +1,4 @@
 library(photobiologyWavebands)
-library(photobiologyUV)
 
 Bentham.raw.data <- read.csv("raw.data/Bentham/Bentham_01_and_12.csv")
 names(Bentham.raw.data)

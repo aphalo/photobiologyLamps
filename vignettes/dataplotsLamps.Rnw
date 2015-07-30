@@ -53,11 +53,7 @@ my_version <- packageVersion("photobiologyLamps")
 
 We will plot the emission spectra of the different lamps for which data is provided in the pacakge. We plot side-by-side the lamp output as spectral energy irradiance and as spectral photon irradiance. All spectra are normalized to an area of one under the whole curve.
 
-<<example-0-dummy, eval=FALSE>>=
-library(ggplot2)
-library(photobiology)
-library(photobiologyLamps)
-library(photobiologygg)
+<<example-0-hiden, eval=FALSE>>=
 @
 
 <<>>=
@@ -99,7 +95,7 @@ print(fig_temp)
 \newpage
 
 <<plot-UVB-temperature2, fig.width=8, fig.height=11, out.width='.95\\textwidth'>>=
-invisible(qpanel.uvb313.temp.spct[ , temperature := factor(temperature)])
+qpanel.uvb313.temp.spct$temperature <- factor(qpanel.uvb313.temp.spct$temperature)
 plot(qpanel.uvb313.temp.spct, annotations = c("boxes", "labels", "title")) +
   facet_wrap(~temperature, ncol = 2)
 @
