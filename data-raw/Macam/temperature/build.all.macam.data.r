@@ -16,7 +16,6 @@ qp.t.melted.data$replicate <- with(qp.t.melted.data, replicate.vec[temp.code])
 spct.names <- ls(pattern="C.spct")
 qpanel.uvb313.temp.spct <- ddply(qp.t.melted.data, .(temperature, w.length), summarise, s.e.irrad=mean(s.e.irrad))
 
-setSourceSpct(qpanel.uvb313.temp.spct)
 # e2q(qpanel.uvb313.temp.spct, action = "add", byref = TRUE)
 qpanel.uvb313.minus5C.spct <- subset(qpanel.uvb313.temp.spct, temperature == -5)
 qpanel.uvb313.00C.spct <- subset(qpanel.uvb313.temp.spct, temperature == 0)
@@ -25,6 +24,8 @@ qpanel.uvb313.10C.spct <- subset(qpanel.uvb313.temp.spct, temperature == 10)
 qpanel.uvb313.20C.spct <- subset(qpanel.uvb313.temp.spct, temperature == 20)
 qpanel.uvb313.30C.spct <- subset(qpanel.uvb313.temp.spct, temperature == 30)
 qpanel.uvb313.35C.spct <- subset(qpanel.uvb313.temp.spct, temperature == 35)
+
+setSourceSpct(qpanel.uvb313.temp.spct, multiple.wl = 7)
 
 spct.names <- ls(pattern = "C.spct")
 

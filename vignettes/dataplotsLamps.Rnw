@@ -1,6 +1,6 @@
 %\VignetteEngine{knitr}
 %\VignetteIndexEntry{Catalogue of lamp emission spectra}
-%\VignetteDepends{knitr, photobiology, photobiologyLamps, photobiologygg, ggplot2}
+%\VignetteDepends{knitr, photobiology, photobiologyLamps, photobiologyWavebands, ggspectra, ggplot2}
 %\VignetteKeyword{misc}
 
 \documentclass{article}
@@ -23,20 +23,22 @@
 \newcommand{\PBFil}{\textsf{photobiologyFilters}\xspace}
 \newcommand{\PBLam}{\textsf{photobiologyLamps}\xspace}
 \newcommand{\PBSen}{\textsf{photobiologySensors}\xspace}
- 
+
 \begin{document}
 
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
 opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize", warning=FALSE,
                fig.width=8, fig.height=4, out.width='.9\\textwidth')
+options(replace.assign = TRUE, width = 55)
 @
 
 <<example-0-hiden, eval=TRUE, include=FALSE>>=
-library(ggplot2)
 library(photobiology)
+library(photobiologyWavebands)
 library(photobiologyLamps)
-library(photobiologygg)
+library(ggplot2)
+library(ggspectra)
 @
 
 <<own-set-up, echo=FALSE, include=FALSE>>=
@@ -57,7 +59,7 @@ We will plot the emission spectra of the different lamps for which data is provi
 @
 
 <<>>=
-options(photobiology.plot.annotations = 
+options(photobiology.plot.annotations =
           c("boxes", "labels", "colour.guide", "peaks", "title"))
 @
 
@@ -83,11 +85,11 @@ plot(qpanel.uvb313.spct)
 @
 
 <<plot-UVB-temperature1, fig.width=8, fig.height=4, out.width='.95\\textwidth'>>=
-fig_temp <- ggplot(data=qpanel.uvb313.temp.spct, 
-                   aes(x=w.length, y=s.e.irrad, colour=factor(temperature))) + 
+fig_temp <- ggplot(data=qpanel.uvb313.temp.spct,
+                   aes(x=w.length, y=s.e.irrad, colour=factor(temperature))) +
              scale_colour_brewer(type="seq", palette="YlOrRd")
-fig_temp <- fig_temp + geom_line() + 
-  labs(x="Wavelength (nm)", y="Spectral energy irradiance (W m-2 nm-1)", 
+fig_temp <- fig_temp + geom_line() +
+  labs(x="Wavelength (nm)", y="Spectral energy irradiance (W m-2 nm-1)",
        colour="Temperature (C)")
 print(fig_temp)
 @

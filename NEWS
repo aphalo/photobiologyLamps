@@ -1,3 +1,15 @@
+photobiologyLamps 0.3.3
+========================
+
+Update for photobiology 0.9.1, ggspectra 0.1.0 and ggplot2 2.0.0.
+Fixed bug in Q-Panel UV313 temperature response data that was triggering and
+error with the now tighter checking.
+
+photobiologyLamps 0.3.2
+========================
+
+Rebuild data and package. Update data object building scripts.
+
 photobiologyLamps 0.3.1
 ========================
 
