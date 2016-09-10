@@ -1,15 +1,13 @@
 library(photobiologyInOut)
- ### NEEDS REWRITING!
- ### 
-# oldwd <- setwd("data-raw/LI1800")
-# df.names <- read_licor_prn("./", "../../data/")
-# all.names <- NULL
-# for (str in df.names){
-#   all.names <- paste(all.names, str)
-# }
-# all.names <- paste("#\'", all.names, "\nNULL")
-# message(all.names)
-# system("cp licor.lamps.data.template.r licor.lamps.data.r")
-# cat(all.names, file="licor.lamps.data.r", append=TRUE)
-# setwd(oldwd)
+
+oldwd <- setwd("data-raw/LI1800")
+file.list <- list.files(pattern = "*.PRN$")
+file.list <- file.list[-2]
+licor.mspct <- normalize(read_m_licor_prn(file.list))
+
+setwd("../..")
+
+save(licor.mspct, file = "data/licor-mspct.rda")
+
+# For some reason file 'Osram.36W.25.PRN gives an error
 

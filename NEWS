@@ -1,3 +1,20 @@
+photobiologyLamps 0.4.0
+========================
+
+Major update, not backwards compatible.
+Data reorganized into collections of spectra grouped by measurement
+conditions/instrument used. This means that names of all data objects have
+changed.
+Documentation updated.
+Vignette converted to Rmarkdown and updated to work with the new objects.
+Most spectra have been normalized to one at the peak, as actual spectral
+irradiance values are irrelevant when distance and geometry are not known.
+
+photobiologyLamps 0.3.4
+========================
+
+Partial update, released as a test version.
+
 photobiologyLamps 0.3.3
 ========================
 
