@@ -88,13 +88,13 @@ Added functions D2_spectrum() and FEL_spectrum(). These functions use constants 
 photobiologyLamps 0.1.9
 =======================
 
-Fixed bug introduced introduced yesterday in 0.1.8. calc_lamp_output was not doing the rescaling correctly and moved most of the code to calc_source_output() in package photobiology.
+Fixed bug introduced yesterday in 0.1.8. calc_lamp_output was not doing the rescaling correctly and moved most of the code to calc_source_output() in package photobiology.
 calc_lamp_output() now just calls calc_source_output() and its use is deprecated.
 
 photobiologyLamps 0.1.8
 =======================
 
-Substantial changes to calc_lamp_output to simplify use and to correclty handle NAs and cases when extrapolation is involved.
+Substantial changes to calc_lamp_output to simplify use and to correctly handle NAs and cases when extrapolation is involved.
 
 photobiologyLamps 0.1.7
 =======================
@@ -111,7 +111,7 @@ but measured over a wider range of wavelengths.
 photobiologyLamps 0.1.5
 =======================
 
-Corrected wrong units in Betham data. It was in mW m-2 nm-1, while documentation 
+Corrected wrong units in Bentham data. It was in mW m-2 nm-1, while documentation 
 indicated that it was in W m-2 nm-1. Data has been now rescaled. 
 
 photobiologyLamps 0.1.4

@@ -48,7 +48,7 @@ plot(licor.mspct$philips.tld36w.18)
 ## ------------------------------------------------------------------------
 attach(licor.mspct)
 plot(incandescent.60w)
-# plot(osram.36w.25)
+plot(osram.36w.25)
 plot(philips.tld36w.83)
 plot(philips.tld36w.89)
 plot(philips.tld36w.92)
@@ -56,6 +56,8 @@ plot(philips.tld36w.865)
 plot(philips.tll36w.950)
 plot(philips.pls11w.827)
 plot(sylvania.215w.vho)
+plot(osram.hqit.400w)
+plot(osram.super.vialox)
 detach(licor.mspct)
 
 ## ------------------------------------------------------------------------
