@@ -1,8 +1,8 @@
 Package: photobiologyLamps
 Type: Package
 Title: Spectral Data of Light Emission by Lamps
-Version: 0.4.0
-Date: 2016-09-10
+Version: 0.4.1
+Date: 2016-09-17
 Authors@R:
      person("Pedro J.", "Aphalo", email = "pedro.aphalo@helsinki.fi", role = c("aut", "cre"))
 Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
