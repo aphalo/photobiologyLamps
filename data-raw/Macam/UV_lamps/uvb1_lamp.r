@@ -15,8 +15,8 @@ philips.tl12.spct <- setSourceSpct(philips.tl12.data)
 
 macam.mspct <- normalize(source_mspct(list(qpanel.uvb313 = qpanel.uvb313.spct,
                                            qpanel.uva340 = qpanel.uva340.spct,
-                                           philips.tl12 = philips.tl12.spct)))
+                                           philips.tl12.mc = philips.tl12.spct)))
 
-save(macam.mspct, file="../../../data/macam-mspct.rda")
+save(macam.mspct, file="../../macam-mspct.rda")
 
 setwd(oldwd)

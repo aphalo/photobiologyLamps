@@ -16,4 +16,4 @@ philips.tl12 <- as.source_spct(philips.tl12.bentham.data)
 bentham.mspct <- normalize(source_mspct(list(philips.tl01 = philips.tl01,
                                              philips.tl12 = philips.tl12)))
 
-save(bentham.mspct, file="./data/bentham-mspct.rda")
+save(bentham.mspct, file="./data-raw/bentham-mspct.rda")

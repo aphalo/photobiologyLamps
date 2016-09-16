@@ -38,20 +38,20 @@ options(photobiology.plot.annotations =
 ## UV-C lamp spectra
 
 ```{r}
-cat(comment(oo_maya.mspct$germicidal))
-plot(oo_maya.mspct$germicidal)
+cat(comment(lamps.mspct$germicidal))
+plot(lamps.mspct$germicidal)
 ```
 
 ## UV-B lamp spectra
 
 ```{r}
-plot(bentham.mspct$philips.tl01)
-plot(bentham.mspct$philips.tl12)
+plot(lamps.mspct$philips.tl01)
+plot(lamps.mspct$philips.tl12)
 ```
 
 ```{r}
-plot(macam.mspct$philips.tl12)
-plot(macam.mspct$qpanel.uvb313)
+plot(lamps.mspct$philips.tl12)
+plot(lamps.mspct$qpanel.uvb313)
 ```
 
 ```{r}
@@ -73,20 +73,20 @@ plot(qp_uvb313_temp.spct, annotations = c("boxes", "labels", "title")) +
 ## UV-A lamp spectra
 
 ```{r}
-plot(macam.mspct$qpanel.uva340)
+plot(lamps.mspct$qpanel.uva340)
 ```
 
 ## Narrow band VIS lamps
 
 ```{r}
-plot(licor.mspct$philips.tld36w.15)
-plot(licor.mspct$philips.tld36w.18)
+plot(lamps.mspct$philips.tld36w.15)
+plot(lamps.mspct$philips.tld36w.18)
 ```
 
 ## Broad band VIS lamps
 
 ```{r}
-attach(licor.mspct)
+attach(lamps.mspct)
 plot(incandescent.60w)
 plot(osram.36w.25)
 plot(philips.tld36w.83)
@@ -98,7 +98,7 @@ plot(philips.pls11w.827)
 plot(sylvania.215w.vho)
 plot(osram.hqit.400w)
 plot(osram.super.vialox)
-detach(licor.mspct)
+detach(lamps.mspct)
 ```
 
 ## Standard lamps used for calibrations

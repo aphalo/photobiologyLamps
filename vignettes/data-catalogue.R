@@ -13,16 +13,16 @@ options(photobiology.plot.annotations =
           c("boxes", "labels", "colour.guide", "peaks", "title"))
 
 ## ------------------------------------------------------------------------
-cat(comment(oo_maya.mspct$germicidal))
-plot(oo_maya.mspct$germicidal)
+cat(comment(lamps.mspct$germicidal))
+plot(lamps.mspct$germicidal)
 
 ## ------------------------------------------------------------------------
-plot(bentham.mspct$philips.tl01)
-plot(bentham.mspct$philips.tl12)
+plot(lamps.mspct$philips.tl01)
+plot(lamps.mspct$philips.tl12)
 
 ## ------------------------------------------------------------------------
-plot(macam.mspct$philips.tl12)
-plot(macam.mspct$qpanel.uvb313)
+plot(lamps.mspct$philips.tl12)
+plot(lamps.mspct$qpanel.uvb313)
 
 ## ------------------------------------------------------------------------
 fig_temp <- ggplot(data=qp_uvb313_temp.spct,
@@ -39,14 +39,14 @@ plot(qp_uvb313_temp.spct, annotations = c("boxes", "labels", "title")) +
   facet_wrap(~t_factor, ncol = 2)
 
 ## ------------------------------------------------------------------------
-plot(macam.mspct$qpanel.uva340)
+plot(lamps.mspct$qpanel.uva340)
 
 ## ------------------------------------------------------------------------
-plot(licor.mspct$philips.tld36w.15)
-plot(licor.mspct$philips.tld36w.18)
+plot(lamps.mspct$philips.tld36w.15)
+plot(lamps.mspct$philips.tld36w.18)
 
 ## ------------------------------------------------------------------------
-attach(licor.mspct)
+attach(lamps.mspct)
 plot(incandescent.60w)
 plot(osram.36w.25)
 plot(philips.tld36w.83)
@@ -58,7 +58,7 @@ plot(philips.pls11w.827)
 plot(sylvania.215w.vho)
 plot(osram.hqit.400w)
 plot(osram.super.vialox)
-detach(licor.mspct)
+detach(lamps.mspct)
 
 ## ------------------------------------------------------------------------
 FEL.spct <- FEL_spectrum(300:900)

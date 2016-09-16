@@ -6,8 +6,8 @@
 #' measuring distances are in most cases unknown data have been normalized to
 #' one at the wavelength of maximum energy irradiance.
 #'
-#' The \code{"source_mspct"} object contains \code{"source_spct"} objects
-#' philips.tl01 philips.tl12
+#' @details \code{licor} is a character vector with indexes to members of 
+#'   \code{\link{lamps.mspct}} philips.tl01 philips.tl12
 #'
 #' The variables in each member spectrum are as follows: \itemize{ \item
 #' w.length (nm) \item s.e.irrad (relative energy based units) }
@@ -21,5 +21,14 @@
 #' @keywords datasets
 #' @format A \code{"source.mspct"} with two member \code{"source.spct objects"},
 #'   each with 301 rows (250 nm to 400 nm, 0.5 nm step) and 2 variables.
+#'   
+#' @examples
+#' lamps.mspct[bentham]
+#' @examples
+#' lamps.mspct[bentham]
+#' lamps.mspct[["philips.tl01"]]
+#' lamps.mspct$philips.tl01
+#'
 #' @aliases philips.tl01 philips.tl12
-"bentham.mspct"
+#' 
+"bentham"

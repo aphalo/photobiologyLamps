@@ -18,7 +18,7 @@
 #' @references Aphalo, P J, R Tegelberg, and R Julkunen-Tiitto. 1999. The
 #' Modulated UV-B Irradiation System at the University of Joensuu.” Biotronics
 #' 28: 109–120.
-#' \url{http://133.5.207.201/ijob/Biotronics/1999_IJOBS_V28/V28_p109-120.pdf}.
+#' \url{http://ci.nii.ac.jp/naid/110006175827/en}.
 #'
 #' @docType data
 #' @keywords datasets
@@ -33,6 +33,7 @@
 #' }
 #'
 "qp_uvb313_temp.spct"
+
 #' @title Spectral irradiance data for UVB lamps at different temperatures.
 #'
 #' @description Dataset of spectral irradiance from a set of two Q-Panel UVB-313 40W
@@ -61,7 +62,7 @@
 #' @references
 #' Aphalo, P J, R Tegelberg, and R Julkunen-Tiitto. 1999. The Modulated UV-B Irradiation System at the
 #' University of Joensuu.” Biotronics 28: 109–120.
-#' \url{http://133.5.207.201/ijob/Biotronics/1999_IJOBS_V28/V28_p109-120.pdf}.
+#' \url{http://ci.nii.ac.jp/naid/110006175827/en}.
 #'
 #' @docType data
 #' @keywords datasets

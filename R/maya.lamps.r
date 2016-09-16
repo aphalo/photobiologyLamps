@@ -8,8 +8,8 @@
 #'   measured. In this case the measurement was on the working surface of a
 #'   laboratory hood, using its built-in lamp.
 #'
-#' @details The \code{"source_mspct"} object contains one \code{"source_spct"}
-#' object germicidal
+#' @details \code{oo_maaya} is a character vector with indexes to members of 
+#'   \code{\link{lamps.mspct}}: germicidal
 #'
 #' The variables in each member spectrum are as follows: \itemize{ \item
 #' w.length (nm) \item s.e.irrad (relative energy based units) }
@@ -23,8 +23,12 @@
 #'
 #' @docType data
 #' @keywords datasets
-#' @format A \code{"source_mspct"} object containing one \code{"source.spct"}
-#'  object with 1425 rows (250 nm to 900 nm, at steps < 1 nm)
+#' @format A vector of character strings.
+#'
+#' @examples
+#' lamps.mspct[oo_maya]
+#' lamps.mspct[["germicidal"]]
+#' lamps.mspct$germicidal
 #'
 #' @aliases germicidal
-"oo_maya.mspct"
+"oo_maya"

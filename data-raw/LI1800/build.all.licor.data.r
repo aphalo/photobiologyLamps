@@ -6,5 +6,5 @@ licor.mspct <- normalize(read_m_licor_prn(file.list))
 
 setwd("../..")
 
-save(licor.mspct, file = "data/licor-mspct.rda")
+save(licor.mspct, file = "data-raw/licor-mspct.rda")
 
