@@ -10,7 +10,9 @@
 #' 
 #' The package contains one collection of spectra for different lamps all of
 #' them measured at air temperatures between 20 C and 25 C and a series of
-#' vectors to be used as indexes to extract different subsets of spectra.
+#' vectors to be used as indexes to extract different subsets of spectra. These
+#' spectral data are normalized to spectral energy irradiaance equal one at
+#' their maximum (strongest emission peak).
 #' 
 #' The temperature response data is included as a separate collection of
 #' spectra both as a \code{source_mspct} object and as a \code{source_spct}

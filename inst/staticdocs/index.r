@@ -6,11 +6,17 @@ sd_section("Package overview", "",
 
 sd_section("Spectral data", "",
            c(
-             "macam.mspct",
-             "licor.mspct",
-             "oo_maya.mspct",
-             "bentham.mspct",
+             "lamps.mspct",
              "qp_uvb313_temp.mspct",
              "qp_uvb313_temp.spct"
+           )
+)
+
+sd_section("Selectors", "",
+           c(
+             "macam",
+             "licor",
+             "oo_maya",
+             "bentham"
            )
 )

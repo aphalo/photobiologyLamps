@@ -19,7 +19,7 @@
 #' @references Aphalo, P J, R Tegelberg, and R Julkunen-Tiitto. 1999. The
 #'   Modulated UV-B Irradiation System at the University of Joensuu.” Biotronics
 #'   28: 109–120.
-#'   \url{http://133.5.207.201/ijob/Biotronics/1999_IJOBS_V28/V28_p109-120.pdf}.
+#'   \url{http://ci.nii.ac.jp/naid/110006175827/en}.
 #'
 #' @docType data
 #' @keywords datasets
