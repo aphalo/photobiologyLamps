@@ -1,11 +1,12 @@
 #' @details
-#' This package contains emission spectra for different types of lamps other than
-#' LEDs. Measured with an assortment of different instruments over more than 20
-#' years in our lab or by collaborators. Some of the lamp types are no longer in
-#' production but the data are relevant for the interpretation of old scientific
-#' publications. Data for lamps emitting in the UV and VIS regions of the
-#' spectrum are represented in these data sets. In addition a set of spectral
-#' emission for UVB lamps exposed to different ambient temperatures is include.
+#' This package contains emission spectra for different types of lamps other
+#' than LEDs. Measured with an assortment of different instruments over more
+#' than 20 years in our lab or by collaborators. Some of the lamp types are no
+#' longer in production but the data are relevant for the interpretation of old
+#' scientific publications. Data for lamps emitting in the UV and VIS regions of
+#' the spectrum are represented in these data sets. In addition a set of
+#' spectral emission for UVB lamps exposed to different ambient temperatures is
+#' include.
 #' 
 #' The package contains one collection of spectra for different lamps all of
 #' them measured at air temperatures between 20 C and 25 C and a series of
