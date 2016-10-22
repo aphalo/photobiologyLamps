@@ -33,7 +33,14 @@ my.spct <- fscale(lamps.mspct$incandescent.60w,
 e_irrad(my.spct, waveband(c(400,700)))
 
 ## ------------------------------------------------------------------------
-e_irrad(setNormalized(lamps.mspct$incandescent.60w))
+getScaled(my.spct)
+setScaled(my.spct)
+getScaled(my.spct)
+
+## ------------------------------------------------------------------------
+my.lamp <- lamps.mspct$incandescent.60w
+setNormalized(my.lamp)
+e_irrad(my.lamp)
 
 ## ------------------------------------------------------------------------
 q_ratio(lamps.mspct$incandescent.60w, Red("Smith10"), Far_red("Smith10"))
@@ -43,7 +50,7 @@ head(as.data.frame(lamps.mspct$incandescent.60w))
 
 ## ------------------------------------------------------------------------
 attach(lamps.mspct)
-q_irrad(setNormalized(incandescent.60w)) * 1e6
+q_ratio(incandescent.60w, Blue(), Red())
 detach(lamps.mspct)
 
 ## ------------------------------------------------------------------------
@@ -52,5 +59,5 @@ with(incandescent.60w, max(w.length))
 detach(lamps.mspct)
 
 ## ------------------------------------------------------------------------
-with(lamps.mspct, q_irrad(setNormalized(incandescent.60w)) * 1e6)
+with(lamps.mspct, q_ratio(incandescent.60w, Blue(), Red()))
 

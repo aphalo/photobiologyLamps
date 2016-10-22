@@ -22,3 +22,6 @@ sodium_lamps <- c("osram.super.vialox")
 
 save(lamps.mspct, licor, macam, oo_maya, bentham,
      file = "data/lamps-mspct.rda")
+
+tools::resaveRdaFiles("data", compress="auto")
+print(tools::checkRdaFiles("data"))

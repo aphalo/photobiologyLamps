@@ -95,19 +95,34 @@ my.spct <- fscale(lamps.mspct$incandescent.60w,
                   )
 e_irrad(my.spct, waveband(c(400,700)))
 ```
-If for some obscure reason we want to simply "pretend" that the spectral data
-have not been normalized, we can temporarily override the attribute. Most of the
-time this is a very bad idea!
+
+If we want to treat the rescaled spectral data, as if they were true readings
+with no scaling we can reset the attribute with method `setScaled()`. With 
+method `getScaled()` we can test if a spectrun has been scaled.
 
 ```{r}
-e_irrad(setNormalized(lamps.mspct$incandescent.60w))
+getScaled(my.spct)
+setScaled(my.spct)
+getScaled(my.spct)
 ```
+
+If for some obscure reason we want to simply "pretend" that the spectral data
+have not been normalized, we can permanently override the attribute on a copy 
+of the data. Most of the time this is a very bad idea!
+
+```{r}
+my.lamp <- lamps.mspct$incandescent.60w
+setNormalized(my.lamp)
+e_irrad(my.lamp)
+```
+
 As mentioned above, ratios can be calculated directly as they are not affected
 by normalization.
 
 ```{r}
 q_ratio(lamps.mspct$incandescent.60w, Red("Smith10"), Far_red("Smith10"))
 ```
+
 ## Using the data in other contexts
 
 As `source_spct` is a class derived from `list`, and `source_spct` is derived from
@@ -121,9 +136,10 @@ head(as.data.frame(lamps.mspct$incandescent.60w))
 Of course `attach` and `with` also work as expected.
 ```{r}
 attach(lamps.mspct)
-q_irrad(setNormalized(incandescent.60w)) * 1e6
+q_ratio(incandescent.60w, Blue(), Red())
 detach(lamps.mspct)
 ```
+
 ```{r}
 attach(lamps.mspct)
 with(incandescent.60w, max(w.length))
@@ -131,7 +147,7 @@ detach(lamps.mspct)
 ```
 
 ```{r}
-with(lamps.mspct, q_irrad(setNormalized(incandescent.60w)) * 1e6)
+with(lamps.mspct, q_ratio(incandescent.60w, Blue(), Red()))
 ```
 
 
