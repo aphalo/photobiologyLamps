@@ -19,7 +19,7 @@ Depends:
     photobiology (>= 0.9.12)
 Suggests:
     knitr (>= 1.14),
-    ggspectra (>= 0.1.8),
+    ggspectra (>= 0.1.10),
     photobiologyWavebands (>= 0.4.1),
     ggplot2 (>= 2.1.0)
 LazyLoad: yes
