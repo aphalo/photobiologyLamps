@@ -3,11 +3,11 @@
 #' Names of datasets containing the wavelengths and tabulated values spectral emittance 
 #' for the lamps of different types from various suppliers. 
 #' 
+#' @aliases colors
+#' 
 #' @docType data
 #' @keywords datasets
 #' @format A vector of character strings.
-#' 
-#' @aliases amber_lamps blue_lamps red_lamps white_lamps
 #' 
 #' @examples 
 #' uv_lamps
@@ -22,3 +22,16 @@
 #' @seealso \code{\link{lamps.mspct}}
 #' 
 "uv_lamps"
+
+#' @rdname uv_lamps
+"amber_lamps"
+
+#' @rdname uv_lamps
+"blue_lamps"
+
+#' @rdname uv_lamps
+"red_lamps"
+
+#' @rdname uv_lamps
+"white_lamps"
+

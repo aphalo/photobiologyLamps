@@ -22,6 +22,10 @@
 #'   \code{"source_spct"}.
 #'
 #' @examples
+#' uv_lamps
+#' union(qpanel_lamps, uv_lamps)
+#' lamps.mspct[union(philips_lamps, red_lamps)]
+#' 
 #' lamps.mspct$qpanel.uvb313
 #' 
 "lamps.mspct"

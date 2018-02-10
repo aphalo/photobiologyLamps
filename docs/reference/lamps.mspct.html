@@ -127,7 +127,228 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>lamps.mspct</span>$<span class='no'>qpanel.uvb313</span></div><div class='output co'>#&gt; Object: source_spct [561 x 2]
+    <pre class="examples"><div class='input'><span class='no'>uv_lamps</span></div><div class='output co'>#&gt; [1] "germicidal"      "philips.tl01"    "philips.tl12"    "philips.tl12.mc"
+#&gt; [5] "qpanel.uva340"   "qpanel.uvb313"  </div><div class='input'><span class='fu'>union</span>(<span class='no'>qpanel_lamps</span>, <span class='no'>uv_lamps</span>)</div><div class='output co'>#&gt; [1] "qpanel.uva340"   "qpanel.uvb313"   "germicidal"      "philips.tl01"   
+#&gt; [5] "philips.tl12"    "philips.tl12.mc"</div><div class='input'><span class='no'>lamps.mspct</span>[<span class='fu'>union</span>(<span class='no'>philips_lamps</span>, <span class='no'>red_lamps</span>)]</div><div class='output co'>#&gt; Object: source_mspct [11 x 1]
+#&gt; --- Member: philips.pls11w.827 ---
+#&gt; Object: source_spct [301 x 2]
+#&gt; Wavelength range 300 to 900 nm, step 2 nm 
+#&gt; Label: File: Philips.PLS11W.827.PRN 
+#&gt; Measured on 0000-10-18 10:31:00 UTC 
+#&gt; Time unit 1s
+#&gt; Spectral data normalized to 1 at 612 nm 
+#&gt; 
+#&gt; # A tibble: 301 x 2
+#&gt;    w.length s.e.irrad
+#&gt;       &lt;dbl&gt;     &lt;dbl&gt;
+#&gt;  1      300  0.000135
+#&gt;  2      302  0.000370
+#&gt;  3      304  0.000351
+#&gt;  4      306  0.000227
+#&gt;  5      308  0.00240 
+#&gt;  6      310  0.00804 
+#&gt;  7      312  0.0151  
+#&gt;  8      314  0.0171  
+#&gt;  9      316  0.0115  
+#&gt; 10      318  0.00536 
+#&gt; # ... with 291 more rows
+#&gt; --- Member: philips.tld36w.83 ---
+#&gt; Object: source_spct [601 x 2]
+#&gt; Wavelength range 300 to 900 nm, step 1 nm 
+#&gt; Label: File: Philips.TLD36W.83.PRN 
+#&gt; Measured on 0000-08-23 13:31:00 UTC 
+#&gt; Time unit 1s
+#&gt; Spectral data normalized to 1 at 613 nm 
+#&gt; 
+#&gt; # A tibble: 601 x 2
+#&gt;    w.length s.e.irrad
+#&gt;       &lt;dbl&gt;     &lt;dbl&gt;
+#&gt;  1      300  0.000381
+#&gt;  2      301  0.000497
+#&gt;  3      302  0.000426
+#&gt;  4      303  0.000476
+#&gt;  5      304  0.000467
+#&gt;  6      305  0.000343
+#&gt;  7      306  0.000449
+#&gt;  8      307  0.000606
+#&gt;  9      308  0.00130 
+#&gt; 10      309  0.00229 
+#&gt; # ... with 591 more rows
+#&gt; --- Member: philips.tld36w.865 ---
+#&gt; Object: source_spct [601 x 2]
+#&gt; Wavelength range 300 to 900 nm, step 1 nm 
+#&gt; Label: File: Philips.TLD36W.865.PRN 
+#&gt; Measured on 0000-08-23 16:32:00 UTC 
+#&gt; Time unit 1s
+#&gt; Spectral data normalized to 1 at 546 nm 
+#&gt; 
+#&gt; # A tibble: 601 x 2
+#&gt;    w.length s.e.irrad
+#&gt;       &lt;dbl&gt;     &lt;dbl&gt;
+#&gt;  1      300  0.000369
+#&gt;  2      301  0.000812
+#&gt;  3      302  0.000530
+#&gt;  4      303  0.000779
+#&gt;  5      304  0.00110 
+#&gt;  6      305  0.000499
+#&gt;  7      306  0.000898
+#&gt;  8      307  0.00112 
+#&gt;  9      308  0.00181 
+#&gt; 10      309  0.00278 
+#&gt; # ... with 591 more rows
+#&gt; --- Member: philips.tld36w.89 ---
+#&gt; Object: source_spct [601 x 2]
+#&gt; Wavelength range 300 to 900 nm, step 1 nm 
+#&gt; Label: File: Philips.TLD36W.89.PRN 
+#&gt; Measured on 0000-08-23 16:59:00 UTC 
+#&gt; Time unit 1s
+#&gt; Spectral data normalized to 1 at 613 nm 
+#&gt; 
+#&gt; # A tibble: 601 x 2
+#&gt;    w.length s.e.irrad
+#&gt;       &lt;dbl&gt;     &lt;dbl&gt;
+#&gt;  1      300  0.000477
+#&gt;  2      301  0.000560
+#&gt;  3      302  0.00100 
+#&gt;  4      303  0.000626
+#&gt;  5      304  0.000965
+#&gt;  6      305  0.000860
+#&gt;  7      306  0.000760
+#&gt;  8      307  0.000746
+#&gt;  9      308  0.00114 
+#&gt; 10      309  0.00176 
+#&gt; # ... with 591 more rows
+#&gt; --- Member: philips.tld36w.92 ---
+#&gt; Object: source_spct [601 x 2]
+#&gt; Wavelength range 300 to 900 nm, step 1 nm 
+#&gt; Label: File: Philips.TLD36W.92.PRN 
+#&gt; Measured on 0000-08-23 16:41:00 UTC 
+#&gt; Time unit 1s
+#&gt; Spectral data normalized to 1 at 547 nm 
+#&gt; 
+#&gt; # A tibble: 601 x 2
+#&gt;    w.length s.e.irrad
+#&gt;       &lt;dbl&gt;     &lt;dbl&gt;
+#&gt;  1      300   0.00192
+#&gt;  2      301   0.00251
+#&gt;  3      302   0.00307
+#&gt;  4      303   0.00241
+#&gt;  5      304   0.00265
+#&gt;  6      305   0.00318
+#&gt;  7      306   0.00312
+#&gt;  8      307   0.00306
+#&gt;  9      308   0.00492
+#&gt; 10      309   0.00779
+#&gt; # ... with 591 more rows
+#&gt; --- Member: philips.tll36w.950 ---
+#&gt; Object: source_spct [601 x 2]
+#&gt; Wavelength range 300 to 900 nm, step 1 nm 
+#&gt; Label: File: Philips.TLL36W.950.PRN 
+#&gt; Measured on 0000-08-23 10:24:00 UTC 
+#&gt; Time unit 1s
+#&gt; Spectral data normalized to 1 at 613 nm 
+#&gt; 
+#&gt; # A tibble: 601 x 2
+#&gt;    w.length s.e.irrad
+#&gt;       &lt;dbl&gt;     &lt;dbl&gt;
+#&gt;  1      300 0.0000697
+#&gt;  2      301 0.0000682
+#&gt;  3      302 0.0000382
+#&gt;  4      303 0.0000561
+#&gt;  5      304 0.0000733
+#&gt;  6      305 0.0000359
+#&gt;  7      306 0.0000353
+#&gt;  8      307 0.0000346
+#&gt;  9      308 0.000136 
+#&gt; 10      309 0.000250 
+#&gt; # ... with 591 more rows
+#&gt; --- Member: philips.tl01 ---
+#&gt; Object: source_spct [301 x 2]
+#&gt; Wavelength range 250 to 400 nm, step 0.5 nm 
+#&gt; Time unit 1s
+#&gt; Spectral data normalized to 1 at 311.5 nm 
+#&gt; 
+#&gt; # A tibble: 301 x 2
+#&gt;    w.length    s.e.irrad
+#&gt;       &lt;dbl&gt;        &lt;dbl&gt;
+#&gt;  1      250 0.000000249 
+#&gt;  2      250 0.0000000624
+#&gt;  3      251 0.0000000340
+#&gt;  4      252 0.0000000166
+#&gt;  5      252 0.0000000261
+#&gt;  6      252 0.000000468 
+#&gt;  7      253 0.0000280   
+#&gt;  8      254 0.0000979   
+#&gt;  9      254 0.0000102   
+#&gt; 10      254 0.000000201 
+#&gt; # ... with 291 more rows
+#&gt; --- Member: philips.tl12 ---
+#&gt; Object: source_spct [301 x 2]
+#&gt; Wavelength range 250 to 400 nm, step 0.5 nm 
+#&gt; Time unit 1s
+#&gt; Spectral data normalized to 1 at 313 nm 
+#&gt; 
+#&gt; # A tibble: 301 x 2
+#&gt;    w.length   s.e.irrad
+#&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+#&gt;  1      250 0.000000683
+#&gt;  2      250 0          
+#&gt;  3      251 0          
+#&gt;  4      252 0          
+#&gt;  5      252 0.000000365
+#&gt;  6      252 0.00000135 
+#&gt;  7      253 0.0000379  
+#&gt;  8      254 0.000153   
+#&gt;  9      254 0.0000109  
+#&gt; 10      254 0.000000978
+#&gt; # ... with 291 more rows
+#&gt; --- Member: philips.tl12.mc ---
+#&gt; Object: source_spct [561 x 2]
+#&gt; Wavelength range 240 to 800 nm, step 1 nm 
+#&gt; Time unit 1s
+#&gt; Spectral data normalized to 1 at 435 nm 
+#&gt; 
+#&gt; # A tibble: 561 x 2
+#&gt;    w.length s.e.irrad
+#&gt;       &lt;int&gt;     &lt;dbl&gt;
+#&gt;  1      240         0
+#&gt;  2      241         0
+#&gt;  3      242         0
+#&gt;  4      243         0
+#&gt;  5      244         0
+#&gt;  6      245         0
+#&gt;  7      246         0
+#&gt;  8      247         0
+#&gt;  9      248         0
+#&gt; 10      249         0
+#&gt; # ... with 551 more rows
+#&gt; --- Member: philips.tld36w.15 ---
+#&gt; Object: source_spct [601 x 2]
+#&gt; Wavelength range 300 to 900 nm, step 1 nm 
+#&gt; Label: File: Philips.TLD36W.15.PRN 
+#&gt; Measured on 0000-08-23 11:56:00 UTC 
+#&gt; Time unit 1s
+#&gt; Spectral data normalized to 1 at 660 nm 
+#&gt; 
+#&gt; # A tibble: 601 x 2
+#&gt;    w.length s.e.irrad
+#&gt;       &lt;dbl&gt;     &lt;dbl&gt;
+#&gt;  1      300  0.000196
+#&gt;  2      301  0.000959
+#&gt;  3      302  0.000752
+#&gt;  4      303  0.00110 
+#&gt;  5      304  0.00126 
+#&gt;  6      305  0.000885
+#&gt;  7      306  0.000521
+#&gt;  8      307  0.00153 
+#&gt;  9      308  0.000167
+#&gt; 10      309  0.000493
+#&gt; # ... with 591 more rows
+#&gt; ..........................
+#&gt; 1 other member spectra not shown
+#&gt; 
+#&gt; --- END ---</div><div class='input'>
+<span class='no'>lamps.mspct</span>$<span class='no'>qpanel.uvb313</span></div><div class='output co'>#&gt; Object: source_spct [561 x 2]
 #&gt; Wavelength range 240 to 800 nm, step 1 nm 
 #&gt; Time unit 1s
 #&gt; Spectral data normalized to 1 at 435 nm 

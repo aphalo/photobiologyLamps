@@ -98,14 +98,23 @@
 fluorescent tubes, measured at different temperatures.</p>
     
 
-    <pre class="usage"><span class='no'>qp_uvb313_temp.spct</span></pre>
+    <pre class="usage"><span class='no'>qp_uvb313_temp.spct</span>
+
+<span class='no'>qp_uvb313_temp.mspct</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A <code>"source_spct"</code> object with 777 rows (290 nm to 400 nm, 1.0 nm step) and 3
+    <p><code>qp_uvb313_temp.spct</code> is a <code>"source_spct"</code> object with 777 rows (290 nm to 400 nm, 1.0 nm step) and 3
   variables.</p>
 <p>The variables are as follows:</p><ul>
 <li><p>temperature (C)</p></li>
+<li><p>w.length (nm)</p></li>
+<li><p>s.e.irrad (W m-2 nm-1)</p></li>
+</ul><p><code>qp_uvb313_temp.mspct</code> is a <code>"source_mspct"</code> object containing a 
+  collection of
+  <code>"source_spct"</code> objects, each with 111 rows (290 nm to 400 nm,
+  1.0 nm step) and 2 variables.</p>  
+<p>The variables in the member spectra are as follows:</p><ul>
 <li><p>w.length (nm)</p></li>
 <li><p>s.e.irrad (W m-2 nm-1)</p></li>
 </ul>
@@ -118,7 +127,14 @@ measurements were done with a recently calibrated Macam double-monochromator
 spectroradiometer located outside the chamber and maintained at constant room
 temperature of 22 C. After each change in the temperature controller
 set-point enough time was allowed after the temperature had stabilized inside
-the chamber, for the output of the lamps to also become stable.</p>
+the chamber, for the output of the lamps to also become stable.
+    <code>qp_uvb313_temp.spct</code> contains data for different
+  temperatures in a "tidy" long form with a factor indicating the temperature
+  at which the lamp was during measurement.</p>  
+<p><code>qp_uvb313_temp.mspct</code> 
+  contains the same data as a collection of spectra stored in a
+  <code>"source_mspct"</code> object, with member <code>"source_spct"</code> objects
+  named minus5C, plus00C, plus05C, plus10C, plus20C, plus30C, and plus35C.</p>
     
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
@@ -134,6 +150,27 @@ Modulated UV-B Irradiation System at the University of Joensuu.” Biotronics
 <a href='http://ci.nii.ac.jp/naid/110006175827/en'>http://ci.nii.ac.jp/naid/110006175827/en</a>.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>qp_uvb313_temp.mspct</span><span class='kw'>[[</span><span class='st'>"plus20C"</span>]]</div><div class='output co'>#&gt; Object: source_spct [111 x 3]
+#&gt; containing 7 spectra in long form
+#&gt; Wavelength range 290 to 400 nm, step 1 nm 
+#&gt; Time unit 1s
+#&gt; 
+#&gt; # A tibble: 111 x 3
+#&gt;    temperature w.length s.e.irrad
+#&gt;  *       &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+#&gt;  1        20.0      290 0        
+#&gt;  2        20.0      291 0        
+#&gt;  3        20.0      292 0.0000496
+#&gt;  4        20.0      293 0.000379 
+#&gt;  5        20.0      294 0.00126  
+#&gt;  6        20.0      295 0.00321  
+#&gt;  7        20.0      296 0.00673  
+#&gt;  8        20.0      297 0.0182   
+#&gt;  9        20.0      298 0.0226   
+#&gt; 10        20.0      299 0.0289   
+#&gt; # ... with 101 more rows</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -146,7 +183,9 @@ Modulated UV-B Irradiation System at the University of Joensuu.” Biotronics
       <li><a href="#note">Note</a></li>
 
       <li><a href="#references">References</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

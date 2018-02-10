@@ -9,6 +9,8 @@
 #' spectral output. For emission spectra for LEDs available as electronic components
 #' please see \code{\link[photobiologyLEDs]{photobiologyLEDs}}.
 #' 
+#' @aliases types
+#' 
 #' @docType data
 #' @keywords datasets
 #' @format A vector of character strings.
@@ -27,3 +29,16 @@
 #' @seealso \code{\link{lamps.mspct}}
 #' 
 "incandescent_lamps"
+
+#' @rdname incandescent_lamps
+"sodium_lamps"
+
+#' @rdname incandescent_lamps
+"mercury_lamps"
+
+#' @rdname incandescent_lamps
+"multimetal_lamps"
+
+#' @rdname incandescent_lamps
+"led_lamps"
+
