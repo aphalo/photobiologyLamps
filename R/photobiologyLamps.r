@@ -37,6 +37,9 @@
 #' being currently sold under the same type denomination.
 #'
 #' @import photobiology
+#' 
+#' @seealso Packages \code{\link[photobiology]{photobiology}} and 
+#' \code{\link[ggspectra]{ggspectra}}.
 #'
 #' @examples
 #' library(photobiologyLamps)

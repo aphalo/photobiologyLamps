@@ -5,6 +5,7 @@ reference:
   - title: Spectra
     contents:
     - lamps.mspct
+    - ledsavers.mspct
     - qp_uvb313_temp.spct
     - qp_uvb313_temp.mspct
   - title: Indexing vectors by color
@@ -38,4 +39,3 @@ articles:
   - title: Vignettes
     contents:
     - '`user-guide`'
-    - '`data-catalogue`'

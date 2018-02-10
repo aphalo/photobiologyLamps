@@ -45,9 +45,6 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/data-catalogue.html">Data Catalogue</a>
-    </li>
-    <li>
       <a href="../articles/user-guide.html">User Guide</a>
     </li>
   </ul>
@@ -66,7 +63,7 @@
   <div class="col-md-9">
     <div class="page-header toc-ignore">
       <h1>User Guide</h1>
-            <h3 class="subtitle">Package ‘photobiologyLamps’ 0.4.1.9000</h3>
+            <h3 class="subtitle">Package ‘photobiologyLamps’ 0.4.1.9001</h3>
                         <h4 class="author">Pedro J. Aphalo</h4>
             
             <h4 class="date">2018-02-10</h4>
@@ -75,20 +72,18 @@
     
     
 <div class="contents">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">fig.width=</span><span class="dv">8</span>, <span class="dt">fig.height=</span><span class="dv">4</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(photobiology)</code></pre></div>
-<pre><code>## For news about 'photobiology', please, see http://www.r4photobiology.info/</code></pre>
-<pre><code>## For on-line documentation see http://docs.r4photobiology.info/photobiology/</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(photobiologyWavebands)</code></pre></div>
-<pre><code>## For news about 'photobiologyWavebands', please, see http://www.r4photobiology.info/</code></pre>
-<pre><code>## For on-line documentation see http://docs.r4photobiology.info/photobiologyWavebands/</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(photobiologyLamps)</code></pre></div>
-<pre><code>## For news about 'photobiologyLamps', please, see http://www.r4photobiology.info/</code></pre>
-<pre><code>## For on-line documentation see http://docs.r4photobiology.info/photobiologyLamps/</code></pre>
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h2>
-<p>In this very brief User Guide we describe how to re-scale the normalized spectra, and how to access individual spectra or subsets of spectra.</p>
+<p>This package, is a data only package, part of a suite, which has package ‘photobiology’ at its core. Please visit (<a href="http://www.r4photobiology.info/" class="uri">http://www.r4photobiology.info/</a>) for more details. For more details on plotting spectra, please consult the documentation for package ‘ggspectra’, and for information on the calculation of summaries and maths operations between spectra, please, consult the documentation for package ‘photobiology’.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(photobiology)
+<span class="kw">library</span>(photobiologyWavebands)
+<span class="kw">library</span>(photobiologyLamps)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(ggspectra)</code></pre></div>
+<p>In this brief User Guide we describe how to re-scale the normalized spectra, and how to access individual spectra or subsets of spectra.</p>
+<p>Spectra in the package are contained in three collections: <code>lamps.mspct</code> contains spectral data for various types of lamps emiiting a fixed color of light; <code>ledsavers.mspct</code> contains spectral data for a LED bulb with four color channels allowing it to output 16 different <em>colors</em> of light; <code>qp_uvb313_temp.mspct</code> contains spectral data for UV lamps under seven different temperatures. In addition <code>qp_uvb313_temp.spct</code> contains the same data in a single spectral object.</p>
+<p>In addtion to the objects containing the data itself, several character vectors of names of spectra are provide to facilitate the retrieval of subsets of spectra.</p>
 </div>
 <div id="accessing-individual-spectra" class="section level2">
 <h2 class="hasAnchor">
@@ -101,7 +96,7 @@
 ## [10] "philips.tld36w.89"  "philips.tld36w.92"  "philips.tll36w.950"
 ## [13] "sylvania.215w.vho"  "qpanel.uvb313"      "qpanel.uva340"     
 ## [16] "philips.tl12.mc"    "philips.tl01"       "philips.tl12"      
-## [19] "germicidal"</code></pre>
+## [19] "germicidal"         "ww_led_bulb"</code></pre>
 <p>We can use a character string as index to extract an individual <code>source_spct</code> object.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lamps.mspct<span class="op">$</span>incandescent.60w</code></pre></div>
 <pre><code>## Object: source_spct [601 x 2]
@@ -245,7 +240,7 @@
 ## --- END ---</code></pre>
 <p>And below we use a computed one. In this case we extract the member spectra with names containing the string “osram”.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lamps.mspct[osram_lamps]</code></pre></div>
-<pre><code>## Object: source_mspct [2 x 1]
+<pre><code>## Object: source_mspct [3 x 1]
 ## --- Member: osram.super.vialox ---
 ## Object: source_spct [301 x 2]
 ## Wavelength range 300 to 900 nm, step 2 nm 
@@ -289,6 +284,28 @@
 ##  8      314 0.000330 
 ##  9      316 0.000320 
 ## 10      318 0.000155 
+## # ... with 291 more rows
+## --- Member: osram.hqit.400w ---
+## Object: source_spct [301 x 2]
+## Wavelength range 300 to 900 nm, step 2 nm 
+## Label: File: Osram.HQIT.400W.PRN 
+## Measured on 0000-10-11 18:57:00 UTC 
+## Time unit 1s
+## Spectral data normalized to 1 at 592 nm 
+## 
+## # A tibble: 301 x 2
+##    w.length s.e.irrad
+##       &lt;dbl&gt;     &lt;dbl&gt;
+##  1      300  0.000382
+##  2      302  0.000641
+##  3      304  0.000615
+##  4      306  0.000761
+##  5      308  0.000795
+##  6      310  0.00102 
+##  7      312  0.00141 
+##  8      314  0.00162 
+##  9      316  0.00161 
+## 10      318  0.00170 
 ## # ... with 291 more rows
 ## 
 ## --- END ---</code></pre>
@@ -363,18 +380,67 @@
 ## # ... with 291 more rows
 ## 
 ## --- END ---</code></pre>
+<p>Set algebra operations can be used with the indexing vectors as each vector describes a single property: color, brand, type, etc.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lamps.mspct[<span class="kw">intersect</span>(osram_lamps, white_lamps)]</code></pre></div>
+<pre><code>## Object: source_mspct [2 x 1]
+## --- Member: osram.36w.25 ---
+## Object: source_spct [301 x 2]
+## Wavelength range 300 to 900 nm, step 2 nm 
+## Label: File: Osram.36W.25.PRN 
+## Measured on 0000-06-09 09:00:00 UTC 
+## Time unit 1s
+## Spectral data normalized to 1 at 436 nm 
+## 
+## # A tibble: 301 x 2
+##    w.length s.e.irrad
+##       &lt;dbl&gt;     &lt;dbl&gt;
+##  1      300 0.000299 
+##  2      302 0.000205 
+##  3      304 0.000354 
+##  4      306 0.0000757
+##  5      308 0.000292 
+##  6      310 0.000247 
+##  7      312 0.000239 
+##  8      314 0.000330 
+##  9      316 0.000320 
+## 10      318 0.000155 
+## # ... with 291 more rows
+## --- Member: osram.hqit.400w ---
+## Object: source_spct [301 x 2]
+## Wavelength range 300 to 900 nm, step 2 nm 
+## Label: File: Osram.HQIT.400W.PRN 
+## Measured on 0000-10-11 18:57:00 UTC 
+## Time unit 1s
+## Spectral data normalized to 1 at 592 nm 
+## 
+## # A tibble: 301 x 2
+##    w.length s.e.irrad
+##       &lt;dbl&gt;     &lt;dbl&gt;
+##  1      300  0.000382
+##  2      302  0.000641
+##  3      304  0.000615
+##  4      306  0.000761
+##  5      308  0.000795
+##  6      310  0.00102 
+##  7      312  0.00141 
+##  8      314  0.00162 
+##  9      316  0.00161 
+## 10      318  0.00170 
+## # ... with 291 more rows
+## 
+## --- END ---</code></pre>
 </div>
 <div id="calculating-summaries-from-the-normalized-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#calculating-summaries-from-the-normalized-data" class="anchor"></a>Calculating summaries from the normalized data</h2>
 <p>The spectra are normalized, and consequently, several summaries expressed in absolute units are undefined, and trigger errors. Summaries like ratios which are not affected by normalization are allowed and valid. The data have been normalized as the measuring conditions used are not all the same, and in many cases not well characterized (e.g. distance to nearby reflecting walls, or exact alignment of the spectrometer input optics with respect to light sources).</p>
 <p>What we will do in this section is to rescale the spectral data so that after conversion a given target value for a summary quantity will be true. As an example, we will rescale one spectrum so that it yields an energy irradiance of 100 W m-2 for the range 400 to 700 nm.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my.spct &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/photobiology/topics/fscale">fscale</a></span>(lamps.mspct<span class="op">$</span>incandescent.60w,
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my.spct &lt;-<span class="st"> </span><span class="kw">fscale</span>(lamps.mspct<span class="op">$</span>incandescent.60w,
                   <span class="dt">range =</span> <span class="kw">c</span>(<span class="dv">400</span>, <span class="dv">700</span>),
                   e_irrad,
                   <span class="dt">target =</span> <span class="dv">100</span>
                   )
-<span class="kw"><a href="http://www.rdocumentation.org/packages/photobiology/topics/e_irrad">e_irrad</a></span>(my.spct, <span class="kw"><a href="http://www.rdocumentation.org/packages/photobiology/topics/waveband">waveband</a></span>(<span class="kw">c</span>(<span class="dv">400</span>,<span class="dv">700</span>)))</code></pre></div>
+<span class="kw">e_irrad</span>(my.spct, <span class="kw">waveband</span>(<span class="kw">c</span>(<span class="dv">400</span>,<span class="dv">700</span>)))</code></pre></div>
 <pre><code>## Warning in irrad_spct(spct, w.band = w.band, unit.out = "energy", quantity
 ## = quantity, : Summarized spectral data have been rescaled</code></pre>
 <pre><code>##  range.400.700 
@@ -383,8 +449,8 @@
 ## [1] "second"
 ## attr(,"radiation.unit")
 ## [1] "energy irradiance total"</code></pre>
-<p>If we want to treat the rescaled spectral data, as if they were true readings with no scaling we can reset the attribute with method <code><a href="http://www.rdocumentation.org/packages/photobiology/topics/setScaled">setScaled()</a></code>. With method <code><a href="http://www.rdocumentation.org/packages/photobiology/topics/getScaled">getScaled()</a></code> we can test if a spectrun has been scaled.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/photobiology/topics/getScaled">getScaled</a></span>(my.spct)</code></pre></div>
+<p>If we want to treat the rescaled spectral data, as if they were true readings with no scaling we can reset the attribute with method <code>setScaled()</code>. With method <code>getScaled()</code> we can test if a spectrun has been scaled.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">getScaled</span>(my.spct)</code></pre></div>
 <pre><code>## $multiplier
 ## [1] 1.293194
 ## 
@@ -396,13 +462,13 @@
 ## 
 ## $target
 ## [1] 100</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/photobiology/topics/setScaled">setScaled</a></span>(my.spct)
-<span class="kw"><a href="http://www.rdocumentation.org/packages/photobiology/topics/getScaled">getScaled</a></span>(my.spct)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setScaled</span>(my.spct)
+<span class="kw">getScaled</span>(my.spct)</code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p>If for some obscure reason we want to simply “pretend” that the spectral data have not been normalized, we can permanently override the attribute on a copy of the data. Most of the time this is a very bad idea!</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my.lamp &lt;-<span class="st"> </span>lamps.mspct<span class="op">$</span>incandescent.60w
-<span class="kw"><a href="http://www.rdocumentation.org/packages/photobiology/topics/setNormalized">setNormalized</a></span>(my.lamp)
-<span class="kw"><a href="http://www.rdocumentation.org/packages/photobiology/topics/e_irrad">e_irrad</a></span>(my.lamp)</code></pre></div>
+<span class="kw">setNormalized</span>(my.lamp)
+<span class="kw">e_irrad</span>(my.lamp)</code></pre></div>
 <pre><code>##    Total 
 ## 247.1079 
 ## attr(,"time.unit")
@@ -410,11 +476,25 @@
 ## attr(,"radiation.unit")
 ## [1] "energy irradiance total"</code></pre>
 <p>As mentioned above, ratios can be calculated directly as they are not affected by normalization.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/photobiology/topics/q_ratio">q_ratio</a></span>(lamps.mspct<span class="op">$</span>incandescent.60w, <span class="kw"><a href="http://www.rdocumentation.org/packages/photobiologyWavebands/topics/Red">Red</a></span>(<span class="st">"Smith10"</span>), <span class="kw"><a href="http://www.rdocumentation.org/packages/photobiologyWavebands/topics/Far_red">Far_red</a></span>(<span class="st">"Smith10"</span>))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">q_ratio</span>(lamps.mspct<span class="op">$</span>incandescent.60w, <span class="kw">Red</span>(<span class="st">"Smith10"</span>), <span class="kw">Far_red</span>(<span class="st">"Smith10"</span>))</code></pre></div>
 <pre><code>##  Red.Smith10: FarRed.Smith10(q:q) 
 ##                         0.6606633 
 ## attr(,"radiation.unit")
 ## [1] "q:q ratio"</code></pre>
+</div>
+<div id="plotting-the-spectra" class="section level2">
+<h2 class="hasAnchor">
+<a href="#plotting-the-spectra" class="anchor"></a>Plotting the spectra</h2>
+<p>Using <code>plot()</code> methods for spectra defined in package ‘ggspectra’ annotated plotting is automatic. The defaults can be easily changed, please see the documentation in package ‘ggspectra’.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(lamps.mspct<span class="op">$</span>ww_led_bulb)</code></pre></div>
+<p><img src="user-guide_files/figure-html/unnamed-chunk-15-1.png" width="768"></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(ledsavers.mspct<span class="op">$</span>purple)</code></pre></div>
+<p><img src="user-guide_files/figure-html/unnamed-chunk-16-1.png" width="768"></p>
+<p>Using the <code>ggplot()</code> method for spectra from package ‘ggspectra’ plus <em>geometries</em> and <em>statistics</em> from package ‘ggplot2’ we gain additional control on the design.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(ledsavers.mspct<span class="op">$</span>purple) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">linetype =</span> <span class="st">"dashed"</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_classic</span>()</code></pre></div>
+<p><img src="user-guide_files/figure-html/unnamed-chunk-17-1.png" width="768"></p>
 </div>
 <div id="using-the-data-in-other-contexts" class="section level2">
 <h2 class="hasAnchor">
@@ -430,17 +510,17 @@
 ## 6      305 0.0008253680</code></pre>
 <p>Of course <code>attach</code> and <code>with</code> also work as expected.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attach</span>(lamps.mspct)
-<span class="kw"><a href="http://www.rdocumentation.org/packages/photobiology/topics/q_ratio">q_ratio</a></span>(incandescent.60w, <span class="kw"><a href="http://www.rdocumentation.org/packages/photobiologyWavebands/topics/Blue">Blue</a></span>(), <span class="kw"><a href="http://www.rdocumentation.org/packages/photobiologyWavebands/topics/Red">Red</a></span>())</code></pre></div>
+<span class="kw">q_ratio</span>(incandescent.60w, <span class="kw">Blue</span>(), <span class="kw">Red</span>())</code></pre></div>
 <pre><code>##  Blue.ISO: Red.ISO(q:q) 
 ##              0.03251342 
 ## attr(,"radiation.unit")
 ## [1] "q:q ratio"</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">detach</span>(lamps.mspct)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attach</span>(lamps.mspct)
-<span class="kw">with</span>(incandescent.60w, <span class="kw"><a href="http://www.rdocumentation.org/packages/photobiology/topics/max">max</a></span>(w.length))</code></pre></div>
+<span class="kw">with</span>(incandescent.60w, <span class="kw">max</span>(w.length))</code></pre></div>
 <pre><code>## [1] 900</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">detach</span>(lamps.mspct)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(lamps.mspct, <span class="kw"><a href="http://www.rdocumentation.org/packages/photobiology/topics/q_ratio">q_ratio</a></span>(incandescent.60w, <span class="kw"><a href="http://www.rdocumentation.org/packages/photobiologyWavebands/topics/Blue">Blue</a></span>(), <span class="kw"><a href="http://www.rdocumentation.org/packages/photobiologyWavebands/topics/Red">Red</a></span>()))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(lamps.mspct, <span class="kw">q_ratio</span>(incandescent.60w, <span class="kw">Blue</span>(), <span class="kw">Red</span>()))</code></pre></div>
 <pre><code>##  Blue.ISO: Red.ISO(q:q) 
 ##              0.03251342 
 ## attr(,"radiation.unit")
@@ -458,6 +538,7 @@
       <li><a href="#accessing-individual-spectra">Accessing individual spectra</a></li>
       <li><a href="#accessing-subsets-of-spectra">Accessing subsets of spectra</a></li>
       <li><a href="#calculating-summaries-from-the-normalized-data">Calculating summaries from the normalized data</a></li>
+      <li><a href="#plotting-the-spectra">Plotting the spectra</a></li>
       <li><a href="#using-the-data-in-other-contexts">Using the data in other contexts</a></li>
       </ul>
 </div>

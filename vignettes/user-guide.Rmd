@@ -12,20 +12,40 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r}
+```{r, echo=FALSE}
 knitr::opts_chunk$set(fig.width=8, fig.height=4)
 ```
 
-```{r}
-library(photobiology)
-library(photobiologyWavebands)
-library(photobiologyLamps)
-```
 
 ## Introduction
 
-In this very brief User Guide we describe how to re-scale the normalized
+This package, is a data only package, part of a suite, which has package 
+'photobiology' at its core. Please visit (http://www.r4photobiology.info/) 
+for more details. For more details on plotting spectra, please consult the 
+documentation for package 'ggspectra', and for information on the calculation 
+of summaries and maths operations between spectra, please, consult the 
+documentation for package 'photobiology'.
+
+```{r, message=FALSE}
+library(photobiology)
+library(photobiologyWavebands)
+library(photobiologyLamps)
+library(ggplot2)
+library(ggspectra)
+```
+
+In this brief User Guide we describe how to re-scale the normalized
 spectra, and how to access individual spectra or subsets of spectra.
+
+Spectra in the package are contained in three collections: `lamps.mspct` contains
+spectral data for various types of lamps emiiting a fixed color of light; `ledsavers.mspct` contains spectral data for a LED bulb with four color
+channels allowing it to output 16 different _colors_ of light; 
+`qp_uvb313_temp.mspct` contains spectral data for UV lamps under seven
+different temperatures. In addition `qp_uvb313_temp.spct` contains the same
+data in a single spectral object.
+
+In addtion to the objects containing the data itself, several character vectors 
+of names of spectra are provide to facilitate the retrieval of subsets of spectra.
 
 ## Accessing individual spectra
 
@@ -83,6 +103,13 @@ More generaly one can search for matching names within the collection of spectra
 lamps.mspct[grep("osram", names(lamps.mspct))]
 ```
 
+Set algebra operations can be used with the indexing vectors as each vector
+describes a single property: color, brand, type, etc.
+
+```{r}
+lamps.mspct[intersect(osram_lamps, white_lamps)]
+```
+
 ## Calculating summaries from the normalized data
 
 The spectra are normalized, and consequently, several summaries expressed in
@@ -131,6 +158,28 @@ by normalization.
 
 ```{r}
 q_ratio(lamps.mspct$incandescent.60w, Red("Smith10"), Far_red("Smith10"))
+```
+
+## Plotting the spectra
+
+Using `plot()` methods for spectra defined in package 'ggspectra' annotated plotting is automatic. The defaults can be easily changed, please see the documentation
+in package 'ggspectra'.
+
+```{r}
+plot(lamps.mspct$ww_led_bulb)
+```
+
+```{r}
+plot(ledsavers.mspct$purple)
+```
+
+Using the `ggplot()` method for spectra from package 'ggspectra' plus _geometries_
+and _statistics_ from package 'ggplot2' we gain additional control on the design.
+
+```{r}
+ggplot(ledsavers.mspct$purple) +
+  geom_line(linetype = "dashed") +
+  theme_classic()
 ```
 
 ## Using the data in other contexts

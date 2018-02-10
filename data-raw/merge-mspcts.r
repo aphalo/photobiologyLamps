@@ -24,7 +24,7 @@ blue_lamps <- "philips.tld36w.18"
 white_lamps <- c("philips.pls11w.827", "philips.tld36w.83", "philips.tld36w.865",
                  "philips.tld36w.89",  "philips.tld36w.92",  "philips.tll36w.950",
                  "sylvania.215w.vho", 
-                 "incandescent.60w", "osram.36w.25", "osram.hqit.400w")
+                 "incandescent.60w", "osram.36w.25", "osram.hqit.400w", "ww_led_bulb")
 ## test vectors
 color_idxs <- unique(c(uv_lamps, amber_lamps, red_lamps, blue_lamps, white_lamps))
 stopifnot(all(color_idxs %in% names(lamps.mspct)))
@@ -37,7 +37,8 @@ mercury_lamps <- c("philips.pls11w.827", "philips.tld36w.83", "philips.tld36w.86
                    "sylvania.215w.vho", "osram.36w.25", 
                    "germicidal", "philips.tl01", "philips.tl12", "philips.tl12.mc",
                    "qpanel.uva340", "qpanel.uvb313", "philips.tld36w.15", "philips.tld36w.18")
-led_lamps <- NULL
+led_lamps <- "ww_led_bulb"
+
 ## test vectors
 type_idxs <- unique(c(sodium_lamps, incandescent_lamps, multimetal_lamps, mercury_lamps))
 stopifnot(all(type_idxs %in% names(lamps.mspct)))
