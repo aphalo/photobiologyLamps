@@ -1,0 +1,34 @@
+reference:
+  - title: Package overview
+    contents:
+    - "photobiologyLamps-package"
+  - title: Spectra
+    contents:
+    - lamps.mspct
+    - qp_uvb313_temp.spct
+    - qp_uvb313_temp.mspct
+  - title: Indexing vectors by color
+    contents:
+    - uv_lamps
+    - red_lamps
+    - blue_lamps
+    - amber_lamps
+    - white_lamps
+  - title: Indexing vectors by manufacturer or supplier
+    contents:
+    - osram_lamps
+    - philips_lamps
+    - sylvania_lamps
+    - qpanel_lamps
+  - title: Indexing vectors by spectrometer
+    contents:
+    - macam_lamps
+    - bentham_lamps
+    - licor_lamps
+    - oo_maya_lamps
+
+articles:
+  - title: Vignettes
+    contents:
+    - '`user-guide`'
+    - '`data-catalogue`'

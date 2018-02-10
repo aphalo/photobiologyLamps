@@ -11,8 +11,10 @@
 #'
 #' @note Please see the help corresponding to each instrument for details.
 #'
-#' @seealso \code{\link{bentham}}, \code{\link{licor}}, \code{\link{macam}},
-#'   \code{\link{oo_maya}}
+#' @seealso \code{\link{bentham_lamps}}, \code{\link{licor_lamps}}, \code{\link{macam_lamps}},
+#'   \code{\link{oo_maya_lamps}} for information on the spectroradiometers, and
+#'   \code{\link[photobiologyLEDs]{photobiologyLEDs}} for spectra for LEDs available
+#'   as electronic components.
 #'
 #' @docType data
 #' @keywords datasets
@@ -21,4 +23,5 @@
 #'
 #' @examples
 #' lamps.mspct$qpanel.uvb313
+#' 
 "lamps.mspct"

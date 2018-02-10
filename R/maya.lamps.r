@@ -1,18 +1,12 @@
 #' @title Spectra acquired with Ocean Optics Maya2000 Pro
 #'
-#' @description Dataset containing the wavelengths and tabulated values spectral
-#'   emittance for a germicidal lamp. This lamps are low pressure mercury
-#'   discharge lamps lacking a phosphor in their envelope, and clearly showing
-#'   the emission lines of mercury. They are used for disinfection. Absolute
-#'   spectral irradiance values are not meaningful as the distance was not
-#'   measured. In this case the measurement was on the working surface of a
-#'   laboratory hood, using its built-in lamp.
+#' @description Spectra measured with a Ocean Optics Maya2000 Pro spectroradiometer. Datasets
+#' contain wavelengths at variable intervals and corresponding values for spectral
+#' emittance from different lamps. Absolute values are not meaningful because
+#' data have been normalized to one at the wavelength of maximum energy irradiance.
 #'
-#' @details \code{oo_maaya} is a character vector with indexes to members of 
-#'   \code{\link{lamps.mspct}}: germicidal
-#'
-#' The variables in each member spectrum are as follows: \itemize{ \item
-#' w.length (nm) \item s.e.irrad (relative energy based units) }
+#' @details \code{oo_maya_lamps} is a character vector with indexes to members of 
+#'   \code{\link{lamps.mspct}}
 #'
 #' @note Instrument used: Ocean Optics Maya2000 Pro single-monochromator array
 #'   spectroradiometer with a Bentham cosine corrected input optics. A complex
@@ -26,9 +20,6 @@
 #' @format A vector of character strings.
 #'
 #' @examples
-#' lamps.mspct[oo_maya]
-#' lamps.mspct[["germicidal"]]
-#' lamps.mspct$germicidal
-#'
-#' @aliases germicidal
-"oo_maya"
+#' oo_maya_lamps
+#' 
+"oo_maya_lamps"

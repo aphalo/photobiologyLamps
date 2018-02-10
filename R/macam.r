@@ -1,15 +1,10 @@
 #' @title Spectra acquired with Macam SR-9010-PC
 #'
-#' @description A collection of lamp emission spectra measured with a Macam
+#' @description Lamp emission spectra measured with a Macam
 #'   SR-9010-PC spectroradiometer.
 #'
-#' @details \code{macam} is a character vector with indexes to members of 
-#'   \code{\link{lamps.mspct}} with spectral emission data for Q-Panel UVB-313
-#'   and UVA-340 40W fluorescent tubes, and for Philips TL12 40W fluorescent
-#'   tubes.
-#'
-#'   The variables in each member spectrum are as follows: \itemize{ \item
-#'   w.length (nm) \item s.e.irrad (relative energy based units) }
+#' @details \code{macam_lamps} is a character vector with indexes to members of 
+#'   \code{\link{lamps.mspct}}.
 #'
 #' @note Instrument used: Macam SR-9010-PC scanning double monochromator
 #'   spectroradiometer with a cosine corrected input optics. Recently
@@ -24,11 +19,8 @@
 #' @docType data
 #' @keywords datasets
 #' @format A vector of character strings.
-#' @aliases qpanel.uvb313 qpanel.uva340 philips.tl12.mc
 #' 
 #' @examples
-#' lamps.mspct[macam]
-#' lamps.mspct[["qpanel.uvb313"]]
-#' lamps.mspct$qpanel.uvb313
+#' macam_lamps
 #' 
-"macam"
+"macam_lamps"

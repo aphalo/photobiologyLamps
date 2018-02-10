@@ -1,5 +1,6 @@
 ---
-title: "`photobiologyLamps` `r packageVersion('photobiologyLamps')`<br>Data Catalogue"
+title: "Data Catalogue"
+subtitle: "Package 'photobiologyLamps' `r packageVersion('photobiologyLamps')` "
 author: "Pedro J. Aphalo"
 date: "`r Sys.Date()`"
 output: 

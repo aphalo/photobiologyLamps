@@ -3,3 +3,5 @@
 ^data-raw/
 ^\.git/
 ^\.gitignore
+^docs$
+^_pkgdown\.yml$

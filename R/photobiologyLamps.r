@@ -47,6 +47,6 @@
 #' # using one spectrum in a calculation
 #' q_ratio(lamps.mspct$incandescent.60w, Blue(), Green())
 #' # extracting all the spectra measured with a given instrument
-#' lamps.mspct[bentham]
+#' lamps.mspct[bentham_lamps]
 #'
 "_PACKAGE"
