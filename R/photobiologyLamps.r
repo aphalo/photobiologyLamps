@@ -1,22 +1,26 @@
-#' @details
-#' This package contains emission spectra for different types of lamps other
-#' than LEDs. Measured with an assortment of different instruments over more
-#' than 20 years in our lab or by collaborators. Some of the lamp types are no
-#' longer in production but the data are relevant for the interpretation of old
-#' scientific publications. Data for lamps emitting in the UV and VIS regions of
-#' the spectrum are represented in these data sets. In addition a set of
-#' spectral emission for UVB lamps exposed to different ambient temperatures is
-#' include.
+#' @details This package contains emission spectra for different types of lamps
+#' including LED lamps sold as fully assembled light bulbs or luminaires but
+#' excluding LEDs sold as components requiring separate electronic driver
+#' modules or circuits. Lamps have been measured with an assortment of different
+#' instruments over more than 25 years in our lab or by collaborators. Some of
+#' the lamp types are no longer in production but the data are relevant for the
+#' interpretation of old scientific publications. Data for lamps emitting in the
+#' UV and VIS regions of the spectrum are represented in these data sets. In
+#' addition a set of spectral emission for UVB lamps exposed to different
+#' ambient temperatures is include.
 #'
-#' The package contains one collection of spectra for different lamps all of
+#' The package contains two collections of spectra for different lamps all of
 #' them measured at air temperatures between 20 C and 25 C and a series of
 #' vectors to be used as indexes to extract different subsets of spectra. These
 #' spectral data are normalized to spectral energy irradiance equal one at
 #' their maximum (strongest emission peak).
 #'
-#' The temperature response data is included as a separate collection of
+#' Temperature response data is included as a separate collection of
 #' spectra both as a \code{source_mspct} object and as a \code{source_spct}
 #' object.
+#' 
+#' A third collection of spectra contains data for the 16 different _colors_ of 
+#' light emitted by a household four channel LED bulb.
 #'
 #' @section Warning!:
 #' None of the spectral data included in this package are based on supplier's

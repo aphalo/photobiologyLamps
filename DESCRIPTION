@@ -1,6 +1,6 @@
 Package: photobiologyLamps
 Type: Package
-Title: Spectral Data of Light Emission by Lamps
+Title: Spectral Irradiance Data for Lamps
 Version: 0.4.1.9001
 Date: 2018-02-10
 Authors@R:
