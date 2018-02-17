@@ -24,14 +24,14 @@
 "uv_lamps"
 
 #' @rdname uv_lamps
-"amber_lamps"
+"white_lamps"
 
 #' @rdname uv_lamps
 "blue_lamps"
 
 #' @rdname uv_lamps
-"red_lamps"
+"amber_lamps"
 
 #' @rdname uv_lamps
-"white_lamps"
+"red_lamps"
 

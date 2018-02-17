@@ -11,28 +11,23 @@ reference:
   - title: Indexing vectors by color
     contents:
     - uv_lamps
-    - red_lamps
-    - blue_lamps
-    - amber_lamps
-    - white_lamps
   - title: Indexing vectors by type of lamp
     contents:
     - incandescent_lamps
-    - sodium_lamps
-    - mercury_lamps
-    - multimetal_lamps
-    - led_lamps
   - title: Indexing vectors by manufacturer or supplier
     contents:
+    - airam_lamps
+    - generic_lamps
     - osram_lamps
     - philips_lamps
-    - sylvania_lamps
     - qpanel_lamps
+    - sylvania_lamps
+    - toshiba_lamps
   - title: Indexing vectors by spectrometer
     contents:
-    - macam_lamps
     - bentham_lamps
     - licor_lamps
+    - macam_lamps
     - oo_maya_lamps
 
 articles:

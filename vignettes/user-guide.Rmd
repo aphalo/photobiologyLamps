@@ -94,20 +94,20 @@ And below we use a computed one. In this case we extract the member spectra
 with names containing the string "osram".
 
 ```{r}
-lamps.mspct[osram_lamps]
+lamps.mspct[toshiba_lamps]
 ```
 
 More generaly one can search for matching names within the collection of spectra.
 
 ```{r}
-lamps.mspct[grep("osram", names(lamps.mspct))]
+lamps.mspct[grep("toshiba", names(lamps.mspct))]
 ```
 
 Set algebra operations can be used with the indexing vectors as each vector
 describes a single property: color, brand, type, etc.
 
 ```{r}
-lamps.mspct[intersect(osram_lamps, white_lamps)]
+lamps.mspct[intersect(philips_lamps, red_lamps)]
 ```
 
 ## Calculating summaries from the normalized data
@@ -139,8 +139,6 @@ method `getScaled()` we can test if a spectrun has been scaled.
 
 ```{r}
 getScaled(my.spct)
-setScaled(my.spct)
-getScaled(my.spct)
 ```
 
 If for some obscure reason we want to simply "pretend" that the spectral data
@@ -166,7 +164,7 @@ Using `plot()` methods for spectra defined in package 'ggspectra' annotated plot
 in package 'ggspectra'.
 
 ```{r}
-plot(lamps.mspct$ww_led_bulb)
+plot(lamps.mspct$osram.led.8w.2700k)
 ```
 
 ```{r}

@@ -2,16 +2,42 @@ rm(list = ls(pattern = "*"))
 
 library(photobiology)
 
-load("./data-raw/Maya/germicidal.spct.rda")
-load("./data-raw/Maya/test_led_desk01.spct.Rda")
+file.names <- list.files("./data-raw/Maya", "spct.Rda|spct.rda", full.names = TRUE)
 
-trimInstrDesc(test_led_desk01.spct)
-setWhatMeasured(test_led_desk01.spct, "Warm white LED bulb, x W, 230 V, E-27")
+for (f in file.names) {
+  load(f, verbose = TRUE)
+}
+rm(f)
+rm(file.names)
+rm(list = ls(pattern = ".raw_mspct"))
 
-oo_maya.mspct <- normalize(source_mspct(list(germicidal = germicidal.spct,
-                                             ww_led_bulb = test_led_desk01.spct)))
+setWhatMeasured(test_led_desk01.spct, "Osram Warm white LED bulb, 8W 230V 2700K E27")
 
-save(oo_maya.mspct, file="./data-raw/oo-maya-mspct.rda")
+# Renaming
+Valoya_B100_AP67.spct <- Valoya.AP67.no.filter.210mm.100pc.spct
+Osram_LED_8W_2700K.spct <- test_led_desk01.spct
+Airam_LED_Oiva_9W_3000K.spct <- Airam_LED_Oiva_3000K_9W.spct
+Osram_L36W_840.spct <- L36W.840.spct
+Philips_TLD_36W_18.spct <- TLD.36W.18.spct
+Pirkka_Halogen_53W_E27.spct <- Halogen_53W_E27_Pirkka.spct
 
-tools::resaveRdaFiles("data", compress="auto")
-print(tools::checkRdaFiles("data"))
+rm(Valoya.AP67.no.filter.210mm.100pc.spct, 
+   test_led_desk01.spct,
+   Airam_LED_Oiva_3000K_9W.spct,
+   L36W.840.spct,
+   TLD.36W.18.spct,
+   Halogen_53W_E27_Pirkka.spct)
+
+object.names <- ls(pattern = ".spct")
+
+oo_maya.mspct <- list()
+for (o in object.names) {
+  oo_maya.mspct[[tolower(gsub(".spct|.lfd|.E27", "", gsub("_", ".", o)))]] <- trimInstrDesc(get(o))
+}
+rm(o)
+
+oo_maya.mspct <- normalize(clean(source_mspct(oo_maya.mspct)))
+
+names(oo_maya.mspct)
+
+save(oo_maya.mspct, file = "data-raw/oo-maya-mspct.rda")

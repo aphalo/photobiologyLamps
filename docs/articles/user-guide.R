@@ -42,8 +42,6 @@ e_irrad(my.spct, waveband(c(400,700)))
 
 ## ------------------------------------------------------------------------
 getScaled(my.spct)
-setScaled(my.spct)
-getScaled(my.spct)
 
 ## ------------------------------------------------------------------------
 my.lamp <- lamps.mspct$incandescent.60w
@@ -54,7 +52,7 @@ e_irrad(my.lamp)
 q_ratio(lamps.mspct$incandescent.60w, Red("Smith10"), Far_red("Smith10"))
 
 ## ------------------------------------------------------------------------
-plot(lamps.mspct$ww_led_bulb)
+plot(lamps.mspct$osram.led.8w.2700k)
 
 ## ------------------------------------------------------------------------
 plot(ledsavers.mspct$purple)

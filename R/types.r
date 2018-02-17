@@ -31,7 +31,7 @@
 "incandescent_lamps"
 
 #' @rdname incandescent_lamps
-"sodium_lamps"
+"led_lamps"
 
 #' @rdname incandescent_lamps
 "mercury_lamps"
@@ -40,5 +40,4 @@
 "multimetal_lamps"
 
 #' @rdname incandescent_lamps
-"led_lamps"
-
+"sodium_lamps"

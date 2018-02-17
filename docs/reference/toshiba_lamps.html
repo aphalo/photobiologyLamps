@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Spectral data for Lamps of different types — incandescent_lamps â€¢ photobiologyLamps</title>
+<title>Spectral data for lamps supplied by Toshiba — toshiba_lamps â€¢ photobiologyLamps</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -87,77 +87,36 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Spectral data for Lamps of different types</h1>
+    <h1>Spectral data for lamps supplied by Toshiba</h1>
     </div>
 
     
     <p>Names of datasets containing the wavelengths and tabulated values spectral emittance 
-for the lamps of different types.</p>
+for lamps from Toshiba. 
+Data are normalized to one at the wavelength of maximum emission.</p>
     
 
-    <pre class="usage"><span class='no'>incandescent_lamps</span>
-
-<span class='no'>led_lamps</span>
-
-<span class='no'>mercury_lamps</span>
-
-<span class='no'>multimetal_lamps</span>
-
-<span class='no'>sodium_lamps</span></pre>
+    <pre class="usage"><span class='no'>toshiba_lamps</span></pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>A vector of character strings.</p>
     
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>In the case of LED-based lamps we include here only ready built commercially 
-available lamps.
-In some cases assembled from multiple descrete LEDs, possible of mixed types and 
-spectral output. For emission spectra for LEDs available as electronic components
-please see <code><a href='http://www.rdocumentation.org/packages/photobiologyLEDs/topics/photobiologyLEDs-package'>photobiologyLEDs</a></code>.</p>
+    <p><a href='https://www.toshiba.eu/lighting/en'>https://www.toshiba.eu/lighting/en</a></p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <p><code><a href='lamps.mspct.html'>lamps.mspct</a></code></p>
+<p>Other manufacturers: <code><a href='airam_lamps.html'>airam_lamps</a></code>,
+  <code><a href='generic_lamps.html'>generic_lamps</a></code>, <code><a href='osram_lamps.html'>osram_lamps</a></code>,
+  <code><a href='philips_lamps.html'>philips_lamps</a></code>, <code><a href='qpanel_lamps.html'>qpanel_lamps</a></code>,
+  <code><a href='sylvania_lamps.html'>sylvania_lamps</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>sodium_lamps</span></div><div class='output co'>#&gt; [1] "osram.super.vialox"</div><div class='input'><span class='no'>multimetal_lamps</span></div><div class='output co'>#&gt; [1] "osram.hqit.400w"</div><div class='input'><span class='no'>mercury_lamps</span></div><div class='output co'>#&gt;  [1] "airam.cf.15w.2700k"    "airam.spiraali"        "germicidal"           
-#&gt;  [4] "osram.36w.25"          "osram.l36w.840"        "philips.pls11w.827"   
-#&gt;  [7] "philips.tl01"          "philips.tl12"          "philips.tl12.mc"      
-#&gt; [10] "philips.tl5.35w.830he" "philips.tld.36w.18"    "philips.tld36w.15"    
-#&gt; [13] "philips.tld36w.18"     "philips.tld36w.83"     "philips.tld36w.865"   
-#&gt; [16] "philips.tld36w.89"     "philips.tld36w.92"     "philips.tll36w.950"   
-#&gt; [19] "qpanel.uva340"         "qpanel.uvb313"         "sylvania.215w.vho"    </div><div class='input'><span class='no'>led_lamps</span></div><div class='output co'>#&gt; [1] "airam.led.oiva.9w.3000k"         "osram.led.10w.2700k.classicstar"
-#&gt; [3] "osram.led.8w.2700k"              "toshiba.led.9.5w.2700k"         
-#&gt; [5] "valoya.b100.ap67"               </div><div class='input'>
-<span class='co'># select lamps emitting in the amber, yellow, orange region</span>
-<span class='no'>lamps.mspct</span>[<span class='no'>sodium_lamps</span>]</div><div class='output co'>#&gt; Object: source_mspct [1 x 1]
-#&gt; --- Member: osram.super.vialox ---
-#&gt; Object: source_spct [301 x 2]
-#&gt; Wavelength range 300 to 900 nm, step 2 nm 
-#&gt; Label: File: Osram.Super.Vialox.PRN 
-#&gt; Measured on 0000-10-17 13:54:00 UTC 
-#&gt; Time unit 1s
-#&gt; Spectral data normalized to 1 at 820 nm 
-#&gt; 
-#&gt; # A tibble: 301 x 2
-#&gt;    w.length s.e.irrad
-#&gt;       &lt;dbl&gt;     &lt;dbl&gt;
-#&gt;  1      300  0.000235
-#&gt;  2      302  0.000196
-#&gt;  3      304  0.000237
-#&gt;  4      306  0.000378
-#&gt;  5      308  0.000553
-#&gt;  6      310  0.000902
-#&gt;  7      312  0.00139 
-#&gt;  8      314  0.00198 
-#&gt;  9      316  0.00270 
-#&gt; 10      318  0.00348 
-#&gt; # ... with 291 more rows
-#&gt; 
-#&gt; --- END ---</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='no'>toshiba_lamps</span></div><div class='output co'>#&gt; [1] "toshiba.led.9.5w.2700k"</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -166,7 +125,7 @@ please see <code><a href='http://www.rdocumentation.org/packages/photobiologyLED
       
       <li><a href="#format">Format</a></li>
 
-      <li><a href="#note">Note</a></li>
+      <li><a href="#references">References</a></li>
 
       <li><a href="#see-also">See also</a></li>
       

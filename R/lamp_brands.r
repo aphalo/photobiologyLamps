@@ -81,3 +81,64 @@
 #' @family manufacturers
 #' 
 "qpanel_lamps"
+
+#' Spectral data for lamps supplied by Airam
+#' 
+#' Names of datasets containing the wavelengths and tabulated values spectral emittance 
+#' for lamps from Airam Electric Oy Ab. 
+#' Data are normalized to one at the wavelength of maximum emission.
+#' 
+#' @docType data
+#' @keywords datasets
+#' @format A vector of character strings.
+#' 
+#' @examples 
+#' osram_lamps
+#' 
+#' @references \url{https://www.airam.fi/en/}
+#' 
+#' @seealso \code{\link{lamps.mspct}}
+#' 
+#' @family manufacturers
+#' 
+"airam_lamps"
+
+#' Spectral data for lamps supplied by Toshiba
+#' 
+#' Names of datasets containing the wavelengths and tabulated values spectral emittance 
+#' for lamps from Toshiba. 
+#' Data are normalized to one at the wavelength of maximum emission.
+#' 
+#' @docType data
+#' @keywords datasets
+#' @format A vector of character strings.
+#' 
+#' @examples 
+#' toshiba_lamps
+#' 
+#' @references \url{https://www.toshiba.eu/lighting/en}
+#' 
+#' @seealso \code{\link{lamps.mspct}}
+#' 
+#' @family manufacturers
+#' 
+"toshiba_lamps"
+
+#' Spectral data for shop-branded lamps 
+#' 
+#' Names of datasets containing the wavelengths and tabulated values spectral emittance 
+#' for lamps from Toshiba. 
+#' Data are normalized to one at the wavelength of maximum emission.
+#' 
+#' @docType data
+#' @keywords datasets
+#' @format A vector of character strings.
+#' 
+#' @examples 
+#' generic_lamps
+#' 
+#' @seealso \code{\link{lamps.mspct}}
+#' 
+#' @family manufacturers
+#' 
+"generic_lamps"

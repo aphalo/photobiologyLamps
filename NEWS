@@ -1,9 +1,9 @@
 photobiologyLamps 0.4.2 
 ========================
 
-Add data for a warm-white LED bulb and for a four-channel WRGB LED bulb.
+Add data for several single-colour lamps and for a four-channel WRGB LED bulb.
 Add indexing vectors and rename some of the existing ones.
-Update documentation and vignettes.
+Update documentation and vignette.
 
 photobiologyLamps 0.4.1  (first CRAN release)
 ========================
