@@ -1,7 +1,8 @@
 photobiologyLamps 0.4.2 
 ========================
 
-Add data for several single-colour lamps and for a four-channel WRGB LED bulb.
+Add data for several fixed-spectrum lamps and for a variable spectrum 
+four-channel WRGB LED bulb.
 Add indexing vectors and rename some of the existing ones.
 Update documentation and vignette.
 

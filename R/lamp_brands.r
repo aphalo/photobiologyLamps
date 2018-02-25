@@ -124,6 +124,48 @@
 #' 
 "toshiba_lamps"
 
+#' Spectral data for lamps supplied by Aputure
+#' 
+#' Names of datasets containing the wavelengths and tabulated values spectral emittance 
+#' for photography and video lamps from Aputure. 
+#' Data are normalized to one at the wavelength of maximum emission.
+#' 
+#' @docType data
+#' @keywords datasets
+#' @format A vector of character strings.
+#' 
+#' @examples 
+#' aputure_lamps
+#' 
+#' @references \url{https://www.aputure.com/}
+#' 
+#' @seealso \code{\link{lamps.mspct}}
+#' 
+#' @family manufacturers
+#' 
+"aputure_lamps"
+
+#' Spectral data for lamps supplied by Valoya
+#' 
+#' Names of datasets containing the wavelengths and tabulated values spectral emittance 
+#' for photography and video lamps from Valoya 
+#' Data are normalized to one at the wavelength of maximum emission.
+#' 
+#' @docType data
+#' @keywords datasets
+#' @format A vector of character strings.
+#' 
+#' @examples 
+#' valoya_lamps
+#' 
+#' @references \url{https://www.valoya.com/}
+#' 
+#' @seealso \code{\link{lamps.mspct}}
+#' 
+#' @family manufacturers
+#' 
+"valoya_lamps"
+
 #' Spectral data for shop-branded lamps 
 #' 
 #' Names of datasets containing the wavelengths and tabulated values spectral emittance 

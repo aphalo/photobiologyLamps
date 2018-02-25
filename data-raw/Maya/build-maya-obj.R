@@ -20,8 +20,12 @@ Airam_LED_Oiva_9W_3000K.spct <- Airam_LED_Oiva_3000K_9W.spct
 Osram_L36W_840.spct <- L36W.840.spct
 Philips_TLD_36W_18.spct <- TLD.36W.18.spct
 Pirkka_Halogen_53W_E27.spct <- Halogen_53W_E27_Pirkka.spct
+Amaran_AL_M9.spct <- Amaran.AL.M9.no1.spct
+Airam_LED_11W_4000K.spct <- Airam.LED.11W.4000K.spct
 
 rm(Valoya.AP67.no.filter.210mm.100pc.spct, 
+   Airam.LED.11W.4000K.spct,
+   Amaran.AL.M9.no1.spct,
    test_led_desk01.spct,
    Airam_LED_Oiva_3000K_9W.spct,
    L36W.840.spct,

@@ -17,12 +17,14 @@ reference:
   - title: Indexing vectors by manufacturer or supplier
     contents:
     - airam_lamps
+    - aputure_lamps
     - generic_lamps
     - osram_lamps
     - philips_lamps
     - qpanel_lamps
     - sylvania_lamps
     - toshiba_lamps
+    - valoya_lamps
   - title: Indexing vectors by spectrometer
     contents:
     - bentham_lamps

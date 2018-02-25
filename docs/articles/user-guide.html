@@ -66,7 +66,7 @@
             <h3 class="subtitle">Package ‘photobiologyLamps’ 0.4.1.9002</h3>
                         <h4 class="author">Pedro J. Aphalo</h4>
             
-            <h4 class="date">2018-02-17</h4>
+            <h4 class="date">2018-02-25</h4>
           </div>
 
     
@@ -99,13 +99,14 @@
 ## [13] "sylvania.215w.vho"               "qpanel.uvb313"                  
 ## [15] "qpanel.uva340"                   "philips.tl12.mc"                
 ## [17] "philips.tl01"                    "philips.tl12"                   
-## [19] "airam.cf.15w.2700k"              "airam.led.oiva.9w.3000k"        
-## [21] "airam.spiraali"                  "germicidal"                     
-## [23] "osram.classic.20w"               "osram.conc.spot.60w"            
-## [25] "osram.l36w.840"                  "osram.led.10w.2700k.classicstar"
-## [27] "osram.led.8w.2700k"              "philips.tl5.35w.830he"          
-## [29] "philips.tld.36w.18"              "pirkka.halogen.53w"             
-## [31] "toshiba.led.9.5w.2700k"          "valoya.b100.ap67"</code></pre>
+## [19] "airam.cf.15w.2700k"              "airam.led.11w.4000k"            
+## [21] "airam.led.oiva.9w.3000k"         "airam.spiraali"                 
+## [23] "amaran.al.m9"                    "germicidal"                     
+## [25] "osram.classic.20w"               "osram.conc.spot.60w"            
+## [27] "osram.l36w.840"                  "osram.led.10w.2700k.classicstar"
+## [29] "osram.led.8w.2700k"              "philips.tl5.35w.830he"          
+## [31] "philips.tld.36w.18"              "pirkka.halogen.53w"             
+## [33] "toshiba.led.9.5w.2700k"          "valoya.b100.ap67"</code></pre>
 <p>We can use a character string as index to extract an individual <code>source_spct</code> object.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lamps.mspct<span class="op">$</span>incandescent.60w</code></pre></div>
 <pre><code>## Object: source_spct [601 x 2]
@@ -248,524 +249,84 @@
 ## 
 ## --- END ---</code></pre>
 <p>And below we use a computed one. In this case we extract the member spectra with names containing the string “osram”.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lamps.mspct[osram_lamps]</code></pre></div>
-<pre><code>## Object: source_mspct [8 x 1]
-## --- Member: osram.36w.25 ---
-## Object: source_spct [301 x 2]
-## Wavelength range 300 to 900 nm, step 2 nm 
-## Label: File: Osram.36W.25.PRN 
-## Measured on 0000-06-09 09:00:00 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 436 nm 
-## 
-## # A tibble: 301 x 2
-##    w.length s.e.irrad
-##       &lt;dbl&gt;     &lt;dbl&gt;
-##  1      300 0.000299 
-##  2      302 0.000205 
-##  3      304 0.000354 
-##  4      306 0.0000757
-##  5      308 0.000292 
-##  6      310 0.000247 
-##  7      312 0.000239 
-##  8      314 0.000330 
-##  9      316 0.000320 
-## 10      318 0.000155 
-## # ... with 291 more rows
-## --- Member: osram.classic.20w ---
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lamps.mspct[toshiba_lamps]</code></pre></div>
+<pre><code>## Object: source_mspct [1 x 1]
+## --- Member: toshiba.led.9.5w.2700k ---
 ## Object: source_spct [1,421 x 2]
 ## Wavelength range 251.16 to 898.81 nm, step 0.43 to 0.48 nm 
-## Label: Osram_Classic_20W_E27_lfd 
-## Measured on 2018-02-12 09:39:40 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 897.07 nm 
-## 
-## # A tibble: 1,421 x 2
-##    w.length s.e.irrad
-##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251  0.00242 
-##  2      252  0       
-##  3      252  0.000884
-##  4      253  0.00169 
-##  5      253  0       
-##  6      254  0.00271 
-##  7      254  0.00405 
-##  8      254  0       
-##  9      255  0       
-## 10      255  0       
-## # ... with 1,411 more rows
-## --- Member: osram.conc.spot.60w ---
-## Object: source_spct [1,421 x 2]
-## Wavelength range 251.16 to 898.81 nm, step 0.43 to 0.48 nm 
-## Label: Osram_conc_spot_60W_E27 
-## Measured on 2018-02-12 09:35:21 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 897.07 nm 
-## 
-## # A tibble: 1,421 x 2
-##    w.length s.e.irrad
-##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251   0.00356
-##  2      252   0.00309
-##  3      252   0.00374
-##  4      253   0.00439
-##  5      253   0.00527
-##  6      254   0.00495
-##  7      254   0.00565
-##  8      254   0.00563
-##  9      255   0.00546
-## 10      255   0.00484
-## # ... with 1,411 more rows
-## --- Member: osram.hqit.400w ---
-## Object: source_spct [301 x 2]
-## Wavelength range 300 to 900 nm, step 2 nm 
-## Label: File: Osram.HQIT.400W.PRN 
-## Measured on 0000-10-11 18:57:00 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 592 nm 
-## 
-## # A tibble: 301 x 2
-##    w.length s.e.irrad
-##       &lt;dbl&gt;     &lt;dbl&gt;
-##  1      300  0.000382
-##  2      302  0.000641
-##  3      304  0.000615
-##  4      306  0.000761
-##  5      308  0.000795
-##  6      310  0.00102 
-##  7      312  0.00141 
-##  8      314  0.00162 
-##  9      316  0.00161 
-## 10      318  0.00170 
-## # ... with 291 more rows
-## --- Member: osram.l36w.840 ---
-## Object: source_spct [1,421 x 2]
-## Wavelength range 251.16 to 898.81 nm, step 0.43 to 0.48 nm 
-## Label: Osram L36W/840 Lumilux Cool White used 
-## Measured on 2018-02-16 14:50:10 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 611.35 nm 
-## 
-## # A tibble: 1,421 x 2
-##    w.length s.e.irrad
-##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251         0
-##  2      252         0
-##  3      252         0
-##  4      253         0
-##  5      253         0
-##  6      254         0
-##  7      254         0
-##  8      254         0
-##  9      255         0
-## 10      255         0
-## # ... with 1,411 more rows
-## --- Member: osram.led.10w.2700k.classicstar ---
-## Object: source_spct [1,421 x 2]
-## Wavelength range 251.16 to 898.81 nm, step 0.43 to 0.48 nm 
-## Label: Osram_LED_10W_2700K_ClassicStar 
-## Measured on 2018-02-12 09:11:32 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 612.72 nm 
-## 
-## # A tibble: 1,421 x 2
-##    w.length s.e.irrad
-##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251 0.0000352
-##  2      252 0.000957 
-##  3      252 0.000232 
-##  4      253 0.000592 
-##  5      253 0.000396 
-##  6      254 0.000826 
-##  7      254 0.000356 
-##  8      254 0.00135  
-##  9      255 0.000928 
-## 10      255 0.000492 
-## # ... with 1,411 more rows
-## --- Member: osram.led.8w.2700k ---
-## Object: source_spct [1,421 x 2]
-## Wavelength range 251.16 to 898.81 nm, step 0.43 to 0.48 nm 
-## Label: Osram Warm white LED bulb, 8W 230V 2700K E27 
-## Measured on 2017-10-02 07:40:27 UTC 
+## Label: Toshiba_LED_9.5W_2700K 
+## Measured on 2018-02-12 09:08:23 UTC 
 ## Time unit 1s
 ## Spectral data normalized to 1 at 607.26 nm 
 ## 
 ## # A tibble: 1,421 x 2
 ##    w.length s.e.irrad
 ##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251   0.00697
-##  2      252   0.00767
-##  3      252   0.00599
-##  4      253   0.00704
-##  5      253   0.00659
-##  6      254   0.00862
-##  7      254   0.00724
-##  8      254   0.00859
-##  9      255   0.00585
-## 10      255   0.00600
+##  1      251 0        
+##  2      252 0.000143 
+##  3      252 0.0000905
+##  4      253 0.000843 
+##  5      253 0.000690 
+##  6      254 0.00103  
+##  7      254 0.000695 
+##  8      254 0.000367 
+##  9      255 0.000765 
+## 10      255 0.000892 
 ## # ... with 1,411 more rows
-## --- Member: osram.super.vialox ---
-## Object: source_spct [301 x 2]
-## Wavelength range 300 to 900 nm, step 2 nm 
-## Label: File: Osram.Super.Vialox.PRN 
-## Measured on 0000-10-17 13:54:00 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 820 nm 
-## 
-## # A tibble: 301 x 2
-##    w.length s.e.irrad
-##       &lt;dbl&gt;     &lt;dbl&gt;
-##  1      300  0.000235
-##  2      302  0.000196
-##  3      304  0.000237
-##  4      306  0.000378
-##  5      308  0.000553
-##  6      310  0.000902
-##  7      312  0.00139 
-##  8      314  0.00198 
-##  9      316  0.00270 
-## 10      318  0.00348 
-## # ... with 291 more rows
 ## 
 ## --- END ---</code></pre>
 <p>More generaly one can search for matching names within the collection of spectra.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lamps.mspct[<span class="kw">grep</span>(<span class="st">"osram"</span>, <span class="kw">names</span>(lamps.mspct))]</code></pre></div>
-<pre><code>## Object: source_mspct [8 x 1]
-## --- Member: osram.36w.25 ---
-## Object: source_spct [301 x 2]
-## Wavelength range 300 to 900 nm, step 2 nm 
-## Label: File: Osram.36W.25.PRN 
-## Measured on 0000-06-09 09:00:00 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 436 nm 
-## 
-## # A tibble: 301 x 2
-##    w.length s.e.irrad
-##       &lt;dbl&gt;     &lt;dbl&gt;
-##  1      300 0.000299 
-##  2      302 0.000205 
-##  3      304 0.000354 
-##  4      306 0.0000757
-##  5      308 0.000292 
-##  6      310 0.000247 
-##  7      312 0.000239 
-##  8      314 0.000330 
-##  9      316 0.000320 
-## 10      318 0.000155 
-## # ... with 291 more rows
-## --- Member: osram.hqit.400w ---
-## Object: source_spct [301 x 2]
-## Wavelength range 300 to 900 nm, step 2 nm 
-## Label: File: Osram.HQIT.400W.PRN 
-## Measured on 0000-10-11 18:57:00 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 592 nm 
-## 
-## # A tibble: 301 x 2
-##    w.length s.e.irrad
-##       &lt;dbl&gt;     &lt;dbl&gt;
-##  1      300  0.000382
-##  2      302  0.000641
-##  3      304  0.000615
-##  4      306  0.000761
-##  5      308  0.000795
-##  6      310  0.00102 
-##  7      312  0.00141 
-##  8      314  0.00162 
-##  9      316  0.00161 
-## 10      318  0.00170 
-## # ... with 291 more rows
-## --- Member: osram.super.vialox ---
-## Object: source_spct [301 x 2]
-## Wavelength range 300 to 900 nm, step 2 nm 
-## Label: File: Osram.Super.Vialox.PRN 
-## Measured on 0000-10-17 13:54:00 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 820 nm 
-## 
-## # A tibble: 301 x 2
-##    w.length s.e.irrad
-##       &lt;dbl&gt;     &lt;dbl&gt;
-##  1      300  0.000235
-##  2      302  0.000196
-##  3      304  0.000237
-##  4      306  0.000378
-##  5      308  0.000553
-##  6      310  0.000902
-##  7      312  0.00139 
-##  8      314  0.00198 
-##  9      316  0.00270 
-## 10      318  0.00348 
-## # ... with 291 more rows
-## --- Member: osram.classic.20w ---
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lamps.mspct[<span class="kw">grep</span>(<span class="st">"toshiba"</span>, <span class="kw">names</span>(lamps.mspct))]</code></pre></div>
+<pre><code>## Object: source_mspct [1 x 1]
+## --- Member: toshiba.led.9.5w.2700k ---
 ## Object: source_spct [1,421 x 2]
 ## Wavelength range 251.16 to 898.81 nm, step 0.43 to 0.48 nm 
-## Label: Osram_Classic_20W_E27_lfd 
-## Measured on 2018-02-12 09:39:40 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 897.07 nm 
-## 
-## # A tibble: 1,421 x 2
-##    w.length s.e.irrad
-##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251  0.00242 
-##  2      252  0       
-##  3      252  0.000884
-##  4      253  0.00169 
-##  5      253  0       
-##  6      254  0.00271 
-##  7      254  0.00405 
-##  8      254  0       
-##  9      255  0       
-## 10      255  0       
-## # ... with 1,411 more rows
-## --- Member: osram.conc.spot.60w ---
-## Object: source_spct [1,421 x 2]
-## Wavelength range 251.16 to 898.81 nm, step 0.43 to 0.48 nm 
-## Label: Osram_conc_spot_60W_E27 
-## Measured on 2018-02-12 09:35:21 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 897.07 nm 
-## 
-## # A tibble: 1,421 x 2
-##    w.length s.e.irrad
-##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251   0.00356
-##  2      252   0.00309
-##  3      252   0.00374
-##  4      253   0.00439
-##  5      253   0.00527
-##  6      254   0.00495
-##  7      254   0.00565
-##  8      254   0.00563
-##  9      255   0.00546
-## 10      255   0.00484
-## # ... with 1,411 more rows
-## --- Member: osram.l36w.840 ---
-## Object: source_spct [1,421 x 2]
-## Wavelength range 251.16 to 898.81 nm, step 0.43 to 0.48 nm 
-## Label: Osram L36W/840 Lumilux Cool White used 
-## Measured on 2018-02-16 14:50:10 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 611.35 nm 
-## 
-## # A tibble: 1,421 x 2
-##    w.length s.e.irrad
-##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251         0
-##  2      252         0
-##  3      252         0
-##  4      253         0
-##  5      253         0
-##  6      254         0
-##  7      254         0
-##  8      254         0
-##  9      255         0
-## 10      255         0
-## # ... with 1,411 more rows
-## --- Member: osram.led.10w.2700k.classicstar ---
-## Object: source_spct [1,421 x 2]
-## Wavelength range 251.16 to 898.81 nm, step 0.43 to 0.48 nm 
-## Label: Osram_LED_10W_2700K_ClassicStar 
-## Measured on 2018-02-12 09:11:32 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 612.72 nm 
-## 
-## # A tibble: 1,421 x 2
-##    w.length s.e.irrad
-##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251 0.0000352
-##  2      252 0.000957 
-##  3      252 0.000232 
-##  4      253 0.000592 
-##  5      253 0.000396 
-##  6      254 0.000826 
-##  7      254 0.000356 
-##  8      254 0.00135  
-##  9      255 0.000928 
-## 10      255 0.000492 
-## # ... with 1,411 more rows
-## --- Member: osram.led.8w.2700k ---
-## Object: source_spct [1,421 x 2]
-## Wavelength range 251.16 to 898.81 nm, step 0.43 to 0.48 nm 
-## Label: Osram Warm white LED bulb, 8W 230V 2700K E27 
-## Measured on 2017-10-02 07:40:27 UTC 
+## Label: Toshiba_LED_9.5W_2700K 
+## Measured on 2018-02-12 09:08:23 UTC 
 ## Time unit 1s
 ## Spectral data normalized to 1 at 607.26 nm 
 ## 
 ## # A tibble: 1,421 x 2
 ##    w.length s.e.irrad
 ##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251   0.00697
-##  2      252   0.00767
-##  3      252   0.00599
-##  4      253   0.00704
-##  5      253   0.00659
-##  6      254   0.00862
-##  7      254   0.00724
-##  8      254   0.00859
-##  9      255   0.00585
-## 10      255   0.00600
+##  1      251 0        
+##  2      252 0.000143 
+##  3      252 0.0000905
+##  4      253 0.000843 
+##  5      253 0.000690 
+##  6      254 0.00103  
+##  7      254 0.000695 
+##  8      254 0.000367 
+##  9      255 0.000765 
+## 10      255 0.000892 
 ## # ... with 1,411 more rows
 ## 
 ## --- END ---</code></pre>
 <p>Set algebra operations can be used with the indexing vectors as each vector describes a single property: color, brand, type, etc.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lamps.mspct[<span class="kw">intersect</span>(osram_lamps, white_lamps)]</code></pre></div>
-<pre><code>## Object: source_mspct [7 x 1]
-## --- Member: osram.36w.25 ---
-## Object: source_spct [301 x 2]
-## Wavelength range 300 to 900 nm, step 2 nm 
-## Label: File: Osram.36W.25.PRN 
-## Measured on 0000-06-09 09:00:00 UTC 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lamps.mspct[<span class="kw">intersect</span>(philips_lamps, red_lamps)]</code></pre></div>
+<pre><code>## Object: source_mspct [1 x 1]
+## --- Member: philips.tld36w.15 ---
+## Object: source_spct [601 x 2]
+## Wavelength range 300 to 900 nm, step 1 nm 
+## Label: File: Philips.TLD36W.15.PRN 
+## Measured on 0000-08-23 11:56:00 UTC 
 ## Time unit 1s
-## Spectral data normalized to 1 at 436 nm 
+## Spectral data normalized to 1 at 660 nm 
 ## 
-## # A tibble: 301 x 2
+## # A tibble: 601 x 2
 ##    w.length s.e.irrad
 ##       &lt;dbl&gt;     &lt;dbl&gt;
-##  1      300 0.000299 
-##  2      302 0.000205 
-##  3      304 0.000354 
-##  4      306 0.0000757
-##  5      308 0.000292 
-##  6      310 0.000247 
-##  7      312 0.000239 
-##  8      314 0.000330 
-##  9      316 0.000320 
-## 10      318 0.000155 
-## # ... with 291 more rows
-## --- Member: osram.classic.20w ---
-## Object: source_spct [1,421 x 2]
-## Wavelength range 251.16 to 898.81 nm, step 0.43 to 0.48 nm 
-## Label: Osram_Classic_20W_E27_lfd 
-## Measured on 2018-02-12 09:39:40 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 897.07 nm 
-## 
-## # A tibble: 1,421 x 2
-##    w.length s.e.irrad
-##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251  0.00242 
-##  2      252  0       
-##  3      252  0.000884
-##  4      253  0.00169 
-##  5      253  0       
-##  6      254  0.00271 
-##  7      254  0.00405 
-##  8      254  0       
-##  9      255  0       
-## 10      255  0       
-## # ... with 1,411 more rows
-## --- Member: osram.conc.spot.60w ---
-## Object: source_spct [1,421 x 2]
-## Wavelength range 251.16 to 898.81 nm, step 0.43 to 0.48 nm 
-## Label: Osram_conc_spot_60W_E27 
-## Measured on 2018-02-12 09:35:21 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 897.07 nm 
-## 
-## # A tibble: 1,421 x 2
-##    w.length s.e.irrad
-##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251   0.00356
-##  2      252   0.00309
-##  3      252   0.00374
-##  4      253   0.00439
-##  5      253   0.00527
-##  6      254   0.00495
-##  7      254   0.00565
-##  8      254   0.00563
-##  9      255   0.00546
-## 10      255   0.00484
-## # ... with 1,411 more rows
-## --- Member: osram.hqit.400w ---
-## Object: source_spct [301 x 2]
-## Wavelength range 300 to 900 nm, step 2 nm 
-## Label: File: Osram.HQIT.400W.PRN 
-## Measured on 0000-10-11 18:57:00 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 592 nm 
-## 
-## # A tibble: 301 x 2
-##    w.length s.e.irrad
-##       &lt;dbl&gt;     &lt;dbl&gt;
-##  1      300  0.000382
-##  2      302  0.000641
-##  3      304  0.000615
-##  4      306  0.000761
-##  5      308  0.000795
-##  6      310  0.00102 
-##  7      312  0.00141 
-##  8      314  0.00162 
-##  9      316  0.00161 
-## 10      318  0.00170 
-## # ... with 291 more rows
-## --- Member: osram.l36w.840 ---
-## Object: source_spct [1,421 x 2]
-## Wavelength range 251.16 to 898.81 nm, step 0.43 to 0.48 nm 
-## Label: Osram L36W/840 Lumilux Cool White used 
-## Measured on 2018-02-16 14:50:10 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 611.35 nm 
-## 
-## # A tibble: 1,421 x 2
-##    w.length s.e.irrad
-##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251         0
-##  2      252         0
-##  3      252         0
-##  4      253         0
-##  5      253         0
-##  6      254         0
-##  7      254         0
-##  8      254         0
-##  9      255         0
-## 10      255         0
-## # ... with 1,411 more rows
-## --- Member: osram.led.10w.2700k.classicstar ---
-## Object: source_spct [1,421 x 2]
-## Wavelength range 251.16 to 898.81 nm, step 0.43 to 0.48 nm 
-## Label: Osram_LED_10W_2700K_ClassicStar 
-## Measured on 2018-02-12 09:11:32 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 612.72 nm 
-## 
-## # A tibble: 1,421 x 2
-##    w.length s.e.irrad
-##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251 0.0000352
-##  2      252 0.000957 
-##  3      252 0.000232 
-##  4      253 0.000592 
-##  5      253 0.000396 
-##  6      254 0.000826 
-##  7      254 0.000356 
-##  8      254 0.00135  
-##  9      255 0.000928 
-## 10      255 0.000492 
-## # ... with 1,411 more rows
-## --- Member: osram.led.8w.2700k ---
-## Object: source_spct [1,421 x 2]
-## Wavelength range 251.16 to 898.81 nm, step 0.43 to 0.48 nm 
-## Label: Osram Warm white LED bulb, 8W 230V 2700K E27 
-## Measured on 2017-10-02 07:40:27 UTC 
-## Time unit 1s
-## Spectral data normalized to 1 at 607.26 nm 
-## 
-## # A tibble: 1,421 x 2
-##    w.length s.e.irrad
-##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251   0.00697
-##  2      252   0.00767
-##  3      252   0.00599
-##  4      253   0.00704
-##  5      253   0.00659
-##  6      254   0.00862
-##  7      254   0.00724
-##  8      254   0.00859
-##  9      255   0.00585
-## 10      255   0.00600
-## # ... with 1,411 more rows
+##  1      300  0.000196
+##  2      301  0.000959
+##  3      302  0.000752
+##  4      303  0.00110 
+##  5      304  0.00126 
+##  6      305  0.000885
+##  7      306  0.000521
+##  8      307  0.00153 
+##  9      308  0.000167
+## 10      309  0.000493
+## # ... with 591 more rows
 ## 
 ## --- END ---</code></pre>
 </div>

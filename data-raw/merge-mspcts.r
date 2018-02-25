@@ -27,13 +27,16 @@ white_lamps <- sort(c("philips.pls11w.827", "philips.tld36w.83", "philips.tld36w
                  "philips.tld36w.89",  "philips.tld36w.92",  "philips.tll36w.950",
                  "sylvania.215w.vho", 
                  "airam.cf.15w.2700k", "airam.spiraali", "osram.classic.20w",
+                 "airam.led.11w.4000k",
                  "osram.l36w.840", "osram.led.8w.2700k", "toshiba.led.9.5w.2700k",
                  "airam.led.oiva.9w.3000k", "osram.conc.spot.60w", 
                  "osram.led.10w.2700k.classicstar", "philips.tl5.35w.830he",
                  "pirkka.halogen.53w", "valoya.b100.ap67",
-                 "incandescent.60w", "osram.36w.25", "osram.hqit.400w"))
+                 "incandescent.60w", "osram.36w.25", "osram.hqit.400w",
+                 "amaran.al.m9"))
 ## test vectors
 color_idxs <- unique(c(uv_lamps, amber_lamps, red_lamps, blue_lamps, white_lamps))
+color_idxs[!color_idxs %in% names(lamps.mspct)]
 stopifnot(all(color_idxs %in% names(lamps.mspct)))
 
 sodium_lamps <- "osram.super.vialox"
@@ -49,9 +52,13 @@ mercury_lamps <- sort(c("philips.pls11w.827", "philips.tld36w.83", "philips.tld3
                    "qpanel.uva340", "qpanel.uvb313", "philips.tld36w.15", 
                    "philips.tld36w.18"))
 led_lamps <- sort(c("osram.led.8w.2700k", "toshiba.led.9.5w.2700k", 
-               "airam.led.oiva.9w.3000k", "osram.led.10w.2700k.classicstar",
-               "valoya.b100.ap67"))
-  
+               "airam.led.oiva.9w.3000k", "airam.led.11w.4000k",
+               "osram.led.10w.2700k.classicstar",
+               "valoya.b100.ap67",
+               "amaran.al.m9"))
+
+# plant_growth_lamps <- "valoya.b100.ap67"
+# photography_lamps <- "amaran.al.m9"
 
 ## test vectors
 type_idxs <- unique(c(sodium_lamps, incandescent_lamps, multimetal_lamps, mercury_lamps))
@@ -63,6 +70,8 @@ qpanel_lamps <- sort(grep("qpanel", names(lamps.mspct), value = TRUE))
 philips_lamps <- sort(grep("philips", names(lamps.mspct), value = TRUE))
 airam_lamps <- sort(grep("airam", names(lamps.mspct), value = TRUE))
 toshiba_lamps <- sort(grep("toshiba", names(lamps.mspct), value = TRUE))
+valoya_lamps <- sort(grep("valoya", names(lamps.mspct), value = TRUE))
+aputure_lamps <- sort(grep("amaran|aputure", names(lamps.mspct), value = TRUE))
 generic_lamps <- sort(grep("pirkka", names(lamps.mspct), value = TRUE))
 
 ## test vectors
@@ -76,8 +85,8 @@ message("Not in any index: ",
 save(lamps.mspct, licor_lamps, macam_lamps, oo_maya_lamps, bentham_lamps,
      uv_lamps, amber_lamps, red_lamps, blue_lamps, white_lamps,
      sodium_lamps, incandescent_lamps, multimetal_lamps, mercury_lamps, led_lamps,
-     osram_lamps, sylvania_lamps, qpanel_lamps, philips_lamps,
-     airam_lamps, toshiba_lamps, generic_lamps,
+     osram_lamps, sylvania_lamps, qpanel_lamps, philips_lamps, valoya_lamps,
+     airam_lamps, toshiba_lamps, generic_lamps, aputure_lamps,
      file = "data/lamps-mspct.rda")
 
 tools::resaveRdaFiles("data", compress="auto")

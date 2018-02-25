@@ -1,8 +1,8 @@
 Package: photobiologyLamps
 Type: Package
 Title: Spectral Irradiance Data for Lamps
-Version: 0.4.1.9002
-Date: 2018-02-17
+Version: 0.4.1.9003
+Date: 2018-02-25
 Authors@R:
    c(
     person("Pedro J.", "Aphalo", email = "pedro.aphalo@helsinki.fi", role = c("aut", "cre"), comment = c(ORCID = "https://orcid.org/0000-0003-3385-972X")),
