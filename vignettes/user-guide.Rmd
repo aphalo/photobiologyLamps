@@ -87,17 +87,12 @@ define their own, either as constants or through computation. Here we use
 a vector defined by the package.
 
 ```{r}
-lamps.mspct[macam_lamps]
-```
-
-And below we use a computed one. In this case we extract the member spectra
-with names containing the string "osram".
-
-```{r}
 lamps.mspct[toshiba_lamps]
 ```
 
-More generaly one can search for matching names within the collection of spectra.
+And below we use a computed one. In this case we extract the member spectra
+with names containing the string "toshiba". More generaly one can search for 
+matching names within the collection of spectra.
 
 ```{r}
 lamps.mspct[grep("toshiba", names(lamps.mspct))]
