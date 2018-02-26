@@ -27,7 +27,7 @@ white_lamps <- sort(c("philips.pls11w.827", "philips.tld36w.83", "philips.tld36w
                  "philips.tld36w.89",  "philips.tld36w.92",  "philips.tll36w.950",
                  "sylvania.215w.vho", 
                  "airam.cf.15w.2700k", "airam.spiraali", "osram.classic.20w",
-                 "airam.led.11w.4000k",
+                 "airam.led.11w.4000k", "v.light.led.2w.6000k",
                  "osram.l36w.840", "osram.led.8w.2700k", "toshiba.led.9.5w.2700k",
                  "airam.led.oiva.9w.3000k", "osram.conc.spot.60w", 
                  "osram.led.10w.2700k.classicstar", "philips.tl5.35w.830he",
@@ -54,7 +54,7 @@ mercury_lamps <- sort(c("philips.pls11w.827", "philips.tld36w.83", "philips.tld3
 led_lamps <- sort(c("osram.led.8w.2700k", "toshiba.led.9.5w.2700k", 
                "airam.led.oiva.9w.3000k", "airam.led.11w.4000k",
                "osram.led.10w.2700k.classicstar",
-               "valoya.b100.ap67",
+               "valoya.b100.ap67", "v.light.led.2w.6000k",
                "amaran.al.m9"))
 
 # plant_growth_lamps <- "valoya.b100.ap67"
@@ -72,7 +72,7 @@ airam_lamps <- sort(grep("airam", names(lamps.mspct), value = TRUE))
 toshiba_lamps <- sort(grep("toshiba", names(lamps.mspct), value = TRUE))
 valoya_lamps <- sort(grep("valoya", names(lamps.mspct), value = TRUE))
 aputure_lamps <- sort(grep("amaran|aputure", names(lamps.mspct), value = TRUE))
-generic_lamps <- sort(grep("pirkka", names(lamps.mspct), value = TRUE))
+generic_lamps <- sort(grep("pirkka|v.light", names(lamps.mspct), value = TRUE))
 
 ## test vectors
 make_idxs <- unique(c(osram_lamps, sylvania_lamps, qpanel_lamps, philips_lamps))
