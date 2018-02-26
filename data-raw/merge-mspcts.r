@@ -57,7 +57,7 @@ led_lamps <- sort(c("osram.led.8w.2700k", "toshiba.led.9.5w.2700k",
                "valoya.b100.ap67", "v.light.led.2w.6000k",
                "amaran.al.m9"))
 
-# plant_growth_lamps <- "valoya.b100.ap67"
+# plant_grow_lamps <- "valoya.b100.ap67"
 # photography_lamps <- "amaran.al.m9"
 
 ## test vectors

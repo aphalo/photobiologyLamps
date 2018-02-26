@@ -7,7 +7,7 @@
 #' available lamps.
 #' In some cases assembled from multiple descrete LEDs, possible of mixed types and 
 #' spectral output. For emission spectra for LEDs available as electronic components
-#' please see \code{\link[photobiologyLEDs]{photobiologyLEDs}}.
+#' please see \code{\link[photobiologyLEDs]{photobiologyLEDs-package}}.
 #' 
 #' @aliases types
 #' 

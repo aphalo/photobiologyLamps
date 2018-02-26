@@ -42,8 +42,8 @@
 #'
 #' @import photobiology
 #' 
-#' @seealso Packages \code{\link[photobiology]{photobiology}} and 
-#' \code{\link[ggspectra]{ggspectra}}.
+#' @seealso Packages \code{\link[photobiology]{photobiology-package}} and 
+#' \code{\link[ggspectra]{ggspectra-package}}.
 #'
 #' @examples
 #' library(photobiologyLamps)

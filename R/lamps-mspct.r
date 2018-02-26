@@ -4,7 +4,9 @@
 #'   spectroradiometers.
 #'
 #' @details The \code{"source_mspct"} object contains \code{"source_spct"}
-#'   objects with spectral emission data.
+#'   objects with spectral emission data. These classes are defined in
+#'   package \code{\link[photobiology]{photobiology-package}} together with
+#'   corresponding methods and functions.
 #'
 #'   The variables in each member spectrum are as follows: \itemize{ \item
 #'   w.length (nm) \item s.e.irrad (relative energy based units) }
@@ -13,7 +15,7 @@
 #'
 #' @seealso \code{\link{bentham_lamps}}, \code{\link{licor_lamps}}, \code{\link{macam_lamps}},
 #'   \code{\link{oo_maya_lamps}} for information on the spectroradiometers, and
-#'   \code{\link[photobiologyLEDs]{photobiologyLEDs}} for spectra for LEDs available
+#'   \code{\link[photobiologyLEDs]{photobiologyLEDs-package}} for spectra for LEDs available
 #'   as electronic components.
 #'
 #' @docType data
