@@ -40,6 +40,10 @@
 #' true for those data measured more than a few years ago when compared to lamps
 #' being currently sold under the same type denomination.
 #'
+#' @references
+#' Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin, 2015:1,
+#' 21-29. \url{http://doi.org/10.19232/uv4pb.2015.1.14}.
+#'
 #' @import photobiology
 #' 
 #' @seealso Packages \code{\link[photobiology]{photobiology-package}} and 

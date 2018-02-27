@@ -12,7 +12,7 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2018-02-26" />
+<meta name="date" content="2018-02-27" />
 
 <title>User Guide</title>
 
@@ -69,9 +69,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 <h1 class="title toc-ignore">User Guide</h1>
-<h3 class="subtitle"><em>Package ‘photobiologyLamps’ 0.4.2</em></h3>
+<h3 class="subtitle"><em>Package ‘photobiologyLamps’ 0.4.2.9000</em></h3>
 <h4 class="author"><em>Pedro J. Aphalo</em></h4>
-<h4 class="date"><em>2018-02-26</em></h4>
+<h4 class="date"><em>2018-02-27</em></h4>
 
 
 <div id="TOC">
@@ -131,16 +131,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## # A tibble: 601 x 2
 ##    w.length s.e.irrad
 ##       &lt;dbl&gt;     &lt;dbl&gt;
-##  1      300  0.000665
-##  2      301  0.000325
-##  3      302  0.000956
-##  4      303  0.000702
-##  5      304  0.000306
-##  6      305  0.000825
-##  7      306  0.00103 
-##  8      307  0.000361
-##  9      308  0.000497
-## 10      309  0.000627
+##  1     300.  0.000665
+##  2     301.  0.000325
+##  3     302.  0.000956
+##  4     303.  0.000702
+##  5     304.  0.000306
+##  6     305.  0.000825
+##  7     306.  0.00103 
+##  8     307.  0.000361
+##  9     308.  0.000497
+## 10     309.  0.000627
 ## # ... with 591 more rows</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lamps.mspct[[<span class="st">&quot;incandescent.60w&quot;</span>]]</code></pre></div>
 <pre><code>## Object: source_spct [601 x 2]
@@ -153,16 +153,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## # A tibble: 601 x 2
 ##    w.length s.e.irrad
 ##       &lt;dbl&gt;     &lt;dbl&gt;
-##  1      300  0.000665
-##  2      301  0.000325
-##  3      302  0.000956
-##  4      303  0.000702
-##  5      304  0.000306
-##  6      305  0.000825
-##  7      306  0.00103 
-##  8      307  0.000361
-##  9      308  0.000497
-## 10      309  0.000627
+##  1     300.  0.000665
+##  2     301.  0.000325
+##  3     302.  0.000956
+##  4     303.  0.000702
+##  5     304.  0.000306
+##  6     305.  0.000825
+##  7     306.  0.00103 
+##  8     307.  0.000361
+##  9     308.  0.000497
+## 10     309.  0.000627
 ## # ... with 591 more rows</code></pre>
 <p>Be aware that according to R’s rules, using single square brackets will return a <code>source_mspct</code> object possibly of length one. This statement is not equivalent to the one in the chunk immediately above.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lamps.mspct[<span class="st">&quot;incandescent.60w&quot;</span>]</code></pre></div>
@@ -178,16 +178,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## # A tibble: 601 x 2
 ##    w.length s.e.irrad
 ##       &lt;dbl&gt;     &lt;dbl&gt;
-##  1      300  0.000665
-##  2      301  0.000325
-##  3      302  0.000956
-##  4      303  0.000702
-##  5      304  0.000306
-##  6      305  0.000825
-##  7      306  0.00103 
-##  8      307  0.000361
-##  9      308  0.000497
-## 10      309  0.000627
+##  1     300.  0.000665
+##  2     301.  0.000325
+##  3     302.  0.000956
+##  4     303.  0.000702
+##  5     304.  0.000306
+##  6     305.  0.000825
+##  7     306.  0.00103 
+##  8     307.  0.000361
+##  9     308.  0.000497
+## 10     309.  0.000627
 ## # ... with 591 more rows
 ## 
 ## --- END ---</code></pre>
@@ -195,71 +195,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="accessing-subsets-of-spectra" class="section level2">
 <h2>Accessing subsets of spectra</h2>
 <p>We can subset the <code>source_mspct</code> object by indexing with vectors of character strings. The package provides some predefined ones, and users can easily define their own, either as constants or through computation. Here we use a vector defined by the package.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lamps.mspct[macam_lamps]</code></pre></div>
-<pre><code>## Object: source_mspct [3 x 1]
-## --- Member: qpanel.uvb313 ---
-## Object: source_spct [561 x 2]
-## Wavelength range 240 to 800 nm, step 1 nm 
-## Time unit 1s
-## Spectral data normalized to 1 at 435 nm 
-## 
-## # A tibble: 561 x 2
-##    w.length s.e.irrad
-##       &lt;int&gt;     &lt;dbl&gt;
-##  1      240         0
-##  2      241         0
-##  3      242         0
-##  4      243         0
-##  5      244         0
-##  6      245         0
-##  7      246         0
-##  8      247         0
-##  9      248         0
-## 10      249         0
-## # ... with 551 more rows
-## --- Member: qpanel.uva340 ---
-## Object: source_spct [561 x 2]
-## Wavelength range 240 to 800 nm, step 1 nm 
-## Time unit 1s
-## Spectral data normalized to 1 at 435 nm 
-## 
-## # A tibble: 561 x 2
-##    w.length s.e.irrad
-##       &lt;int&gt;     &lt;dbl&gt;
-##  1      240         0
-##  2      241         0
-##  3      242         0
-##  4      243         0
-##  5      244         0
-##  6      245         0
-##  7      246         0
-##  8      247         0
-##  9      248         0
-## 10      249         0
-## # ... with 551 more rows
-## --- Member: philips.tl12.mc ---
-## Object: source_spct [561 x 2]
-## Wavelength range 240 to 800 nm, step 1 nm 
-## Time unit 1s
-## Spectral data normalized to 1 at 435 nm 
-## 
-## # A tibble: 561 x 2
-##    w.length s.e.irrad
-##       &lt;int&gt;     &lt;dbl&gt;
-##  1      240         0
-##  2      241         0
-##  3      242         0
-##  4      243         0
-##  5      244         0
-##  6      245         0
-##  7      246         0
-##  8      247         0
-##  9      248         0
-## 10      249         0
-## # ... with 551 more rows
-## 
-## --- END ---</code></pre>
-<p>And below we use a computed one. In this case we extract the member spectra with names containing the string “osram”.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lamps.mspct[toshiba_lamps]</code></pre></div>
 <pre><code>## Object: source_mspct [1 x 1]
 ## --- Member: toshiba.led.9.5w.2700k ---
@@ -273,20 +208,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## # A tibble: 1,421 x 2
 ##    w.length s.e.irrad
 ##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251 0        
-##  2      252 0.000143 
-##  3      252 0.0000905
-##  4      253 0.000843 
-##  5      253 0.000690 
-##  6      254 0.00103  
-##  7      254 0.000695 
-##  8      254 0.000367 
-##  9      255 0.000765 
-## 10      255 0.000892 
+##  1     251. 0.       
+##  2     252. 0.000143 
+##  3     252. 0.0000905
+##  4     253. 0.000843 
+##  5     253. 0.000690 
+##  6     254. 0.00103  
+##  7     254. 0.000695 
+##  8     254. 0.000367 
+##  9     255. 0.000765 
+## 10     255. 0.000892 
 ## # ... with 1,411 more rows
 ## 
 ## --- END ---</code></pre>
-<p>More generaly one can search for matching names within the collection of spectra.</p>
+<p>And below we use a computed one. In this case we extract the member spectra with names containing the string “toshiba”. More generaly one can search for matching names within the collection of spectra.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lamps.mspct[<span class="kw">grep</span>(<span class="st">&quot;toshiba&quot;</span>, <span class="kw">names</span>(lamps.mspct))]</code></pre></div>
 <pre><code>## Object: source_mspct [1 x 1]
 ## --- Member: toshiba.led.9.5w.2700k ---
@@ -300,16 +235,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## # A tibble: 1,421 x 2
 ##    w.length s.e.irrad
 ##  *    &lt;dbl&gt;     &lt;dbl&gt;
-##  1      251 0        
-##  2      252 0.000143 
-##  3      252 0.0000905
-##  4      253 0.000843 
-##  5      253 0.000690 
-##  6      254 0.00103  
-##  7      254 0.000695 
-##  8      254 0.000367 
-##  9      255 0.000765 
-## 10      255 0.000892 
+##  1     251. 0.       
+##  2     252. 0.000143 
+##  3     252. 0.0000905
+##  4     253. 0.000843 
+##  5     253. 0.000690 
+##  6     254. 0.00103  
+##  7     254. 0.000695 
+##  8     254. 0.000367 
+##  9     255. 0.000765 
+## 10     255. 0.000892 
 ## # ... with 1,411 more rows
 ## 
 ## --- END ---</code></pre>
@@ -327,16 +262,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## # A tibble: 601 x 2
 ##    w.length s.e.irrad
 ##       &lt;dbl&gt;     &lt;dbl&gt;
-##  1      300  0.000196
-##  2      301  0.000959
-##  3      302  0.000752
-##  4      303  0.00110 
-##  5      304  0.00126 
-##  6      305  0.000885
-##  7      306  0.000521
-##  8      307  0.00153 
-##  9      308  0.000167
-## 10      309  0.000493
+##  1     300.  0.000196
+##  2     301.  0.000959
+##  3     302.  0.000752
+##  4     303.  0.00110 
+##  5     304.  0.00126 
+##  6     305.  0.000885
+##  7     306.  0.000521
+##  8     307.  0.00153 
+##  9     308.  0.000167
+## 10     309.  0.000493
 ## # ... with 591 more rows
 ## 
 ## --- END ---</code></pre>

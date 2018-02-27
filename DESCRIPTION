@@ -13,7 +13,8 @@ Description: Spectral emission data for some frequently used lamps excluding
     led emitting diodes (LEDs) available as electronic components. Original 
     spectral irradiance data for incandescent-, LED- and discharge lamps are 
     included. They are complemented by data on the effect of temperature on
-    the emission by fluorescent tubes.
+    the emission by fluorescent tubes. Part of the 'r4photobiology' suite, 
+    Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.
 License: GPL (>= 2)
 VignetteBuilder: knitr
 Depends:
