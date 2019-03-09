@@ -12,8 +12,8 @@
 #'   ballast. Measured between 1996 to 1998.
 #'
 #' @references Aphalo, P J, R Tegelberg, and R Julkunen-Tiitto. 1999. The
-#'   Modulated UV-B Irradiation System at the University of Joensuu.” Biotronics
-#'   28: 109–120.
+#'   Modulated UV-B Irradiation System at the University of Joensuu. Biotronics
+#'   28: 109-120.
 #'   \url{http://ci.nii.ac.jp/naid/110006175827/en}.
 #'
 #' @docType data

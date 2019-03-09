@@ -27,7 +27,7 @@
 #'   Measurements done by Pedro J. Aphalo. Data acquired using R package 'ooacquire'.
 #'
 #' @section Acknowledgements:
-#' We thank Prof. Lars Olof Björn for the gift of the lamp.
+#' We thank Prof. Lars Olof Bjoern for the gift of the lamp.
 #' 
 #' @docType data
 #' @keywords datasets
