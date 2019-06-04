@@ -1,3 +1,12 @@
+photobiologyLamps 0.4.3 (2019-06-xx)
+====================================
+
+Add data for Osram-Fluence grow lamps.
+Replace non-ASCII characters in documentation.
+Rebuild all spectral data objects.
+Correct some minor mistakes in the metadata stored in attribute "what.measured"
+in some spectra.
+
 photobiologyLamps 0.4.2 (2018-02-27)
 ====================================
 

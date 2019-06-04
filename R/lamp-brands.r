@@ -148,8 +148,8 @@
 #' Spectral data for lamps supplied by Valoya
 #' 
 #' Names of datasets containing the wavelengths and tabulated values spectral emittance 
-#' for photography and video lamps from Valoya 
-#' Data are normalized to one at the wavelength of maximum emission.
+#' for plant grow lamps from Valoya Oy (Finland).
+#' Data measured by the author are normalized to one at the wavelength of maximum emission.
 #' 
 #' @docType data
 #' @keywords datasets
@@ -165,6 +165,27 @@
 #' @family manufacturers
 #' 
 "valoya_lamps"
+
+#' Spectral data for lamps supplied by Osram-Fluence
+#' 
+#' Names of datasets containing the wavelengths and tabulated values spectral emittance 
+#' for plant grow lamps from Fluence (Osram).
+#' Data digitized from manufacturer's brochure are normalized to one at the wavelength of maximum emission.
+#' 
+#' @docType data
+#' @keywords datasets
+#' @format A vector of character strings.
+#' 
+#' @examples 
+#' fluence_lamps
+#' 
+#' @references \url{https://fluence.science/}
+#' 
+#' @seealso \code{\link{lamps.mspct}}
+#' 
+#' @family manufacturers
+#' 
+"fluence_lamps"
 
 #' Spectral data for shop-branded lamps 
 #' 

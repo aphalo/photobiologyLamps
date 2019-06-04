@@ -16,7 +16,10 @@ oo_maya_lamps <- names(oo_maya.mspct)
 load(file = "data-raw/bentham-mspct.rda")
 bentham_lamps <- names(bentham.mspct)
 
-lamps.mspct <- c(licor.mspct, macam.mspct, bentham.mspct, oo_maya.mspct)
+load(file = "data-raw/fluence-mspct.rda")
+fluence_lamps <- names(fluence.mspct)
+
+lamps.mspct <- c(licor.mspct, macam.mspct, bentham.mspct, oo_maya.mspct, fluence.mspct)
 
 uv_lamps <- sort(c("germicidal", "philips.tl01", "philips.tl12", "philips.tl12.mc",
               "qpanel.uva340", "qpanel.uvb313"))
@@ -31,7 +34,7 @@ white_lamps <- sort(c("philips.pls11w.827", "philips.tld36w.83", "philips.tld36w
                  "osram.l36w.840", "osram.led.8w.2700k", "toshiba.led.9.5w.2700k",
                  "airam.led.oiva.9w.3000k", "osram.conc.spot.60w", 
                  "osram.led.10w.2700k.classicstar", "philips.tl5.35w.830he",
-                 "pirkka.halogen.53w", "valoya.b100.ap67",
+                 "pirkka.halogen.53w", "valoya.b50.ap67", "fluence.PhysioSpecGreenhouse",
                  "incandescent.60w", "osram.36w.25", "osram.hqit.400w",
                  "amaran.al.m9"))
 ## test vectors
@@ -54,11 +57,8 @@ mercury_lamps <- sort(c("philips.pls11w.827", "philips.tld36w.83", "philips.tld3
 led_lamps <- sort(c("osram.led.8w.2700k", "toshiba.led.9.5w.2700k", 
                "airam.led.oiva.9w.3000k", "airam.led.11w.4000k",
                "osram.led.10w.2700k.classicstar",
-               "valoya.b100.ap67", "v.light.led.2w.6000k",
-               "amaran.al.m9"))
-
-# plant_grow_lamps <- "valoya.b100.ap67"
-# photography_lamps <- "amaran.al.m9"
+               "valoya.b50.ap67", "v.light.led.2w.6000k",
+               "amaran.al.m9", fluence_lamps))
 
 ## test vectors
 type_idxs <- unique(c(sodium_lamps, incandescent_lamps, multimetal_lamps, mercury_lamps))
@@ -74,8 +74,13 @@ valoya_lamps <- sort(grep("valoya", names(lamps.mspct), value = TRUE))
 aputure_lamps <- sort(grep("amaran|aputure", names(lamps.mspct), value = TRUE))
 generic_lamps <- sort(grep("pirkka|v.light", names(lamps.mspct), value = TRUE))
 
+plant_grow_lamps <- c(valoya_lamps, fluence_lamps)
+photography_lamps <- aputure_lamps
+
 ## test vectors
-make_idxs <- unique(c(osram_lamps, sylvania_lamps, qpanel_lamps, philips_lamps))
+make_idxs <- unique(c(osram_lamps, sylvania_lamps, qpanel_lamps, philips_lamps, 
+                      airam_lamps, toshiba_lamps, valoya_lamps, fluence_lamps, 
+                      aputure_lamps, generic_lamps))
 stopifnot(all(make_idxs %in% names(lamps.mspct)))
 
 message("Not in any index: ", 
@@ -86,7 +91,8 @@ save(lamps.mspct, licor_lamps, macam_lamps, oo_maya_lamps, bentham_lamps,
      uv_lamps, amber_lamps, red_lamps, blue_lamps, white_lamps,
      sodium_lamps, incandescent_lamps, multimetal_lamps, mercury_lamps, led_lamps,
      osram_lamps, sylvania_lamps, qpanel_lamps, philips_lamps, valoya_lamps,
-     airam_lamps, toshiba_lamps, generic_lamps, aputure_lamps,
+     airam_lamps, toshiba_lamps, generic_lamps, aputure_lamps, fluence_lamps,
+     photography_lamps, plant_grow_lamps,
      file = "data/lamps-mspct.rda")
 
 tools::resaveRdaFiles("data", compress="auto")

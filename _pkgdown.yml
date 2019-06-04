@@ -14,10 +14,14 @@ reference:
   - title: Indexing vectors by type of lamp
     contents:
     - incandescent_lamps
+  - title: Indexing vectors by use
+    contents:
+    - photography_lamps
   - title: Indexing vectors by manufacturer or supplier
     contents:
     - airam_lamps
     - aputure_lamps
+    - fluence_lamps
     - generic_lamps
     - osram_lamps
     - philips_lamps

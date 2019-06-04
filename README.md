@@ -1,6 +1,7 @@
-# photobiologyLamps #
+# photobiologyLamps
 
-[![](http://www.r-pkg.org/badges/version/photobiologyLamps)](https://cran.r-project.org/package=photobiologyLamps) [![](http://cranlogs.r-pkg.org/badges/photobiologyLamps)](https://cran.r-project.org/package=photobiologyLamps) [![](http://cranlogs.r-pkg.org/badges/grand-total/photobiologyLamps)](https://cran.r-project.org/package=photobiologyLamps)
+[![CRAN version](http://www.r-pkg.org/badges/version-last-release/photobiologyLamps)](https://cran.r-project.org/package=photobiologyLamps) 
+[![cran checks](https://cranchecks.info/badges/worst/photobiologyLamps)](https://cran.r-project.org/web/checks/check_results_photobiologyLamps.html)
 
 __photobiologyLamps__ is a data-only R package containing spectral emission data for diverse types of lamps, while data for LEDs sold as electronic components are included in package __photobiologyLEDs__. This package complements other packages in the __photobiology__ R suite.
 

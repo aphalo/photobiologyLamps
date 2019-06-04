@@ -14,7 +14,7 @@ rm(list = ls(pattern = ".raw_mspct"))
 setWhatMeasured(test_led_desk01.spct, "Osram Warm white LED bulb, 8W 230V 2700K E27")
 
 # Renaming
-Valoya_B100_AP67.spct <- Valoya.AP67.no.filter.210mm.100pc.spct
+Valoya_B50_AP67.spct <- Valoya.AP67.no.filter.210mm.100pc.spct
 Osram_LED_8W_2700K.spct <- test_led_desk01.spct
 Airam_LED_Oiva_9W_3000K.spct <- Airam_LED_Oiva_3000K_9W.spct
 Osram_L36W_840.spct <- L36W.840.spct
@@ -31,6 +31,23 @@ rm(Valoya.AP67.no.filter.210mm.100pc.spct,
    L36W.840.spct,
    TLD.36W.18.spct,
    Halogen_53W_E27_Pirkka.spct)
+
+setWhatMeasured(Valoya_B50_AP67.spct, 
+                "Valoya B50/AP67 inside Aralab FitoClima 1200 chamber at 100% output")
+setWhatMeasured(Osram_LED_8W_2700K.spct,
+                "Osram LED STAR CLASSIC A 60 2700K Ra 80 E27")
+setWhatMeasured(Toshiba_LED_9.5W_2700K.spct,
+                "Toshiba 9.5W 2700K 806 lm E27")
+# setWhatMeasured(,
+#                 "Airam Compact 2000 Longlife 1W compact fluorescent 2700K E27")
+setWhatMeasured(Osram_conc_spot_60W_E27.spct,
+                "Osram CONC SPOT RG3 30 degrees 230V 60W")
+setWhatMeasured(Osram_Classic_20W_E27_lfd.spct,
+                "Osram Classic 64541 A 20W 230V Halogen E27 235 lm 2700K Ra 100")
+setWhatMeasured(Pirkka_Halogen_53W_E27.spct,
+                "Pirkka Halogeenilampuu 53W 240V E27 2800K")
+setWhatMeasured(Airam_spiraali_lfd.spct,
+                "Airam Spiraali 14W 220-240W 3000K E27 900 lm CRI>=80")
 
 object.names <- ls(pattern = ".spct")
 
