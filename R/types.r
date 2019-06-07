@@ -41,3 +41,6 @@
 
 #' @rdname incandescent_lamps
 "sodium_lamps"
+
+#' @rdname incandescent_lamps
+"xenon_lamps"
