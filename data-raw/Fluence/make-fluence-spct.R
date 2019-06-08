@@ -13,6 +13,8 @@ nrow(AnthoSpec.spct)
 range(AnthoSpec.spct)
 setWhatMeasured(AnthoSpec.spct, "RAY LED grow light bar, AnthoSpec spectrum, Osram-Fluence, USA")
 setWhatMeasured(PhysioSpecGreenhouse.spct, "RAY LED grow light bar, PhysioSpecGreenhouse spectrum, Osram-Fluence, USA")
+setHowMeasured(AnthoSpec.spct, "Digitized from figure in manufacturer's brochure.")
+setHowMeasured(PhysioSpecGreenhouse.spct, "Digitized from figure in manufacturer's brochure.")
 
 fluence.mspct <- source_mspct(list(fluence.AnthoSpec = AnthoSpec.spct,
                                    fluence.PhysioSpecGreenhouse = PhysioSpecGreenhouse.spct))

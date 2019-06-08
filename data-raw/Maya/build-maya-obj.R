@@ -105,9 +105,11 @@ object.names <- ls(pattern = ".spct")
 
 oo_maya.mspct <- list()
 for (o in object.names) {
-  oo_maya.mspct[[tolower(gsub(".spct|.lfd|.E27", "", gsub("_", ".", o)))]] <- trimInstrDesc(get(o))
+   tmp <- get(o)
+   setHowMeasured(tmp, "Measured with an array spectrometer")
+   oo_maya.mspct[[tolower(gsub(".spct|.lfd|.E27", "", gsub("_", ".", o)))]] <- trimInstrDesc(tmp)
 }
-rm(o)
+rm(o, tmp)
 
 oo_maya.mspct <- normalize(clean(source_mspct(oo_maya.mspct)))
 

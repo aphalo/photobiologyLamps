@@ -9,22 +9,23 @@ files <- list.files(path = "./data-raw/Maya-Ledsaver/",
 
 for (f in files) load(f)
 
-object.names <- gsub(".Rda", "", basename(files))
+# object.names <- gsub(".Rda", "", basename(files))
 
-ledsavers.mspct <- mget(object.names)
+object.names <- grep("raw|dim", ls(pattern = ".spct"), value = TRUE, invert = TRUE)
 
-for (spct in names(ledsavers.mspct)) {
-  
+ledsavers.mspct <- source_mspct()
+for (o in object.names) {
+  tmp <- get(o)
+  setWhatMeasured(tmp, "LedSaver 7.5W four channels (WRGB) LED lamp.")
+  setHowMeasured(tmp, "Measured with an array spectrometer.")
+  ledsavers.mspct[[o]] <- trimInstrDesc(tmp)
 }
+rm(o, tmp)
 
 names(ledsavers.mspct) <- gsub("LedSaver_7.5W_", "", 
                               gsub(".spct", "", names(ledsavers.mspct)))
 
 names(ledsavers.mspct)[names(ledsavers.mspct) == "Fuchsia"] <- "fuchsia"
-
-to.keep <- grep("dim", names(ledsavers.mspct), value = TRUE, invert = TRUE)
-
-ledsavers.mspct <- as.source_mspct(ledsavers.mspct[to.keep])
 
 ledsavers.mspct <- clean(ledsavers.mspct)
 

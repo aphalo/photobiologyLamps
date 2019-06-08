@@ -31,7 +31,7 @@ plot(lamps.mspct$airam.spiraali,
      annotations = c("+", "title:what"))
 ```
 
-![](README_files/figure-gfm/example1-1.png)<!-- -->
+![](man/figures/README-example1-1.png)<!-- -->
 
 The second example shows how to access metadata.
 

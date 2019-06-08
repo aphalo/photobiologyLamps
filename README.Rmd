@@ -4,10 +4,12 @@ output:
     html_preview: false
 ---
 
-```{r, echo = FALSE}
+```{r readme-01, echo = FALSE}
 knitr::opts_chunk$set(
+  fig.asp = 2/3,
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.path = "man/figures/README-"
 )
 ```
 
