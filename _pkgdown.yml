@@ -31,9 +31,11 @@ reference:
     - aputure_lamps
     - fluence_lamps
     - generic_lamps
+    - godox_lamps
     - osram_lamps
     - philips_lamps
     - qpanel_lamps
+    - sunwayfoto_lamps
     - sylvania_lamps
     - toshiba_lamps
     - valoya_lamps
