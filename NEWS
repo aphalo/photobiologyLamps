@@ -2,6 +2,8 @@ photobiologyLamps 0.4.3 (2019-06-xx)
 ====================================
 
 Add data for Osram-Fluence grow lamps.
+Add data for Sunwayfoto LED lamp and Godox flash.
+Add data for UV-A flashlights.
 Replace non-ASCII characters in documentation.
 Rebuild all spectral data objects.
 Correct some minor mistakes in the metadata stored in attribute "what.measured"
