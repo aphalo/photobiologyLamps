@@ -2,7 +2,7 @@ Package: photobiologyLamps
 Type: Package
 Title: Spectral Irradiance Data for Lamps
 Version: 0.4.2.9001
-Date: 2019-06-04
+Date: 2019-06-08
 Authors@R:
    c(
     person("Pedro J.", "Aphalo", email = "pedro.aphalo@helsinki.fi", role = c("aut", "cre"), comment = c(ORCID = "https://orcid.org/0000-0003-3385-972X")),
@@ -19,13 +19,13 @@ License: GPL (>= 2)
 VignetteBuilder: knitr
 Depends:
     R (>= 3.5.0),
-    photobiology (>= 0.9.26)
+    photobiology (>= 0.9.28)
 Suggests:
-    knitr (>= 1.21),
-    rmarkdown (>= 1.11),
-    ggspectra (>= 0.3.2),
-    photobiologyWavebands (>= 0.4.2),
-    ggplot2 (>= 3.1.0)
+    knitr (>= 1.23),
+    rmarkdown (>= 1.13),
+    ggspectra (>= 0.3.4),
+    photobiologyWavebands (>= 0.4.3),
+    ggplot2 (>= 3.1.1)
 LazyLoad: yes
 LazyData: yes
 ByteCompile: true
