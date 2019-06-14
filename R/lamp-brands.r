@@ -116,7 +116,7 @@
 #' @examples 
 #' toshiba_lamps
 #' 
-#' @references \url{https://www.toshiba.eu/lighting/en}
+#' @references \url{https://www.uot-toshibalighting.eu/}
 #' 
 #' @seealso \code{\link{lamps.mspct}}
 #' 
