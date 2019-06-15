@@ -3,3 +3,4 @@
 .RData
 man
 inst/web
+data-raw/NonASCII-test\.txt
