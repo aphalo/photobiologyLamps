@@ -14,3 +14,4 @@
 ^README\.Rmd$
 ^README-.*\.png$
 ^.*\.sh$
+^build-binary-from-source.sh$

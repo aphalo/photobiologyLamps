@@ -49,10 +49,10 @@ e_irrad(my.lamp)
 q_ratio(lamps.mspct$incandescent.60w, Red("Smith10"), Far_red("Smith10"))
 
 ## ------------------------------------------------------------------------
-plot(lamps.mspct$osram.led.8w.2700k)
+autoplot(lamps.mspct$osram.led.8w.2700k)
 
 ## ------------------------------------------------------------------------
-plot(ledsavers.mspct$purple)
+autoplot(ledsavers.mspct$purple)
 
 ## ------------------------------------------------------------------------
 ggplot(ledsavers.mspct$purple) +

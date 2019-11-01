@@ -37,12 +37,13 @@ library(ggspectra)
 In this brief User Guide we describe how to re-scale the normalized
 spectra, and how to access individual spectra or subsets of spectra.
 
-Spectra in the package are contained in three collections: `lamps.mspct` contains
-spectral data for various types of lamps emiiting a fixed color of light; `ledsavers.mspct` contains spectral data for a LED bulb with four color
-channels allowing it to output 16 different _colors_ of light; 
-`qp_uvb313_temp.mspct` contains spectral data for UV lamps under seven
-different temperatures. In addition `qp_uvb313_temp.spct` contains the same
-data in a single spectral object.
+Spectra in the package are contained in three collections: `lamps.mspct`
+contains spectral data for various types of lamps emiiting a fixed color of
+light; `ledsavers.mspct` contains spectral data for a LED bulb with four color
+channels allowing it to output 16 different _colors_ of light;
+`qp_uvb313_temp.mspct` contains spectral data for UV lamps under seven different
+temperatures. In addition `qp_uvb313_temp.spct` contains the same data in a
+single spectral object.
 
 In addtion to the objects containing the data itself, several character vectors 
 of names of spectra are provide to facilitate the retrieval of subsets of spectra.
@@ -60,12 +61,14 @@ listed with method `names()`.
 names(lamps.mspct)
 ```
 
-We can use a character string as index to extract an individual `source_spct`
+We can use a name as index to extract an individual `source_spct`
 object.
 
 ```{r}
 lamps.mspct$incandescent.60w
 ```
+
+Or a character string.
 
 ```{r}
 lamps.mspct[["incandescent.60w"]]
@@ -155,15 +158,15 @@ q_ratio(lamps.mspct$incandescent.60w, Red("Smith10"), Far_red("Smith10"))
 
 ## Plotting the spectra
 
-Using `plot()` methods for spectra defined in package 'ggspectra' annotated plotting is automatic. The defaults can be easily changed, please see the documentation
+Using `autoplot()` methods for spectra defined in package 'ggspectra' annotated plotting is automatic. The defaults can be easily changed, please see the documentation
 in package 'ggspectra'.
 
 ```{r}
-plot(lamps.mspct$osram.led.8w.2700k)
+autoplot(lamps.mspct$osram.led.8w.2700k)
 ```
 
 ```{r}
-plot(ledsavers.mspct$purple)
+autoplot(ledsavers.mspct$purple)
 ```
 
 Using the `ggplot()` method for spectra from package 'ggspectra' plus _geometries_
@@ -177,8 +180,8 @@ ggplot(ledsavers.mspct$purple) +
 
 ## Using the data in other contexts
 
-As `source_spct` is a class derived from `list`, and `source_spct` is derived from
-`tibble::tible` which is a compatible reimplementation of `data.frame` the
+As `source_mspct` is a class derived from `list`, and `source_spct` is derived from
+`tibble::tibble` that is a partly compatible reimplementation of `data.frame` the
 data can be used very easily with any R function.
 
 ```{r}
