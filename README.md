@@ -7,16 +7,22 @@ version](https://www.r-pkg.org/badges/version-last-release/photobiologyLamps)](h
 checks](https://cranchecks.info/badges/worst/photobiologyLamps)](https://cran.r-project.org/web/checks/check_results_photobiologyLamps.html)
 
 Package ‘**photobiologyLamps**’ is a data-only R package containing
-spectral emission data for diverse types of lamps, while data for LEDs
-sold as electronic components are included in package
+spectral emission data for frequently used lamps including bulbs and
+flashlights based on light emitting diodes (LEDs) but excluding LEDs
+available as electronic components. Original spectral irradiance data
+for incandescent-, LED- and discharge lamps are included. They are
+complemented by data on the effect of temperature on the spectral
+emission from UV-B fluorescent tubes.
+
+Data for LEDs available as electronic components are included in package
 ‘**photobiologyLEDs**’.
 
 The data in this package are stored in objects of classes defined in
 package ‘**photobiology**’ which are mostly backwards compatible with
 data frames.
 
-This package is part of a suite of R packages for photobiological
-calculations described at the
+Package ‘**photobiologyLamps**’ is part of a suite of R packages for
+photobiological calculations described at the
 [r4photobiology](https://www.r4photobiology.info) web site.
 
 ## Examples
@@ -27,8 +33,9 @@ the lamps.
 ``` r
 library(ggspectra)
 library(photobiologyLamps)
-plot(lamps.mspct$airam.spiraali,
-     annotations = c("+", "title:what"))
+
+autoplot(lamps.mspct$airam.spiraali,
+         annotations = c("+", "title:what"))
 ```
 
 ![](man/figures/README-example1-1.png)<!-- -->
@@ -36,8 +43,44 @@ plot(lamps.mspct$airam.spiraali,
 The second example shows how to access metadata.
 
 ``` r
-getWhatMeasured(lamps.mspct$airam.spiraali)
+what_measured(lamps.mspct$airam.spiraali)
 #> [1] "Airam Spiraali 14W 220-240W 3000K E27 900 lm CRI>=80"
+```
+
+The number of spectra included in the collection can be obtained as
+follows.
+
+``` r
+length(lamps.mspct)
+#> [1] 48
+```
+
+The members of the collection are named, and several vectors of names
+are available, such as by manufacturer,
+
+``` r
+philips_lamps
+#>  [1] "philips.led.t8.10w.840" "philips.pls11w.827"     "philips.tl01"          
+#>  [4] "philips.tl12"           "philips.tl12.mc"        "philips.tl5.35w.830he" 
+#>  [7] "philips.tld.36w.18"     "philips.tld36w.15"      "philips.tld36w.18"     
+#> [10] "philips.tld36w.83"      "philips.tld36w.865"     "philips.tld36w.89"     
+#> [13] "philips.tld36w.92"      "philips.tll36w.950"
+```
+
+or type of lamp.
+
+``` r
+incandescent_lamps
+#> [1] "incandescent.60w"    "osram.classic.20w"   "osram.conc.spot.60w"
+#> [4] "pirkka.halogen.53w"
+```
+
+Temperature response data for emision from UV-B fluorescent tubes is
+provided as a separate collection of spectra.
+
+``` r
+names(qp_uvb313_temp.mspct)
+#> [1] "minus05C" "plus00C"  "plus05C"  "plus10C"  "plus20C"  "plus30C"  "plus35C"
 ```
 
 ## Installation
@@ -97,8 +140,8 @@ citation("photobiologyLamps")
 #> 
 #> To cite package 'photobiologyLamps' in publications, please use:
 #> 
-#>   Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants
-#>   Bulletin, 2015:1, 21-29. DOI:10.19232/uv4pb.2015.1.14
+#>   Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin,
+#>   2015:1, 21-29. DOI:10.19232/uv4pb.2015.1.14
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
