@@ -26,7 +26,8 @@ Godox_AD200_H200j_ADFT200_IR.spct <- Godox.bare.128.spct
 Godox_AD200_H200.spct <- speedlight.1.128.spct
 Godox_AD200_H200R.spct <- round.1.128.spct
 Godox_AD200_H200j_FTSTS40w.spct <- bare.bulb.israel.1.128.spct
-Convoy_UV_flashlight.spct <- Convoy_2plus.spct
+Convoy_2p_UV_flashlight.spct <- Convoy.2p.200mm.spct
+Jaxman_UC1flood_UV_flashlight.spct <- Jaxman.UC1.flood.200mm.spct
 Philips_LED_T8_10W_840.spct <- Philips.LED.T8.10W.840.daylight.spct
 Sunwayfoto_FL96_3000K.spct <- sunwayfoto_100_3000K.spct
 Sunwayfoto_FL96_5500K.spct <- Sunwayfoto_100_5500K.spct
@@ -39,6 +40,8 @@ rm(Valoya.AP67.no.filter.210mm.100pc.spct,
    L36W.840.spct,
    TLD.36W.18.spct,
    Convoy_2plus.spct,
+   Convoy.2p.200mm.spct,
+   Jaxman.UC1.flood.200mm.spct,
    Halogen_53W_E27_Pirkka.spct,
    bare.bulb.godox.1.128.spct,
    bare.bulb.israel.1.128.spct,
@@ -70,10 +73,12 @@ setWhatMeasured(Godox_AD200_H200.spct,
                 "Godox AD200 flash, head: Godox H200 (speedligh fresnel), power setting: 1/128")
 setWhatMeasured(Godox_AD200_H200R.spct, 
                 "Godox AD200 flash, head: Godox H200R (round), power setting: 1/128")
-setWhatMeasured(Convoy_UV_flashlight.spct, 
-                "Convoy 2+ flashlight, Nichia 365 nm LED, filter: UV-pass (unknown type), 1mm")
+setWhatMeasured(Convoy_2p_UV_flashlight.spct, 
+                "Convoy 2+ flashlight, Nichia 365 nm LED, filter: UV-pass (unknown type), 1mm; beam centre at 200 mm")
+setWhatMeasured(Jaxman_UC1flood_UV_flashlight.spct, 
+                "Convoy 2+ flashlight, Nichia 365 nm LED, filter: UV-pass (unknown type); beam centre at 200 mm")
 setWhatMeasured(Cree_UV_flashlight.spct, 
-                "Convoy 2+ flashlight, Nichia 365 nm LED, filter: UV-pass (unknown type), 1mm")
+                "UV flashlight, Cree 390 nm LED, filter: unknown type")
 setWhatMeasured(Philips_LED_T8_10W_840.spct, 
                 "Philips LED T8 tube, 10W, colour: 840 (daylight)")
 setWhatMeasured(Sunwayfoto_FL96_3000K.spct, 

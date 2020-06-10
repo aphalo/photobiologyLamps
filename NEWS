@@ -1,7 +1,9 @@
-photobiologyLamps 0.4.4 (2019-xx-xx)
+photobiologyLamps 0.4.4 (2020-xx-xx)
 ====================================
 
-* Replace non-ASCII character in data object comment attribute.
+* Add data for aditional flashlights.
+* Add data for Philips black light blue fluorescent tubes.
+* Revise vignette and other documentation.
 
 photobiologyLamps 0.4.3 (2019-06-09)
 ====================================
