@@ -15,3 +15,5 @@
 ^README-.*\.png$
 ^.*\.sh$
 ^build-binary-from-source.sh$
+^CITATION\.cff$
+^\.github$
