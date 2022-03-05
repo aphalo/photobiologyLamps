@@ -39,7 +39,6 @@ ledsavers.mspct %>%
 comment(ledsavers.mspct) <- 
   paste("Different settings of a four channel WRGB LED bulb",
         "Bulb 'Ledsavers 7.5 W with remote control', 230 V, E-27",
-#        "Ledsavers RGB-lampa med fjärrkontroll E27 350 lm, Art. 62559", # Avoid non-ASCII character in data NOTE
         "Ledsavers RGB-lampa med fjaerrkontroll E27 350 lm, Art. 62559",
         sep = "\n")
 

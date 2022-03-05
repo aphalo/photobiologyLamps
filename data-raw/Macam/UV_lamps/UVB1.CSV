@@ -1,4 +1,4 @@
-Wavelength(nm),W/mý
+Wavelength(nm),W/m2
  2.4000000000E+02, 0.0000000000E+00
  2.4100000000E+02, 0.0000000000E+00
  2.4200000000E+02, 0.0000000000E+00
@@ -562,7 +562,7 @@ Wavelength(nm),W/mý
  8.0000000000E+02, 0.0000000000E+00
 
 Total integrals in:
-W/mý,æmol/mý/s,Lux
+W/m2,umol/m2/s,Lux
  9.7855385839E+00, 2.7934052925E+01, 2.7624404127E+02
 
 Original file: C:\SPECTRO\UVB1.DTA
