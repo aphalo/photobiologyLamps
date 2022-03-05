@@ -57,6 +57,7 @@ all.spectra <- ls(pattern = ".spct$")
 
 for (s in all.spectra[grepl("^Godox", all.spectra) & !grepl("IR", all.spectra)]) {
    tmp <- trim_wl(get(s), range = c(300,800))
+   tmp <- thin_wl(tmp)
    assign(s, tmp)
 }
 rm(tmp)
