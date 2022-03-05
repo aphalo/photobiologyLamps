@@ -24,7 +24,7 @@ Depends:
 Suggests:
     knitr (>= 1.37),
     rmarkdown (>= 2.12),
-    ggspectra (>= 0.3.8),
+    ggspectra (>= 0.3.7),
     photobiologyWavebands (>= 0.4.5),
     ggplot2 (>= 3.3.5)
 LazyLoad: yes

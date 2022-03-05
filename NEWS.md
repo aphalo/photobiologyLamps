@@ -28,7 +28,7 @@ Update documentation and vignette.
 photobiologyLamps 0.4.1
 =======================
 
-_first CRAN release_ 
+_First CRAN release_ 
 Further reorganization of data into fewer objects.
 Update documentation to track these changes. 
 
