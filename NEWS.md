@@ -1,38 +1,39 @@
-photobiologyLamps 0.4.4 (2020-xx-xx)
-====================================
+photobiologyLamps 0.4.4
+=======================
 
 * Add data for aditional flashlights.
 * Add data for black light blue "BLB" fluorescent tubes.
 * Revise vignette and other documentation.
 
-photobiologyLamps 0.4.3 (2019-06-09)
-====================================
+photobiologyLamps 0.4.3
+=======================
 
 * Add data for Fluence-Osram grow lamps.
 * Add data for Sunwayfoto LED lamp and Godox flash.
 * Add data for UV-A flashlights.
 * Replace non-ASCII characters in documentation.
 * Rebuild all spectral data objects.
-* Correct some minor mistakes in the metadata stored in attribute "what.measured"
-in some spectra, add missing attribute "what.measured" and new attribute
-"how.measured".
+* Correct some minor mistakes in the metadata stored in attribute `"what.measured"`
+in some spectra, add missing attribute `"what.measured"` and new attribute
+`"how.measured"`.
 
-photobiologyLamps 0.4.2 (2018-02-27)
-====================================
+photobiologyLamps 0.4.2
+=======================
 
 Add data for several fixed-spectrum lamps and for a variable spectrum 
 four-channel WRGB LED bulb.
 Add indexing vectors and rename some of the existing ones.
 Update documentation and vignette.
 
-photobiologyLamps 0.4.1  (first CRAN release)
-========================
+photobiologyLamps 0.4.1
+=======================
 
+_first CRAN release_ 
 Further reorganization of data into fewer objects.
 Update documentation to track these changes. 
 
 photobiologyLamps 0.4.0
-========================
+=======================
 
 Major update, not backwards compatible.
 Data reorganized into collections of spectra grouped by measurement
@@ -44,31 +45,31 @@ Most spectra have been normalized to one at the peak, as actual spectral
 irradiance values are irrelevant when distance and geometry are not known.
 
 photobiologyLamps 0.3.4
-========================
+=======================
 
 Partial update, released as a test version.
 
 photobiologyLamps 0.3.3
-========================
+=======================
 
 Update for photobiology 0.9.1, ggspectra 0.1.0 and ggplot2 2.0.0.
 Fixed bug in Q-Panel UV313 temperature response data that was triggering and
 error with the now tighter checking.
 
 photobiologyLamps 0.3.2
-========================
+=======================
 
 Rebuild data and package. Update data object building scripts.
 
 photobiologyLamps 0.3.1
-========================
+=======================
 
 Add spectral data for germicidal lamp.
 
 Rebuild all data, and the package under photobiology 0.7.0.
 
 photobiologyLamps 0.3.0
-========================
+=======================
 
 Rebuilt all data, and the package under photobiology 0.6.0.
 
@@ -78,20 +79,20 @@ temperature response. Because of this the User Guide was also
 edited.
 
 photobiologyLamps 0.2.2
-========================
+=======================
 
 Edited vignette to use photobiologygg 0.2.8, adding titles to the figures.
 
 photobiologyLamps 0.2.1
-========================
+=======================
 
 Edited vignette to use photobiologygg 0.2.5 functions to simplify code examples.
 
 photobiologyLamps 0.2.0
-========================
+=======================
 
 Rebuilt vignette with photobiology 0.5.1, which is now required.
-Removed calc.lamp.multipliers().
+Removed `calc.lamp.multipliers()`.
 
 photobiologyLamps 0.1.14
 ========================
@@ -116,7 +117,7 @@ All data is now in source.spct objects, except for a data.table with the tempera
 photobiologyLamps 0.1.10
 ========================
 
-Added functions D2_spectrum() and FEL_spectrum(). These functions use constants from high precision fits to known calibration lamps.
+Added functions `D2_spectrum()` and `FEL_spectrum()`. These functions use constants from high precision fits to known calibration lamps.
 
 photobiologyLamps 0.1.9
 =======================
@@ -144,8 +145,8 @@ but measured over a wider range of wavelengths.
 photobiologyLamps 0.1.5
 =======================
 
-Corrected wrong units in Bentham data. It was in mW m-2 nm-1, while documentation 
-indicated that it was in W m-2 nm-1. Data has been now rescaled. 
+Corrected wrong units in Bentham data. It was in mW m<sup>-2</sup> nm<sup>-1</sup>, while documentation 
+indicated that it was in W m<sup>-2</sup> nm<sup>-1</sup>. Data has been now rescaled. 
 
 photobiologyLamps 0.1.4
 =======================

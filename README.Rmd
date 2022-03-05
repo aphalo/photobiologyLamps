@@ -1,7 +1,6 @@
 ---
 output:
-  github_document:
-    html_preview: false
+  github_document
 ---
 
 ```{r readme-01, echo = FALSE}
@@ -13,10 +12,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-# photobiologyLamps
+# photobiologyLamps <img src="man/figures/logo.png" align="right" width="120" />
 
+<!-- badges: start -->
 [![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyLamps)](https://cran.r-project.org/package=photobiologyLamps) 
 [![cran checks](https://cranchecks.info/badges/worst/photobiologyLamps)](https://cran.r-project.org/web/checks/check_results_photobiologyLamps.html)
+[![R-CMD-check](https://github.com/aphalo/photobiologyLamps/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyLamps/actions)
+<!-- badges: end -->
 
 Package '**photobiologyLamps**' is a data-only R package containing spectral
 emission data for frequently used lamps including bulbs and flashlights based on
