@@ -1,7 +1,7 @@
 Package: photobiologyLamps
 Type: Package
 Title: Spectral Irradiance Data for Lamps
-Version: 0.4.3.9001
+Version: 0.4.4
 Date: 2022-03-05
 Authors@R:
    c(

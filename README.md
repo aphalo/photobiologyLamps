@@ -1,39 +1,67 @@
 
-# photobiologyLamps
+# photobiologyLamps <img src="man/figures/logo.png" align="right" width="120" />
+
+<!-- badges: start -->
 
 [![CRAN
 version](https://www.r-pkg.org/badges/version-last-release/photobiologyLamps)](https://cran.r-project.org/package=photobiologyLamps)
 [![cran
 checks](https://cranchecks.info/badges/worst/photobiologyLamps)](https://cran.r-project.org/web/checks/check_results_photobiologyLamps.html)
+[![R-CMD-check](https://github.com/aphalo/photobiologyLamps/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyLamps/actions)
+<!-- badges: end -->
 
-Package ‘**photobiologyLamps**’ is a data-only R package containing
-spectral emission data for frequently used lamps including bulbs and
-flashlights based on light emitting diodes (LEDs) but excluding LEDs
-available as electronic components. Original spectral irradiance data
-for incandescent-, LED- and discharge lamps are included. They are
-complemented by data on the effect of temperature on the spectral
-emission from UV-B fluorescent tubes.
+Package ‘**photobiologyLamps**’ complements other packages in the [*R
+for photobiology* suite](https://www.r4photobiology.info/). It contains
+spectral emission data for LED, fluorescent, incandescent and other
+lamps (`lamps.mspct`). Spectra for light emitting diodes (LEDs) and LED
+arrays (`leds.mspct`) available as electronic components are included in
+package
+[‘photobioloyLEDs’](https://docs.r4photobiology.info/photobiologyLEDs/).
+Package ‘**photobiologyLamps**’ also includes spectra from UV-B
+fluorescent tubes operating at different temperatures
+(`qp_uvb313_temp.mspct` and `qp_uvb313_temp.spct`) and for a
+four-channel LED buld supporting channel mixing (`ledsavers.mspct`).
 
-Data for LEDs available as electronic components are included in package
-‘**photobiologyLEDs**’.
-
-The data in this package are stored in objects of classes defined in
-package ‘**photobiology**’ which are mostly backwards compatible with
-data frames.
-
-Package ‘**photobiologyLamps**’ is part of a suite of R packages for
-photobiological calculations described at the
-[r4photobiology](https://www.r4photobiology.info) web site.
+This package contains only data. Data are stored as collections of
+spectra of class `source_mspct` from package ‘photobiology’, which is
+the core of the [*R for photobiology*
+suite](https://www.r4photobiology.info/). Spectra can be easily plotted
+with functions and methods from package
+[‘ggspectra’](https://docs.r4photobiology.info/ggspectra/). The spectra
+can be used seamlesly with functions from package
+[‘photobioloy’](https://docs.r4photobiology.info/photobiology/).
+However, class `source_mspct` is derived from `list` and class
+`source_spct` is derived from `data.frame` making the data also usable
+as is with base R functions.
 
 ## Examples
+
+``` r
+library(ggspectra)
+library(photobiologyLamps)
+```
+
+The package includes spectral data for several lamps.
+
+``` r
+length(lamps.mspct)
+#> [1] 50
+```
+
+``` r
+length(qp_uvb313_temp.mspct)
+#> [1] 7
+```
+
+``` r
+length(ledsavers.mspct)
+#> [1] 16
+```
 
 The first example shows you how to plot the emission spectrum of one of
 the lamps.
 
 ``` r
-library(ggspectra)
-library(photobiologyLamps)
-
 autoplot(lamps.mspct$airam.spiraali,
          annotations = c("+", "title:what"))
 ```
@@ -47,24 +75,16 @@ what_measured(lamps.mspct$airam.spiraali)
 #> [1] "Airam Spiraali 14W 220-240W 3000K E27 900 lm CRI>=80"
 ```
 
-The number of spectra included in the collection can be obtained as
-follows.
-
-``` r
-length(lamps.mspct)
-#> [1] 48
-```
-
 The members of the collection are named, and several vectors of names
 are available, such as by manufacturer,
 
 ``` r
 philips_lamps
-#>  [1] "philips.led.t8.10w.840" "philips.pls11w.827"     "philips.tl01"          
-#>  [4] "philips.tl12"           "philips.tl12.mc"        "philips.tl5.35w.830he" 
-#>  [7] "philips.tld.36w.18"     "philips.tld36w.15"      "philips.tld36w.18"     
-#> [10] "philips.tld36w.83"      "philips.tld36w.865"     "philips.tld36w.89"     
-#> [13] "philips.tld36w.92"      "philips.tll36w.950"
+#>  [1] "philips.BLB.tld108"     "philips.led.t8.10w.840" "philips.pls11w.827"    
+#>  [4] "philips.tl01"           "philips.tl12"           "philips.tl12.mc"       
+#>  [7] "philips.tl5.35w.830he"  "philips.tld.36w.18"     "philips.tld36w.15"     
+#> [10] "philips.tld36w.18"      "philips.tld36w.83"      "philips.tld36w.865"    
+#> [13] "philips.tld36w.89"      "philips.tld36w.92"      "philips.tll36w.950"
 ```
 
 or type of lamp.
@@ -159,6 +179,6 @@ citation("photobiologyLamps")
 
 ## License
 
-© 2013-2019 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2013-2022 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.

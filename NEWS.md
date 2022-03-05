@@ -1,9 +1,16 @@
+---
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
 photobiologyLamps 0.4.4
 =======================
 
 * Add data for aditional flashlights.
 * Add data for black light blue "BLB" fluorescent tubes.
 * Revise vignette and other documentation.
+* Migrate Git repository from Bitbucket to GitHub.
 
 photobiologyLamps 0.4.3
 =======================

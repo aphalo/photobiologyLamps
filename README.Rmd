@@ -20,28 +20,38 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/aphalo/photobiologyLamps/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyLamps/actions)
 <!-- badges: end -->
 
-Package '**photobiologyLamps**' is a data-only R package containing spectral
-emission data for frequently used lamps including bulbs and flashlights based on
-light emitting diodes (LEDs) but excluding LEDs available as electronic
-components. Original spectral irradiance data for incandescent-, LED- and
-discharge lamps are included. They are complemented by data on the effect of
-temperature on the spectral emission from UV-B fluorescent tubes.
-    
-Data for LEDs available as electronic components are included in package '**photobiologyLEDs**'.
+Package '**photobiologyLamps**' complements other packages in the [_R for photobiology_ suite](https://www.r4photobiology.info/). It contains spectral emission data for LED, fluorescent, incandescent and other lamps (`lamps.mspct`). Spectra for light emitting diodes (LEDs) and LED arrays (`leds.mspct`) available as electronic components are included in package ['photobioloyLEDs'](https://docs.r4photobiology.info/photobiologyLEDs/). Package '**photobiologyLamps**' also includes spectra from UV-B fluorescent tubes operating at different temperatures (`qp_uvb313_temp.mspct` and `qp_uvb313_temp.spct`) and for a four-channel LED buld supporting channel mixing (`ledsavers.mspct`).
 
-The data in this package are stored in objects of classes defined in package '**photobiology**' which are mostly backwards compatible with data frames.
-
-Package '**photobiologyLamps**' is part of a suite of R packages for photobiological calculations described at the [r4photobiology](https://www.r4photobiology.info) web site.
+This package contains only data. Data are stored as collections of spectra of class `source_mspct` from package 'photobiology', which is the core of the 
+[_R for photobiology_ suite](https://www.r4photobiology.info/). Spectra can
+be easily plotted with functions and methods from package ['ggspectra'](https://docs.r4photobiology.info/ggspectra/). The spectra can be used seamlesly with functions from package ['photobioloy'](https://docs.r4photobiology.info/photobiology/). However,
+class `source_mspct` is derived from `list` and class `source_spct` is derived from `data.frame` making the data also usable as is with base R functions.
 
 ## Examples
+
+```{r example0, message=FALSE}
+library(ggspectra)
+library(photobiologyLamps)
+```
+
+The package includes spectral data for several lamps.
+
+```{r}
+length(lamps.mspct)
+```
+
+```{r}
+length(qp_uvb313_temp.mspct)
+```
+
+```{r}
+length(ledsavers.mspct)
+```
 
 The first example shows you how to plot the emission spectrum of one of the
 lamps.
 
 ```{r example1, message=FALSE}
-library(ggspectra)
-library(photobiologyLamps)
-
 autoplot(lamps.mspct$airam.spiraali,
          annotations = c("+", "title:what"))
 ```
@@ -50,12 +60,6 @@ The second example shows how to access metadata.
 
 ```{r example2}
 what_measured(lamps.mspct$airam.spiraali)
-```
-
-The number of spectra included in the collection can be obtained as follows.
-
-```{r}
-length(lamps.mspct)
 ```
 
 The members of the collection are named, and several vectors of names are available, such as by manufacturer,
@@ -119,5 +123,5 @@ citation("photobiologyLamps")
 
 ## License
 
-© 2013-2019 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
+© 2013-2022 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
 

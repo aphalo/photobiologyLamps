@@ -16,7 +16,6 @@ vignette: >
 knitr::opts_chunk$set(fig.width=8, fig.height=4)
 ```
 
-
 ## Introduction
 
 This package, is a data only package, part of a suite, which has package 
