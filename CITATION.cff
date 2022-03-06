@@ -36,8 +36,8 @@ preferred-citation:
   doi: 10.19232/uv4pb.2015.1.14
   start: 21-29
 repository: https://CRAN.R-project.org/package=photobiologyLamps
-repository-code: https://bitbucket.org/aphalo/photobiologylamps
-url: http://www.r4photobiology.info
+repository-code: https://github.com/aphalo/photobiologylamps
+url: https://www.r4photobiology.info/
 date-released: '2022-03-06'
 contact:
 - family-names: Aphalo
