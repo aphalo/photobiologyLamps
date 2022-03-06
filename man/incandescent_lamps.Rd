@@ -13,7 +13,7 @@
 \format{
 A vector of character strings.
 
-An object of class \code{character} of length 15.
+An object of class \code{character} of length 20.
 
 An object of class \code{character} of length 23.
 

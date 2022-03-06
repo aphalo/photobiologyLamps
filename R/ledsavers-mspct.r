@@ -40,7 +40,7 @@
 #' \code{ledsavers_RB_mixes}, \code{ledsavers_GB_mixes} are character vectors
 #' containing subsets of \code{names(ledsavers.mspct)}.
 #' 
-#' @references \url{http://www.ledsavers.com/}
+#' @references \url{https://www.kjell.com/varumarken/ledsavers}
 #'
 #' @examples
 #' ledsavers_channels

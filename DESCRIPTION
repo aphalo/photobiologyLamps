@@ -31,7 +31,7 @@ LazyLoad: yes
 LazyData: yes
 ByteCompile: true
 Encoding: UTF-8
-URL: http://www.r4photobiology.info,
-    https://bitbucket.org/aphalo/photobiologylamps
-BugReports: https://bitbucket.org/aphalo/photobiologylamps/issues
+URL: https://www.r4photobiology.info/,
+    https://github.com/aphalo/photobiologylamps
+BugReports: https://github.com/aphalo/photobiologylamps/issues
 RoxygenNote: 7.1.2

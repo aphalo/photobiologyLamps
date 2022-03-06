@@ -83,6 +83,6 @@ ledsavers.mspct[ledsavers_channels]
 
 }
 \references{
-\url{http://www.ledsavers.com/}
+\url{https://www.kjell.com/varumarken/ledsavers}
 }
 \keyword{datasets}

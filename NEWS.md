@@ -9,6 +9,7 @@ photobiologyLamps 0.4.4
 
 * Add data for aditional flashlights.
 * Add data for black light blue "BLB" fluorescent tubes.
+* Add data for new grow lights from Fluence-Osram.
 * Revise vignette and other documentation.
 * Migrate Git repository from Bitbucket to GitHub.
 

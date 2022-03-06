@@ -70,6 +70,6 @@ qp_uvb313_temp.mspct[["plus20C"]]
 Aphalo, P J, R Tegelberg, and R Julkunen-Tiitto. 1999. The
 Modulated UV-B Irradiation System at the University of Joensuu. Biotronics
 28: 109–120.
-\url{http://ci.nii.ac.jp/naid/110006175827/en}.
+\url{https://ci.nii.ac.jp/naid/110006175827/en}.
 }
 \keyword{datasets}
