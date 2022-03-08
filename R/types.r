@@ -31,6 +31,9 @@
 "incandescent_lamps"
 
 #' @rdname incandescent_lamps
+"fluorescent_lamps"
+
+#' @rdname incandescent_lamps
 "led_lamps"
 
 #' @rdname incandescent_lamps
@@ -44,3 +47,6 @@
 
 #' @rdname incandescent_lamps
 "xenon_lamps"
+
+#' @rdname incandescent_lamps
+"germicidal_lamps"

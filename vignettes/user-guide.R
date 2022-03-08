@@ -12,25 +12,25 @@ library(ggspectra)
 names(lamps.mspct)
 
 ## -----------------------------------------------------------------------------
-lamps.mspct$incandescent.60w
+lamps.mspct$Generic.Inc.bulb.60W
 
 ## -----------------------------------------------------------------------------
-lamps.mspct[["incandescent.60w"]]
+lamps.mspct[["Generic.Inc.bulb.60W"]]
 
 ## -----------------------------------------------------------------------------
-lamps.mspct["incandescent.60w"]
+lamps.mspct["Generic.Inc.bulb.60W"]
 
 ## -----------------------------------------------------------------------------
 lamps.mspct[toshiba_lamps]
 
 ## -----------------------------------------------------------------------------
-lamps.mspct[grep("toshiba", names(lamps.mspct))]
+lamps.mspct[grep("Toshiba", names(lamps.mspct))]
 
 ## -----------------------------------------------------------------------------
 lamps.mspct[intersect(philips_lamps, red_lamps)]
 
 ## -----------------------------------------------------------------------------
-my.spct <- fscale(lamps.mspct$incandescent.60w,
+my.spct <- fscale(lamps.mspct$Generic.Inc.bulb.60W,
                   range = c(400, 700),
                   f = e_irrad,
                   target = 100
@@ -41,7 +41,7 @@ e_irrad(my.spct, waveband(c(400,700)))
 is_scaled(my.spct)
 
 ## -----------------------------------------------------------------------------
-my.spct <- fscale(lamps.mspct$incandescent.60w,
+my.spct <- fscale(lamps.mspct$Generic.Inc.bulb.60W,
                   range = c(400, 700),
                   f = q_irrad,
                   target = 300e-6
@@ -50,7 +50,7 @@ q_irrad(my.spct, waveband(c(400,700)))
 
 
 ## -----------------------------------------------------------------------------
-my.spct <- fscale(lamps.mspct$incandescent.60w,
+my.spct <- fscale(lamps.mspct$Generic.Inc.bulb.60W,
                   range = c(400, 700),
                   f = e_irrad,
                   target = 1
@@ -58,13 +58,13 @@ my.spct <- fscale(lamps.mspct$incandescent.60w,
 is_scaled(my.spct)
 
 ## -----------------------------------------------------------------------------
-normalize(lamps.mspct$philips.tld.36w.18)
+normalize(lamps.mspct$Philips.FT.TLD.36W.15)
 
 ## -----------------------------------------------------------------------------
 q_ratio(my.spct, Red("Smith10"), Far_red("Smith10"))
 
 ## -----------------------------------------------------------------------------
-autoplot(lamps.mspct$osram.led.8w.2700k)
+autoplot(lamps.mspct$Osram.LED.8W.2700K)
 
 ## -----------------------------------------------------------------------------
 what_measured(ledsavers.mspct$purple)
@@ -84,18 +84,18 @@ autoplot(ledsavers.mspct[c( "W", "R", "G", "B")],
   labs(linetype = "Channel")
 
 ## -----------------------------------------------------------------------------
-head(as.data.frame(lamps.mspct$incandescent.60w))
+head(as.data.frame(lamps.mspct$Osram.LED.8W.2700K))
 
 ## -----------------------------------------------------------------------------
 attach(lamps.mspct)
-q_ratio(incandescent.60w, Blue(), Red())
+q_ratio(Osram.LED.8W.2700K, Blue(), Red())
 detach(lamps.mspct)
 
 ## -----------------------------------------------------------------------------
 attach(lamps.mspct)
-with(incandescent.60w, max(w.length))
+with(Osram.LED.8W.2700K, max(w.length))
 detach(lamps.mspct)
 
 ## -----------------------------------------------------------------------------
-with(lamps.mspct, q_ratio(incandescent.60w, Blue(), Red()))
+with(lamps.mspct, q_ratio(Osram.LED.8W.2700K, Blue(), Red()))
 

@@ -6,14 +6,14 @@ LCDlighting.UVA.BL.spct <- as.source_spct(LCDlighting.UVA.BL) %>% clean()
 
 LCDlighting.UVA.BL.spct <- 
   interpolate_wl(LCDlighting.UVA.BL.spct, w.length.out = 250:800, fill = 0) %>%
-  normalise()
+  normalise() %>% thin_wl()
 range(LCDlighting.UVA.BL.spct)
 setWhatMeasured(LCDlighting.UVA.BL.spct, 
                 "Blacklight UVA BL fluorescent tube spectrum, LightSources Inc, USA/Hungary.")
 setHowMeasured(LCDlighting.UVA.BL.spct, 
                "Digitized from figure in manufacturer's image in web site.")
 
-LCDlighting.mspct <- source_mspct(list(LCDlighting.UVA.BL = LCDlighting.UVA.BL.spct))
+LCDlighting.mspct <- source_mspct(list(LCDlighting.FT.UVA.BL = LCDlighting.UVA.BL.spct))
 
 save(LCDlighting.mspct, file = "data-raw/LCDlighting-mspct.rda")
 

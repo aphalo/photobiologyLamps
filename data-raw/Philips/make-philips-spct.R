@@ -13,7 +13,7 @@ setWhatMeasured(philips.BLB.tld108.spct,
 setHowMeasured(philips.BLB.tld108.spct, 
                "Digitized from figure in manufacturer's brochure.")
 
-philips.mspct <- source_mspct(list(philips.BLB.tld108 = philips.BLB.tld108.spct))
+philips.mspct <- source_mspct(list(Philips.FT.TLD.36W.BLB.108 = philips.BLB.tld108.spct))
 
 save(philips.mspct, file = "data-raw/philips-mspct.rda")
 

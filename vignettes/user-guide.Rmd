@@ -64,13 +64,13 @@ We can use a name as index to extract an individual `source_spct`
 object.
 
 ```{r}
-lamps.mspct$incandescent.60w
+lamps.mspct$Generic.Inc.bulb.60W
 ```
 
 Or a character string.
 
 ```{r}
-lamps.mspct[["incandescent.60w"]]
+lamps.mspct[["Generic.Inc.bulb.60W"]]
 ```
 
 Be aware that according to R's rules, using single square brackets will return
@@ -78,7 +78,7 @@ a `source_mspct` object possibly of length one. This statement is not equivalent
 to the one in the chunk immediately above.
 
 ```{r}
-lamps.mspct["incandescent.60w"]
+lamps.mspct["Generic.Inc.bulb.60W"]
 ```
 
 ## Accessing subsets of spectra
@@ -97,7 +97,7 @@ with names containing the string "toshiba". More generaly one can search for
 matching names within the collection of spectra.
 
 ```{r}
-lamps.mspct[grep("toshiba", names(lamps.mspct))]
+lamps.mspct[grep("Toshiba", names(lamps.mspct))]
 ```
 
 Set algebra operations can be used with the indexing vectors as each vector
@@ -131,7 +131,7 @@ operation is done to obtain spectral emission data that could have been measured
 at a target condition that we want to simulate or reconstruct.
 
 ```{r}
-my.spct <- fscale(lamps.mspct$incandescent.60w,
+my.spct <- fscale(lamps.mspct$Generic.Inc.bulb.60W,
                   range = c(400, 700),
                   f = e_irrad,
                   target = 100
@@ -146,7 +146,7 @@ is_scaled(my.spct)
 To do the scaling based on photon irradiance, different approaches are available to change the default. Here as above we specify the function to use through the argument passed to `f` and set a suitable target in mol m-2 s-1. We use 300e-6 to indicate 300 umol m-2 s-1.
 
 ```{r}
-my.spct <- fscale(lamps.mspct$incandescent.60w,
+my.spct <- fscale(lamps.mspct$Generic.Inc.bulb.60W,
                   range = c(400, 700),
                   f = q_irrad,
                   target = 300e-6
@@ -159,7 +159,7 @@ In the special case when `target == 1`, the default changes, assuming that
 in this case the intention is to re-express the spectral data in relative units.
 
 ```{r}
-my.spct <- fscale(lamps.mspct$incandescent.60w,
+my.spct <- fscale(lamps.mspct$Generic.Inc.bulb.60W,
                   range = c(400, 700),
                   f = e_irrad,
                   target = 1
@@ -179,7 +179,7 @@ the returned spectra are always labeled as being normalized. We use a blue
 fluorescent tube for this example.
 
 ```{r}
-normalize(lamps.mspct$philips.tld.36w.18)
+normalize(lamps.mspct$Philips.FT.TLD.36W.15)
 ```
 
 Ratios can be calculated directly as they are not affected
@@ -200,7 +200,7 @@ such cases the data included in the package have been normalized to 1 at the
 tallest peak of emission, as can be seen in the example below.
 
 ```{r}
-autoplot(lamps.mspct$osram.led.8w.2700k)
+autoplot(lamps.mspct$Osram.LED.8W.2700K)
 ```
 
 Data for a four channel, remote controlled, LED bulb is included in object 
@@ -250,25 +250,25 @@ derived from `tibble::tibble` that is a partly compatible reimplementation of
 frames as input.
 
 ```{r}
-head(as.data.frame(lamps.mspct$incandescent.60w))
+head(as.data.frame(lamps.mspct$Osram.LED.8W.2700K))
 ```
 
 Of course `attach` and `with` also work as expected.
 
 ```{r}
 attach(lamps.mspct)
-q_ratio(incandescent.60w, Blue(), Red())
+q_ratio(Osram.LED.8W.2700K, Blue(), Red())
 detach(lamps.mspct)
 ```
 
 ```{r}
 attach(lamps.mspct)
-with(incandescent.60w, max(w.length))
+with(Osram.LED.8W.2700K, max(w.length))
 detach(lamps.mspct)
 ```
 
 ```{r}
-with(lamps.mspct, q_ratio(incandescent.60w, Blue(), Red()))
+with(lamps.mspct, q_ratio(Osram.LED.8W.2700K, Blue(), Red()))
 ```
 
 

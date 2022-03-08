@@ -20,25 +20,25 @@
 \format{
 A vector of character strings.
 
-An object of class \code{character} of length 10.
+An object of class \code{character} of length 8.
 
-An object of class \code{character} of length 4.
+An object of class \code{character} of length 14.
 
-An object of class \code{character} of length 3.
-
-An object of class \code{character} of length 0.
-
-An object of class \code{character} of length 0.
-
-An object of class \code{character} of length 0.
-
-An object of class \code{character} of length 0.
+An object of class \code{character} of length 8.
 
 An object of class \code{character} of length 7.
 
-An object of class \code{character} of length 0.
+An object of class \code{character} of length 3.
 
-An object of class \code{source_mspct} (inherits from \code{generic_mspct}, \code{list}) with 35 rows and 1 columns.
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 7.
+
+An object of class \code{character} of length 14.
+
+An object of class \code{character} of length 8.
+
+An object of class \code{character} of length 39.
 }
 \usage{
 lamp_colors

@@ -12,29 +12,33 @@ for (f in files) load(f)
 # object.names <- gsub(".Rda", "", basename(files))
 
 object.names <- grep("raw|dim", ls(pattern = ".spct"), value = TRUE, invert = TRUE)
+how.measured <- "Array spectrometer, Ocean Optics Maya 2000 Pro; Bentham cosine diffuser D7H; distance unknown."
 
 ledsavers.mspct <- source_mspct()
 for (o in object.names) {
-  tmp <- get(o)
-  setWhatMeasured(tmp, "LedSaver 7.5W four channels (WRGB) LED lamp.")
-  setHowMeasured(tmp, "Measured with an array spectrometer.")
-  ledsavers.mspct[[o]] <- trimInstrDesc(tmp)
+  temp.spct <- get(o)
+#  temp.spct <- normalize(temp.spct)
+  temp.spct <- smooth_spct(temp.spct)
+  temp.spct <- thin_wl(temp.spct)
+  temp.spct <- trim_wl(temp.spct, c(350, NA), fill = 0)
+  setHowMeasured(temp.spct, how.measured)
+  setWhatMeasured(temp.spct, "LedSavers 7.5W four channels (WRGB) LED lamp.")
+  #  comment(temp.spct) <- comment.text
+  trimInstrDesc(temp.spct)
+  trimInstrSettings(temp.spct)
+  print(str(get_attributes(temp.spct)))
+  print(autoplot(temp.spct, annotations = c("+", "title:what:when:comment")))
+  ledsavers.mspct[[o]] <- temp.spct
+  readline("next:")
 }
-rm(o, tmp)
+rm(o, tmp.spct)
 
-names(ledsavers.mspct) <- gsub("LedSaver_7.5W_", "", 
-                              gsub(".spct", "", names(ledsavers.mspct)))
+names(ledsavers.mspct) <- gsub("_", ".",
+                               gsub("LedSaver_7\\.5W_", "", 
+                              gsub("\\.spct", "", names(ledsavers.mspct))))
 
 names(ledsavers.mspct)[names(ledsavers.mspct) == "Fuchsia"] <- "fuchsia"
-
-ledsavers.mspct <- clean(ledsavers.mspct)
-
-ledsavers.mspct <- trim_wl(ledsavers.mspct, range = c(350, 900))
-
-# ledsavers.mspct <- normalize(ledsavers.mspct)
-
-ledsavers.mspct %>% 
-  msmsply(.fun = trimInstrDesc) -> ledsavers.mspct
+names(ledsavers.mspct)
 
 comment(ledsavers.mspct) <- 
   paste("Different settings of a four channel WRGB LED bulb",

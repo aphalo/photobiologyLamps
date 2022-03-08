@@ -53,7 +53,7 @@ rm(Valoya.AP67.no.filter.210mm.100pc.spct,
    Philips.LED.T8.10W.840.daylight.spct)
 
 # trim out bad data
-all.spectra <- ls(pattern = ".spct$")
+all.spectra <- ls(pattern = "\\.spct$")
 
 for (s in all.spectra[grepl("^Godox", all.spectra) & !grepl("IR", all.spectra)]) {
    tmp <- trim_wl(get(s), range = c(300,800))

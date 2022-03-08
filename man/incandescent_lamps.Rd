@@ -8,12 +8,16 @@
 \alias{mercury_lamps}
 \alias{multimetal_lamps}
 \alias{led_lamps}
+\alias{fluorescent_lamps}
 \alias{xenon_lamps}
+\alias{germicidal_lamps}
 \title{Spectral data for Lamps of different types}
 \format{
 A vector of character strings.
 
-An object of class \code{character} of length 20.
+An object of class \code{character} of length 22.
+
+An object of class \code{character} of length 23.
 
 An object of class \code{character} of length 23.
 
@@ -21,10 +25,14 @@ An object of class \code{character} of length 1.
 
 An object of class \code{character} of length 1.
 
-An object of class \code{character} of length 5.
+An object of class \code{character} of length 4.
+
+An object of class \code{character} of length 1.
 }
 \usage{
 incandescent_lamps
+
+fluorescent_lamps
 
 led_lamps
 
@@ -35,6 +43,8 @@ multimetal_lamps
 sodium_lamps
 
 xenon_lamps
+
+germicidal_lamps
 }
 \description{
 Names of datasets containing the wavelengths and tabulated values spectral emittance 

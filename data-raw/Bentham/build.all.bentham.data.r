@@ -15,10 +15,10 @@ philips.tl01 <- as.source_spct(philips.tl01.bentham.data)
 philips.tl12 <- as.source_spct(philips.tl12.bentham.data)
 setWhatMeasured(philips.tl01, "Philips fluorescent UV lamp TL01")
 setWhatMeasured(philips.tl12, "Philips fluorescent UV lamp TL12")
-setHowMeasured(philips.tl01, "Measured with a double monochromator scanning spectroradiometer.")
-setHowMeasured(philips.tl12, "Measured with a double monochromator scanning spectroradiometer.")
+setHowMeasured(philips.tl01, "Measured with a Bentham double monochromator scanning spectroradiometer.")
+setHowMeasured(philips.tl12, "Measured with a Bentham double monochromator scanning spectroradiometer.")
 
-bentham.mspct <- normalize(source_mspct(list(philips.tl01 = philips.tl01,
-                                             philips.tl12 = philips.tl12)))
+bentham.mspct <- normalize(source_mspct(list(Philips.FT.TL.40W.01.uv = philips.tl01,
+                                             Philips.FT.TL.40W.12.uv = philips.tl12)))
 
 save(bentham.mspct, file="./data-raw/bentham-mspct.rda")

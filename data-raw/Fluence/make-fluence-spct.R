@@ -6,7 +6,7 @@ library(ggspectra)
 # clear workspace
 rm(list = ls(pattern = "*"))
 
-photon_as_default()
+energy_as_default()
 
 AnthoSpec <- read.csv("data-raw/Fluence/AnthoSpec-RAY.csv",
                       skip = 1, header = FALSE, col.names = c("w.length", "s.q.irrad"))
@@ -23,24 +23,27 @@ PhysioSpecBROAD_R6 <- read.csv2("data-raw/Fluence/PhysioSpec-BROAD-R6.csv",
 PhysioSpecBROAD_R9B <- read.csv2("data-raw/Fluence/PhysioSpec-BROAD-R9B.csv",
                             skip = 1, header = FALSE, col.names = c("w.length", "s.q.irrad"))
 
-fluence_AnthoSpec.spct <- as.source_spct(AnthoSpec) %>% clean() %>% normalize()
-fluence_PhysioSpec_Greenhouse.spct <- as.source_spct(PhysioSpecGreenhouse) %>% clean() %>% normalize()
-fluence_PhysioSpec_Indoor.spct <- as.source_spct(PhysioSpecIndoor) %>% clean() %>% normalize()
-fluence_PhysioSpec_BROAD.spct <- as.source_spct(PhysioSpecBROAD) %>% clean() %>% normalize()
-fluence_PhysioSpec_BROAD_R3.spct <- as.source_spct(PhysioSpecBROAD_R3[-69, ]) %>% clean() %>% normalize()
-fluence_PhysioSpec_BROAD_R6.spct <- as.source_spct(PhysioSpecBROAD_R6) %>% clean() %>% normalize()
-fluence_PhysioSpec_BROAD_R9B.spct <- as.source_spct(PhysioSpecBROAD_R9B[-14, ]) %>% clean() %>% normalize()
+Fluence_AnthoSpec.spct <- as.source_spct(AnthoSpec) %>% clean() %>% normalize()
+Fluence_PhysioSpec_Greenhouse.spct <- as.source_spct(PhysioSpecGreenhouse) %>% clean() %>% normalize()
+Fluence_PhysioSpec_Indoor.spct <- as.source_spct(PhysioSpecIndoor) %>% clean() %>% normalize()
+Fluence_PhysioSpec_BROAD.spct <- as.source_spct(PhysioSpecBROAD) %>% clean() %>% normalize()
+Fluence_PhysioSpec_BROAD_R3.spct <- as.source_spct(PhysioSpecBROAD_R3[-69, ]) %>% clean() %>% normalize()
+Fluence_PhysioSpec_BROAD_R6.spct <- as.source_spct(PhysioSpecBROAD_R6) %>% clean() %>% normalize()
+Fluence_PhysioSpec_BROAD_R9B.spct <- as.source_spct(PhysioSpecBROAD_R9B[-14, ]) %>% clean() %>% normalize()
 
-fluence.mspct <- collect2mspct()
-names(fluence.mspct) <- gsub(".spct", "", names(fluence.mspct))
+fluence.mspct <- normalise(collect2mspct())
+names(fluence.mspct) <- gsub("_", ".", 
+                             gsub("Fluence_", "Fluence_LED_",
+                                  gsub(".spct", "", names(fluence.mspct))))
+
 autoplot(fluence.mspct)
 
 for (s in names(fluence.mspct)) {
   vintage <- if (grepl("AnthoSpec|Greenhouse", s)) "2019" else "2022"
   fluence.mspct[[s]] <- interpolate_wl(fluence.mspct[[s]], w.length.out = 360:830, fill = 0)
   what_measured(fluence.mspct[[s]]) <- 
-                  paste("LED grow light, spectrum ", 
-                  gsub("_", " ", gsub("fluence_", "", s)))
+                  paste("LED grow light: spectrum ", 
+                  gsub("_|\\.", " ", gsub("Fluence_", "", s)))
   how_measured(fluence.mspct[[s]]) <- 
                  paste("Digitized from figure in manufacturer's brochure or image from web site in ",
                        vintage, ".", sep = "")
