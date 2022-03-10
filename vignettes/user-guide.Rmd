@@ -89,7 +89,7 @@ define their own, either as constants or through computation. Here we use
 a vector defined by the package.
 
 ```{r}
-lamps.mspct[toshiba_lamps]
+lamps.mspct[Toshiba_lamps]
 ```
 
 And below we use a computed one. In this case we extract the member spectra
@@ -104,7 +104,7 @@ Set algebra operations can be used with the indexing vectors as each vector
 describes a single property: color, brand, type, etc.
 
 ```{r}
-lamps.mspct[intersect(philips_lamps, red_lamps)]
+lamps.mspct[intersect(Philips_lamps, red_lamps)]
 ```
 
 ## Rescaling spectral data

@@ -53,10 +53,10 @@
 #' library(photobiologyLamps)
 #' library(photobiologyWavebands)
 #' # extract one spectrum
-#' lamps.mspct$incandescent.60w
-#' lamps.mspct[["incandescent.60w"]]
+#' lamps.mspct$Generic.Inc.bulb.60W
+#' lamps.mspct[["Generic.Inc.bulb.60W"]]
 #' # using one spectrum in a calculation
-#' q_ratio(lamps.mspct$incandescent.60w, Blue(), Green())
+#' q_ratio(lamps.mspct$Generic.Inc.bulb.60W, Blue(), Green())
 #' # extracting all the spectra measured with a given instrument
 #' lamps.mspct[bentham_lamps]
 #'

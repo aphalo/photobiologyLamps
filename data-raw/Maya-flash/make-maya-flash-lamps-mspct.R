@@ -21,10 +21,10 @@ lamp.type <- rep("Xenon flashtube: ", 4L)
                     
 names(lamp.type) <- spectra
 
-new.names <- c("Godox.XF.AD200.H200j.ADFT200.flash",
-               "Godox.XF.AD200.H200.flash",
-               "Godox.XF.AD200.H200R.flash",
-               "Godox.XF.AD200.H200j.FTSTS40w.flash")
+new.names <- c("Godox.XeF.AD200.H200j.ADFT200.flash",
+               "Godox.XeF.AD200.H200.flash",
+               "Godox.XeF.AD200.H200R.flash",
+               "Godox.XeF.AD200.H200j.FTSTS40w.flash")
   
 names(new.names) <- spectra
 

@@ -3,20 +3,20 @@
 \docType{data}
 \name{lamp_brands}
 \alias{lamp_brands}
-\alias{osram_lamps}
-\alias{philips_lamps}
-\alias{sylvania_lamps}
-\alias{qpanel_lamps}
-\alias{airam_lamps}
-\alias{toshiba_lamps}
-\alias{aputure_lamps}
-\alias{sunwayfoto_lamps}
-\alias{godox_lamps}
-\alias{valoya_lamps}
-\alias{fluence_lamps}
-\alias{convoy_lamps}
-\alias{jaxman_lamps}
-\alias{generic_lamps}
+\alias{Osram_lamps}
+\alias{Philips_lamps}
+\alias{Sylvania_lamps}
+\alias{QPanel_lamps}
+\alias{Airam_lamps}
+\alias{Toshiba_lamps}
+\alias{Aputure_lamps}
+\alias{Sunwayfoto_lamps}
+\alias{Godox_lamps}
+\alias{Valoya_lamps}
+\alias{Fluence_lamps}
+\alias{Convoy_lamps}
+\alias{Jaxman_lamps}
+\alias{Generic_lamps}
 \title{Spectral data for Lamps from different suppliers}
 \format{
 A vector of character strings.
@@ -52,33 +52,33 @@ An object of class \code{character} of length 9.
 \usage{
 lamp_brands
 
-osram_lamps
+Osram_lamps
 
-philips_lamps
+Philips_lamps
 
-sylvania_lamps
+Sylvania_lamps
 
-qpanel_lamps
+QPanel_lamps
 
-airam_lamps
+Airam_lamps
 
-toshiba_lamps
+Toshiba_lamps
 
-aputure_lamps
+Aputure_lamps
 
-sunwayfoto_lamps
+Sunwayfoto_lamps
 
-godox_lamps
+Godox_lamps
 
-valoya_lamps
+Valoya_lamps
 
-fluence_lamps
+Fluence_lamps
 
-convoy_lamps
+Convoy_lamps
 
-jaxman_lamps
+Jaxman_lamps
 
-generic_lamps
+Generic_lamps
 }
 \description{
 The collection of spectra \code{\link{lamps.mspct}} contains spectra for 
@@ -178,7 +178,7 @@ Is a Chinese supplier of LED flashlights/torches. Formerly sold
 through AliExpress.
 }
 
-\section{Generic or shop branded}{
+\section{Generic, shop branded or distributor branded}{
 
 We group under this category shop-branded or generic (no-brand) lamps that
 usually have specifications with limited details. These lamps are unlikely to
@@ -187,7 +187,7 @@ remain consistent from batch to batch or have limited availability.
 
 \examples{
 lamp_brands
-osram_lamps
+Osram_lamps
 
 }
 \references{

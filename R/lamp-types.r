@@ -27,26 +27,26 @@
 #' lamps.mspct[sodium_lamps]
 #' 
 #' @seealso \code{\link{lamps.mspct}}
-#' 
+#'
+"lamp_types"
+
+#' @rdname lamp_types
 "incandescent_lamps"
 
-#' @rdname incandescent_lamps
+#' @rdname lamp_types
 "fluorescent_lamps"
 
-#' @rdname incandescent_lamps
+#' @rdname lamp_types
 "led_lamps"
 
-#' @rdname incandescent_lamps
+#' @rdname lamp_types
 "mercury_lamps"
 
-#' @rdname incandescent_lamps
+#' @rdname lamp_types
 "multimetal_lamps"
 
-#' @rdname incandescent_lamps
+#' @rdname lamp_types
 "sodium_lamps"
 
-#' @rdname incandescent_lamps
+#' @rdname lamp_types
 "xenon_lamps"
-
-#' @rdname incandescent_lamps
-"germicidal_lamps"

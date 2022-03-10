@@ -20,7 +20,7 @@
 #' 
 #' @examples
 #' lamp_brands
-#' osram_lamps
+#' Osram_lamps
 #' 
 #' @seealso \code{\link{lamps.mspct}}
 #' 
@@ -36,7 +36,7 @@
 #'  .
 #' @references \url{https://www.ledvance.com/}
 #' 
-"osram_lamps"
+"Osram_lamps"
 
 #' @rdname lamp_brands
 #' 
@@ -45,7 +45,7 @@
 #' 
 #' @references \url{https://www.lighting.philips.com/}
 #' 
-"philips_lamps"
+"Philips_lamps"
 
 #' @rdname lamp_brands
 #' 
@@ -57,7 +57,7 @@
 #' 
 #' @references \url{https://www.sylvania.com/Pages/default.aspx}
 #' 
-"sylvania_lamps"
+"Sylvania_lamps"
 
 #' @rdname lamp_brands
 #' 
@@ -67,7 +67,7 @@
 #' 
 #' @references \url{https://www.q-lab.com/}
 #' 
-"qpanel_lamps"
+"QPanel_lamps"
 
 #' @rdname lamp_brands
 #' 
@@ -77,7 +77,7 @@
 #' 
 #' @references \url{https://www.airam.fi/en/}
 #' 
-"airam_lamps"
+"Airam_lamps"
 
 #' @rdname lamp_brands
 #' 
@@ -86,7 +86,7 @@
 #' 
 #' @references \url{https://www.tlt.co.jp/tlt/index_e.htm}
 #' 
-"toshiba_lamps"
+"Toshiba_lamps"
 
 #' @rdname lamp_brands
 #' 
@@ -95,7 +95,7 @@
 #' 
 #' @references \url{https://www.aputure.com/}
 #' 
-"aputure_lamps"
+"Aputure_lamps"
 
 #' @rdname lamp_brands
 #' 
@@ -105,7 +105,7 @@
 #' 
 #' @references \url{http://www.sunwayfoto.com/e_index.aspx}
 #' 
-"sunwayfoto_lamps"
+"Sunwayfoto_lamps"
 
 #' @rdname lamp_brands
 #' 
@@ -115,7 +115,7 @@
 #' 
 #' @references \url{https://www.godox.com/}
 #' 
-"godox_lamps"
+"Godox_lamps"
 
 #' @rdname lamp_brands
 #' 
@@ -126,7 +126,7 @@
 #' 
 #' @references \url{https://www.valoya.com/}
 #' 
-"valoya_lamps"
+"Valoya_lamps"
 
 #' @rdname lamp_brands
 #' 
@@ -137,7 +137,7 @@
 #' 
 #' @references \url{https://fluence-led.com/}
 #' 
-"fluence_lamps"
+"Fluence_lamps"
 
 #' @rdname lamp_brands
 #' 
@@ -145,7 +145,7 @@
 #' Is a Chinese supplier of LED flashlights/torches and their parts. Sold
 #' through AliExpress, eBay and Banggood.
 #' 
-"convoy_lamps"
+"Convoy_lamps"
 
 #' @rdname lamp_brands
 #' 
@@ -153,13 +153,13 @@
 #' Is a Chinese supplier of LED flashlights/torches. Formerly sold
 #' through AliExpress.
 #' 
-"jaxman_lamps"
+"Jaxman_lamps"
 
 #' @rdname lamp_brands
 #' 
-#' @section Generic or shop branded:
+#' @section Generic, shop branded or distributor branded:
 #' We group under this category shop-branded or generic (no-brand) lamps that
 #' usually have specifications with limited details. These lamps are unlikely to
 #' remain consistent from batch to batch or have limited availability.
 #' 
-"generic_lamps"
+"Generic_lamps"

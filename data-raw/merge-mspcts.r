@@ -25,7 +25,6 @@ load(file = "data-raw/bentham-mspct.rda")
 bentham_lamps <- names(bentham.mspct)
 
 load(file = "data-raw/fluence-mspct.rda")
-fluence_lamps <- names(fluence.mspct)
 
 load(file = "data-raw/philips-mspct.rda")
 
@@ -76,9 +75,9 @@ amber_lamps <- sort(c(yellow_lamps, orange_lamps))
 lamp_colors <- c("uv", "purle", "blue", "green", "yellow", "orange", "red", "ir")
 
 ## lists by type
-sodium_lamps <- 
+sodium_lamps <-
   sort(grep("\\.HPS\\.|\\.LPS\\.", names(lamps.mspct), value = TRUE))
-incandescent_lamps <- 
+incandescent_lamps <-
   sort(grep("\\.Inc\\.", names(lamps.mspct), value = TRUE))
 multimetal_lamps <-
   sort(grep("\\.MH\\.", names(lamps.mspct), value = TRUE))
@@ -90,38 +89,50 @@ mercury_lamps <- c(fluorescent_lamps, germicidal_lamps)
 led_lamps <- 
   sort(grep("\\.LED\\.", names(lamps.mspct), value = TRUE))
 xenon_lamps <- 
-  sort(grep("\\.XF\\.", names(lamps.mspct), value = TRUE))
+  sort(grep("\\.XeF\\.", names(lamps.mspct), value = TRUE))
+
+lamp_types <- sort(c(Inc = "incandescent_lamps",
+                     FT = "fluorescent_lamps",
+                     CF = "fluorescent_lamps",
+                     LED = "led_lamps",
+                     Hg = "mercury_lamps",
+                     Germicidal = "mercury_lamps",
+                     MH = "multimetal_lamps",
+                     HPS = "sodium_lamps",
+                     LPS = "sodium_lamps",
+                     XeF = "xenon_lamps"))
 
 ## test vectors
 type_idxs <- unique(c(sodium_lamps, incandescent_lamps, multimetal_lamps, mercury_lamps))
 # stopifnot(all(type_idxs %in% names(lamps.mspct)))
 
 # lists by make
-osram_lamps <- sort(grep("osram", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
-sylvania_lamps <- sort(grep("sylvania", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
-qpanel_lamps <- sort(grep("qpanel", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
-philips_lamps <- sort(grep("philips", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
-airam_lamps <- sort(grep("airam", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
-toshiba_lamps <- sort(grep("toshiba", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
-valoya_lamps <- sort(grep("valoya", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
-fluence_lamps <- sort(grep("fluence", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
-aputure_lamps <- sort(grep("amaran|aputure", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
-godox_lamps <- sort(grep("godox", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
-sunwayfoto_lamps <- sort(grep("sunwayfoto", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
-jaxman_lamps <- sort(grep("jaxman", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
-convoy_lamps <- sort(grep("convoy", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
-generic_lamps <- sort(grep("pirkka|v.light|LCDlighting|Ledstore|Generic|Ikea", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
+Osram_lamps <- sort(grep("osram", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
+Sylvania_lamps <- sort(grep("sylvania", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
+QPanel_lamps <- sort(grep("qpanel", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
+Philips_lamps <- sort(grep("philips", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
+Airam_lamps <- sort(grep("airam", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
+Toshiba_lamps <- sort(grep("toshiba", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
+Valoya_lamps <- sort(grep("valoya", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
+Fluence_lamps <- sort(grep("fluence", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
+Aputure_lamps <- sort(grep("amaran|aputure", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
+Godox_lamps <- sort(grep("godox", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
+Sunwayfoto_lamps <- sort(grep("sunwayfoto", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
+Jaxman_lamps <- sort(grep("jaxman", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
+Convoy_lamps <- sort(grep("convoy", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
+Generic_lamps <- sort(grep("pirkka|v.light|LCDlighting|Ledstore|Generic|Ikea", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
 
 lamp_brands <- 
-  sort(c("osram", "sylvania", "qpanel", "philips", "airam", "toshiba",
-         "valoya", "aputure", "godox", "sunwayfoto", "jaxman", "convoy",
-         "fluence", "generic"))
+  sort(c("Osram", "Sylvania", "QPpanel", "Philips", "Airam", "Toshiba",
+         "Valoya", "Aputure", "Godox", "Sunwayfoto", "Jaxman", "Convoy",
+         "Fluence", "Generic"))
 
 # lists by special uses
-plant_grow_lamps <- c(valoya_lamps, fluence_lamps)
-photography_lamps <- c(aputure_lamps, sunwayfoto_lamps, godox_lamps)
+plant_grow_lamps <- c(Valoya_lamps, Fluence_lamps)
+photography_lamps <- c(Aputure_lamps, Sunwayfoto_lamps, Godox_lamps)
 
-save(list = c("lamps.mspct", "lamp_brands", "lamp_colors", ls(pattern = "*_lamps$")),
+save(list = c("lamps.mspct", "lamp_brands", "lamp_colors", "lamp_types", 
+              ls(pattern = "*_lamps$")),
      file = "data/lamps-mspct.rda")
 
 tools::resaveRdaFiles("data", compress="auto")

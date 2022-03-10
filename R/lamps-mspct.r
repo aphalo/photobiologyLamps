@@ -25,9 +25,9 @@
 #'
 #' @examples
 #' uv_lamps
-#' union(qpanel_lamps, uv_lamps)
-#' lamps.mspct[union(philips_lamps, red_lamps)]
+#' union(QPanel_lamps, uv_lamps)
+#' lamps.mspct[union(Philips_lamps, red_lamps)]
 #' 
-#' lamps.mspct$qpanel.uvb313
+#' lamps.mspct$QPanel.FT.UVB313.40W
 #' 
 "lamps.mspct"

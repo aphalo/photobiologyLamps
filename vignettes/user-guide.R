@@ -21,13 +21,13 @@ lamps.mspct[["Generic.Inc.bulb.60W"]]
 lamps.mspct["Generic.Inc.bulb.60W"]
 
 ## -----------------------------------------------------------------------------
-lamps.mspct[toshiba_lamps]
+lamps.mspct[Toshiba_lamps]
 
 ## -----------------------------------------------------------------------------
 lamps.mspct[grep("Toshiba", names(lamps.mspct))]
 
 ## -----------------------------------------------------------------------------
-lamps.mspct[intersect(philips_lamps, red_lamps)]
+lamps.mspct[intersect(Philips_lamps, red_lamps)]
 
 ## -----------------------------------------------------------------------------
 my.spct <- fscale(lamps.mspct$Generic.Inc.bulb.60W,

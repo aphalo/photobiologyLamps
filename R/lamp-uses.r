@@ -30,3 +30,7 @@
 
 #' @rdname photography_lamps
 "plant_grow_lamps"
+
+
+#' @rdname photography_lamps
+"germicidal_lamps"

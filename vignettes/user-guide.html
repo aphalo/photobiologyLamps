@@ -12,7 +12,7 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2022-03-08" />
+<meta name="date" content="2022-03-10" />
 
 <title>User Guide</title>
 
@@ -333,9 +333,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 <h1 class="title toc-ignore">User Guide</h1>
-<h3 class="subtitle">Package ‘photobiologyLamps’ 0.4.4</h3>
+<h3 class="subtitle">Package ‘photobiologyLamps’ 0.5.0</h3>
 <h4 class="author">Pedro J. Aphalo</h4>
-<h4 class="date">2022-03-08</h4>
+<h4 class="date">2022-03-10</h4>
 
 
 <div id="TOC">
@@ -390,37 +390,68 @@ strings should be used instead. The names are listed in the
 documentation and also available through the “Data Catalogue” vignette.
 They can also be listed with method <code>names()</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(lamps.mspct)</span></code></pre></div>
-<pre><code>##  [1] &quot;Airam.CF.15W.2700K&quot;                  &quot;Airam.CF.Spiraali.14W.3000K&quot;        
-##  [3] &quot;Airam.LED.11W.4000K&quot;                 &quot;Airam.LED.14W.4000K&quot;                
-##  [5] &quot;Airam.LED.9W.3000K&quot;                  &quot;Amaran.M9.LED.video.light.5500K&quot;    
-##  [7] &quot;Convoy.2plus.LED.UVA.flashlight&quot;     &quot;Fluence.AnthoSpec&quot;                  
-##  [9] &quot;Fluence.PhysioSpec.BROAD&quot;            &quot;Fluence.PhysioSpec.BROAD.R3&quot;        
-## [11] &quot;Fluence.PhysioSpec.BROAD.R6&quot;         &quot;Fluence.PhysioSpec.BROAD.R9B&quot;       
-## [13] &quot;Fluence.PhysioSpec.Greenhouse&quot;       &quot;Fluence.PhysioSpec.Indoor&quot;          
-## [15] &quot;Generic.germicidal&quot;                  &quot;Generic.Inc.bulb.60W&quot;               
-## [17] &quot;Generic.LED.9W.mosquito&quot;             &quot;Generic.LED.NIR.flashlight&quot;         
-## [19] &quot;Generic.LED.UVA.flashlight&quot;          &quot;Godox.XF.AD200.H200.flash&quot;          
-## [21] &quot;Godox.XF.AD200.H200j.ADFT200.flash&quot;  &quot;Godox.XF.AD200.H200j.FTSTS40w.flash&quot;
-## [23] &quot;Godox.XF.AD200.H200R.flash&quot;          &quot;Ikea.LED.6.3W.2700K&quot;                
-## [25] &quot;Jaxman.U1c.LED.UVA.flood.flashlight&quot; &quot;LCDlighting.FT.UVA.BL&quot;              
-## [27] &quot;Ledenergie.LED.Nano.T8.9.5W.4000K&quot;   &quot;Ledenergie.LED.Teho.T8.9W.4000K&quot;    
-## [29] &quot;Ledstore.LED.10W.4000K&quot;              &quot;Osram.FT.36W.25&quot;                    
-## [31] &quot;Osram.FT.L36W.840&quot;                   &quot;Osram.HPS.Super.Vialox&quot;             
-## [33] &quot;Osram.Inc.20W&quot;                       &quot;Osram.LED.10W.2700K&quot;                
-## [35] &quot;Osram.LED.8W.2700K&quot;                  &quot;Osram.MH.HQIT.400W&quot;                 
-## [37] &quot;Philips.CF.PLS.11W.927&quot;              &quot;Philips.FT.TL.40W.01.uv&quot;            
-## [39] &quot;Philips.FT.TL.40W.12&quot;                &quot;Philips.FT.TL.40W.12.uv&quot;            
-## [41] &quot;Philips.FT.TL5.35W.830.HE&quot;           &quot;Philips.FT.TLD.36W.15&quot;              
-## [43] &quot;Philips.FT.TLD.36W.18&quot;               &quot;Philips.FT.TLD.36W.18.lores&quot;        
-## [45] &quot;Philips.FT.TLD.36W.83&quot;               &quot;Philips.FT.TLD.36W.89&quot;              
-## [47] &quot;Philips.FT.TLD.36W.92&quot;               &quot;Philips.FT.TLD.36W.965&quot;             
-## [49] &quot;Philips.FT.TLD.36W.BLB.108&quot;          &quot;Philips.FT.TLL.36W.950&quot;             
-## [51] &quot;Philips.Inc.50W.spot.halogen&quot;        &quot;Philips.LED.T8.10W.840&quot;             
-## [53] &quot;QPanel.FT.UVB313.40W&quot;                &quot;QPanel.FT.UVB340.40W&quot;               
-## [55] &quot;Sunwayfoto.LED.FL96.at.3000K&quot;        &quot;Sunwayfoto.LED.FL96.at.4000K&quot;       
-## [57] &quot;Sunwayfoto.LED.FL96.at.5500K&quot;        &quot;Sylvania.FT.215W.VHO&quot;               
-## [59] &quot;Toshiba.LED.12W.2700K&quot;               &quot;Toshiba.LED.9.5W.2700K&quot;             
-## [61] &quot;V.light.LED.2W.6000K&quot;                &quot;Valoya.B50.AP67.LED.grow.lamp&quot;</code></pre>
+<pre><code>##  [1] &quot;Airam.CF.15W.2700K&quot;                  
+##  [2] &quot;Airam.CF.Spiraali.14W.3000K&quot;         
+##  [3] &quot;Airam.LED.11W.4000K&quot;                 
+##  [4] &quot;Airam.LED.14W.4000K&quot;                 
+##  [5] &quot;Airam.LED.9W.3000K&quot;                  
+##  [6] &quot;Amaran.M9.LED.video.light.5500K&quot;     
+##  [7] &quot;Convoy.2plus.LED.UVA.flashlight&quot;     
+##  [8] &quot;Fluence.LED.AnthoSpec&quot;               
+##  [9] &quot;Fluence.LED.PhysioSpec.BROAD&quot;        
+## [10] &quot;Fluence.LED.PhysioSpec.BROAD.R3&quot;     
+## [11] &quot;Fluence.LED.PhysioSpec.BROAD.R6&quot;     
+## [12] &quot;Fluence.LED.PhysioSpec.BROAD.R9B&quot;    
+## [13] &quot;Fluence.LED.PhysioSpec.Greenhouse&quot;   
+## [14] &quot;Fluence.LED.PhysioSpec.Indoor&quot;       
+## [15] &quot;Generic.germicidal&quot;                  
+## [16] &quot;Generic.Inc.bulb.60W&quot;                
+## [17] &quot;Generic.LED.9W.mosquito&quot;             
+## [18] &quot;Generic.LED.NIR.flashlight&quot;          
+## [19] &quot;Generic.LED.UVA.flashlight&quot;          
+## [20] &quot;Godox.XeF.AD200.H200.flash&quot;          
+## [21] &quot;Godox.XeF.AD200.H200j.ADFT200.flash&quot; 
+## [22] &quot;Godox.XeF.AD200.H200j.FTSTS40w.flash&quot;
+## [23] &quot;Godox.XeF.AD200.H200R.flash&quot;         
+## [24] &quot;Ikea.LED.6.3W.2700K&quot;                 
+## [25] &quot;Jaxman.U1c.LED.UVA.flood.flashlight&quot; 
+## [26] &quot;LCDlighting.FT.UVA.BL&quot;               
+## [27] &quot;Ledenergie.LED.Nano.T8.9.5W.4000K&quot;   
+## [28] &quot;Ledenergie.LED.Teho.T8.9W.4000K&quot;     
+## [29] &quot;Ledstore.LED.10W.4000K&quot;              
+## [30] &quot;Osram.FT.36W.25&quot;                     
+## [31] &quot;Osram.FT.L36W.840&quot;                   
+## [32] &quot;Osram.HPS.Super.Vialox&quot;              
+## [33] &quot;Osram.Inc.20W&quot;                       
+## [34] &quot;Osram.LED.10W.2700K&quot;                 
+## [35] &quot;Osram.LED.8W.2700K&quot;                  
+## [36] &quot;Osram.MH.HQIT.400W&quot;                  
+## [37] &quot;Philips.CF.PLS.11W.927&quot;              
+## [38] &quot;Philips.FT.TL.40W.01.uv&quot;             
+## [39] &quot;Philips.FT.TL.40W.12&quot;                
+## [40] &quot;Philips.FT.TL.40W.12.uv&quot;             
+## [41] &quot;Philips.FT.TL5.35W.830.HE&quot;           
+## [42] &quot;Philips.FT.TLD.36W.15&quot;               
+## [43] &quot;Philips.FT.TLD.36W.18&quot;               
+## [44] &quot;Philips.FT.TLD.36W.18.lores&quot;         
+## [45] &quot;Philips.FT.TLD.36W.83&quot;               
+## [46] &quot;Philips.FT.TLD.36W.89&quot;               
+## [47] &quot;Philips.FT.TLD.36W.92&quot;               
+## [48] &quot;Philips.FT.TLD.36W.965&quot;              
+## [49] &quot;Philips.FT.TLD.36W.BLB.108&quot;          
+## [50] &quot;Philips.FT.TLL.36W.950&quot;              
+## [51] &quot;Philips.Inc.50W.spot.halogen&quot;        
+## [52] &quot;Philips.LED.T8.10W.840&quot;              
+## [53] &quot;QPanel.FT.UVB313.40W&quot;                
+## [54] &quot;QPanel.FT.UVB340.40W&quot;                
+## [55] &quot;Sunwayfoto.LED.FL96.at.3000K&quot;        
+## [56] &quot;Sunwayfoto.LED.FL96.at.4000K&quot;        
+## [57] &quot;Sunwayfoto.LED.FL96.at.5500K&quot;        
+## [58] &quot;Sylvania.FT.215W.VHO&quot;                
+## [59] &quot;Toshiba.LED.12W.2700K&quot;               
+## [60] &quot;Toshiba.LED.9.5W.2700K&quot;              
+## [61] &quot;V.light.LED.2W.6000K&quot;                
+## [62] &quot;Valoya.LED.B50.AP67.LED.grow.lamp&quot;</code></pre>
 <p>We can use a name as index to extract an individual
 <code>source_spct</code> object.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lamps.mspct<span class="sc">$</span>Generic.Inc.bulb<span class="fl">.60</span>W</span></code></pre></div>
@@ -505,12 +536,12 @@ above.</p>
 vectors of character strings. The package provides some predefined ones,
 and users can easily define their own, either as constants or through
 computation. Here we use a vector defined by the package.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>lamps.mspct[toshiba_lamps]</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>lamps.mspct[Toshiba_lamps]</span></code></pre></div>
 <pre><code>## Object: source_mspct [2 x 1]
 ## --- Member: Toshiba.LED.12W.2700K ---
 ## Object: source_spct [591 x 2]
 ## Wavelength range 251.16 to 898.81 nm, step 1.023182e-12 to 7.56 nm 
-## Label: LED lamp:  Toshiba LED 12W 2700K 
+## Label: LED lamp:  Toshiba 12W 2700K 
 ## Measured on 2018-02-12 09:08:23 UTC 
 ## Time unit 1s
 ## Spectral data normalized to 1 at 607.26 nm 
@@ -532,7 +563,7 @@ computation. Here we use a vector defined by the package.</p>
 ## --- Member: Toshiba.LED.9.5W.2700K ---
 ## Object: source_spct [678 x 2]
 ## Wavelength range 251.29 to 898.97 nm, step 1.023182e-12 to 7.55 nm 
-## Label: LED lamp:  Toshiba LED 9.5W 2700K 
+## Label: LED lamp:  Toshiba 9.5W 2700K 
 ## Measured on 2021-09-02 19:48:00 UTC 
 ## Time unit 1s
 ## Spectral data normalized to 1 at 605.57 nm 
@@ -561,7 +592,7 @@ can search for matching names within the collection of spectra.</p>
 ## --- Member: Toshiba.LED.12W.2700K ---
 ## Object: source_spct [591 x 2]
 ## Wavelength range 251.16 to 898.81 nm, step 1.023182e-12 to 7.56 nm 
-## Label: LED lamp:  Toshiba LED 12W 2700K 
+## Label: LED lamp:  Toshiba 12W 2700K 
 ## Measured on 2018-02-12 09:08:23 UTC 
 ## Time unit 1s
 ## Spectral data normalized to 1 at 607.26 nm 
@@ -583,7 +614,7 @@ can search for matching names within the collection of spectra.</p>
 ## --- Member: Toshiba.LED.9.5W.2700K ---
 ## Object: source_spct [678 x 2]
 ## Wavelength range 251.29 to 898.97 nm, step 1.023182e-12 to 7.55 nm 
-## Label: LED lamp:  Toshiba LED 9.5W 2700K 
+## Label: LED lamp:  Toshiba 9.5W 2700K 
 ## Measured on 2021-09-02 19:48:00 UTC 
 ## Time unit 1s
 ## Spectral data normalized to 1 at 605.57 nm 
@@ -606,8 +637,8 @@ can search for matching names within the collection of spectra.</p>
 ## --- END ---</code></pre>
 <p>Set algebra operations can be used with the indexing vectors as each
 vector describes a single property: color, brand, type, etc.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>lamps.mspct[<span class="fu">intersect</span>(philips_lamps, red_lamps)]</span></code></pre></div>
-<pre><code>## Object: source_mspct [4 x 1]
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>lamps.mspct[<span class="fu">intersect</span>(Philips_lamps, red_lamps)]</span></code></pre></div>
+<pre><code>## Object: source_mspct [6 x 1]
 ## --- Member: Philips.CF.PLS.11W.927 ---
 ## Object: source_spct [301 x 2]
 ## Wavelength range 300 to 900 nm, step 2 nm 
@@ -695,6 +726,50 @@ vector describes a single property: color, brand, type, etc.</p>
 ##  8      307  0.000606
 ##  9      308  0.00130 
 ## 10      309  0.00229 
+## # ... with 591 more rows
+## --- Member: Philips.FT.TLD.36W.89 ---
+## Object: source_spct [601 x 2]
+## Wavelength range 300 to 900 nm, step 1 nm 
+## Label: Fluorescent tube: Philips TLD 36W 89 ca. 1995 
+## Measured on 0000-08-23 15:19:11 UTC 
+## Time unit 1s
+## Spectral data normalized to 1 at 613 nm 
+## 
+## # A tibble: 601 x 2
+##    w.length s.e.irrad
+##       &lt;dbl&gt;     &lt;dbl&gt;
+##  1      300  0.000477
+##  2      301  0.000560
+##  3      302  0.00100 
+##  4      303  0.000626
+##  5      304  0.000965
+##  6      305  0.000860
+##  7      306  0.000760
+##  8      307  0.000746
+##  9      308  0.00114 
+## 10      309  0.00176 
+## # ... with 591 more rows
+## --- Member: Philips.FT.TLL.36W.950 ---
+## Object: source_spct [601 x 2]
+## Wavelength range 300 to 900 nm, step 1 nm 
+## Label: Fluorescent tube: Philips TLL 36W 950 ca. 1995 
+## Measured on 0000-08-23 08:44:11 UTC 
+## Time unit 1s
+## Spectral data normalized to 1 at 613 nm 
+## 
+## # A tibble: 601 x 2
+##    w.length s.e.irrad
+##       &lt;dbl&gt;     &lt;dbl&gt;
+##  1      300 0.0000697
+##  2      301 0.0000682
+##  3      302 0.0000382
+##  4      303 0.0000561
+##  5      304 0.0000733
+##  6      305 0.0000359
+##  7      306 0.0000353
+##  8      307 0.0000346
+##  9      308 0.000136 
+## 10      309 0.000250 
 ## # ... with 591 more rows
 ## 
 ## --- END ---</code></pre>
