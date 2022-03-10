@@ -55,7 +55,7 @@ new.names <- c("Airam.LED.14W.4000K",
                "Toshiba.LED.9.5W.2700K",
                "Toshiba.LED.12W.2700K",
                "V.light.LED.2W.6000K",
-               "Valoya.B50.AP67.LED.grow.lamp")
+               "Valoya.LED.B50.AP67.LED.grow.lamp")
   
 names(new.names) <- spectra
 
@@ -65,6 +65,7 @@ maya_LED_lamps.mspct <- source_mspct()
 for (s in spectra) {
   comment.text <- lamp.info[s]
   what.measured <- gsub("\\.", " ", new.names[s])
+  what.measured <- gsub("LED ", "", what.measured)
   what.measured <- gsub("V light", "V-light", what.measured)
   what.measured <- gsub("6 3W", "6.3W", what.measured)
   what.measured <- gsub("9 5W", "9.5W", what.measured)
