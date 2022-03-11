@@ -20,7 +20,24 @@ package
 Package ‘**photobiologyLamps**’ also includes spectra from UV-B
 fluorescent tubes operating at different temperatures
 (`qp_uvb313_temp.mspct` and `qp_uvb313_temp.spct`) and for a
-four-channel LED buld supporting channel mixing (`ledsavers.mspct`).
+four-channel LED bulb supporting channel mixing (`ledsavers.mspct`).
+
+The data are for the most part original but also include some spectra
+digitized from plots in manufacturers’ specifications. Data have been
+acquired over many years, although when possible lamps have been
+measured again after we got a spectrometer with improved wavelength
+resolution. It is important for users to be aware that depending on the
+optical wavelength resolution of the instruments used spectra can look
+quite different because of the broadening of peaks. This is most obvious
+in lamps with narrow emission peaks like mercury vapours lamps. If you
+make use of the data, please inspect the metadata and read the
+documentation. The metadata is in most cases fairly complete, although
+the distance from lamps to the entrance optics is frequently unknown.
+For this reason spectra have been normalized. The multiplier used for
+normalization is part of the metadata, making it possible to recover the
+original spectrum. The metadata includes, when available, a descriptor
+of the spectrometer and the settings used for acqiring the spectral
+data.
 
 This package contains only data. Data are stored as collections of
 spectra of class `source_mspct` from package ‘photobiology’, which is
@@ -45,7 +62,7 @@ The package includes spectral data for several lamps.
 
 ``` r
 length(lamps.mspct)
-#> [1] 50
+#> [1] 62
 ```
 
 ``` r
@@ -58,11 +75,11 @@ length(ledsavers.mspct)
 #> [1] 16
 ```
 
-The first example shows you how to plot the emission spectrum of one of
-the lamps.
+The first example below shows you how to plot the emission spectrum of
+one of the lamps.
 
 ``` r
-autoplot(lamps.mspct$airam.spiraali,
+autoplot(lamps.mspct$Airam.CF.Spiraali.14W.3000K,
          annotations = c("+", "title:what"))
 ```
 
@@ -71,28 +88,31 @@ autoplot(lamps.mspct$airam.spiraali,
 The second example shows how to access metadata.
 
 ``` r
-what_measured(lamps.mspct$airam.spiraali)
-#> [1] "Airam Spiraali 14W 220-240W 3000K E27 900 lm CRI>=80"
+what_measured(lamps.mspct$Airam.CF.Spiraali.14W.3000K)
+#> [1] "Compact fluorescent lamp: Airam CF Spiraali 14W 3000K"
 ```
 
 The members of the collection are named, and several vectors of names
 are available, such as by manufacturer,
 
 ``` r
-philips_lamps
-#>  [1] "philips.BLB.tld108"     "philips.led.t8.10w.840" "philips.pls11w.827"    
-#>  [4] "philips.tl01"           "philips.tl12"           "philips.tl12.mc"       
-#>  [7] "philips.tl5.35w.830he"  "philips.tld.36w.18"     "philips.tld36w.15"     
-#> [10] "philips.tld36w.18"      "philips.tld36w.83"      "philips.tld36w.865"    
-#> [13] "philips.tld36w.89"      "philips.tld36w.92"      "philips.tll36w.950"
+Philips_lamps
+#>  [1] "Philips.CF.PLS.11W.927"       "Philips.FT.TL.40W.01.uv"     
+#>  [3] "Philips.FT.TL.40W.12"         "Philips.FT.TL.40W.12.uv"     
+#>  [5] "Philips.FT.TL5.35W.830.HE"    "Philips.FT.TLD.36W.15"       
+#>  [7] "Philips.FT.TLD.36W.18"        "Philips.FT.TLD.36W.18.lores" 
+#>  [9] "Philips.FT.TLD.36W.83"        "Philips.FT.TLD.36W.89"       
+#> [11] "Philips.FT.TLD.36W.92"        "Philips.FT.TLD.36W.965"      
+#> [13] "Philips.FT.TLD.36W.BLB.108"   "Philips.FT.TLL.36W.950"      
+#> [15] "Philips.Inc.50W.spot.halogen" "Philips.LED.T8.10W.840"
 ```
 
 or type of lamp.
 
 ``` r
 incandescent_lamps
-#> [1] "incandescent.60w"    "osram.classic.20w"   "osram.conc.spot.60w"
-#> [4] "pirkka.halogen.53w"
+#> [1] "Generic.Inc.bulb.60W"         "Osram.Inc.20W"               
+#> [3] "Philips.Inc.50W.spot.halogen"
 ```
 
 Temperature response data for emision from UV-B fluorescent tubes is

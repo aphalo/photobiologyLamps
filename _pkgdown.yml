@@ -16,27 +16,16 @@ reference:
     - qp_uvb313_temp.mspct
   - title: Indexing vectors by color
     contents:
-    - uv_lamps
+    - lamp_colors
   - title: Indexing vectors by type of lamp
     contents:
-    - incandescent_lamps
+    - lamp_types
   - title: Indexing vectors by use
     contents:
     - photography_lamps
   - title: Indexing vectors by manufacturer or supplier
     contents:
-    - airam_lamps
-    - aputure_lamps
-    - fluence_lamps
-    - generic_lamps
-    - godox_lamps
-    - osram_lamps
-    - philips_lamps
-    - qpanel_lamps
-    - sunwayfoto_lamps
-    - sylvania_lamps
-    - toshiba_lamps
-    - valoya_lamps
+    - lamp_brands
   - title: Indexing vectors by spectrometer
     contents:
     - bentham_lamps

@@ -20,7 +20,9 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/aphalo/photobiologyLamps/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyLamps/actions)
 <!-- badges: end -->
 
-Package '**photobiologyLamps**' complements other packages in the [_R for photobiology_ suite](https://www.r4photobiology.info/). It contains spectral emission data for LED, fluorescent, incandescent and other lamps (`lamps.mspct`). Spectra for light emitting diodes (LEDs) and LED arrays (`leds.mspct`) available as electronic components are included in package ['photobioloyLEDs'](https://docs.r4photobiology.info/photobiologyLEDs/). Package '**photobiologyLamps**' also includes spectra from UV-B fluorescent tubes operating at different temperatures (`qp_uvb313_temp.mspct` and `qp_uvb313_temp.spct`) and for a four-channel LED buld supporting channel mixing (`ledsavers.mspct`).
+Package '**photobiologyLamps**' complements other packages in the [_R for photobiology_ suite](https://www.r4photobiology.info/). It contains spectral emission data for LED, fluorescent, incandescent and other lamps (`lamps.mspct`). Spectra for light emitting diodes (LEDs) and LED arrays (`leds.mspct`) available as electronic components are included in package ['photobioloyLEDs'](https://docs.r4photobiology.info/photobiologyLEDs/). Package '**photobiologyLamps**' also includes spectra from UV-B fluorescent tubes operating at different temperatures (`qp_uvb313_temp.mspct` and `qp_uvb313_temp.spct`) and for a four-channel LED bulb supporting channel mixing (`ledsavers.mspct`).
+
+The data are for the most part original but also include some spectra digitized from plots in manufacturers' specifications. Data have been acquired over many years, although when possible lamps have been measured again after we got a spectrometer with improved wavelength resolution. It is important for users to be aware that depending on the optical wavelength resolution of the instruments used spectra can look quite different because of the broadening of peaks. This is most obvious in lamps with narrow emission peaks like mercury vapours lamps. If you make use of the data, please inspect the metadata and read the documentation. The metadata is in most cases fairly complete, although the distance from lamps to the entrance optics is frequently unknown. For this reason spectra have been normalized. The multiplier used for normalization is part of the metadata, making it possible to recover the original spectrum. The metadata includes, when available, a descriptor of the spectrometer and the settings used for acqiring the spectral data.
 
 This package contains only data. Data are stored as collections of spectra of class `source_mspct` from package 'photobiology', which is the core of the 
 [_R for photobiology_ suite](https://www.r4photobiology.info/). Spectra can
@@ -48,24 +50,24 @@ length(qp_uvb313_temp.mspct)
 length(ledsavers.mspct)
 ```
 
-The first example shows you how to plot the emission spectrum of one of the
+The first example below shows you how to plot the emission spectrum of one of the
 lamps.
 
 ```{r example1, message=FALSE}
-autoplot(lamps.mspct$airam.spiraali,
+autoplot(lamps.mspct$Airam.CF.Spiraali.14W.3000K,
          annotations = c("+", "title:what"))
 ```
 
 The second example shows how to access metadata.
 
 ```{r example2}
-what_measured(lamps.mspct$airam.spiraali)
+what_measured(lamps.mspct$Airam.CF.Spiraali.14W.3000K)
 ```
 
 The members of the collection are named, and several vectors of names are available, such as by manufacturer,
 
 ```{r}
-philips_lamps
+Philips_lamps
 ```
 
 or type of lamp.

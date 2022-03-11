@@ -13,17 +13,14 @@ Previously included spectra have in most cases been recomputed and may slightly 
 In part this was done to reduce the size of the data objects, making it possible to include more spectra while keeping the size of the package reasonable.
 
 * Revise for 'ggspectra' (\>= 0.3.1).
-* Rebuild all data objects with 'photobiology' (== 0.10.9) taking care that all spectra in `lamps.mspct` are normalized.
+* Rebuild all data objects with 'photobiology' (== 0.10.9) taking care that all spectra in `lamps.mspct` are normalized, also adding previously missing metadata.
 * Apply function `photobiology::thin_wl()` to all spectra to reduce their stored size.
 * Add data for additional flashlights.
 * Add data for black light blue "BLB" fluorescent tubes.
 * Add data for new grow lights from Fluence-Osram.
 * Add data for various LED lamps and tubes.
-* Recompute most of the existing data to save storage space and consitency
-  of metadata.
 * Replace a few spectra with newly measured ones from the same lamps.
-* CODE BREAKING. Rename the members of the collection of spectra for easier identification.
-* CODE BREAKING. Improve consistency in naming with packages 'photobiologyLEDs' and 
+* CODE BREAKING. Rename the members of the collection of spectra for easier identification and to improve consistency in naming with packages 'photobiologyLEDs' and 
   'photobiologyFilters'.
 * Revise vignette and other documentation.
 * Migrate the Git repository from Bitbucket to GitHub.
