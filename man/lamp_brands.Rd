@@ -195,7 +195,7 @@ Osram_lamps
 
 \url{https://www.lighting.philips.com/}
 
-\url{https://www.sylvania.com/Pages/default.aspx}
+\url{https://www.sylvania.com/}
 
 \url{https://www.q-lab.com/}
 
@@ -205,7 +205,7 @@ Osram_lamps
 
 \url{https://www.aputure.com/}
 
-\url{http://www.sunwayfoto.com/e_index.aspx}
+\url{http://www.sunwayfoto.com/}
 
 \url{https://www.godox.com/}
 

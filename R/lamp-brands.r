@@ -55,7 +55,7 @@
 #' Sylvania (USA) merged years back both brands remained in use in different
 #' markets and many types of lamps remained differentiated.
 #' 
-#' @references \url{https://www.sylvania.com/Pages/default.aspx}
+#' @references \url{https://www.sylvania.com/}
 #' 
 "Sylvania_lamps"
 
@@ -103,7 +103,7 @@
 #' Sunwayfoto is a Chinese supplier of ancillary equipment for photography,
 #' including battery-powered fill-in LED lights with high CRI ratings..
 #' 
-#' @references \url{http://www.sunwayfoto.com/e_index.aspx}
+#' @references \url{http://www.sunwayfoto.com/}
 #' 
 "Sunwayfoto_lamps"
 
