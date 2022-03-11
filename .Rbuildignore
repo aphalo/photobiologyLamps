@@ -13,3 +13,4 @@
 ^CITATION\.cff$
 ^\.github$
 ^pkgdown
+cran-comments.md
