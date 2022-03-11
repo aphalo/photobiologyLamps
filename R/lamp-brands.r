@@ -50,12 +50,12 @@
 #' @rdname lamp_brands
 #' 
 #' @section Sylvania:
-#' Lamps branded Sylvania are currently sold by Ledvance, of Chinese ownership.
-#' Osram currently makes and sells other products. When Osram (Germany) and
-#' Sylvania (USA) merged years back both brands remained in use in different
-#' markets and many types of lamps remained differentiated.
+#' Lamps branded Sylvania are currently sold by Ledvance in the USA, of Chinese
+#' ownership. Osram currently makes and sells other products. When Osram
+#' (Germany) and Sylvania (USA) merged years back both brands remained in use in
+#' different markets and many types of lamps remained differentiated.
 #' 
-#' @references \url{https://www.sylvania.com/}
+#' @references \url{https://www.ledvanceus.com/Pages/default.aspx}
 #' 
 "Sylvania_lamps"
 

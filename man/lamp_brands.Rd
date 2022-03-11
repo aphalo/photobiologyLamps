@@ -112,10 +112,10 @@ Lamps branded Philips are sold by Signify Netherlands B.V.
 
 \section{Sylvania}{
 
-Lamps branded Sylvania are currently sold by Ledvance, of Chinese ownership.
-Osram currently makes and sells other products. When Osram (Germany) and
-Sylvania (USA) merged years back both brands remained in use in different
-markets and many types of lamps remained differentiated.
+Lamps branded Sylvania are currently sold by Ledvance in the USA, of Chinese
+ownership. Osram currently makes and sells other products. When Osram
+(Germany) and Sylvania (USA) merged years back both brands remained in use in
+different markets and many types of lamps remained differentiated.
 }
 
 \section{Q-LAB}{
@@ -195,7 +195,7 @@ Osram_lamps
 
 \url{https://www.lighting.philips.com/}
 
-\url{https://www.sylvania.com/}
+\url{https://www.ledvanceus.com/Pages/default.aspx}
 
 \url{https://www.q-lab.com/}
 

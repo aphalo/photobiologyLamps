@@ -1,5 +1,6 @@
-Checks on Winbuilder and RHub trigger a spurious Note about URLs.
+Action taken in response to Uwe Ligges' request for correction and resubmission: 
 
-_In brief:_ the URLs flagegd under "Found the following (possibly) invalid URLs:" are valid and functioning.
+I replaced the URL (https://www.sylvania.com/) by
+(https://www.ledvanceus.com/Pages/default.aspx). 
 
-_In detail:_ 1) URL (https://www.sylvania.com/) is being redirected to a specific page within the same domain. 2) DOI URLs in an HTML vignette as well as some other URLs that open in a browser without problem either intermitently time out or report key or signature errors from libcurl. It seems to me preferable to retain the links as they are as they are valid and needed as references to sources.
+Sorry about this! I was confused by chained redirects that initially seemed to be within the same domain.
