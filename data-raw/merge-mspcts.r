@@ -34,6 +34,7 @@ lamps.mspct <- c(licor.mspct, macam.mspct, bentham.mspct, oo_maya.mspct,
                  fluence.mspct, philips.mspct, LCDlighting.mspct)
 
 lamps.mspct <- lamps.mspct[order(names(lamps.mspct))]
+lamps.mspct <- normalize(lamps.mspct, nrom = "max", unit.out = "energy")
 names(lamps.mspct)
 
 normalized.ls <- list()
