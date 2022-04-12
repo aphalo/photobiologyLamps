@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.2.1
+# CITATION file created with {cffr} R package, v0.2.2
 # See also: https://docs.ropensci.org/cffr/
 # -----------------------------------------------------------
  
@@ -8,7 +8,7 @@ message: 'To cite package "photobiologyLamps" in publications use:'
 type: software
 license: GPL-2.0-or-later
 title: 'photobiologyLamps: Spectral Irradiance Data for Lamps'
-version: 0.5.0
+version: 0.5.0.9000
 doi: 10.19232/uv4pb.2015.1.14
 abstract: Spectral emission data for some frequently used lamps including bulbs and
   flashlights based on led emitting diodes (LEDs) but excluding LEDs available as
@@ -38,7 +38,7 @@ preferred-citation:
 repository: https://CRAN.R-project.org/package=photobiologyLamps
 repository-code: https://github.com/aphalo/photobiologylamps
 url: https://www.r4photobiology.info/
-date-released: '2022-03-08'
+date-released: '2022-03-24'
 contact:
 - family-names: Aphalo
   given-names: Pedro J.
