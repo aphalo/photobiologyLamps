@@ -32,6 +32,6 @@ macam_lamps
 Aphalo, P J, R Tegelberg, and R Julkunen-Tiitto. 1999. The
   Modulated UV-B Irradiation System at the University of Joensuu. Biotronics
   28: 109-120.
-  \url{https://ci.nii.ac.jp/naid/110006175827/en}.
+  \url{https://cir.nii.ac.jp/crid/1050001335921484032?lang=en}.
 }
 \keyword{datasets}

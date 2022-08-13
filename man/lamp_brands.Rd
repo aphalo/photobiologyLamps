@@ -193,7 +193,7 @@ Osram_lamps
 \references{
 \url{https://www.ledvance.com/}
 
-\url{https://www.lighting.philips.com/}
+\url{https://www.lighting.philips.com/main/home}
 
 \url{https://www.ledvanceus.com/Pages/default.aspx}
 
@@ -205,7 +205,7 @@ Osram_lamps
 
 \url{https://www.aputure.com/}
 
-\url{http://www.sunwayfoto.com/}
+\url{https://www.sunwayfoto.com/}
 
 \url{https://www.godox.com/}
 

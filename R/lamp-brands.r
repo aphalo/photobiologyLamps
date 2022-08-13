@@ -43,7 +43,7 @@
 #' @section Philips:
 #' Lamps branded Philips are sold by Signify Netherlands B.V.
 #' 
-#' @references \url{https://www.lighting.philips.com/}
+#' @references \url{https://www.lighting.philips.com/main/home}
 #' 
 "Philips_lamps"
 
@@ -103,7 +103,7 @@
 #' Sunwayfoto is a Chinese supplier of ancillary equipment for photography,
 #' including battery-powered fill-in LED lights with high CRI ratings..
 #' 
-#' @references \url{http://www.sunwayfoto.com/}
+#' @references \url{https://www.sunwayfoto.com/}
 #' 
 "Sunwayfoto_lamps"
 

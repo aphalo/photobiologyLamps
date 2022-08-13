@@ -4,6 +4,12 @@ editor_options:
     wrap: sentence
 ---
 
+photobiologyLamps 0.5.1
+=======================
+
+* Make manual compliant with HTML5.
+* Fix normalization for one spectrum.
+
 photobiologyLamps 0.5.0
 =======================
 
