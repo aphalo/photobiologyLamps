@@ -1,6 +1,10 @@
 library(photobiology)
 library(photobiologyWavebands)
 
+verbose_as_default()
+old.options <- options(warn = 1)
+on.exit(options(old.options))
+
 rm(list = ls(pattern = "*"))
 
 # merge
@@ -34,7 +38,7 @@ lamps.mspct <- c(licor.mspct, macam.mspct, bentham.mspct, oo_maya.mspct,
                  fluence.mspct, philips.mspct, LCDlighting.mspct)
 
 lamps.mspct <- lamps.mspct[order(names(lamps.mspct))]
-lamps.mspct <- normalize(lamps.mspct, nrom = "max", unit.out = "energy")
+lamps.mspct <- normalize(lamps.mspct, nrom = "max", unit.out = "energy", keep.scaling = 100) # W m-2
 names(lamps.mspct)
 
 normalized.ls <- list()
@@ -45,7 +49,7 @@ peak.wl <- unlist(normalized.ls)
 setdiff(names(lamps.mspct), names(peak.wl))
 length(peak.wl)
 
-# as the spectra are normalised, a broad spectrum with have a large integral
+# as the spectra are normalised, a broad spectrum will have a large integral
 white_lamps <- names(lamps.mspct[q_irrad(lamps.mspct, allow.scaled = TRUE)[["Q_Total"]] > 2e-4 & 
                              (peak.wl <= 700 | peak.wl > 890) & peak.wl >= 400])
 names(white_lamps)

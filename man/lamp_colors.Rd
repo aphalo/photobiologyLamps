@@ -38,7 +38,7 @@ An object of class \code{character} of length 14.
 
 An object of class \code{character} of length 8.
 
-An object of class \code{character} of length 37.
+An object of class \code{character} of length 50.
 }
 \usage{
 lamp_colors
