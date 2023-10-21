@@ -7,7 +7,7 @@ editor_options:
 photobiologyLamps 0.5.2
 =======================
 
-* Rebuild data objects with 'photobiology' (== 0.10.17)
+* Rebuild data objects with 'photobiology' (== 0.11.0)
 
 photobiologyLamps 0.5.1
 =======================
