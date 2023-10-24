@@ -6,7 +6,7 @@
 [![CRAN
 version](https://www.r-pkg.org/badges/version-last-release/photobiologyLamps)](https://cran.r-project.org/package=photobiologyLamps)
 [![cran
-checks](https://cranchecks.info/badges/worst/photobiologyLamps)](https://cran.r-project.org/web/checks/check_results_photobiologyLamps.html)
+checks](https://badges.cranchecks.info/worst/photobiologyLamps.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyLamps.html)
 [![R-CMD-check](https://github.com/aphalo/photobiologyLamps/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyLamps/actions)
 <!-- badges: end -->
 
@@ -46,7 +46,7 @@ suite](https://www.r4photobiology.info/). Spectra can be easily plotted
 with functions and methods from package
 [‘ggspectra’](https://docs.r4photobiology.info/ggspectra/). The spectra
 can be used seamlesly with functions from package
-[‘photobioloy’](https://docs.r4photobiology.info/photobiology/).
+[‘photobiology’](https://docs.r4photobiology.info/photobiology/).
 However, class `source_mspct` is derived from `list` and class
 `source_spct` is derived from `data.frame` making the data also usable
 as is with base R functions.
@@ -131,11 +131,11 @@ Installation of the most recent stable version from CRAN:
 install.packages("photobiologyLamps")
 ```
 
-Installation of the current unstable version from Bitbucket:
+Installation of the current unstable version from GitHub:
 
 ``` r
 # install.packages("devtools")
-devtools::install_bitbucket("aphalo/photobiologylamps")
+remotes::install_github("aphalo/photobiologylamps")
 ```
 
 ## Documentation
@@ -177,7 +177,6 @@ publications, please cite according to:
 
 ``` r
 citation("photobiologyLamps")
-#> 
 #> To cite package 'photobiologyLamps' in publications, please use:
 #> 
 #>   Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin,
@@ -199,6 +198,6 @@ citation("photobiologyLamps")
 
 ## License
 
-© 2013-2022 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2013-2023 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.

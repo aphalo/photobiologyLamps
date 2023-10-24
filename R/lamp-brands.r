@@ -43,7 +43,7 @@
 #' @section Philips:
 #' Lamps branded Philips are sold by Signify Netherlands B.V.
 #' 
-#' @references \url{https://www.lighting.philips.com/main/home}
+#' @references \url{https://www.lighting.philips.com/home}
 #' 
 "Philips_lamps"
 

@@ -193,7 +193,7 @@ Osram_lamps
 \references{
 \url{https://www.ledvance.com/}
 
-\url{https://www.lighting.philips.com/main/home}
+\url{https://www.lighting.philips.com/home}
 
 \url{https://www.ledvanceus.com/Pages/default.aspx}
 
