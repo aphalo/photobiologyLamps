@@ -112,7 +112,7 @@ Aphalo, P. J., Albert, A., Björn, L. O., McLeod, A. R., Robson, T. M., & Rosenq
 
 ## Contributing
 
-Pull requests, bug reports, and feature requests are welcome at (https://bitbucket.org/aphalo/photobiology).
+Pull requests, bug reports, and feature requests are welcome at (https://github.com/aphalo/photobiologyLamps).
 
 ## Citation
 

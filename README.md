@@ -168,7 +168,7 @@ Division of Plant Biology. ISBN 978-952-10-8363-1 (PDF),
 ## Contributing
 
 Pull requests, bug reports, and feature requests are welcome at
-(<https://bitbucket.org/aphalo/photobiology>).
+(<https://github.com/aphalo/photobiologyLamps>).
 
 ## Citation
 
