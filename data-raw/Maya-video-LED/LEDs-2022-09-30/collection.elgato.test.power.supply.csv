@@ -1,0 +1,5 @@
+spct.idx,E_UVB.ISO,E_UVA2.CIE,E_UVA1.CIE,E_Blue.Sellaro,E_Green.Sellaro,E_Red.Smith20,E_FarRed.Smith20,]UVC:PAR[e:e],UVB:PAR[e:e],UVA:PAR[e:e],blue:green[e:e],red:far-red[e:e],when.measured
+elgato.max.4000.batt.1.spct,0.0219,0.0119,0.0193,4.5,6.19,1.64,0.275,0.0011,9.38e-4,0.00134,0.728,6.07,2022-09-30T20:38:51Z
+elgato.max.4000.USBC.charging.spct,0.00568,0.00504,0.00819,4.5,6.2,1.65,0.275,4.61e-5,2.43e-4,5.66e-4,0.726,6.08,2022-09-30T20:42:19Z
+elgato.max.4000.charger.spct,0.00659,0.00537,0.00878,4.5,6.2,1.65,0.275,7.48e-5,2.82e-4,6.05e-4,0.726,6.08,2022-09-30T20:45:42Z
+elgato.max.4000.studio.mode.spct,0.00703,0.00668,0.00939,4.5,6.19,1.65,0.275,-1.17e-5,3.01e-4,6.88e-4,0.727,6.08,2022-09-30T20:48:18Z

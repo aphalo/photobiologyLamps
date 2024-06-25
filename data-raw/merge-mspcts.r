@@ -28,6 +28,8 @@ oo_maya_lamps <- names(oo_maya.mspct)
 load(file = "data-raw/bentham-mspct.rda")
 bentham_lamps <- names(bentham.mspct)
 
+load(file = "data-raw/growth-room.mspct.rda")
+
 load(file = "data-raw/fluence-mspct.rda")
 
 load(file = "data-raw/philips-mspct.rda")
@@ -35,7 +37,7 @@ load(file = "data-raw/philips-mspct.rda")
 load(file = "data-raw/LCDlighting-mspct.rda")
 
 lamps.mspct <- c(licor.mspct, macam.mspct, bentham.mspct, oo_maya.mspct, 
-                 fluence.mspct, philips.mspct, LCDlighting.mspct)
+                 fluence.mspct, philips.mspct, LCDlighting.mspct, growth_room.mspct)
 
 lamps.mspct <- lamps.mspct[order(names(lamps.mspct))]
 lamps.mspct <- normalize(lamps.mspct, nrom = "max", unit.out = "energy", keep.scaling = 100) # W m-2
