@@ -41,4 +41,4 @@ growth_room.mspct <- source_mspct(list(Osram.FT.L36W.865 = temp.spct))
 
 growth_room.mspct
 
-save(growth_room.mspct, file = "data-raw/growth-room.mspct.rda")
+save(growth_room.mspct, file = "data-raw/rda/growth-room.mspct.rda")
