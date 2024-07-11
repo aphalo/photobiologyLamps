@@ -23,6 +23,9 @@ rm(list = ls(pattern = "raw_mspct$"))
 autoplot(Aralab.Luke.100pc.22C.series.spct)
 autoplot(Aralab.Luke.50pc.22C.series.spct)
 
+autoplot(Aralab.Luke.100pc.22C.series.spct, plot.data = "median")
+autoplot(Aralab.Luke.50pc.22C.series.spct, plot.data = "median")
+
 # load temperature response at 100% power
 
 rm(list = ls(pattern = "*"))
@@ -102,24 +105,29 @@ colnames(irrads.df)
 library(ggpmisc)
 library(ggspectra)
 
-ggplot(subset(irrads.df, dimming == 100),
+ggplot(irrads.df,
        aes(temperature, Q_PAR)) +
   geom_point() +
   geom_line() +
   expand_limits(y = 0)
 
-ggplot(subset(irrads.df, dimming == 100),
+ggplot(irrads.df,
        aes(temperature, Q_IRA / Q_PAR)) +
   geom_point() +
   stat_poly_line(formula = y ~ poly(x, 3, raw = TRUE))
 
-ggplot(subset(irrads.df, dimming == 100),
+ggplot(irrads.df,
        aes(temperature, Q_NIR / Q_PAR)) +
   geom_point() +
   stat_poly_line(formula = y ~ poly(x, 3, raw = TRUE))
 
-ggplot(subset(irrads.df, dimming == 100),
+ggplot(irrads.df,
        aes(temperature, Q_UVA1.CIE / Q_PAR)) +
+  geom_point() +
+  stat_poly_line(formula = y ~ poly(x, 3, raw = TRUE))
+
+ggplot(irrads.df,
+       aes(temperature, Q_UVA2.CIE / Q_PAR)) +
   geom_point() +
   stat_poly_line(formula = y ~ poly(x, 3, raw = TRUE))
 
