@@ -9,32 +9,32 @@ rm(list = ls(pattern = "*"))
 
 # merge
 
-load(file = "data-raw/licor-mspct.rda")
+load(file = "data-raw/rda/licor-mspct.rda")
 licor_lamps <- names(licor.mspct)
 
-load(file = "data-raw/macam-mspct.rda")
+load(file = "data-raw/rda/macam-mspct.rda")
 macam_lamps <- names(macam.mspct)
 
-load(file = "data-raw/maya-LED-lamps.mspct.rda")
-load(file = "data-raw/maya-discharge-lamps.mspct.rda")
-load(file = "data-raw/maya-flash-lamps.mspct.rda")
-load(file = "data-raw/maya-incandescent-lamps.mspct.rda")
+load(file = "data-raw/rda/maya-LED-lamps.mspct.rda")
+load(file = "data-raw/rda/maya-discharge-lamps.mspct.rda")
+load(file = "data-raw/rda/maya-flash-lamps.mspct.rda")
+load(file = "data-raw/rda/maya-incandescent-lamps.mspct.rda")
 oo_maya.mspct <- c(maya_LED_lamps.mspct, 
                    maya_discharge_lamps.mspct,
                    maya_flash_lamps.mspct,
                    maya_incandescent_lamps.mspct)
 oo_maya_lamps <- names(oo_maya.mspct)
 
-load(file = "data-raw/bentham-mspct.rda")
+load(file = "data-raw/rda/bentham-mspct.rda")
 bentham_lamps <- names(bentham.mspct)
 
-load(file = "data-raw/growth-room.mspct.rda")
+load(file = "data-raw/rda/growth-room.mspct.rda")
 
-load(file = "data-raw/fluence-mspct.rda")
+load(file = "data-raw/rda/fluence-mspct.rda")
 
-load(file = "data-raw/philips-mspct.rda")
+load(file = "data-raw/rda/philips-mspct.rda")
 
-load(file = "data-raw/LCDlighting-mspct.rda")
+load(file = "data-raw/rda/LCDlighting-mspct.rda")
 
 lamps.mspct <- c(licor.mspct, macam.mspct, bentham.mspct, oo_maya.mspct, 
                  fluence.mspct, philips.mspct, LCDlighting.mspct, growth_room.mspct)
@@ -89,7 +89,7 @@ incandescent_lamps <-
 multimetal_lamps <-
   sort(grep("\\.MH\\.", names(lamps.mspct), value = TRUE))
 fluorescent_lamps <- 
-  sort(grep("\\.FT\\.|\\.CF\\.", names(lamps.mspct), value = TRUE))
+  sort(grep("\\.FT\\.|\\.CF\\.|\\F36T8\\.", names(lamps.mspct), value = TRUE))
 germicidal_lamps <- 
   sort(grep("Germicidal", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
 mercury_lamps <- c(fluorescent_lamps, germicidal_lamps)

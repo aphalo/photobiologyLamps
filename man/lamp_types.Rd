@@ -17,11 +17,11 @@ A vector of character strings.
 
 An object of class \code{character} of length 3.
 
-An object of class \code{character} of length 23.
-
-An object of class \code{character} of length 30.
-
 An object of class \code{character} of length 24.
+
+An object of class \code{character} of length 32.
+
+An object of class \code{character} of length 25.
 
 An object of class \code{character} of length 1.
 

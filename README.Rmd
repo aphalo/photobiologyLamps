@@ -16,7 +16,11 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyLamps)](https://cran.r-project.org/package=photobiologyLamps) 
-[![cran checks](https://badges.cranchecks.info/worst/photobiologyLamps.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyLamps.html) [![R-CMD-check](https://github.com/aphalo/photobiologyLamps/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyLamps/actions)
+[![cran checks](https://badges.cranchecks.info/worst/photobiologyLamps.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyLamps.html)
+[![R Universe vwersion](https://aphalo.r-universe.dev/badges/photobiologyLEDs)](https://aphalo.r-universe.dev/photobiologyLEDs)
+[![R-CMD-check](https://github.com/aphalo/photobiologyLamps/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyLamps/actions)
+[![Documentation](https://img.shields.io/badge/documentation-photobiologyLamps-informational.svg)](https://docs.r4photobiology.info/photobiologyLamps/)
+[![doi](https://img.shields.io/badge/doi-10.32614/CRAN.package.photobiologyLamps-blue.svg)](https://doi.org/10.32614/CRAN.package.photobiologyLamps)
 <!-- badges: end -->
 
 Package '**photobiologyLamps**' complements other packages in the [_R for photobiology_ suite](https://www.r4photobiology.info/). It contains spectral emission data for LED, fluorescent, incandescent and other lamps (`lamps.mspct`). Spectra for light emitting diodes (LEDs) and LED arrays (`leds.mspct`) available as electronic components are included in package ['photobioloyLEDs'](https://docs.r4photobiology.info/photobiologyLEDs/). Package '**photobiologyLamps**' also includes spectra from UV-B fluorescent tubes operating at different temperatures (`qp_uvb313_temp.mspct` and `qp_uvb313_temp.spct`) and for a four-channel LED bulb supporting channel mixing (`ledsavers.mspct`).
@@ -33,6 +37,7 @@ class `source_mspct` is derived from `list` and class `source_spct` is derived f
 ```{r example0, message=FALSE}
 library(ggspectra)
 library(photobiologyLamps)
+theme_set(theme_bw())
 ```
 
 The package includes spectral data for several lamps.
@@ -53,7 +58,7 @@ The first example below shows you how to plot the emission spectrum of one of th
 lamps.
 
 ```{r example1, message=FALSE}
-autoplot(lamps.mspct$Airam.CF.Spiraali.14W.3000K,
+autoplot(lamps.mspct$Airam.CF.Spiraali.14W.3000K, geom = "spct",
          annotations = c("+", "title:what"))
 ```
 
@@ -87,6 +92,14 @@ Installation of the most recent stable version from CRAN:
 
 ```{r, eval=FALSE}
 install.packages("photobiologyLamps")
+```
+
+Installation of the current unstable version from R-Universe CRAN-like repository (source and binaries available):
+
+```{r, eval=FALSE}
+install.packages('photobiologyLamps', 
+                 repos = c('https://aphalo.r-universe.dev', 
+                           'https://cloud.r-project.org'))
 ```
 
 Installation of the current unstable version from GitHub:
