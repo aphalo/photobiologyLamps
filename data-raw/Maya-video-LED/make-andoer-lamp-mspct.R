@@ -28,23 +28,40 @@ names(new.names) <- spectrum
 
 how.measured <- "Array spectrometer, Ocean Optics Maya 2000 Pro; Bentham cosine diffuser D7H; distance unknown."
 
+temp.mspct <- get(spectrum)[1:2]
+names(temp.mspct)
+
+summary(temp.mspct)
+
 comment.text <- lamp.info
-what.measured <- lamp.info
-what.measured <- paste(lamp.type, "lamp:", what.measured)
-temp.spct <- get(spectrum)[1:2]
-# temp.spct <- normalize(temp.spct)
-temp.spct <- smooth_spct(temp.spct)
-temp.spct <- thin_wl(temp.spct)
-temp.spct <- trim_wl(temp.spct, c(315, NA), fill = 0)
-setHowMeasured(temp.spct, how.measured)
-setWhatMeasured(temp.spct, what.measured)
-comment(temp.spct) <- NULL
-temp.spct <- msmsply(temp.spct, trimInstrDesc)
-temp.spct <- msmsply(temp.spct, trimInstrSettings)
-print(str(get_attributes(temp.spct[[1]])))
-print(autoplot(temp.spct, annotations = c("+", "title:what:when:comment")))
-assign(new.names, temp.spct)
+for (i in names(temp.mspct)) {
+  temp.spct <- temp.mspct[[i]]
+  what.measured <- paste(lamp.type, "lamp:", gsub("power", "dimmed", 
+                                                  gsub("\\.", " ", what_measured(temp.spct))))
+  what.measured <- gsub("100", "max ", what.measured)
+  what.measured <- gsub("pc", "power", what.measured)
+  if (grepl("\\.1\\.spct", i)) {
+    what.measured <- gsub("3/9", "1/9", what.measured)
+  }
+  # temp.spct <- normalize(temp.spct)
+  temp.spct <- smooth_spct(temp.spct, method = "supsmu")
+  temp.spct <- thin_wl(temp.spct, max.slope.delta = 0.001, max.wl.step = 10)
+  temp.spct <- trim_wl(temp.spct, c(700, NA), fill = 0)
+  setHowMeasured(temp.spct, how.measured)
+  setWhatMeasured(temp.spct, what.measured)
+  comment(temp.spct) <- NULL
+  temp.spct <- trimInstrDesc(temp.spct)
+  temp.spct <- trimInstrSettings(temp.spct)
+  print(str(get_attributes(temp.spct)))
+  print(autoplot(temp.spct, annotations = c("+", "title:what:when:comment")) + geom_point())
+  temp.mspct[[i]] <- temp.spct
+}
+assign(new.names, temp.mspct)
 
-length(andoer_ir49.mspct)
+names(andoer_ir49.mspct) <- 
+  paste("dimmed.", gsub("Andoer\\.IR\\.49\\.|\\.spct", "", names(andoer_ir49.mspct)), sep = "") |>
+  gsub("min\\.pc", "10pc", x = _)
 
-save(andoer_ir49.mspct, file = "data/andoer-ir49.mspct.rda")
+summary(andoer_ir49.mspct)
+
+save(andoer_ir49.mspct, file = "data/andoer-ir49-mspct.rda")

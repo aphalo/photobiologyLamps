@@ -127,7 +127,8 @@ Godox_lamps <- sort(grep("godox", names(lamps.mspct), value = TRUE, ignore.case 
 Sunwayfoto_lamps <- sort(grep("sunwayfoto", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
 Jaxman_lamps <- sort(grep("jaxman", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
 Convoy_lamps <- sort(grep("convoy", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
-Generic_lamps <- sort(grep("pirkka|v.light|LCDlighting|Ledstore|Generic|Ikea", names(lamps.mspct), value = TRUE, ignore.case = TRUE))
+Generic_lamps <- sort(grep("pirkka|v.light|LCDlighting|Ledstore|Ledenergie|Generic|Ikea|Eiko", 
+                           names(lamps.mspct), value = TRUE, ignore.case = TRUE))
 
 lamp_brands <- 
   sort(c("Osram", "Sylvania", "QPpanel", "Philips", "Airam", "Toshiba",
