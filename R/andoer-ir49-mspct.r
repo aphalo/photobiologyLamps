@@ -4,11 +4,15 @@
 #'   emitting LED-based light source for video and photography. The lamp is
 #'   advertised as "Andoer IR49S Mini IR Night Vision Light" 
 #'
-#' @details \code{andoer_ir49.mspct} contains a collection of two \code{"source_spct"}
-#'   objects with spectral emission data for the lamp at full and minimum 
-#'   power. Dimming setting is stepless. The lamp was maintained at the same distance from the 
-#'   input optics so the two spectra are comparable and provided expressed
-#'   in calibrated spectral energy irradiance units.
+#' @details \code{andoer_ir49.mspct} contains a collection of two
+#'   \code{"source_spct"} objects with spectral emission data for the lamp at
+#'   full and minimum power. Dimming setting is stepless. The lamp was
+#'   maintained at the same distance from the input optics so the two spectra
+#'   are comparable and provided expressed in calibrated spectral energy
+#'   irradiance units.
+#'   
+#'   This light source has 49 LEDs in a 7 \eqn{\times} 7 grid. The LEDs are
+#'   in through-hole packages. A built-in Lithium battery powers it.
 #'
 #'   The variables in each member spectrum are as follows: \itemize{ \item
 #'   w.length (nm) \item s.e.irrad (\eqn{\mathrm{W\,m^{-2}\,nm^{-1}}}) }

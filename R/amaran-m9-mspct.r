@@ -1,4 +1,4 @@
-#' @title Spectra for an Amaran M9 LED video light
+#' @title Spectra for an Amaran AL-M9 LED video light
 #'
 #' @description A collection of lamp emission spectra for an Aputure Amaran 
 #'   pocket-sized daylight-balanced LED light type AL-M9.
@@ -9,6 +9,10 @@
 #'   from the input optics of the spectrometer. In all cases the diffuser was
 #'   kept in place. Thus, the different spectra are comparable and provided
 #'   expressed in calibrated spectral energy irradiance units.
+#'   
+#'   This light source has 9 LEDs in a 3 \eqn{\times} 3 grid. The LEDs are
+#'   in SMD packages. A built-in Lithium battery powers it. It comes with a
+#'   detachable plastic diffuser
 #'
 #'   The variables in each member spectrum are as follows: \itemize{ \item
 #'   w.length (nm) \item s.e.irrad (\eqn{\mathrm{W\,m^{-2}\,nm^{-1}}}) }
