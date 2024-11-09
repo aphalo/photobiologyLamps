@@ -57,10 +57,10 @@ A collection of lamp emission spectra for a household LED bulb
   the lamp. All colors were measured at maximum power output although the lamp
   supports dimming. The lamp was maintained at the same distance from the 
   input optics so the different spectra are comparable and provided expressed
-  in calibrated units.
+  in calibrated spectral energy irradiance units.
 
   The variables in each member spectrum are as follows: \itemize{ \item
-  w.length (nm) \item s.e.irrad (relative energy based units) }
+  w.length (nm) \item s.e.irrad (\eqn{\mathrm{W\,m^{-2}\,nm^{-1}}}) }
 }
 \note{
 Instrument used: Ocean Optics Maya2000 Pro single-monochromator array

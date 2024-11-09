@@ -56,6 +56,9 @@ the chamber, for the output of the lamps to also become stable.
   contains the same data as a collection of spectra stored in a
   \code{"source_mspct"} object, with member \code{"source_spct"} objects
   named minus5C, plus00C, plus05C, plus10C, plus20C, plus30C, and plus35C.
+
+  The variables in each member spectrum are as follows: \itemize{ \item
+  w.length (nm) \item s.e.irrad (\eqn{\mathrm{W\,m^{-2}\,nm^{-1}}}) }
 }
 \note{
 Instrument used: Macam SR-9010-PC scanning double monochromator
