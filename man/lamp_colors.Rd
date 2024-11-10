@@ -20,25 +20,25 @@
 \format{
 A vector of character strings.
 
-An object of class \code{character} of length 8.
+An object of class \code{character} of length 9.
 
 An object of class \code{character} of length 14.
 
 An object of class \code{character} of length 5.
 
-An object of class \code{character} of length 10.
+An object of class \code{character} of length 11.
 
-An object of class \code{character} of length 3.
+An object of class \code{character} of length 4.
 
 An object of class \code{character} of length 1.
 
 An object of class \code{character} of length 7.
 
-An object of class \code{character} of length 14.
+An object of class \code{character} of length 15.
 
 An object of class \code{character} of length 8.
 
-An object of class \code{character} of length 50.
+An object of class \code{character} of length 53.
 }
 \usage{
 lamp_colors

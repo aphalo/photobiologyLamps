@@ -1,0 +1,5 @@
+spct.idx,E_UVB.ISO,E_UVA2.CIE,E_UVA1.CIE,E_Blue.Sellaro,E_Green.Sellaro,E_Red.Smith20,E_FarRed.Smith20,]UVC:PAR[e:e],UVB:PAR[e:e],UVA:PAR[e:e],blue:green[e:e],red:far-red[e:e],when.measured
+elgato.max.4000.640mm.spct,1.97e-4,-9.21e-4,-1.4e-4,0.376,0.52,0.141,0.0238,-4.06e-4,9.97e-5,-5.37e-4,0.722,6.01,2022-09-30T20:52:20Z
+elgato.max.4000.540mm.repeat.spct,-0.00196,-6.57e-4,-0.00147,0.328,0.455,0.123,0.0208,-0.00295,-0.00113,-0.00123,0.721,6.03,2022-09-30T20:55:05Z
+sunwayfoto.fl96.max.4000.640mm.spct,8.95e-4,9.63e-4,0.00161,0.367,0.587,0.23,0.0501,3.94e-4,3.67e-4,0.00105,0.624,4.65,2022-09-30T21:02:37Z
+sunwayfoto.fl96.max.5500.640mm.spct,-0.00141,-4.74e-4,-6.08e-4,0.497,0.56,0.128,0.0277,-0.00243,-6.98e-4,-5.36e-4,0.887,4.67,2022-09-30T21:06:24Z

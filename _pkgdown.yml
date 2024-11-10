@@ -11,9 +11,12 @@ reference:
   - title: Spectra
     contents:
     - lamps.mspct
+    - amaran_m9.mspct
+    - andoer_ir49.mspct
     - ledsavers.mspct
     - qp_uvb313_temp.spct
     - qp_uvb313_temp.mspct
+    - sunwayfoto_fl96.mspct
   - title: Indexing vectors by color
     contents:
     - lamp_colors
@@ -41,6 +44,7 @@ navbar:
     intro:
       icon: fas fa-home fa-lg
       href: index.html
+      aria-label: Home
     reference:
       text: Reference
       href: reference/index.html

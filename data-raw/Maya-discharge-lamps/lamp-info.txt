@@ -7,3 +7,5 @@ Osram Classic 64541 A 20W 230V Halogen E27 235 lm 2700K Ra 100
 Pirkka Halogeenilampuu 53W 240V E27 2800K
 Airam Spiraali 14W 220-240W 3000K E27 900 lm CRI>=80
 Valoya B50/AP67 inside Aralab FitoClima 1200 chamber at 100% output
+Valoya RX600HV Solray385 in greenhouse
+Eiko BLB F36T8 36W black-light blue

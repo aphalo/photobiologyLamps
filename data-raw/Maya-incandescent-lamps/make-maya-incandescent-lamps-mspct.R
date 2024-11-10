@@ -54,4 +54,4 @@ for (s in spectra) {
 
 length(maya_incandescent_lamps.mspct)
 
-save(maya_incandescent_lamps.mspct, file = "data-raw/maya-incandescent-lamps.mspct.rda")
+save(maya_incandescent_lamps.mspct, file = "data-raw/rda/maya-incandescent-lamps.mspct.rda")

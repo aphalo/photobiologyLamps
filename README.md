@@ -7,7 +7,11 @@
 version](https://www.r-pkg.org/badges/version-last-release/photobiologyLamps)](https://cran.r-project.org/package=photobiologyLamps)
 [![cran
 checks](https://badges.cranchecks.info/worst/photobiologyLamps.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyLamps.html)
+[![R Universe
+vwersion](https://aphalo.r-universe.dev/badges/photobiologyLEDs)](https://aphalo.r-universe.dev/photobiologyLEDs)
 [![R-CMD-check](https://github.com/aphalo/photobiologyLamps/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyLamps/actions)
+[![Documentation](https://img.shields.io/badge/documentation-photobiologyLamps-informational.svg)](https://docs.r4photobiology.info/photobiologyLamps/)
+[![doi](https://img.shields.io/badge/doi-10.32614/CRAN.package.photobiologyLamps-blue.svg)](https://doi.org/10.32614/CRAN.package.photobiologyLamps)
 <!-- badges: end -->
 
 Package ‘**photobiologyLamps**’ complements other packages in the [*R
@@ -56,13 +60,14 @@ as is with base R functions.
 ``` r
 library(ggspectra)
 library(photobiologyLamps)
+theme_set(theme_bw())
 ```
 
 The package includes spectral data for several lamps.
 
 ``` r
 length(lamps.mspct)
-#> [1] 62
+#> [1] 66
 ```
 
 ``` r
@@ -79,7 +84,7 @@ The first example below shows you how to plot the emission spectrum of
 one of the lamps.
 
 ``` r
-autoplot(lamps.mspct$Airam.CF.Spiraali.14W.3000K,
+autoplot(lamps.mspct$Airam.CF.Spiraali.14W.3000K, geom = "spct",
          annotations = c("+", "title:what"))
 ```
 
@@ -131,6 +136,15 @@ Installation of the most recent stable version from CRAN:
 install.packages("photobiologyLamps")
 ```
 
+Installation of the current unstable version from R-Universe CRAN-like
+repository (source and binaries available):
+
+``` r
+install.packages('photobiologyLamps', 
+                 repos = c('https://aphalo.r-universe.dev', 
+                           'https://cloud.r-project.org'))
+```
+
 Installation of the current unstable version from GitHub:
 
 ``` r
@@ -177,7 +191,7 @@ publications, please cite according to:
 
 ``` r
 citation("photobiologyLamps")
-#> To cite package 'photobiologyLamps' in publications, please use:
+#> To cite package ‘photobiologyLamps’ in publications use:
 #> 
 #>   Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin,
 #>   2015:1, 21-29. DOI:10.19232/uv4pb.2015.1.14

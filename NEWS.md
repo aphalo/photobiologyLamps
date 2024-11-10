@@ -4,6 +4,12 @@ editor_options:
     wrap: sentence
 ---
 
+photobiologyLamps 0.5.3
+=======================
+
+* Add data for grow lamps and growth cabinets.
+* Add data for video/photography on-camera LED lamps.
+
 photobiologyLamps 0.5.2
 =======================
 

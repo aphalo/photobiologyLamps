@@ -23,13 +23,13 @@ lamp.info <- gsub("airam", "Airam", lamp.info)
 lamp.info <- gsub("cf", "compact fluorescent", lamp.info)
 lamp.info <- gsub("L36W", "Osram L36W", lamp.info)
 lamp.info <- gsub("TLD", "Philips TLD", lamp.info)
-
+lamp.info <- gsub("BLB x2 at 94cm no filter", "Eiko F36T8 BLB 36W", lamp.info)
 
 names(lamp.info) <- spectra
 
 lamp.type <- ifelse(grepl("germicidal", spectra), 
                      "Low-pressure Hg tube:",
-                    ifelse(grepl("TL|L36", spectra),
+                    ifelse(grepl("TL|L36|F36T8", spectra),
                      "Fluorescent tube:",
                      "Compact fluorescent lamp:"))
                     
@@ -37,6 +37,7 @@ names(lamp.type) <- spectra
 
 new.names <- c("Airam.CF.15W.2700K",
                "Airam.CF.Spiraali.14W.3000K",
+               "Eiko.F36T8.BLB",
                "Generic.germicidal",
                "Osram.FT.L36W.840",
                "Philips.FT.TL5.35W.830.HE",
@@ -53,6 +54,7 @@ for (s in spectra) {
   what.measured <- gsub("plus", "+", what.measured)
   what.measured <- paste(lamp.type[s], what.measured)
   temp.spct <- get(s)
+  temp.spct <- smooth_spct(temp.spct, wl.range = c(250, 312))
   temp.spct <- normalize(temp.spct)
   temp.spct <- thin_wl(temp.spct)
   setHowMeasured(temp.spct, how.measured)
@@ -66,7 +68,7 @@ for (s in spectra) {
 #  comment(temp.spct) <- comment.text
   trimInstrDesc(temp.spct)
   trimInstrSettings(temp.spct)
-  print(str(get_attributes(temp.spct)))
+#  print(str(get_attributes(temp.spct)))
   print(autoplot(temp.spct, annotations = c("+", "title:what:when:comment")))
   maya_discharge_lamps.mspct[[new.names[s]]] <- temp.spct
   readline("next:")
@@ -74,4 +76,4 @@ for (s in spectra) {
 
 length(maya_discharge_lamps.mspct)
 
-save(maya_discharge_lamps.mspct, file = "data-raw/maya-discharge-lamps.mspct.rda")
+save(maya_discharge_lamps.mspct, file = "data-raw/rda/maya-discharge-lamps.mspct.rda")
