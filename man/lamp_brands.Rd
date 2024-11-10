@@ -47,7 +47,7 @@ An object of class \code{character} of length 1.
 
 An object of class \code{character} of length 2.
 
-An object of class \code{character} of length 9.
+An object of class \code{character} of length 12.
 }
 \usage{
 lamp_brands

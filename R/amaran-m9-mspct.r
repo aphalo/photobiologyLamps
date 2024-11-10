@@ -28,7 +28,8 @@
 #' @keywords datasets
 #' 
 #' @references
-#' Lamp manufacturer: \url{https://aputure.com/}
+#' Lamp manufacturer: \url{https://aputure.com/}.
+#' 
 #' Aphalo, Pedro J. (2022) Small fill/video LED lights revisited: A new 
 #'   comparison. \url{https://www.photo-spectrum.info/pages/illumination/led-fill-lights-2.html}.
 #' 

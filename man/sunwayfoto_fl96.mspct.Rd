@@ -46,7 +46,8 @@ summary(sunwayfoto_fl96.mspct)
 
 }
 \references{
-Lamp manufacturer: \url{https://sunwayfoto.com/}
+Lamp manufacturer: \url{https://sunwayfoto.com/}.
+
 Aphalo, Pedro J. (2022) Small fill/video LED lights revisited: A new 
   comparison. \url{https://www.photo-spectrum.info/pages/illumination/led-fill-lights-2.html}.
 }
