@@ -36,7 +36,7 @@ library(ggspectra)
 In this brief User Guide we describe how to re-scale the normalized
 spectra, and how to access individual spectra or subsets of spectra.
 
-Spectra in the package are contained in three collections: `lamps.mspct`
+Spectra in the package are contained in several collections: `lamps.mspct`
 contains spectral data for various types of lamps emiiting a fixed color of
 light; `ledsavers.mspct` contains spectral data for a LED bulb with four color
 channels allowing it to output 16 different _colors_ of light;
@@ -44,17 +44,21 @@ channels allowing it to output 16 different _colors_ of light;
 temperatures. In addition `qp_uvb313_temp.spct` contains the same data in a
 single spectral object.
 
+Collections `amaran_m9.mspct`, `andoer_ir49.mspct`, `elgato_klm_cct.mspct`, 
+`elgato_klm_dim.mspct` and `sunwayfoto_fl96.mspct` contain spectra for video
+and photography small LED lamps.
+
 In addtion to the objects containing the data itself, several character vectors 
 of names of spectra are provide to facilitate the retrieval of subsets of spectra.
 
 ## Accessing individual spectra
 
-The `source_spct` member objects in `lamps.mspct` can be accessed through their
+The `lamps.mspct` collection, and object of class `source_mspct`, contains 
+`r length(lamps.mspct)` spectra as member objects of class`source_spct`.
+The member spectra of `lamps.mspct` can be accessed through their
 names or through a numeric index. As the numeric indexes are likely to change 
 with updates to the package, their use is discouraged. Names as character
-strings should be used instead. The names are listed in the documentation
-and also available through the "Data Catalogue" vignette. They can also be
-listed with method `names()`.
+strings should be used instead. They can be listed with method `names()`.
 
 ```{r}
 names(lamps.mspct)
