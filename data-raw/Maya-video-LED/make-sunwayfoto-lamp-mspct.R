@@ -55,5 +55,7 @@ assign(new.names, temp.mspct)
 
 names(sunwayfoto_fl96.mspct) <- gsub("Sunwayfoto\\.FL96\\.|\\.spct", "", names(sunwayfoto_fl96.mspct))
 summary(sunwayfoto_fl96.mspct)
+what_measured(sunwayfoto_fl96.mspct)
+how_measured(sunwayfoto_fl96.mspct)
 
 save(sunwayfoto_fl96.mspct, file = "data/sunwayfoto-fl96-mspct.rda")

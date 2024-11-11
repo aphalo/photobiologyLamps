@@ -46,13 +46,34 @@ The package includes spectral data for several lamps.
 length(lamps.mspct)
 ```
 
-```{r}
-length(qp_uvb313_temp.mspct)
-```
+The members of the collections are named, and several vectors of names are available indexing `lamps.mspct`, such as by manufacturer,
 
 ```{r}
-length(ledsavers.mspct)
+Philips_lamps
 ```
+
+or type of lamp.
+
+```{r}
+incandescent_lamps
+```
+
+Response to temperature of UV-B fluorescent tubes.
+
+```{r}
+what_measured(qp_uvb313_temp.mspct)
+```
+
+Different settings of a four-channel LED bulb, with its own indexing vectors of member names.
+
+```{r}
+what_measured(ledsavers.mspct)
+```
+
+Different small video/photography LED lamps: `sunwayfoto_fl96.mspct`,
+`elgato_klm_cct.mspct`, `elgato_klm_dim.mspct`, `amaran_m9.mspct` and
+`andoer_ir49.mspct`. Each of these collections of spectra contains data
+for one lamp with different dimming and/or colour temperature settings.
 
 The first example below shows you how to plot the emission spectrum of one of the
 lamps.
@@ -66,24 +87,6 @@ The second example shows how to access metadata.
 
 ```{r example2}
 what_measured(lamps.mspct$Airam.CF.Spiraali.14W.3000K)
-```
-
-The members of the collection are named, and several vectors of names are available, such as by manufacturer,
-
-```{r}
-Philips_lamps
-```
-
-or type of lamp.
-
-```{r}
-incandescent_lamps
-```
-
-Temperature response data for emision from UV-B fluorescent tubes is provided as a separate collection of spectra.
-
-```{r}
-names(qp_uvb313_temp.mspct)
 ```
 
 ## Installation
@@ -137,5 +140,5 @@ citation("photobiologyLamps")
 
 ## License
 
-© 2013-2023 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
+© 2013-2024 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
 

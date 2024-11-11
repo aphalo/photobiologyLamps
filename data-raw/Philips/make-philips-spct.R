@@ -9,13 +9,17 @@ philips.BLB.tld108.spct <-
   normalise()
 range(philips.BLB.tld108.spct)
 setWhatMeasured(philips.BLB.tld108.spct, 
-                "Blacklight blue \"BLB\" 36W fluorescent tube spectrum, Philips, Finland")
+                "Fluorescent tube: Blacklight blue BLB 36W, Philips, Finland")
 setHowMeasured(philips.BLB.tld108.spct, 
                "Digitized from figure in manufacturer's brochure.")
 
 philips.mspct <- source_mspct(list(Philips.FT.TLD.36W.BLB.108 = philips.BLB.tld108.spct))
 
-save(philips.mspct, file = "data-raw/philips-mspct.rda")
+summary(philips.mspct)
+what_measured(philips.mspct)
+how_measured(philips.mspct)
+
+save(philips.mspct, file = "data-raw/rda/philips-mspct.rda")
 
 library(ggspectra)
 print(autoplot(philips.BLB.tld108.spct))

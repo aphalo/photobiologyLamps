@@ -63,23 +63,36 @@ peak.wl_narrow <- peak.wl[names_narrow]
 names_narrow == names(peak.wl_narrow)
 peak.wl_narrow <- unname(peak.wl_narrow)
 
-uv_lamps <- names_narrow[peak.wl_narrow <= wl_max(UV())]
-ir_lamps <- names_narrow[peak.wl_narrow > 700]
-purple_lamps <- names_narrow[peak.wl_narrow > wl_max(UV()) &
-                              peak.wl_narrow <= wl_max(Purple())]
-blue_lamps <- names_narrow[peak.wl_narrow > wl_min(Blue()) &
-                            peak.wl_narrow <= wl_max(Blue())]
-green_lamps <- names_narrow[peak.wl_narrow > wl_min(Green()) &
-                             peak.wl_narrow <= wl_max(Green())]
-yellow_lamps <- names_narrow[peak.wl_narrow > wl_min(Yellow()) &
-                              peak.wl_narrow <= wl_max(Yellow())]
-orange_lamps <- names_narrow[peak.wl_narrow > wl_min(Orange()) &
-                              peak.wl_narrow <= wl_max(Orange())]
-red_lamps <-  names_narrow[peak.wl_narrow > wl_min(Red()) &
-                            peak.wl_narrow <= wl_max(Red())]
+colour.map <- character()
+for (lamp.name in names(lamps.mspct)) {
+  temp.df <- e_irrad(lamps.mspct[lamp.name], 
+                     w.band = c(UV_bands(), VIS_bands(), IR_bands()), 
+                     quantity = "relative")
+  names(temp.df) <- tolower(gsub("E/Esum_|\\.ISO|\\[|\\]", "", names(temp.df)))
+  peak.colour <- names(temp.df)[which.max(temp.df[1, -1]) + 1]
+  if (!peak.colour %in% c("uvc", "uvb", "uva", "nir") &&
+      unname(as.vector(temp.df[1, peak.colour])) < 0.6 && 
+      unname(as.vector(e_irrad(lamps.mspct[[lamp.name]], w.band = VIS(), quantity = "relative"))) > 0.7) {
+    peak.colour <- "white"
+  }
+  colour.map[lamp.name] <- peak.colour
+
+}
+
+# colour.map
+
+white_lamps <- names(colour.map)[colour.map == "white"]
+uv_lamps <- names(colour.map)[colour.map %in% c("uvc", "uvb", "uva")]
+ir_lamps <- names(colour.map)[colour.map == "nir"]
+purple_lamps <- names(colour.map)[colour.map == "purple"]
+blue_lamps <- names(colour.map)[colour.map == "blue"]
+green_lamps <- names(colour.map)[colour.map == "green"]
+yellow_lamps <- names(colour.map)[colour.map == "yellow"]
+orange_lamps <- names(colour.map)[colour.map == "orange"]
+red_lamps <- names(colour.map)[colour.map == "red"]
 amber_lamps <- sort(c(yellow_lamps, orange_lamps))
 
-lamp_colors <- c("uv", "purle", "blue", "green", "yellow", "orange", "red", "ir")
+lamp_colors <- c("uv", "purple", "blue", "green", "yellow", "orange", "red", "ir")
 
 ## lists by type
 sodium_lamps <-

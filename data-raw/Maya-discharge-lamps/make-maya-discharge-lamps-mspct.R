@@ -29,7 +29,7 @@ names(lamp.info) <- spectra
 
 lamp.type <- ifelse(grepl("germicidal", spectra), 
                      "Low-pressure Hg tube:",
-                    ifelse(grepl("TL|L36|F36T8", spectra),
+                    ifelse(grepl("TL|L36|BLB", spectra),
                      "Fluorescent tube:",
                      "Compact fluorescent lamp:"))
                     
@@ -75,5 +75,8 @@ for (s in spectra) {
 }
 
 length(maya_discharge_lamps.mspct)
+summary(maya_discharge_lamps.mspct)
+what_measured(maya_discharge_lamps.mspct)
+how_measured(maya_discharge_lamps.mspct)
 
 save(maya_discharge_lamps.mspct, file = "data-raw/rda/maya-discharge-lamps.mspct.rda")
