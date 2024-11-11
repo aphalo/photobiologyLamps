@@ -38,7 +38,9 @@ for (i in names(temp.mspct)) {
   temp.spct <- temp.mspct[[i]]
   what.measured <- paste(lamp.type, "lamp:", gsub("power", "dimmed", 
                                                   gsub("\\.", " ", what_measured(temp.spct))))
-  what.measured <- gsub("100", "max ", what.measured)
+  what.measured <- gsub("IR 49", "IR49S", what.measured)
+  what.measured <- gsub("100", "at max ", what.measured)
+  what.measured <- gsub("min", "at min", what.measured)
   what.measured <- gsub("pc", "power", what.measured)
   if (grepl("\\.1\\.spct", i)) {
     what.measured <- gsub("3/9", "1/9", what.measured)
@@ -63,5 +65,7 @@ names(andoer_ir49.mspct) <-
   gsub("min\\.pc", "10pc", x = _)
 
 summary(andoer_ir49.mspct)
+
+what_measured(andoer_ir49.mspct)
 
 save(andoer_ir49.mspct, file = "data/andoer-ir49-mspct.rda")
