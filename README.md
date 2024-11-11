@@ -70,35 +70,8 @@ length(lamps.mspct)
 #> [1] 66
 ```
 
-``` r
-length(qp_uvb313_temp.mspct)
-#> [1] 7
-```
-
-``` r
-length(ledsavers.mspct)
-#> [1] 16
-```
-
-The first example below shows you how to plot the emission spectrum of
-one of the lamps.
-
-``` r
-autoplot(lamps.mspct$Airam.CF.Spiraali.14W.3000K, geom = "spct",
-         annotations = c("+", "title:what"))
-```
-
-![](man/figures/README-example1-1.png)<!-- -->
-
-The second example shows how to access metadata.
-
-``` r
-what_measured(lamps.mspct$Airam.CF.Spiraali.14W.3000K)
-#> [1] "Compact fluorescent lamp: Airam CF Spiraali 14W 3000K"
-```
-
-The members of the collection are named, and several vectors of names
-are available, such as by manufacturer,
+The members of the collections are named, and several vectors of names
+are available indexing `lamps.mspct`, such as by manufacturer,
 
 ``` r
 Philips_lamps
@@ -120,12 +93,68 @@ incandescent_lamps
 #> [3] "Philips.Inc.50W.spot.halogen"
 ```
 
-Temperature response data for emision from UV-B fluorescent tubes is
-provided as a separate collection of spectra.
+Response to temperature of UV-B fluorescent tubes.
 
 ``` r
-names(qp_uvb313_temp.mspct)
-#> [1] "minus05C" "plus00C"  "plus05C"  "plus10C"  "plus20C"  "plus30C"  "plus35C"
+what_measured(qp_uvb313_temp.mspct)
+#> # A tibble: 7 × 2
+#>   spct.idx what.measured                              
+#>   <fct>    <chr>                                      
+#> 1 minus05C Flourescent tube: Q-Panel UVB313 40W at -5C
+#> 2 plus00C  Flourescent tube: Q-Panel UVB313 40W at 0C 
+#> 3 plus05C  Flourescent tube: Q-Panel UVB313 40W at 5C 
+#> 4 plus10C  Flourescent tube: Q-Panel UVB313 40W at 10C
+#> 5 plus20C  Flourescent tube: Q-Panel UVB313 40W at 20C
+#> 6 plus30C  Flourescent tube: Q-Panel UVB313 40W at 30C
+#> 7 plus35C  Flourescent tube: Q-Panel UVB313 40W at 35C
+```
+
+Different settings of a four-channel LED bulb, with its own indexing
+vectors of member names.
+
+``` r
+what_measured(ledsavers.mspct)
+#> # A tibble: 16 × 2
+#>    spct.idx      what.measured                                 
+#>    <fct>         <chr>                                         
+#>  1 B             LED lamp: LedSavers 7.5W four channels (WRGB).
+#>  2 blue.green    LED lamp: LedSavers 7.5W four channels (WRGB).
+#>  3 bluish.green  LED lamp: LedSavers 7.5W four channels (WRGB).
+#>  4 cool.green    LED lamp: LedSavers 7.5W four channels (WRGB).
+#>  5 dark.orange   LED lamp: LedSavers 7.5W four channels (WRGB).
+#>  6 fuchsia       LED lamp: LedSavers 7.5W four channels (WRGB).
+#>  7 G             LED lamp: LedSavers 7.5W four channels (WRGB).
+#>  8 greenish.blue LED lamp: LedSavers 7.5W four channels (WRGB).
+#>  9 orange        LED lamp: LedSavers 7.5W four channels (WRGB).
+#> 10 pink          LED lamp: LedSavers 7.5W four channels (WRGB).
+#> 11 purple        LED lamp: LedSavers 7.5W four channels (WRGB).
+#> 12 R             LED lamp: LedSavers 7.5W four channels (WRGB).
+#> 13 sand          LED lamp: LedSavers 7.5W four channels (WRGB).
+#> 14 W             LED lamp: LedSavers 7.5W four channels (WRGB).
+#> 15 warm.blue     LED lamp: LedSavers 7.5W four channels (WRGB).
+#> 16 yellow        LED lamp: LedSavers 7.5W four channels (WRGB).
+```
+
+Different small video/photography LED lamps: `sunwayfoto_fl96.mspct`,
+`elgato_klm_cct.mspct`, `elgato_klm_dim.mspct`, `amaran_m9.mspct` and
+`andoer_ir49.mspct`. Each of these collections of spectra contains data
+for one lamp with different dimming and/or colour temperature settings.
+
+The first example below shows you how to plot the emission spectrum of
+one of the lamps.
+
+``` r
+autoplot(lamps.mspct$Airam.CF.Spiraali.14W.3000K, geom = "spct",
+         annotations = c("+", "title:what"))
+```
+
+![](man/figures/README-example1-1.png)<!-- -->
+
+The second example shows how to access metadata.
+
+``` r
+what_measured(lamps.mspct$Airam.CF.Spiraali.14W.3000K)
+#> [1] "Compact fluorescent lamp: Airam CF Spiraali 14W 3000K"
 ```
 
 ## Installation
@@ -212,6 +241,6 @@ citation("photobiologyLamps")
 
 ## License
 
-© 2013-2023 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2013-2024 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.

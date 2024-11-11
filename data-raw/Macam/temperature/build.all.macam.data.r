@@ -20,7 +20,7 @@ qpanel.uvb313.temp.spct <- ddply(qp.t.melted.data, .(temperature, w.length), sum
 
 setSourceSpct(qpanel.uvb313.temp.spct, multiple.wl = 7)
 
-lamp.info <- "Flourescent tube: Q-Panel UVB313 40W at"
+lamp.info <- "Fluorescent tube: Q-Panel UVB313 40W at"
 qpanel.uvb313.minus5C.spct <- subset(qpanel.uvb313.temp.spct, temperature == -5)
 what_measured(qpanel.uvb313.minus5C.spct) <- paste(lamp.info, "-5C")
 qpanel.uvb313.00C.spct <- subset(qpanel.uvb313.temp.spct, temperature == 0)

@@ -9,7 +9,10 @@ photobiologyLamps 0.5.3
 
 * Add data for grow lamps and growth cabinets.
 * Add data for video/photography on-camera LED lamps.
-* Rebuild data objects with 'photobiology' (== 0.11.3), ensuring that metadata about the normalization is complete.
+* Rebuild data objects with 'photobiology' (== 0.11.3), ensuring that metadata about the normalization is complete. 
+* Add metadata on _what_ and _how_ was measured to obtain the spectral data.
+* Update the code used to create vectors of lamp names by colour.
+* Update the User Guide to reflect these and other recent changes in this package and in package 'photobiology'.
 
 photobiologyLamps 0.5.2
 =======================
