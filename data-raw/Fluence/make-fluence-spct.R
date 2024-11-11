@@ -42,7 +42,7 @@ for (s in names(fluence.mspct)) {
   vintage <- if (grepl("AnthoSpec|Greenhouse", s)) "2019" else "2022"
   fluence.mspct[[s]] <- interpolate_wl(fluence.mspct[[s]], w.length.out = 360:830, fill = 0)
   what_measured(fluence.mspct[[s]]) <- 
-                  paste("LED grow light: ", 
+                  paste("LED grow light:", 
                   gsub("_|\\.", " ", gsub("LED\\.", "", s)))
   how_measured(fluence.mspct[[s]]) <- 
                  paste("Digitized from figure in manufacturer's brochure or image from web site in ",
@@ -57,6 +57,10 @@ for (s in names(fluence.mspct)) {
 }
 
 autoplot(fluence.mspct)
+summary(fluence.mspct)
+what_measured(fluence.mspct)
+how_measured(fluence.mspct)
+when_measured(fluence.mspct)
 
 # fluence_lamps <- names(fluence.mspct)
 save(fluence.mspct, file = "data-raw/fluence-mspct.rda")

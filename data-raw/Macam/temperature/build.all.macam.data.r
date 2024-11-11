@@ -44,7 +44,7 @@ qp_uvb313_temp.mspct <- source_mspct(list(minus05C = qpanel.uvb313.minus5C.spct,
                                           plus30C = qpanel.uvb313.30C.spct,
                                           plus35C = qpanel.uvb313.35C.spct))
 
-when_measured(qp_uvb313_temp.mspct) <- as.POSIXct(ymd("1997-05-19"))
+when_measured(qp_uvb313_temp.mspct) <- lubridate::ymd_h("1997-05-19 00")
 how_measured(qp_uvb313_temp.mspct) <- "Measured with MACAM double monochromator scaning spectrometer PCxxx"
 
 what_measured(qp_uvb313_temp.mspct)
@@ -55,7 +55,7 @@ save(qp_uvb313_temp.mspct, file="./data/qp-uvb313-temp-mspct.rda")
 
 qp_uvb313_temp.spct <- qpanel.uvb313.temp.spct
 what_measured(qp_uvb313_temp.spct) <- paste(lamp.info, "-5C to 35C")
-when_measured(qp_uvb313_temp.spct) <- ymd("1997-05-19")
+when_measured(qp_uvb313_temp.spct) <- lubridate::ymd_h("1997-05-19 00")
 how_measured(qp_uvb313_temp.spct) <- "Measured with MACAM double monochromator scaning spectrometer PCxxx"
 
 save(qp_uvb313_temp.spct, file="./data/qp-uvb313-temp-spct.rda")

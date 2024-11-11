@@ -9,6 +9,7 @@ photobiologyLamps 0.5.3
 
 * Add data for grow lamps and growth cabinets.
 * Add data for video/photography on-camera LED lamps.
+* Rebuild data objects with 'photobiology' (== 0.11.3), ensuring that metadata about the normalization is complete.
 
 photobiologyLamps 0.5.2
 =======================

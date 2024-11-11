@@ -59,4 +59,8 @@ assign(new.names, temp.mspct)
 names(amaran_m9.mspct) <- 
   paste("dimmed.", c(9, 7, 5, 3, 1, 0), "of9", sep = "")
 
+summary(amaran_m9.mspct)
+what_measured(amaran_m9.mspct)
+how_measured(amaran_m9.mspct)
+
 save(amaran_m9.mspct, file = "data/amaran-m9-mspct.rda")

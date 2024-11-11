@@ -17,7 +17,7 @@ rm(list = ls(pattern = "*raw.mspct"))
 
 spectra <- ls(pattern = "\\.spct")
 
-lamp.type <- rep("Xenon flashtube: ", 4L)
+lamp.type <- rep("Xenon flash:", 4L)
                     
 names(lamp.type) <- spectra
 
@@ -54,5 +54,9 @@ for (s in spectra) {
 }
 
 length(maya_flash_lamps.mspct)
+summary(maya_flash_lamps.mspct)
+what_measured(maya_flash_lamps.mspct)
+how_measured(maya_flash_lamps.mspct)
+comment(maya_flash_lamps.mspct)
 
 save(maya_flash_lamps.mspct, file = "data-raw/maya-flash-lamps.mspct.rda")

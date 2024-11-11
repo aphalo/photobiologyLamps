@@ -67,5 +67,6 @@ names(andoer_ir49.mspct) <-
 summary(andoer_ir49.mspct)
 
 what_measured(andoer_ir49.mspct)
+how_measured(andoer_ir49.mspct)
 
 save(andoer_ir49.mspct, file = "data/andoer-ir49-mspct.rda")

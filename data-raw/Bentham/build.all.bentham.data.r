@@ -24,4 +24,4 @@ bentham.mspct <- normalize(source_mspct(list(Philips.FT.TL.40W.01.uv = philips.t
 what_measured(bentham.mspct)
 how_measured(bentham.mspct)
 
-save(bentham.mspct, file="./data-raw/bentham-mspct.rda")
+save(bentham.mspct, file="./data-raw/rda/bentham-mspct.rda")

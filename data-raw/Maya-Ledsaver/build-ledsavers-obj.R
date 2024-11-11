@@ -22,16 +22,17 @@ for (o in object.names) {
   temp.spct <- thin_wl(temp.spct)
   temp.spct <- trim_wl(temp.spct, c(350, NA), fill = 0)
   setHowMeasured(temp.spct, how.measured)
-  setWhatMeasured(temp.spct, "LedSavers 7.5W four channels (WRGB) LED lamp.")
+  setWhatMeasured(temp.spct, "LED lamp: LedSavers 7.5W four channels (WRGB).")
   #  comment(temp.spct) <- comment.text
   trimInstrDesc(temp.spct)
   trimInstrSettings(temp.spct)
   print(str(get_attributes(temp.spct)))
-  print(autoplot(temp.spct, annotations = c("+", "title:what:when:comment")))
+  print(autoplot(temp.spct, annotations = c("+", "title:what:when:comment"),
+                 span = 31))
   ledsavers.mspct[[o]] <- temp.spct
-  readline("next:")
+#  readline("next:")
 }
-rm(o, tmp.spct)
+rm(o, temp.spct)
 
 names(ledsavers.mspct) <- gsub("_", ".",
                                gsub("LedSaver_7\\.5W_", "", 
@@ -47,6 +48,10 @@ comment(ledsavers.mspct) <-
         sep = "\n")
 
 cat(comment(ledsavers.mspct))
+
+summary(ledsavers.mspct)
+what_measured(ledsavers.mspct)
+how_measured(ledsavers.mspct)
 
 ledsavers_channels <- c("W", "R", "G", "B")
 ledsavers_mixes <- setdiff(names(ledsavers.mspct), ledsavers_channels)

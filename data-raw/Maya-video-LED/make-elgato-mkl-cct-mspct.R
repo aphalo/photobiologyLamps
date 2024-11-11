@@ -66,6 +66,7 @@ assign(new.names, temp.mspct)
 names(elgato_klm_cct.mspct) <- member.names
 summary(elgato_klm_cct.mspct)
 what_measured(elgato_klm_cct.mspct)
+how_measured(elgato_klm_cct.mspct)
 
 print(autoplot(elgato_klm_cct.mspct))
 q_irrad(elgato_klm_cct.mspct[["at.4000K.dimmed.to.100pc"]], scale.factor = 1e6)
