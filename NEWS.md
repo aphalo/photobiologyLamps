@@ -16,6 +16,7 @@ photobiologyLamps 0.5.3
 * Add metadata on _what_ and _how_ was measured to obtain the spectral data.
 * Update the code used to create vectors of lamp names by colour.
 * Update the User Guide to reflect these and other recent changes in this package and in package 'photobiology'.
+* **Change:** The data objects have slightly changed as the size-reduction applied is milder to better preserve features.
 
 photobiologyLamps 0.5.2
 =======================

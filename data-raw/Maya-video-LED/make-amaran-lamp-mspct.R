@@ -43,7 +43,7 @@ for (i in names(temp.mspct)) {
   }
   # temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct, method = "supsmu")
-  temp.spct <- thin_wl(temp.spct, max.slope.delta = 0.001)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 6, span = 15)
   temp.spct <- trim_wl(temp.spct, c(390, NA), fill = 0)
   setHowMeasured(temp.spct, how.measured)
   setWhatMeasured(temp.spct, what.measured)

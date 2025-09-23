@@ -19,14 +19,14 @@ Description: Spectral emission data for some frequently used lamps including
 License: GPL (>= 2)
 VignetteBuilder: knitr
 Depends:
-    R (>= 4.0.0),
-    photobiology (>= 0.11.2)
+    R (>= 4.1.0),
+    photobiology (>= 0.14.0)
 Suggests:
-    knitr (>= 1.40),
-    rmarkdown (>= 2.23),
-    ggspectra (>= 0.3.12),
-    photobiologyWavebands (>= 0.5.2),
-    ggplot2 (>= 3.4.0),
+    knitr (>= 1.50),
+    rmarkdown (>= 2.29),
+    ggspectra (>= 0.3.16),
+    photobiologyWavebands (>= 0.5.4),
+    ggplot2 (>= 3.5.0),
     photobiologyLEDs
 LazyLoad: yes
 LazyData: yes

@@ -49,7 +49,7 @@ for (i in seq_along(temp.mspct)) {
   what.measured <- paste(lamp.type, "lamp:", lamp.info, what.measured)
   # temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct, method = "supsmu")
-  temp.spct <- thin_wl(temp.spct, max.slope.delta = 0.0005)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 6, span = 15, max.slope.delta = 0.0005)
   temp.spct <- trim_wl(temp.spct, c(400, NA), fill = 0)
   setHowMeasured(temp.spct, how.measured)
   setWhatMeasured(temp.spct, what.measured)

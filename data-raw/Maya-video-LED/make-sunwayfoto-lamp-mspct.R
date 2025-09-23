@@ -40,7 +40,7 @@ for (i in names(temp.mspct)) {
   what.measured <- paste(lamp.type, "lamp:", what.measured)
   # temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct, method = "supsmu")
-  temp.spct <- thin_wl(temp.spct, max.slope.delta = 0.001)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 6, span = 15, max.slope.delta = 0.0005)
   temp.spct <- trim_wl(temp.spct, c(375, NA), fill = 0)
   setHowMeasured(temp.spct, how.measured)
   setWhatMeasured(temp.spct, what.measured)

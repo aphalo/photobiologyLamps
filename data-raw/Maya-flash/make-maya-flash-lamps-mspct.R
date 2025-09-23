@@ -39,7 +39,7 @@ for (s in spectra) {
   temp.spct <- get(s)
   temp.spct <- normalize(temp.spct)
   temp.spct <- trim_wl(temp.spct, range = c(315, 800))
-  temp.spct <- thin_wl(temp.spct)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 6, span = 15)
   setHowMeasured(temp.spct, how.measured)
   setWhatMeasured(temp.spct, what.measured)
   temp.spct <- clean(temp.spct)

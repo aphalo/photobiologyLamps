@@ -56,7 +56,7 @@ for (s in spectra) {
   temp.spct <- get(s)
   temp.spct <- smooth_spct(temp.spct, wl.range = c(250, 312))
   temp.spct <- normalize(temp.spct)
-  temp.spct <- thin_wl(temp.spct)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 6, span = 15)
   setHowMeasured(temp.spct, how.measured)
   setWhatMeasured(temp.spct, what.measured)
   if (grepl("germicidal", s)) {

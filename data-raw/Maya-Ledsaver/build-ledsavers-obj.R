@@ -19,7 +19,7 @@ for (o in object.names) {
   temp.spct <- get(o)
 #  temp.spct <- normalize(temp.spct)
   temp.spct <- smooth_spct(temp.spct)
-  temp.spct <- thin_wl(temp.spct)
+  temp.spct <- thin_wl(temp.spct, max.wl.step = 6, span = 15)
   temp.spct <- trim_wl(temp.spct, c(350, NA), fill = 0)
   setHowMeasured(temp.spct, how.measured)
   setWhatMeasured(temp.spct, "LED lamp: LedSavers 7.5W four channels (WRGB).")
