@@ -44,4 +44,5 @@ summary(Percival_LED_dim.mspct)
 \references{
 Growth chamber manufacturer: \url{https://percival-scientific.com/}.
 }
+\concept{light dimming}
 \keyword{datasets}

@@ -3,10 +3,12 @@ knitr::opts_chunk$set(fig.width=8, fig.height=4)
 
 ## ----message=FALSE------------------------------------------------------------
 library(photobiology)
-library(photobiologyWavebands)
 library(photobiologyLamps)
-library(ggplot2)
-library(ggspectra)
+# Are the packages used in examples installed?
+eval_bands <- requireNamespace("photobiologyWavebands", quietly = TRUE)
+if (eval_bands) library(photobiologyWavebands)
+eval_plots <- eval_bands && requireNamespace("ggspectra", quietly = TRUE)
+if (eval_plots) library(ggspectra)
 
 ## -----------------------------------------------------------------------------
 names(lamps.mspct)
@@ -75,25 +77,25 @@ is_scaled(my.spct)
 ## -----------------------------------------------------------------------------
 normalize(lamps.mspct$Philips.FT.TLD.36W.15)
 
-## -----------------------------------------------------------------------------
+## ----eval=eval_bands----------------------------------------------------------
 q_ratio(my.spct, Red("Smith10"), Far_red("Smith10"))
 
-## -----------------------------------------------------------------------------
+## ----eval=eval_plots----------------------------------------------------------
 autoplot(lamps.mspct$Osram.LED.8W.2700K, w.band = VIS(), span = 51)
 
 ## -----------------------------------------------------------------------------
 what_measured(ledsavers.mspct$purple)
 how_measured(ledsavers.mspct$purple)
 
-## -----------------------------------------------------------------------------
+## ----eval=eval_plots----------------------------------------------------------
 autoplot(ledsavers.mspct$purple, w.band = VIS(), span = 51)
 
-## -----------------------------------------------------------------------------
+## ----eval=eval_plots----------------------------------------------------------
 ggplot(ledsavers.mspct$purple) +
   geom_line(linetype = "dashed") +
   theme_classic()
 
-## -----------------------------------------------------------------------------
+## ----eval=eval_plots----------------------------------------------------------
 autoplot(ledsavers.mspct[c( "W", "R", "G", "B")],
          annotations = c("+", "title:what"), w.band = VIS(), span = 51) +
   labs(linetype = "Channel")
@@ -101,7 +103,7 @@ autoplot(ledsavers.mspct[c( "W", "R", "G", "B")],
 ## -----------------------------------------------------------------------------
 head(as.data.frame(lamps.mspct$Osram.LED.8W.2700K))
 
-## -----------------------------------------------------------------------------
+## ----eval=eval_bands----------------------------------------------------------
 attach(lamps.mspct)
 q_ratio(Osram.LED.8W.2700K, Blue(), Red())
 detach(lamps.mspct)
@@ -111,7 +113,7 @@ attach(lamps.mspct)
 with(Osram.LED.8W.2700K, max(w.length))
 detach(lamps.mspct)
 
-## -----------------------------------------------------------------------------
+## ----eval=eval_bands----------------------------------------------------------
 with(lamps.mspct, q_ratio(Osram.LED.8W.2700K, Blue(), Red()))
 
 ## -----------------------------------------------------------------------------
@@ -132,7 +134,7 @@ head(qp_uvb313_temp.mspct$minus05C)
 ## -----------------------------------------------------------------------------
 names(ledsavers.mspct)
 
-## -----------------------------------------------------------------------------
+## ----eval=eval_plots----------------------------------------------------------
 autoplot(ledsavers.mspct[c("R", "G", "B", "W")], 
          w.band = VIS_bands(), span = 51)
 
@@ -148,7 +150,7 @@ names(elgato_klm_cct.mspct)
 ## -----------------------------------------------------------------------------
 what_measured(elgato_klm_cct.mspct)
 
-## -----------------------------------------------------------------------------
+## ----eval=eval_plots----------------------------------------------------------
 autoplot(elgato_klm_cct.mspct)
 
 ## -----------------------------------------------------------------------------
@@ -157,7 +159,7 @@ names(elgato_klm_dim.mspct)
 ## -----------------------------------------------------------------------------
 what_measured(elgato_klm_dim.mspct)
 
-## -----------------------------------------------------------------------------
+## ----eval=eval_plots----------------------------------------------------------
 autoplot(elgato_klm_dim.mspct)
 
 ## -----------------------------------------------------------------------------

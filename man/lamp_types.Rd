@@ -3,9 +3,6 @@
 \docType{data}
 \name{lamp_types}
 \alias{lamp_types}
-\alias{'lamps}
-\alias{by}
-\alias{technology'}
 \alias{incandescent_lamps}
 \alias{fluorescent_lamps}
 \alias{led_lamps}
@@ -49,7 +46,7 @@ sodium_lamps
 xenon_lamps
 }
 \description{
-Names of members of the \code{\link{lamps.mpsct}} collection of spectra
+Names of members of the \code{\link{lamps.mspct}} collection of spectra
 grouped by the technology their are based on, i.e., type.
 }
 \details{
@@ -78,5 +75,12 @@ lamps.mspct[sodium_lamps]
 }
 \seealso{
 \code{\link{lamps.mspct}}
+
+Other indexing vectors of names: 
+\code{\link{lamp_brands}},
+\code{\link{lamp_colors}},
+\code{\link{lamp_uses}}
 }
+\concept{indexing vectors of names}
+\concept{lamps by technology}
 \keyword{datasets}

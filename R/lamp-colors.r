@@ -1,6 +1,6 @@
 #' Spectral data for Lamps of different colours
 #' 
-#' Names of members of the \code{\link{lamps.mpsct}} collection of spectra
+#' Names of members of the \code{\link{lamps.mspct}} collection of spectra
 #' grouped by colour or wavelength band.
 #' 
 #' @details contain the names of the members of \code{lamps.mspct} with peaks of
@@ -21,7 +21,8 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #' 
-#' @aliases 'lamps by color' 
+#' @concept lamps by color
+#' @family indexing vectors of names
 #' 
 #' @examples
 #' lamp_colors

@@ -24,6 +24,7 @@
 #'
 #' @docType data
 #' @keywords datasets
+#' @concept light dimming
 #' 
 #' @references
 #' Growth chamber manufacturer: \url{https://percival-scientific.com/}.

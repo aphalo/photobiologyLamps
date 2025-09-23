@@ -1,6 +1,6 @@
 #' Spectral data for Lamps from different suppliers
 #' 
-#' Names of members of the \code{\link{lamps.mpsct}} collection of spectra
+#' Names of members of the \code{\link{lamps.mspct}} collection of spectra
 #' grouped by brand name.
 #' 
 #' @details The character vectors described here contain the names of the
@@ -18,11 +18,14 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #' 
-#' @aliases 'lamps by brand name'
+#' @concept lamps by brand name
+#' @family indexing vectors of names
 #' 
 #' @examples
 #' lamp_brands
 #' Osram_lamps
+#' 
+#' @family indexing vectors of names
 #' 
 #' @seealso \code{\link{lamps.mspct}}
 #' 

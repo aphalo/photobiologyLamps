@@ -56,6 +56,10 @@
 #'   \item s.e.irrad (W m-2 nm-1)
 #' }
 #' 
+#' @docType data
+#' @keywords datasets
+#' @concept effect of temperature
+#' 
 #' @examples 
 #' qp_uvb313_temp.mspct[["plus20C"]]
 #' 

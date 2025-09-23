@@ -26,6 +26,7 @@
 #'
 #' @docType data
 #' @keywords datasets
+#' @concept light dimming
 #' 
 #' @format \code{andoer_ir49.mspct} is a \code{"source_mspct"} object containing 
 #'   a collection of two \code{"source_spct"} objects as members. Members are

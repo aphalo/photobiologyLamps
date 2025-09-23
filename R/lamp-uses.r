@@ -1,6 +1,6 @@
 #' Spectral data for Lamps designed for specific uses
 #' 
-#' Names of members of the \code{\link{lamps.mpsct}} collection of spectra
+#' Names of members of the \code{\link{lamps.mspct}} collection of spectra
 #' grouped by intended use.
 #' 
 #' @details These vectors can be used to extract subsets of spectra from
@@ -19,7 +19,8 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #' 
-#' @aliases 'lamps by intended use'
+#' @concept lamps by intended use
+#' @family indexing vectors of names
 #' 
 #' @examples 
 #' plant_grow_lamps

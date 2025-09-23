@@ -8,13 +8,16 @@ reference:
   - title: Package overview
     contents:
     - "photobiologyLamps-package"
-  - title: Spectra
+  - title: Collections of spectra
     contents:
     - lamps.mspct
     - amaran_m9.mspct
     - andoer_ir49.mspct
     - elgato_klm_cct.mspct
     - ledsavers.mspct
+    - Nichia_LED_RECOM_dim.mspct
+    - Osram_L_18W_840_temp.mspct
+    - Percival_LED_dim.mspct
     - qp_uvb313_temp.spct
     - qp_uvb313_temp.mspct
     - sunwayfoto_fl96.mspct
@@ -24,7 +27,7 @@ reference:
   - title: Indexing vectors by type of lamp
     contents:
     - lamp_types
-  - title: Indexing vectors by use
+  - title: Indexing vectors by intended use
     contents:
     - photography_lamps
   - title: Indexing vectors by manufacturer or supplier

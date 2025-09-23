@@ -3,10 +3,6 @@
 \docType{data}
 \name{lamp_brands}
 \alias{lamp_brands}
-\alias{'lamps}
-\alias{by}
-\alias{brand}
-\alias{name'}
 \alias{Osram_lamps}
 \alias{Philips_lamps}
 \alias{Sylvania_lamps}
@@ -85,7 +81,7 @@ Jaxman_lamps
 Generic_lamps
 }
 \description{
-Names of members of the \code{\link{lamps.mpsct}} collection of spectra
+Names of members of the \code{\link{lamps.mspct}} collection of spectra
 grouped by brand name.
 }
 \details{
@@ -220,5 +216,17 @@ Osram_lamps
 }
 \seealso{
 \code{\link{lamps.mspct}}
+
+Other indexing vectors of names: 
+\code{\link{lamp_colors}},
+\code{\link{lamp_types}},
+\code{\link{lamp_uses}}
+
+Other indexing vectors of names: 
+\code{\link{lamp_colors}},
+\code{\link{lamp_types}},
+\code{\link{lamp_uses}}
 }
+\concept{indexing vectors of names}
+\concept{lamps by brand name}
 \keyword{datasets}

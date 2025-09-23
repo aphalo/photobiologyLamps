@@ -1,6 +1,6 @@
 #' Spectral data for Lamps of different types
 #' 
-#' Names of members of the \code{\link{lamps.mpsct}} collection of spectra
+#' Names of members of the \code{\link{lamps.mspct}} collection of spectra
 #' grouped by the technology their are based on, i.e., type.
 #' 
 #' @details
@@ -18,7 +18,8 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #' 
-#' @aliases 'lamps by technology'
+#' @concept lamps by technology
+#' @family indexing vectors of names
 #' 
 #' @examples
 #' lamp_types

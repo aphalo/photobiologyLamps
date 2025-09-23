@@ -3,10 +3,6 @@
 \docType{data}
 \name{lamp_uses}
 \alias{lamp_uses}
-\alias{'lamps}
-\alias{by}
-\alias{intended}
-\alias{use'}
 \alias{photography_lamps}
 \alias{plant_grow_lamps}
 \alias{germicidal_lamps}
@@ -35,7 +31,7 @@ germicidal_lamps
 flashlights
 }
 \description{
-Names of members of the \code{\link{lamps.mpsct}} collection of spectra
+Names of members of the \code{\link{lamps.mspct}} collection of spectra
 grouped by intended use.
 }
 \details{
@@ -62,5 +58,12 @@ lamps.mspct[photography_lamps]
 }
 \seealso{
 \code{\link{lamps.mspct}}
+
+Other indexing vectors of names: 
+\code{\link{lamp_brands}},
+\code{\link{lamp_colors}},
+\code{\link{lamp_types}}
 }
+\concept{indexing vectors of names}
+\concept{lamps by intended use}
 \keyword{datasets}

@@ -31,10 +31,12 @@ package 'photobiology'.
 
 ```{r, message=FALSE}
 library(photobiology)
-library(photobiologyWavebands)
 library(photobiologyLamps)
-library(ggplot2)
-library(ggspectra)
+# Are the packages used in examples installed?
+eval_bands <- requireNamespace("photobiologyWavebands", quietly = TRUE)
+if (eval_bands) library(photobiologyWavebands)
+eval_plots <- eval_bands && requireNamespace("ggspectra", quietly = TRUE)
+if (eval_plots) library(ggspectra)
 ```
 
 In this brief User Guide we describe how to re-scale the normalized
@@ -237,7 +239,7 @@ normalize(lamps.mspct$Philips.FT.TLD.36W.15)
 Ratios can be calculated directly as they are not affected by
 normalization or linear rescaling.
 
-```{r}
+```{r, eval=eval_bands}
 q_ratio(my.spct, Red("Smith10"), Far_red("Smith10"))
 ```
 
@@ -252,7 +254,7 @@ and the exact distance not recorded. In such cases the data included in
 the package have been normalized to 1 at the tallest peak of emission,
 as can be seen in the example below.
 
-```{r}
+```{r, eval=eval_plots}
 autoplot(lamps.mspct$Osram.LED.8W.2700K, w.band = VIS(), span = 51)
 ```
 
@@ -270,7 +272,7 @@ position, controlling emission with wireless remote controller. In the
 next example we see that *purple* is created as a mix of blue and red
 light.
 
-```{r}
+```{r, eval=eval_plots}
 autoplot(ledsavers.mspct$purple, w.band = VIS(), span = 51)
 ```
 
@@ -278,7 +280,7 @@ Using the `ggplot()` method for spectra from package 'ggspectra' plus
 *geometries* and *statistics* from package 'ggplot2' we gain additional
 control on the design.
 
-```{r}
+```{r, eval=eval_plots}
 ggplot(ledsavers.mspct$purple) +
   geom_line(linetype = "dashed") +
   theme_classic()
@@ -287,7 +289,7 @@ ggplot(ledsavers.mspct$purple) +
 We can also plot multiple spectra. In this example we plot the pure
 emission from each of the four channels of the bulb.
 
-```{r}
+```{r, eval=eval_plots}
 autoplot(ledsavers.mspct[c( "W", "R", "G", "B")],
          annotations = c("+", "title:what"), w.band = VIS(), span = 51) +
   labs(linetype = "Channel")
@@ -308,7 +310,7 @@ head(as.data.frame(lamps.mspct$Osram.LED.8W.2700K))
 
 Of course `attach` and `with` also work as expected.
 
-```{r}
+```{r, eval=eval_bands}
 attach(lamps.mspct)
 q_ratio(Osram.LED.8W.2700K, Blue(), Red())
 detach(lamps.mspct)
@@ -320,7 +322,7 @@ with(Osram.LED.8W.2700K, max(w.length))
 detach(lamps.mspct)
 ```
 
-```{r}
+```{r, eval=eval_bands}
 with(lamps.mspct, q_ratio(Osram.LED.8W.2700K, Blue(), Red()))
 ```
 
@@ -375,7 +377,7 @@ names(ledsavers.mspct)
 
 We can plot the spectra for the individual channels by selecting them.
 
-```{r}
+```{r, eval=eval_plots}
 autoplot(ledsavers.mspct[c("R", "G", "B", "W")], 
          w.band = VIS_bands(), span = 51)
 ```
@@ -410,7 +412,7 @@ names(elgato_klm_cct.mspct)
 what_measured(elgato_klm_cct.mspct)
 ```
 
-```{r}
+```{r, eval=eval_plots}
 autoplot(elgato_klm_cct.mspct)
 ```
 
@@ -428,7 +430,7 @@ names(elgato_klm_dim.mspct)
 what_measured(elgato_klm_dim.mspct)
 ```
 
-```{r}
+```{r, eval=eval_plots}
 autoplot(elgato_klm_dim.mspct)
 ```
 

@@ -340,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 <h1 class="title toc-ignore">User Guide</h1>
-<h3 class="subtitle">Package ‘photobiologyLamps’ 0.5.2.9000</h3>
+<h3 class="subtitle">Package ‘photobiologyLamps’ 0.5.3</h3>
 <h4 class="author">Pedro J. Aphalo</h4>
 <h4 class="date">2025-09-23</h4>
 
@@ -383,10 +383,12 @@ package ‘ggspectra’, and for information on the calculation of summaries
 and maths operations between spectra, please, consult the documentation
 for package ‘photobiology’.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(photobiology)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(photobiologyWavebands)</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(photobiologyLamps)</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">library</span>(ggspectra)</span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(photobiologyLamps)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co"># Are the packages used in examples installed?</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>eval_bands <span class="ot">&lt;-</span> <span class="fu">requireNamespace</span>(<span class="st">&quot;photobiologyWavebands&quot;</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="cf">if</span> (eval_bands) <span class="fu">library</span>(photobiologyWavebands)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>eval_plots <span class="ot">&lt;-</span> eval_bands <span class="sc">&amp;&amp;</span> <span class="fu">requireNamespace</span>(<span class="st">&quot;ggspectra&quot;</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="cf">if</span> (eval_plots) <span class="fu">library</span>(ggspectra)</span></code></pre></div>
 <p>In this brief User Guide we describe how to re-scale the normalized
 spectra, and how to access individual spectra or subsets of spectra.</p>
 <p>Spectra in the package are contained in several collections, listed

@@ -27,6 +27,7 @@
 #'
 #' @docType data
 #' @keywords datasets
+#' @concept light dimming
 #' 
 #' @references
 #' Lamp manufacturer: \url{https://sunwayfoto.com/}.

@@ -3,9 +3,6 @@
 \docType{data}
 \name{lamp_colors}
 \alias{lamp_colors}
-\alias{'lamps}
-\alias{by}
-\alias{color'}
 \alias{uv_lamps}
 \alias{purple_lamps}
 \alias{blue_lamps}
@@ -64,7 +61,7 @@ amber_lamps
 white_lamps
 }
 \description{
-Names of members of the \code{\link{lamps.mpsct}} collection of spectra
+Names of members of the \code{\link{lamps.mspct}} collection of spectra
 grouped by colour or wavelength band.
 }
 \details{
@@ -96,5 +93,12 @@ lamps.mspct[uv_lamps]
 }
 \seealso{
 \code{\link{lamps.mspct}}
+
+Other indexing vectors of names: 
+\code{\link{lamp_brands}},
+\code{\link{lamp_types}},
+\code{\link{lamp_uses}}
 }
+\concept{indexing vectors of names}
+\concept{lamps by color}
 \keyword{datasets}

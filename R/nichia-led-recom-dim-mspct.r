@@ -27,7 +27,8 @@
 #'
 #' @docType data
 #' @keywords datasets
-#' 
+#' @concept light dimming
+#'
 #' @references
 #' Growth chamber manufacturer: \url{https://aralab.pt/en/aralab-environmental-chambers/}.
 #' 
