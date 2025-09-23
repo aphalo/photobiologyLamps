@@ -52,7 +52,10 @@ temperature.true <- c(10, 15, 20,
 
 irrads.df$temperature <- temperature.true
 
+nrow(irrads.df)
 colnames(irrads.df)
+unique(irrads.df$dimming)
+sum(na.omit(irrads.df$temperature) == 22)
 
 library(ggpmisc)
 library(ggspectra)

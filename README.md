@@ -17,31 +17,47 @@ vwersion](https://aphalo.r-universe.dev/badges/photobiologyLEDs)](https://aphalo
 Package ‘**photobiologyLamps**’ complements other packages in the [*R
 for photobiology* suite](https://www.r4photobiology.info/). It contains
 spectral emission data for LED, fluorescent, incandescent and other
-lamps (`lamps.mspct`). Spectra for light emitting diodes (LEDs) and LED
-arrays (`leds.mspct`) available as electronic components are included in
-package
-[‘photobioloyLEDs’](https://docs.r4photobiology.info/photobiologyLEDs/).
-Package ‘**photobiologyLamps**’ also includes spectra from UV-B
-fluorescent tubes operating at different temperatures
-(`qp_uvb313_temp.mspct` and `qp_uvb313_temp.spct`) and for a
-four-channel LED bulb supporting channel mixing (`ledsavers.mspct`).
+lamps (`lamps.mspct`) in several collections of spectra.
+
+Spectra in the package are contained in several collections, listed in
+the table below.
+
+| Collection | Description | n |
+|----|----|---:|
+| `lamps.mspct` | Spectra from imdividual lamps at full power and ambient temperature | 67 |
+| `amaran_m9.mspct` | Aputure Amaran M9 LED video lamp dimming | 6 |
+| `andoer_ir49.mspct` | Andoer IR LED photo/video lamp dimming | 2 |
+| `elgato_klm_cct.mspct` | ElGato Key Light Mini LED video lamp colour temperature | 12 |
+| `elgato_klm_dim.mspct` | ElGato Key Light Mini LED video lamp dimming | 6 |
+| `ledsavers.mspct` | LedSavers 4 channel LED bulb channel mixing | 16 |
+| `Nichia_LED_RECOM_dim.mspct` | Custom LED light source in Aralab plant-growth chamber, dimming | 8 |
+| `Osram_L_18W_840_temp.mspct` | White fluorescent tubes in Aralab plant-growth chamber at temperatures 5 C to 35 C | 8 |
+| `Percival_LED_dim.mspct` | White LEDs in Percival plant-growth chamber, dimming | 11 |
+| `qp_uvb313_temp.mspct` and `qp_uvb313_temp.spct` | Q-Panel UVB-313 UV-B fluorescent tubes at temperatures -5 C to 35 C | 7 |
+| `sunwayfoto_fl96.mspct` | Sunwayfoto FL96 LED fill light dimming and colour temperature | 7 |
+
+Collections of spectra in package ‘photobiologyLamps’. **n** gives the
+number of spectra. Collection `lamps.mspct` contains spectra for
+different lamps, one spectrum for each lamp. Each of the other
+collections contains multiple spectra measured under different
+conditions or settings from one lamp or luminaire.
 
 The data are for the most part original but also include some spectra
 digitized from plots in manufacturers’ specifications. Data have been
 acquired over many years, although when possible lamps have been
-measured again after we got a spectrometer with improved wavelength
+measured again after we acquired a spectrometer with improved wavelength
 resolution. It is important for users to be aware that depending on the
-optical wavelength resolution of the instruments used spectra can look
+optical wavelength resolution of the instruments used, spectra can look
 quite different because of the broadening of peaks. This is most obvious
 in lamps with narrow emission peaks like mercury vapours lamps. If you
 make use of the data, please inspect the metadata and read the
 documentation. The metadata is in most cases fairly complete, although
 the distance from lamps to the entrance optics is frequently unknown.
-For this reason spectra have been normalized. The multiplier used for
-normalization is part of the metadata, making it possible to recover the
-original spectrum. The metadata includes, when available, a descriptor
-of the spectrometer and the settings used for acqiring the spectral
-data.
+For this reason some spectra have been normalized. The multiplier used
+for normalization is part of the metadata, making it possible to recover
+the original spectrum. The metadata includes, when available, a
+descriptor of the spectrometer and the settings used for acquiring the
+spectral data.
 
 This package contains only data. Data are stored as collections of
 spectra of class `source_mspct` from package ‘photobiology’, which is
@@ -55,6 +71,10 @@ However, class `source_mspct` is derived from `list` and class
 `source_spct` is derived from `data.frame` making the data also usable
 as is with base R functions.
 
+Spectra for light emitting diodes (LEDs) and LED arrays (`leds.mspct`)
+available as electronic components are included in the companion package
+[‘photobioloyLEDs’](https://docs.r4photobiology.info/photobiologyLEDs/).
+
 ## Examples
 
 ``` r
@@ -67,7 +87,7 @@ The package includes spectral data for several lamps.
 
 ``` r
 length(lamps.mspct)
-#> [1] 66
+#> [1] 67
 ```
 
 The members of the collections are named, and several vectors of names
@@ -100,13 +120,13 @@ what_measured(qp_uvb313_temp.mspct)
 #> # A tibble: 7 × 2
 #>   spct.idx what.measured                              
 #>   <fct>    <chr>                                      
-#> 1 minus05C Flourescent tube: Q-Panel UVB313 40W at -5C
-#> 2 plus00C  Flourescent tube: Q-Panel UVB313 40W at 0C 
-#> 3 plus05C  Flourescent tube: Q-Panel UVB313 40W at 5C 
-#> 4 plus10C  Flourescent tube: Q-Panel UVB313 40W at 10C
-#> 5 plus20C  Flourescent tube: Q-Panel UVB313 40W at 20C
-#> 6 plus30C  Flourescent tube: Q-Panel UVB313 40W at 30C
-#> 7 plus35C  Flourescent tube: Q-Panel UVB313 40W at 35C
+#> 1 minus05C Fluorescent tube: Q-Panel UVB313 40W at -5C
+#> 2 plus00C  Fluorescent tube: Q-Panel UVB313 40W at 0C 
+#> 3 plus05C  Fluorescent tube: Q-Panel UVB313 40W at 5C 
+#> 4 plus10C  Fluorescent tube: Q-Panel UVB313 40W at 10C
+#> 5 plus20C  Fluorescent tube: Q-Panel UVB313 40W at 20C
+#> 6 plus30C  Fluorescent tube: Q-Panel UVB313 40W at 30C
+#> 7 plus35C  Fluorescent tube: Q-Panel UVB313 40W at 35C
 ```
 
 Different settings of a four-channel LED bulb, with its own indexing
@@ -165,20 +185,13 @@ Installation of the most recent stable version from CRAN:
 install.packages("photobiologyLamps")
 ```
 
-Installation of the current unstable version from R-Universe CRAN-like
-repository (source and binaries available):
+Installation of the current under development version from R-Universe
+CRAN-like repository (source and binaries available):
 
 ``` r
 install.packages('photobiologyLamps', 
                  repos = c('https://aphalo.r-universe.dev', 
                            'https://cloud.r-project.org'))
-```
-
-Installation of the current unstable version from GitHub:
-
-``` r
-# install.packages("devtools")
-remotes::install_github("aphalo/photobiologylamps")
 ```
 
 ## Documentation
@@ -241,6 +254,6 @@ citation("photobiologyLamps")
 
 ## License
 
-© 2013-2024 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2013-2025 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.

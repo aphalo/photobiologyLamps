@@ -1,12 +1,12 @@
 #' Spectral data for Lamps from different suppliers
 #' 
-#' The collection of spectra \code{\link{lamps.mspct}} contains spectra for 
-#' light bulds, luminaires and other ready-to-use lamps from various current
-#' and former suppliers. The character
-#' vectors described here contain the names of the spectra for lamps from each
-#' brand to facilitate their extraction from the collection. One
-#' additional vector, \code{lamp_brands} contains the names of the brands as used
-#' in the names of the spectra in the collection.
+#' Names of members of the \code{\link{lamps.mpsct}} collection of spectra
+#' grouped by brand name.
+#' 
+#' @details The character vectors described here contain the names of the
+#'   spectra for lamps from each brand to facilitate their extraction from the
+#'   collection. One additional vector, \code{lamp_brands} contains the names of
+#'   the brands as used in the names of the spectra in the collection.
 #' 
 #' @note Some of the lamps are from resellers' brands, usually obscure ones, and
 #'   others are from well-known brands. Some of the brands have changed 
@@ -17,6 +17,8 @@
 #' @docType data
 #' @keywords datasets
 #' @format A vector of character strings.
+#' 
+#' @aliases 'lamps by brand name'
 #' 
 #' @examples
 #' lamp_brands

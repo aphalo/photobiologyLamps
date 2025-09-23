@@ -3,6 +3,10 @@
 \docType{data}
 \name{lamp_brands}
 \alias{lamp_brands}
+\alias{'lamps}
+\alias{by}
+\alias{brand}
+\alias{name'}
 \alias{Osram_lamps}
 \alias{Philips_lamps}
 \alias{Sylvania_lamps}
@@ -43,7 +47,7 @@ An object of class \code{character} of length 2.
 
 An object of class \code{character} of length 7.
 
-An object of class \code{character} of length 1.
+An object of class \code{character} of length 2.
 
 An object of class \code{character} of length 2.
 
@@ -81,13 +85,14 @@ Jaxman_lamps
 Generic_lamps
 }
 \description{
-The collection of spectra \code{\link{lamps.mspct}} contains spectra for 
-light bulds, luminaires and other ready-to-use lamps from various current
-and former suppliers. The character
-vectors described here contain the names of the spectra for lamps from each
-brand to facilitate their extraction from the collection. One
-additional vector, \code{lamp_brands} contains the names of the brands as used
-in the names of the spectra in the collection.
+Names of members of the \code{\link{lamps.mpsct}} collection of spectra
+grouped by brand name.
+}
+\details{
+The character vectors described here contain the names of the
+  spectra for lamps from each brand to facilitate their extraction from the
+  collection. One additional vector, \code{lamp_brands} contains the names of
+  the brands as used in the names of the spectra in the collection.
 }
 \note{
 Some of the lamps are from resellers' brands, usually obscure ones, and

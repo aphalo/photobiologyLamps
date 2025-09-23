@@ -8,8 +8,11 @@ output:
     toc: yes
 vignette: >
   %\VignetteIndexEntry{User Guide}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 ```{r, echo=FALSE}
@@ -18,12 +21,13 @@ knitr::opts_chunk$set(fig.width=8, fig.height=4)
 
 ## Introduction
 
-This package, is a data only package, part of a suite, which has package 
-'photobiology' at its core. Please visit (https://www.r4photobiology.info/) 
-for more details. For more details on plotting spectra, please consult the 
-documentation for package 'ggspectra', and for information on the calculation 
-of summaries and maths operations between spectra, please, consult the 
-documentation for package 'photobiology'.
+This package, is a data only package, part of a suite, which has package
+'photobiology' at its core. Please visit
+(<https://www.r4photobiology.info/>) for more details. For more details
+on plotting spectra, please consult the documentation for package
+'ggspectra', and for information on the calculation of summaries and
+maths operations between spectra, please, consult the documentation for
+package 'photobiology'.
 
 ```{r, message=FALSE}
 library(photobiology)
@@ -36,33 +40,41 @@ library(ggspectra)
 In this brief User Guide we describe how to re-scale the normalized
 spectra, and how to access individual spectra or subsets of spectra.
 
-Spectra in the package are contained in several collections: `lamps.mspct`
-contains spectral data for various types of lamps emiiting a fixed color of
-light, in most cases with a single spectrum per lamp, and it is the main data
-container. Separate collections of spectra contain data for single light sources
-that have multiple modes, i.e., built-in dimmers or are capable of adjusting the
-spectrum of emitted. Of theses,`ledsavers.mspct` contains spectral data for a
-household LED bulb with four color channels allowing it to output 16 different
-_colors_ of light and `amaran_m9.mspct`, `andoer_ir49.mspct`,
-`elgato_klm_cct.mspct`, `elgato_klm_dim.mspct` and `sunwayfoto_fl96.mspct`
-contain spectra for video and photography small LED lamps. The output of
-fluorescent lamps depends strongly on temperature, and collection
-`qp_uvb313_temp.mspct` contains spectral data for an UV-B lamp measured under
-seven different temperatures. In addition `qp_uvb313_temp.spct` contains the
-same data in long form (or tidy) as a single `source_spct` object.
+Spectra in the package are contained in several collections, listed in
+the table below.
 
-In addtion to the objects containing the data themselves, several character
-vectors of names of spectra are provide to facilitate the retrieval of subsets
-of spectra from `lamps.mspct`.
+| Collection | Description | n |
+|----|-------------|-:|
+| `lamps.mspct` | Spectra from imdividual lamps at full power and ambient temperature | 67 |
+| `amaran_m9.mspct` | Aputure Amaran M9 LED video lamp dimming | 6 |
+| `andoer_ir49.mspct` | Andoer IR LED photo/video lamp dimming | 2 |
+| `elgato_klm_cct.mspct` | ElGato Key Light Mini LED video lamp colour temperature | 12 |
+| `elgato_klm_dim.mspct` | ElGato Key Light Mini LED video lamp dimming | 6 |
+| `ledsavers.mspct` | LedSavers 4 channel LED bulb channel mixing | 16 |
+| `Nichia_LED_RECOM_dim.mspct` | Custom LED light source in Aralab plant-growth chamber, dimming | 8 |
+| `Osram_L_18W_840_temp.mspct` | White fluorescent tubes in Aralab plant-growth chamber at temperatures 5 C to 35 C | 8 |
+| `Percival_LED_dim.mspct` | White LEDs in Percival plant-growth chamber, dimming | 11 |
+| `qp_uvb313_temp.mspct` and `qp_uvb313_temp.spct` | Q-Panel UVB-313 UV-B fluorescent tubes at temperatures -5 C to 35 C | 7 |
+| `sunwayfoto_fl96.mspct` | Sunwayfoto FL96 LED fill light dimming and colour temperature | 7 |
 
-## Using data from `lamps.mspct` 
+: Collections of spectra in package 'photobiologyLamps'. **n** gives the number of spectra. Collection `lamps.mspct` contains spectra for different lamps, one
+spectrum for each lamp. Each of the other collections contains multiple spectra
+measured under different conditions or settings from one lamp or luminaire.
 
-The `lamps.mspct` collection, an object of class `source_mspct`, contains 
-`r length(lamps.mspct)` spectra as member objects of class`source_spct`.
-The member spectra of `lamps.mspct` can be accessed through their
-names or through a numeric index. As the numeric indexes are likely to change 
-with updates to the package, their use is discouraged. Names as character
-strings should be used instead. They can be listed with method `names()`.
+In addition to the objects containing the data themselves, several
+character vectors of names of spectra are provide to facilitate the
+retrieval of subsets of spectra from `lamps.mspct`. These vectors group names
+by colour, supplier, type of lamp, and intended use.
+
+## Using data from `lamps.mspct`
+
+The `lamps.mspct` collection, an object of class `source_mspct`,
+contains `r length(lamps.mspct)` spectra as member objects of
+class`source_spct`. The member spectra of `lamps.mspct` can be accessed
+through their names or through a numeric index. As the numeric indexes
+are likely to change with updates to the package, their use is
+discouraged. Names as character strings should be used instead. They can
+be listed with method `names()`.
 
 ```{r}
 names(lamps.mspct)
@@ -83,9 +95,9 @@ Or a character string.
 lamps.mspct[["Generic.Inc.bulb.60W"]]
 ```
 
-Be aware that according to R's rules, using single square brackets will return
-a `source_mspct` object possibly of length one. This statement is not equivalent
-to the one in the chunk immediately above.
+Be aware that according to R's rules, using single square brackets will
+return a `source_mspct` object possibly of length one. This statement is
+not equivalent to the one in the chunk immediately above.
 
 ```{r}
 lamps.mspct["Generic.Inc.bulb.60W"]
@@ -93,25 +105,25 @@ lamps.mspct["Generic.Inc.bulb.60W"]
 
 ### Accessing subsets of spectra
 
-We can subset the `source_mspct` object by indexing with vectors of character
-strings. The package provides some predefined ones, and users can easily
-define their own, either as constants or through computation. Here we use
-a vector defined by the package.
+We can subset the `source_mspct` object by indexing with vectors of
+character strings. The package provides some predefined ones, and users
+can easily define their own, either as constants or through computation.
+Here we use a vector defined by the package.
 
 ```{r}
 lamps.mspct[Toshiba_lamps]
 ```
 
-And below we use a computed one. In this case we extract the member spectra
-with names containing the string "toshiba". More generaly one can search for 
-matching names within the collection of spectra.
+And below we use a computed one. In this case we extract the member
+spectra with names containing the string "toshiba". More generaly one
+can search for matching names within the collection of spectra.
 
 ```{r}
 lamps.mspct[grep("Toshiba", names(lamps.mspct))]
 ```
 
-Set algebra operations can be used with the indexing vectors as each vector
-describes a single property: color, brand, type, etc.
+Set algebra operations can be used with the indexing vectors as each
+vector describes a single property: color, brand, type, etc.
 
 ```{r}
 lamps.mspct[intersect(Philips_lamps, red_lamps)]
@@ -122,6 +134,7 @@ lamps.mspct[intersect(Philips_lamps, red_lamps)]
 ```{r}
 what_measured(lamps.mspct$Eiko.F36T8.BLB)
 ```
+
 ```{r}
 how_measured(lamps.mspct$Eiko.F36T8.BLB)
 ```
@@ -142,26 +155,28 @@ getNormalisation(lamps.mspct$Eiko.F36T8.BLB)
 
 ### Rescaling spectral data
 
-The spectra are normalized, and consequently, several summaries expressed in
-absolute units are undefined, and trigger errors. Summaries like ratios which
-are not affected by normalization are allowed and valid. The data have been
-normalized as the measuring conditions used are not all the same, and in many
-cases not well characterized (e.g. distance to light source, or exact 
-alignment of the spectrometer input optics with respect to the center of the
-light beam from sources).
+The spectra are normalized, and consequently, several summaries
+expressed in absolute units are undefined, and trigger errors. Summaries
+like ratios which are not affected by normalization are allowed and
+valid. The data have been normalized as the measuring conditions used
+are not all the same, and in many cases not well characterized (e.g.
+distance to light source, or exact alignment of the spectrometer input
+optics with respect to the center of the light beam from sources).
 
-These uncertainties in the measurment conditions are likely to have minimal effect
-on the shape of the spectrum when plotted. This allows us to reconstruct the
-spectrum at a different distance from the lamp(s) or under a different number of 
-lamps as long as we know the irradiance for some known waveband, such as PAR. 
+These uncertainties in the measurment conditions are likely to have
+minimal effect on the shape of the spectrum when plotted. This allows us
+to reconstruct the spectrum at a different distance from the lamp(s) or
+under a different number of lamps as long as we know the irradiance for
+some known waveband, such as PAR.
 
-In this section we will rescale the spectral data so that after 
-re-scaling a given target value for a summary quantity will be true. As an 
-example, we will rescale one spectrum so that it yields an energy irradiance of
-100 W m-2 for the range 400 to 700 nm. By default the returned spectrum is not
-labelled as being expressed in relative units, as the expectation is that the
-operation is done to obtain spectral emission data that could have been measured
-at a target condition that we want to simulate or reconstruct.
+In this section we will rescale the spectral data so that after
+re-scaling a given target value for a summary quantity will be true. As
+an example, we will rescale one spectrum so that it yields an energy
+irradiance of 100 W m-2 for the range 400 to 700 nm. By default the
+returned spectrum is not labelled as being expressed in relative units,
+as the expectation is that the operation is done to obtain spectral
+emission data that could have been measured at a target condition that
+we want to simulate or reconstruct.
 
 ```{r}
 my.spct <- fscale(lamps.mspct$Generic.Inc.bulb.60W,
@@ -176,7 +191,10 @@ e_irrad(my.spct, waveband(c(400,700)))
 is_scaled(my.spct)
 ```
 
-To do the scaling based on photon irradiance, different approaches are available to change the default. Here as above we specify the function to use through the argument passed to `f` and set a suitable target in mol m-2 s-1. We use 300e-6 to indicate 300 umol m-2 s-1.
+To do the scaling based on photon irradiance, different approaches are
+available to change the default. Here as above we specify the function
+to use through the argument passed to `f` and set a suitable target in
+mol m-2 s-1. We use 300e-6 to indicate 300 umol m-2 s-1.
 
 ```{r}
 my.spct <- fscale(lamps.mspct$Generic.Inc.bulb.60W,
@@ -188,8 +206,9 @@ q_irrad(my.spct, waveband(c(400,700)))
 
 ```
 
-In the special case when `target == 1`, the default changes, assuming that
-in this case the intention is to re-express the spectral data in relative units.
+In the special case when `target == 1`, the default changes, assuming
+that in this case the intention is to re-express the spectral data in
+relative units.
 
 ```{r}
 my.spct <- fscale(lamps.mspct$Generic.Inc.bulb.60W,
@@ -200,23 +219,23 @@ my.spct <- fscale(lamps.mspct$Generic.Inc.bulb.60W,
 is_scaled(my.spct)
 ```
 
-If we want to override the defaults for tagging as scaled, we ccan pass a
-suitable argument to parameter `set.scaled` of `fscale()`.
+If we want to override the defaults for tagging as scaled, we ccan pass
+a suitable argument to parameter `set.scaled` of `fscale()`.
 
-In addition to scaling based of the summary calculated by a function, as shown
-above, it is frequent to _normalize_ spectral data. In this case scaling is
-done so that spectral irradiance matches a certain value at an specific
-wavelength. In most cases, the wavelength used is that of the maximal spectral 
-irradiance, and the target value is 1. These are the defaults and in this case
-the returned spectra are always labeled as being normalized. We use a blue
-fluorescent tube for this example.
+In addition to scaling based of the summary calculated by a function, as
+shown above, it is frequent to *normalize* spectral data. In this case
+scaling is done so that spectral irradiance matches a certain value at
+an specific wavelength. In most cases, the wavelength used is that of
+the maximal spectral irradiance, and the target value is 1. These are
+the defaults and in this case the returned spectra are always labeled as
+being normalized. We use a blue fluorescent tube for this example.
 
 ```{r}
 normalize(lamps.mspct$Philips.FT.TLD.36W.15)
 ```
 
-Ratios can be calculated directly as they are not affected
-by normalization or linear rescaling.
+Ratios can be calculated directly as they are not affected by
+normalization or linear rescaling.
 
 ```{r}
 q_ratio(my.spct, Red("Smith10"), Far_red("Smith10"))
@@ -224,38 +243,40 @@ q_ratio(my.spct, Red("Smith10"), Far_red("Smith10"))
 
 ### Plotting the spectra
 
-Using `autoplot()` methods for spectra defined in package 'ggspectra' annotated
-plotting are created with automatically genrateda xis labels, annotations and
-decorations. The defaults can be easily changed, please see the documentation in
-package 'ggspectra'. For most of the data included in the package, as told
-above, exact alignment was not ensured and the exact distance not recorded. In
-such cases the data included in the package have been normalized to 1 at the
-tallest peak of emission, as can be seen in the example below.
+Using `autoplot()` methods for spectra defined in package 'ggspectra'
+annotated plotting are created with automatically genrateda xis labels,
+annotations and decorations. The defaults can be easily changed, please
+see the documentation in package 'ggspectra'. For most of the data
+included in the package, as told above, exact alignment was not ensured
+and the exact distance not recorded. In such cases the data included in
+the package have been normalized to 1 at the tallest peak of emission,
+as can be seen in the example below.
 
 ```{r}
 autoplot(lamps.mspct$Osram.LED.8W.2700K, w.band = VIS(), span = 51)
 ```
 
-Data for a four channel, remote controlled, LED bulb is included in object 
-`ledsavers.mspct`. 
+Data for a four channel, remote controlled, LED bulb is included in
+object `ledsavers.mspct`.
 
 ```{r}
 what_measured(ledsavers.mspct$purple)
 how_measured(ledsavers.mspct$purple)
 ```
 
-In this case, data are not normalized, as all spectra in the object have been
-measure with the lamp and entrance optics in exactly the same position,
-controlling emission with wireless remote controller. In the next example we see
-that _purple_ is created as a mix of blue and red light.
+In this case, data are not normalized, as all spectra in the object have
+been measure with the lamp and entrance optics in exactly the same
+position, controlling emission with wireless remote controller. In the
+next example we see that *purple* is created as a mix of blue and red
+light.
 
 ```{r}
 autoplot(ledsavers.mspct$purple, w.band = VIS(), span = 51)
 ```
 
 Using the `ggplot()` method for spectra from package 'ggspectra' plus
-_geometries_ and _statistics_ from package 'ggplot2' we gain additional control
-on the design.
+*geometries* and *statistics* from package 'ggplot2' we gain additional
+control on the design.
 
 ```{r}
 ggplot(ledsavers.mspct$purple) +
@@ -263,9 +284,8 @@ ggplot(ledsavers.mspct$purple) +
   theme_classic()
 ```
 
-We can also plot multiple spectra. In this example we plot the pure emission
-from each of the four channels of the bulb.
-
+We can also plot multiple spectra. In this example we plot the pure
+emission from each of the four channels of the bulb.
 
 ```{r}
 autoplot(ledsavers.mspct[c( "W", "R", "G", "B")],
@@ -276,11 +296,11 @@ autoplot(ledsavers.mspct[c( "W", "R", "G", "B")],
 ### Using the data in other contexts
 
 In general it will be easiest to use methods from packages in the
-'r4photobiology' suite for plotting and calculation of various summaries.
-However, as `source_mspct` is a class derived from `list`, and `source_spct` is
-derived from `tibble::tibble` that is a partly compatible reimplementation of
-`data.frame` the data can be used very easily with R functions expecting data
-frames as input.
+'r4photobiology' suite for plotting and calculation of various
+summaries. However, as `source_mspct` is a class derived from `list`,
+and `source_spct` is derived from `tibble::tibble` that is a partly
+compatible reimplementation of `data.frame` the data can be used very
+easily with R functions expecting data frames as input.
 
 ```{r}
 head(as.data.frame(lamps.mspct$Osram.LED.8W.2700K))
@@ -306,15 +326,17 @@ with(lamps.mspct, q_ratio(Osram.LED.8W.2700K, Blue(), Red()))
 
 ## Other data sets
 
-The additional data sets can be used similarly as described above for 
-`lamps.spct` when stored as collections. For datasets stored in long-form
-an additional variable or column identifies the individual spectra.
+The additional data sets can be used similarly as described above for
+`lamps.spct` when stored as collections. For datasets stored in
+long-form an additional variable or column identifies the individual
+spectra.
 
 ## Ultraviolet-B lamps and temperature
 
-Object `qp_uvb313_temp.spct` is a `source_spct` object that contains spectra in
-long form for a pair of UV-B lamps measured at 
-`r length(unique(qp_uvb313_temp.spct$temperature))` different air temperatures.
+Object `qp_uvb313_temp.spct` is a `source_spct` object that contains
+spectra in long form for a pair of UV-B lamps measured at
+`r length(unique(qp_uvb313_temp.spct$temperature))` different air
+temperatures.
 
 ```{r}
 head(qp_uvb313_temp.spct)
@@ -323,12 +345,15 @@ head(qp_uvb313_temp.spct)
 ```{r}
 unique(qp_uvb313_temp.spct$temperature)
 ```
-Collection `qp_uvb313_temp.mspct` contains the same spectra as 
-`qp_uvb313_temp.spct` as a collection of individual `source_spct` objects.
+
+Collection `qp_uvb313_temp.mspct` contains the same spectra as
+`qp_uvb313_temp.spct` as a collection of individual `source_spct`
+objects.
 
 ```{r}
 names(qp_uvb313_temp.mspct)
 ```
+
 ```{r}
 summary(qp_uvb313_temp.mspct)
 ```
@@ -337,11 +362,12 @@ summary(qp_uvb313_temp.mspct)
 head(qp_uvb313_temp.mspct$minus05C)
 ```
 
-## Multicolour LED lamp 
+## Multicolour LED lamp
 
-Collection `ledsavers.mspct` contains `r length(ledsavers.mspct)` spectra. Each
-spectrum corresponds to a different combination of dimming settings of the
-four channels in this RGBW (red, green, blue, white) lamp.
+Collection `ledsavers.mspct` contains `r length(ledsavers.mspct)`
+spectra. Each spectrum corresponds to a different combination of dimming
+settings of the four channels in this RGBW (red, green, blue, white)
+lamp.
 
 ```{r}
 names(ledsavers.mspct)
@@ -356,10 +382,11 @@ autoplot(ledsavers.mspct[c("R", "G", "B", "W")],
 
 ## Video and photography lamps
 
-Collection `sunwayfoto_fl96.mspct` contains `r length(sunwayfoto_fl96.mspct)`
-spectra. Each spectrum corresponds to a different combination of dimming and
-colour temperature settings of a two channel or bi-colour (warm white
-and cool white) lamp sold for use in photography and video..
+Collection `sunwayfoto_fl96.mspct` contains
+`r length(sunwayfoto_fl96.mspct)` spectra. Each spectrum corresponds to
+a different combination of dimming and colour temperature settings of a
+two channel or bi-colour (warm white and cool white) lamp sold for use
+in photography and video..
 
 ```{r}
 names(sunwayfoto_fl96.mspct)
@@ -369,11 +396,11 @@ names(sunwayfoto_fl96.mspct)
 what_measured(sunwayfoto_fl96.mspct)
 ```
 
-Collection `elgato_klm_cct.mspct` contains `r length(elgato_klm_cct.mspct)`
-spectra. Each spectrum corresponds to a different 
-colour temperature setting of a two channel or bi-colour (warm white
-and cool white) lamp sold for use in photography and video. Measurements were
-done with dimming set at full power.
+Collection `elgato_klm_cct.mspct` contains
+`r length(elgato_klm_cct.mspct)` spectra. Each spectrum corresponds to a
+different colour temperature setting of a two channel or bi-colour (warm
+white and cool white) lamp sold for use in photography and video.
+Measurements were done with dimming set at full power.
 
 ```{r}
 names(elgato_klm_cct.mspct)
@@ -387,11 +414,11 @@ what_measured(elgato_klm_cct.mspct)
 autoplot(elgato_klm_cct.mspct)
 ```
 
-Collection `elgato_klm_dim.mspct` contains `r length(elgato_klm_dim.mspct)`
-spectra. Each spectrum corresponds to a different 
-dimming setting of a two channel or bi-colour (warm white
-and cool white) lamp sold for use in photography and video. Measurements were
-done with colour temperature (CCT) set to 4000K.
+Collection `elgato_klm_dim.mspct` contains
+`r length(elgato_klm_dim.mspct)` spectra. Each spectrum corresponds to a
+different dimming setting of a two channel or bi-colour (warm white and
+cool white) lamp sold for use in photography and video. Measurements
+were done with colour temperature (CCT) set to 4000K.
 
 ```{r}
 names(elgato_klm_dim.mspct)
@@ -405,9 +432,9 @@ what_measured(elgato_klm_dim.mspct)
 autoplot(elgato_klm_dim.mspct)
 ```
 
-Collection `amaran_m9.mspct` contains `r length(amaran_m9.mspct)` spectra. Each
-spectrum corresponds to a different dimming setting of a single channel (cool
-white) lamp sold for use in photography and video.
+Collection `amaran_m9.mspct` contains `r length(amaran_m9.mspct)`
+spectra. Each spectrum corresponds to a different dimming setting of a
+single channel (cool white) lamp sold for use in photography and video.
 
 ```{r}
 names(amaran_m9.mspct)
@@ -419,10 +446,11 @@ what_measured(amaran_m9.mspct)
 
 ## Night vision video and photography lamp
 
-Collection `andoer_ir49.mspct` contains `r length(andoer_ir49.mspct)` spectra.
-Each spectrum corresponds to a different dimming setting of a single channel
-(infra-red) lamp sold for use in photography and video. This requires a
-modified or special camera sensitive to near infrared radiation (NIR)
+Collection `andoer_ir49.mspct` contains `r length(andoer_ir49.mspct)`
+spectra. Each spectrum corresponds to a different dimming setting of a
+single channel (infra-red) lamp sold for use in photography and video.
+This requires a modified or special camera sensitive to near infrared
+radiation (NIR)
 
 ```{r}
 names(andoer_ir49.mspct)

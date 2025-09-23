@@ -8,12 +8,12 @@
 \alias{color'}
 \alias{uv_lamps}
 \alias{purple_lamps}
-\alias{ir_lamps}
 \alias{blue_lamps}
 \alias{green_lamps}
 \alias{yellow_lamps}
 \alias{orange_lamps}
 \alias{red_lamps}
+\alias{ir_lamps}
 \alias{amber_lamps}
 \alias{white_lamps}
 \title{Spectral data for Lamps of different colours}
@@ -23,8 +23,6 @@ A vector of character strings.
 An object of class \code{character} of length 11.
 
 An object of class \code{character} of length 0.
-
-An object of class \code{character} of length 2.
 
 An object of class \code{character} of length 0.
 
@@ -36,9 +34,11 @@ An object of class \code{character} of length 0.
 
 An object of class \code{character} of length 4.
 
+An object of class \code{character} of length 2.
+
 An object of class \code{character} of length 0.
 
-An object of class \code{character} of length 49.
+An object of class \code{character} of length 50.
 }
 \usage{
 lamp_colors
@@ -46,8 +46,6 @@ lamp_colors
 uv_lamps
 
 purple_lamps
-
-ir_lamps
 
 blue_lamps
 
@@ -59,30 +57,34 @@ orange_lamps
 
 red_lamps
 
+ir_lamps
+
 amber_lamps
 
 white_lamps
 }
 \description{
-Names of members of the collection of emission spectra
-\code{\link{lamps.mspct}} grouped by the wavelength at which they emit.
+Names of members of the \code{\link{lamps.mpsct}} collection of spectra
+grouped by colour or wavelength band.
 }
 \details{
-The character vectors \code{"uv_leds"}, \code{"purple_leds"},
-\code{"blue_leds"}, \code{"green_leds"}, \code{"yellow_leds"},
-\code{"orange_leds"} and \code{"red_leds"} contain the names of the members
-of \code{lamps.mspct} with peaks of emission within the wavelength range
-corresponding to the light colours as defined by ISO standards. Vector
-\code{amber_lamps} is the union of \code{"yellow_lamps"} and
-\code{"orange_lamps"}. Vector \code{white_lamps} contains the names of spectra
-for lamps with broad or multiple peaks of emission in the visible range.
-Vectors \code{"uv_lamps"} and \code{"ir_lamps"} contain the names for lamps with
-peak emission at wavelengths < 400 nm and wavelengths > 700 nm, respectively.
+contain the names of the members of \code{lamps.mspct} with peaks of
+  emission within the wavelength range corresponding to the light colours as
+  defined by ISO standards. Vector \code{amber_lamps} is the union of
+  \code{"yellow_lamps"} and \code{"orange_lamps"}. Vector \code{white_lamps}
+  contains the names of spectra for lamps with broad or multiple peaks of
+  emission in the visible range. Vectors \code{"uv_lamps"} and
+  \code{"ir_lamps"} contain the names for lamps with peak emission at
+  wavelengths < 400 nm and wavelengths > 700 nm, respectively.  One 
+  additional vector, \code{lamp_colors} contains the names of
+  the colors as used in the vectors.
 
-These vectors can be used to extract subsets of spectra from
-\code{lamps.mspct}.
+  These vectors can be used to extract subsets of spectra from
+  \code{lamps.mspct}.
 }
 \examples{
+lamp_colors
+
 uv_lamps
 blue_lamps
 red_lamps

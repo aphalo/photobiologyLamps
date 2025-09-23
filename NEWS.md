@@ -7,9 +7,12 @@ editor_options:
 photobiologyLamps 0.5.3
 =======================
 
-* Add data for grow lamps and growth cabinets.
-* Add data for video/photography on-camera LED lamps.
-* Rebuild data objects with 'photobiology' (== 0.11.3), ensuring that metadata about the normalization is complete. 
+* Add spectral irradiance data for plant grow lamps.
+* Add spectral irradiance data for LED dimming in plant-growth cabinets.
+* Add spectral irradiance data for fluorescent lamps at different temperatures in plant-growth cabinets.
+* Add spectral irradiance data for video/photography on-camera LED lamps.
+* Add spectral irradiance data for a blue LED flashlight.
+* Rebuild data objects with 'photobiology' (== 0.14.0), ensuring that metadata about the normalization is complete. 
 * Add metadata on _what_ and _how_ was measured to obtain the spectral data.
 * Update the code used to create vectors of lamp names by colour.
 * Update the User Guide to reflect these and other recent changes in this package and in package 'photobiology'.

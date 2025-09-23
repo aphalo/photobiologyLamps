@@ -92,7 +92,7 @@ orange_lamps <- names(colour.map)[colour.map == "orange"]
 red_lamps <- names(colour.map)[colour.map == "red"]
 amber_lamps <- sort(c(yellow_lamps, orange_lamps))
 
-lamp_colors <- c("uv", "purple", "blue", "green", "yellow", "orange", "red", "ir")
+lamp_colors <- c("uv", "purple", "blue", "green", "yellow", "orange", "red", "ir", "amber", "white")
 
 ## lists by type
 sodium_lamps <-
@@ -151,10 +151,13 @@ lamp_brands <-
 # lists by special uses
 plant_grow_lamps <- c(Valoya_lamps, Fluence_lamps)
 photography_lamps <- c(Aputure_lamps, Sunwayfoto_lamps, Godox_lamps)
+flashlights <-sort(grepv("flashlight$", names(lamps.mspct)))
+lamp_uses <- c("photography_lamps", "plant_grow_lamps", "germicidal_lamps", "flashlights")
 
-save(list = c("lamps.mspct", "lamp_brands", "lamp_colors", "lamp_types", 
-              ls(pattern = "*_lamps$")),
+save(list = c("lamps.mspct", 
+              "lamp_brands", "lamp_colors", "lamp_types", "lamp_uses",
+              "flashlights", ls(pattern = "*_lamps$")),
      file = "data/lamps-mspct.rda")
 
-tools::resaveRdaFiles("data", compress="auto")
+tools::resaveRdaFiles("data", compress = "auto")
 print(tools::checkRdaFiles("data"))
