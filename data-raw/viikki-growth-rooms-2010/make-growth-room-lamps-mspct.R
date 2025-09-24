@@ -37,6 +37,9 @@ comment(temp.spct) <- comment.text
 print(str(get_attributes(temp.spct)))
 print(autoplot(temp.spct, annotations = c("+", "title:what:when:comment")))
 
+temp.spct <- trimInstrDesc(temp.spct)
+temp.spct <- trimInstrSettings(temp.spct)
+
 growth_room.mspct <- source_mspct(list(Osram.FT.L36W.865 = temp.spct))
 
 growth_room.mspct

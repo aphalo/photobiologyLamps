@@ -46,6 +46,8 @@ for (i in names(Percival_LED_dim.mspct)) {
   what_measured(Percival_LED_dim.mspct[[i]]) <-
                   paste(what_measured(Percival_LED_dim.mspct[[i]]),
                         ", dimming set at ", gsub("pc", "%", i), sep = "")
+  Percival_LED_dim.mspct[[i]] <- trimInstrDesc(Percival_LED_dim.mspct[[i]])
+  Percival_LED_dim.mspct[[i]] <- trimInstrSettings(Percival_LED_dim.mspct[[i]])
 }
 what_measured(Percival_LED_dim.mspct)[ , 2]
 

@@ -42,6 +42,8 @@ for (i in names(Nichia_LED_RECOM_dim.mspct)) {
   what_measured(Nichia_LED_RECOM_dim.mspct[[i]]) <-
                   paste(what_measured(Nichia_LED_RECOM_dim.mspct[[i]]),
                         ", dimming set at ", gsub("pc", "%", i), sep = "")
+  Nichia_LED_RECOM_dim.mspct[[i]] <- trimInstrDesc(Nichia_LED_RECOM_dim.mspct[[i]])
+  Nichia_LED_RECOM_dim.mspct[[i]] <- trimInstrSettings(Nichia_LED_RECOM_dim.mspct[[i]])
 }
 what_measured(Nichia_LED_RECOM_dim.mspct)[ , 2]
 

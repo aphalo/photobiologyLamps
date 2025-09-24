@@ -101,6 +101,8 @@ for (i in names(Osram_L_18W_840_temp.mspct)) {
   what_measured(Osram_L_18W_840_temp.mspct[[i]]) <-
                   paste(what_measured(Osram_L_18W_840_temp.mspct[[i]]),
                         ", t =", i)
+  Osram_L_18W_840_temp.mspct[[i]] <- trimInstrDesc(Osram_L_18W_840_temp.mspct[[i]])
+  Osram_L_18W_840_temp.mspct[[i]] <- trimInstrSettings(Osram_L_18W_840_temp.mspct[[i]])
 }
 what_measured(Osram_L_18W_840_temp.mspct)[ , 2]
 
