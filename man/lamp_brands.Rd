@@ -194,7 +194,7 @@ Osram_lamps
 \references{
 \url{https://www.ledvance.com/}
 
-\url{https://www.lighting.philips.com/home}
+\url{https://www.lighting.philips.com}
 
 \url{https://www.ledvanceus.com/Pages/default.aspx}
 
@@ -204,9 +204,9 @@ Osram_lamps
 
 \url{https://www.tlt.co.jp/tlt/index_e.htm}
 
-\url{https://www.aputure.com/}
+\url{https://aputure.com/}
 
-\url{https://www.sunwayfoto.com/}
+\url{https://sunwayfoto.com/}
 
 \url{https://www.godox.com/}
 

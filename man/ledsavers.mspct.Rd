@@ -49,7 +49,8 @@ A collection of lamp emission spectra for a household LED bulb
   lamp and/or its remote control. The lamp here used is a 7.6 W, 230 V, E-27
   LED lamp bulb accompanied by a small wireless remote control from a Swedish
   supplier. Similar (identical?) lamps are at the moment (early 2018) widely
-  available through eBay and Aliexpress sellers.
+  available through eBay and Aliexpress sellers. This type of lamps is no
+  longer available under the Ledsavers brand.
 }
 \details{
 \code{ledsavers.mspct}  contains a collection of 16 \code{"source_spct"}
@@ -81,8 +82,5 @@ ledsavers.mspct$W
 ledsavers.mspct[["W"]]
 ledsavers.mspct[ledsavers_channels]
 
-}
-\references{
-\url{https://www.kjell.com/varumarken/ledsavers}
 }
 \keyword{datasets}

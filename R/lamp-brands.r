@@ -48,7 +48,7 @@
 #' @section Philips:
 #' Lamps branded Philips are sold by Signify Netherlands B.V.
 #' 
-#' @references \url{https://www.lighting.philips.com/home}
+#' @references \url{https://www.lighting.philips.com}
 #' 
 "Philips_lamps"
 
@@ -98,7 +98,7 @@
 #' @section Aputure:
 #' Aputure is a Chinese supplier of LED lighting and related equipment for filmmaking.
 #' 
-#' @references \url{https://www.aputure.com/}
+#' @references \url{https://aputure.com/}
 #' 
 "Aputure_lamps"
 
@@ -108,7 +108,7 @@
 #' Sunwayfoto is a Chinese supplier of ancillary equipment for photography,
 #' including battery-powered fill-in LED lights with high CRI ratings..
 #' 
-#' @references \url{https://www.sunwayfoto.com/}
+#' @references \url{https://sunwayfoto.com/}
 #' 
 "Sunwayfoto_lamps"
 

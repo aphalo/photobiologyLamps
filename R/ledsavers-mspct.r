@@ -7,7 +7,8 @@
 #'   lamp and/or its remote control. The lamp here used is a 7.6 W, 230 V, E-27
 #'   LED lamp bulb accompanied by a small wireless remote control from a Swedish
 #'   supplier. Similar (identical?) lamps are at the moment (early 2018) widely
-#'   available through eBay and Aliexpress sellers.
+#'   available through eBay and Aliexpress sellers. This type of lamps is no
+#'   longer available under the Ledsavers brand.
 #'
 #' @details \code{ledsavers.mspct}  contains a collection of 16 \code{"source_spct"}
 #'   objects with spectral emission data for each of the colors obtainable from
@@ -40,8 +41,6 @@
 #' \code{ledsavers_RB_mixes}, \code{ledsavers_GB_mixes} are character vectors
 #' containing subsets of \code{names(ledsavers.mspct)}.
 #' 
-#' @references \url{https://www.kjell.com/varumarken/ledsavers}
-#'
 #' @examples
 #' ledsavers_channels
 #' ledsavers.mspct$W

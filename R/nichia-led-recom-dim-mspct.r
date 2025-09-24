@@ -30,7 +30,7 @@
 #' @concept light dimming
 #'
 #' @references
-#' Growth chamber manufacturer: \url{https://aralab.pt/en/aralab-environmental-chambers/}.
+#' Growth chamber manufacturer: \url{https://aralab.pt/}.
 #' 
 #' LED modules manufacturer: \url{https://www.lumitronix.com/en}.
 #' 
