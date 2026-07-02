@@ -76,7 +76,7 @@ lamps.mspct[sodium_lamps]
 \seealso{
 \code{\link{lamps.mspct}}
 
-Other indexing vectors of names: 
+Other indexing vectors of names:
 \code{\link{lamp_brands}},
 \code{\link{lamp_colors}},
 \code{\link{lamp_uses}}

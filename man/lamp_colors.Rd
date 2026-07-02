@@ -94,7 +94,7 @@ lamps.mspct[uv_lamps]
 \seealso{
 \code{\link{lamps.mspct}}
 
-Other indexing vectors of names: 
+Other indexing vectors of names:
 \code{\link{lamp_brands}},
 \code{\link{lamp_types}},
 \code{\link{lamp_uses}}
